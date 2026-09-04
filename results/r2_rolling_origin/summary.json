@@ -1,0 +1,421 @@
+{
+  "inputs": {
+    "hours": 4439,
+    "mean_mw": 3.5465355236928358,
+    "test_weeks": 4,
+    "step_weeks": 1
+  },
+  "by_setting": {
+    "tw4_h1_a0.9_abs": {
+      "n_origins": 19,
+      "coverage_mean": 0.8485275689223059,
+      "coverage_p10": 0.6199404761904762,
+      "coverage_min": 0.5625,
+      "frac_origins_meeting_target": 0.5263157894736842,
+      "mean_shortfall_frac": 0.06550584241669119,
+      "worst_shortfall_frac": 0.4562872615432439,
+      "mean_growth_ratio": 1.0375746032079012
+    },
+    "tw4_h1_a0.9_norm": {
+      "n_origins": 19,
+      "coverage_mean": 0.8854949874686717,
+      "coverage_p10": 0.7776785714285714,
+      "coverage_min": 0.7083333333333334,
+      "frac_origins_meeting_target": 0.5263157894736842,
+      "mean_shortfall_frac": 0.07075784052547808,
+      "worst_shortfall_frac": 0.4313991630357824,
+      "mean_growth_ratio": 1.0375746032079012
+    },
+    "tw4_h1_a0.95_abs": {
+      "n_origins": 19,
+      "coverage_mean": 0.9051535087719299,
+      "coverage_p10": 0.7130952380952381,
+      "coverage_min": 0.6666666666666666,
+      "frac_origins_meeting_target": 0.47368421052631576,
+      "mean_shortfall_frac": 0.0529089590540872,
+      "worst_shortfall_frac": 0.43428658680321364,
+      "mean_growth_ratio": 1.0375746032079012
+    },
+    "tw4_h1_a0.95_norm": {
+      "n_origins": 19,
+      "coverage_mean": 0.9287280701754387,
+      "coverage_p10": 0.8151785714285714,
+      "coverage_min": 0.7946428571428571,
+      "frac_origins_meeting_target": 0.47368421052631576,
+      "mean_shortfall_frac": 0.05597550749037064,
+      "worst_shortfall_frac": 0.4072919515340189,
+      "mean_growth_ratio": 1.0375746032079012
+    },
+    "tw4_h4_a0.9_abs": {
+      "n_origins": 19,
+      "coverage_mean": 0.8433640154197151,
+      "coverage_p10": 0.5476831091180867,
+      "coverage_min": 0.5321375186846039,
+      "frac_origins_meeting_target": 0.5263157894736842,
+      "mean_shortfall_frac": 0.0609477136723811,
+      "worst_shortfall_frac": 0.4261206882458378,
+      "mean_growth_ratio": 1.0375746032079012
+    },
+    "tw4_h4_a0.9_norm": {
+      "n_origins": 19,
+      "coverage_mean": 0.8734953976870429,
+      "coverage_p10": 0.6795216741405082,
+      "coverage_min": 0.6636771300448431,
+      "frac_origins_meeting_target": 0.47368421052631576,
+      "mean_shortfall_frac": 0.06755950956181438,
+      "worst_shortfall_frac": 0.4060677717355651,
+      "mean_growth_ratio": 1.0375746032079012
+    },
+    "tw4_h4_a0.95_abs": {
+      "n_origins": 19,
+      "coverage_mean": 0.9033907639052788,
+      "coverage_p10": 0.6890881913303437,
+      "coverage_min": 0.6233183856502242,
+      "frac_origins_meeting_target": 0.5789473684210527,
+      "mean_shortfall_frac": 0.051998647611892886,
+      "worst_shortfall_frac": 0.3976545177324848,
+      "mean_growth_ratio": 1.0375746032079012
+    },
+    "tw4_h4_a0.95_norm": {
+      "n_origins": 19,
+      "coverage_mean": 0.9202265754071277,
+      "coverage_p10": 0.7713004484304933,
+      "coverage_min": 0.7130044843049327,
+      "frac_origins_meeting_target": 0.47368421052631576,
+      "mean_shortfall_frac": 0.05206405482430444,
+      "worst_shortfall_frac": 0.3909869963366874,
+      "mean_growth_ratio": 1.0375746032079012
+    },
+    "tw4_h24_a0.9_abs": {
+      "n_origins": 19,
+      "coverage_mean": 0.8022058227232179,
+      "coverage_p10": 0.3531587057010786,
+      "coverage_min": 0.19568567026194145,
+      "frac_origins_meeting_target": 0.631578947368421,
+      "mean_shortfall_frac": 0.0511323217248669,
+      "worst_shortfall_frac": 0.3661078205209488,
+      "mean_growth_ratio": 1.0375746032079012
+    },
+    "tw4_h24_a0.9_norm": {
+      "n_origins": 19,
+      "coverage_mean": 0.8289676425269645,
+      "coverage_p10": 0.5340523882896764,
+      "coverage_min": 0.4098613251155624,
+      "frac_origins_meeting_target": 0.47368421052631576,
+      "mean_shortfall_frac": 0.052469470191757184,
+      "worst_shortfall_frac": 0.34573207231653497,
+      "mean_growth_ratio": 1.0375746032079012
+    },
+    "tw4_h24_a0.95_abs": {
+      "n_origins": 19,
+      "coverage_mean": 0.8597842835130971,
+      "coverage_p10": 0.40338983050847455,
+      "coverage_min": 0.2357473035439137,
+      "frac_origins_meeting_target": 0.6842105263157895,
+      "mean_shortfall_frac": 0.04747394331386108,
+      "worst_shortfall_frac": 0.35289504811536565,
+      "mean_growth_ratio": 1.0375746032079012
+    },
+    "tw4_h24_a0.95_norm": {
+      "n_origins": 19,
+      "coverage_mean": 0.8738950612277998,
+      "coverage_p10": 0.5436055469953776,
+      "coverage_min": 0.4530046224961479,
+      "frac_origins_meeting_target": 0.5789473684210527,
+      "mean_shortfall_frac": 0.04154600788967082,
+      "worst_shortfall_frac": 0.34039316841747375,
+      "mean_growth_ratio": 1.0375746032079012
+    },
+    "tw8_h1_a0.9_abs": {
+      "n_origins": 15,
+      "coverage_mean": 0.9083333333333332,
+      "coverage_p10": 0.7714285714285715,
+      "coverage_min": 0.7113095238095238,
+      "frac_origins_meeting_target": 0.6666666666666666,
+      "mean_shortfall_frac": 0.061291170906982585,
+      "worst_shortfall_frac": 0.4082849995758438,
+      "mean_growth_ratio": 1.0494745909158711
+    },
+    "tw8_h1_a0.9_norm": {
+      "n_origins": 15,
+      "coverage_mean": 0.9080357142857143,
+      "coverage_p10": 0.8333333333333333,
+      "coverage_min": 0.8229166666666666,
+      "frac_origins_meeting_target": 0.4666666666666667,
+      "mean_shortfall_frac": 0.06611464784124145,
+      "worst_shortfall_frac": 0.3858955471886276,
+      "mean_growth_ratio": 1.0494745909158711
+    },
+    "tw8_h1_a0.95_abs": {
+      "n_origins": 15,
+      "coverage_mean": 0.9544642857142857,
+      "coverage_p10": 0.8476190476190476,
+      "coverage_min": 0.8422619047619048,
+      "frac_origins_meeting_target": 0.6666666666666666,
+      "mean_shortfall_frac": 0.048839109949759575,
+      "worst_shortfall_frac": 0.34827663901739075,
+      "mean_growth_ratio": 1.0494745909158711
+    },
+    "tw8_h1_a0.95_norm": {
+      "n_origins": 15,
+      "coverage_mean": 0.9455357142857144,
+      "coverage_p10": 0.8922619047619047,
+      "coverage_min": 0.8809523809523809,
+      "frac_origins_meeting_target": 0.4666666666666667,
+      "mean_shortfall_frac": 0.052552653545149444,
+      "worst_shortfall_frac": 0.36692295338533654,
+      "mean_growth_ratio": 1.0494745909158711
+    },
+    "tw8_h4_a0.9_abs": {
+      "n_origins": 15,
+      "coverage_mean": 0.9061285500747385,
+      "coverage_p10": 0.7402092675635276,
+      "coverage_min": 0.6995515695067265,
+      "frac_origins_meeting_target": 0.6666666666666666,
+      "mean_shortfall_frac": 0.05701252014779916,
+      "worst_shortfall_frac": 0.3455747613817743,
+      "mean_growth_ratio": 1.0494745909158711
+    },
+    "tw8_h4_a0.9_norm": {
+      "n_origins": 15,
+      "coverage_mean": 0.8867962132536124,
+      "coverage_p10": 0.7898355754857997,
+      "coverage_min": 0.7399103139013453,
+      "frac_origins_meeting_target": 0.4666666666666667,
+      "mean_shortfall_frac": 0.06277863875563608,
+      "worst_shortfall_frac": 0.3669857928422312,
+      "mean_growth_ratio": 1.0494745909158711
+    },
+    "tw8_h4_a0.95_abs": {
+      "n_origins": 15,
+      "coverage_mean": 0.9460886895864475,
+      "coverage_p10": 0.8532137518684604,
+      "coverage_min": 0.7533632286995515,
+      "frac_origins_meeting_target": 0.6,
+      "mean_shortfall_frac": 0.053181702267046854,
+      "worst_shortfall_frac": 0.3005401849574982,
+      "mean_growth_ratio": 1.0494745909158711
+    },
+    "tw8_h4_a0.95_norm": {
+      "n_origins": 15,
+      "coverage_mean": 0.9323368211260588,
+      "coverage_p10": 0.8158445440956652,
+      "coverage_min": 0.8056801195814649,
+      "frac_origins_meeting_target": 0.5333333333333333,
+      "mean_shortfall_frac": 0.055618198146184836,
+      "worst_shortfall_frac": 0.33902079030027166,
+      "mean_growth_ratio": 1.0494745909158711
+    },
+    "tw8_h24_a0.9_abs": {
+      "n_origins": 15,
+      "coverage_mean": 0.8814586543400103,
+      "coverage_p10": 0.6348228043143298,
+      "coverage_min": 0.4915254237288136,
+      "frac_origins_meeting_target": 0.6666666666666666,
+      "mean_shortfall_frac": 0.05628633767995133,
+      "worst_shortfall_frac": 0.2803354603850176,
+      "mean_growth_ratio": 1.0494745909158711
+    },
+    "tw8_h24_a0.9_norm": {
+      "n_origins": 15,
+      "coverage_mean": 0.8570107858243453,
+      "coverage_p10": 0.5617873651771956,
+      "coverage_min": 0.5439137134052389,
+      "frac_origins_meeting_target": 0.6,
+      "mean_shortfall_frac": 0.05869690288210224,
+      "worst_shortfall_frac": 0.3281038265782444,
+      "mean_growth_ratio": 1.0494745909158711
+    },
+    "tw8_h24_a0.95_abs": {
+      "n_origins": 15,
+      "coverage_mean": 0.9072419106317412,
+      "coverage_p10": 0.6579352850539292,
+      "coverage_min": 0.551617873651772,
+      "frac_origins_meeting_target": 0.7333333333333333,
+      "mean_shortfall_frac": 0.04750964149732762,
+      "worst_shortfall_frac": 0.25771518288442213,
+      "mean_growth_ratio": 1.0494745909158711
+    },
+    "tw8_h24_a0.95_norm": {
+      "n_origins": 15,
+      "coverage_mean": 0.8917308680020545,
+      "coverage_p10": 0.6073959938366719,
+      "coverage_min": 0.5439137134052389,
+      "frac_origins_meeting_target": 0.7333333333333333,
+      "mean_shortfall_frac": 0.05230243000645126,
+      "worst_shortfall_frac": 0.3092854411861508,
+      "mean_growth_ratio": 1.0494745909158711
+    },
+    "tw12_h1_a0.9_abs": {
+      "n_origins": 11,
+      "coverage_mean": 0.9502164502164502,
+      "coverage_p10": 0.8913690476190477,
+      "coverage_min": 0.8586309523809523,
+      "frac_origins_meeting_target": 0.7272727272727273,
+      "mean_shortfall_frac": 0.06624996229498951,
+      "worst_shortfall_frac": 0.3245338807825705,
+      "mean_growth_ratio": 1.1048404262820695
+    },
+    "tw12_h1_a0.9_norm": {
+      "n_origins": 11,
+      "coverage_mean": 0.8990800865800866,
+      "coverage_p10": 0.8586309523809523,
+      "coverage_min": 0.8452380952380952,
+      "frac_origins_meeting_target": 0.45454545454545453,
+      "mean_shortfall_frac": 0.07590091256992514,
+      "worst_shortfall_frac": 0.387315819845193,
+      "mean_growth_ratio": 1.1048404262820695
+    },
+    "tw12_h1_a0.95_abs": {
+      "n_origins": 11,
+      "coverage_mean": 0.9604978354978356,
+      "coverage_p10": 0.9196428571428571,
+      "coverage_min": 0.8839285714285714,
+      "frac_origins_meeting_target": 0.5454545454545454,
+      "mean_shortfall_frac": 0.053869806465867746,
+      "worst_shortfall_frac": 0.29727598881413614,
+      "mean_growth_ratio": 1.1048404262820695
+    },
+    "tw12_h1_a0.95_norm": {
+      "n_origins": 11,
+      "coverage_mean": 0.9358766233766235,
+      "coverage_p10": 0.8809523809523809,
+      "coverage_min": 0.8779761904761905,
+      "frac_origins_meeting_target": 0.45454545454545453,
+      "mean_shortfall_frac": 0.06521110366340874,
+      "worst_shortfall_frac": 0.36508226463065824,
+      "mean_growth_ratio": 1.1048404262820695
+    },
+    "tw12_h4_a0.9_abs": {
+      "n_origins": 11,
+      "coverage_mean": 0.9187389590977034,
+      "coverage_p10": 0.8505231689088192,
+      "coverage_min": 0.7653213751868461,
+      "frac_origins_meeting_target": 0.5454545454545454,
+      "mean_shortfall_frac": 0.061140377308970234,
+      "worst_shortfall_frac": 0.2936052050646432,
+      "mean_growth_ratio": 1.1048404262820695
+    },
+    "tw12_h4_a0.9_norm": {
+      "n_origins": 11,
+      "coverage_mean": 0.8698192689224079,
+      "coverage_p10": 0.772795216741405,
+      "coverage_min": 0.7593423019431988,
+      "frac_origins_meeting_target": 0.45454545454545453,
+      "mean_shortfall_frac": 0.08039736618571722,
+      "worst_shortfall_frac": 0.3650467945029553,
+      "mean_growth_ratio": 1.1048404262820695
+    },
+    "tw12_h4_a0.95_abs": {
+      "n_origins": 11,
+      "coverage_mean": 0.9422475879874984,
+      "coverage_p10": 0.8863976083707026,
+      "coverage_min": 0.8310911808669657,
+      "frac_origins_meeting_target": 0.45454545454545453,
+      "mean_shortfall_frac": 0.06679151416708771,
+      "worst_shortfall_frac": 0.26567130681548257,
+      "mean_growth_ratio": 1.1048404262820695
+    },
+    "tw12_h4_a0.95_norm": {
+      "n_origins": 11,
+      "coverage_mean": 0.9115368935996738,
+      "coverage_p10": 0.8086696562032885,
+      "coverage_min": 0.8056801195814649,
+      "frac_origins_meeting_target": 0.36363636363636365,
+      "mean_shortfall_frac": 0.06545689191427274,
+      "worst_shortfall_frac": 0.3371169708477281,
+      "mean_growth_ratio": 1.1048404262820695
+    },
+    "tw12_h24_a0.9_abs": {
+      "n_origins": 11,
+      "coverage_mean": 0.8585236027454827,
+      "coverage_p10": 0.6579352850539292,
+      "coverage_min": 0.5608628659476117,
+      "frac_origins_meeting_target": 0.5454545454545454,
+      "mean_shortfall_frac": 0.07405782344682264,
+      "worst_shortfall_frac": 0.2449580703865306,
+      "mean_growth_ratio": 1.1048404262820695
+    },
+    "tw12_h24_a0.9_norm": {
+      "n_origins": 11,
+      "coverage_mean": 0.8033338002521362,
+      "coverage_p10": 0.5577812018489985,
+      "coverage_min": 0.5439137134052389,
+      "frac_origins_meeting_target": 0.45454545454545453,
+      "mean_shortfall_frac": 0.07605519511300463,
+      "worst_shortfall_frac": 0.3161176642529107,
+      "mean_growth_ratio": 1.1048404262820695
+    },
+    "tw12_h24_a0.95_abs": {
+      "n_origins": 11,
+      "coverage_mean": 0.8907410001400758,
+      "coverage_p10": 0.7072419106317411,
+      "coverage_min": 0.6795069337442219,
+      "frac_origins_meeting_target": 0.5454545454545454,
+      "mean_shortfall_frac": 0.059842476537982824,
+      "worst_shortfall_frac": 0.20639352138374348,
+      "mean_growth_ratio": 1.1048404262820695
+    },
+    "tw12_h24_a0.95_norm": {
+      "n_origins": 11,
+      "coverage_mean": 0.859924359153943,
+      "coverage_p10": 0.6178736517719569,
+      "coverage_min": 0.6070878274268104,
+      "frac_origins_meeting_target": 0.5454545454545454,
+      "mean_shortfall_frac": 0.07046660384896503,
+      "worst_shortfall_frac": 0.2798717254302299,
+      "mean_growth_ratio": 1.1048404262820695
+    }
+  },
+  "derating_trainweeks8": {
+    "h1_a0.9_abs": {
+      "derating_factor_for_target": 1.0078125000000002,
+      "derated_K_mw": 2.72993354763908
+    },
+    "h1_a0.9_norm": {
+      "derating_factor_for_target": 1.0066406250000002,
+      "derated_K_mw": 2.726759206304616
+    },
+    "h1_a0.95_abs": {
+      "derating_factor_for_target": 1.0113281250000001,
+      "derated_K_mw": 2.5464676143740586
+    },
+    "h1_a0.95_norm": {
+      "derating_factor_for_target": 0.9931640625000001,
+      "derated_K_mw": 2.500731521647757
+    },
+    "h4_a0.9_abs": {
+      "derating_factor_for_target": 1.0060546875000003,
+      "derated_K_mw": 2.5543023359136163
+    },
+    "h4_a0.9_norm": {
+      "derating_factor_for_target": 0.9878906250000001,
+      "derated_K_mw": 2.5081850543682918
+    },
+    "h4_a0.95_abs": {
+      "derating_factor_for_target": 0.9873046875000001,
+      "derated_K_mw": 2.290406135490493
+    },
+    "h4_a0.95_norm": {
+      "derating_factor_for_target": 0.9691406250000001,
+      "derated_K_mw": 2.248268099763368
+    },
+    "h24_a0.9_abs": {
+      "derating_factor_for_target": 0.9644531250000001,
+      "derated_K_mw": 2.104881488288121
+    },
+    "h24_a0.9_norm": {
+      "derating_factor_for_target": 0.9416015624999999,
+      "derated_K_mw": 2.055008840631233
+    },
+    "h24_a0.95_abs": {
+      "derating_factor_for_target": 0.8853515625,
+      "derated_K_mw": 1.726861017190592
+    },
+    "h24_a0.95_norm": {
+      "derating_factor_for_target": 0.8572265625000001,
+      "derated_K_mw": 1.672003751257337
+    }
+  },
+  "interpretation": "coverage close to or above the target with a derating factor near 1 means K generalises prospectively; a factor well below 1 means the in-sample K is optimistic and the paper must call K a retrospective lower-tail statistic."
+}

@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this code or the derived data, please cite the paper and the source trace."
+title: "asi-trace-power: hourly load and eligible-flexibility reconstruction from the Alibaba cluster-trace-gpu-v2026"
+authors:
+  - family-names: Li
+    given-names: Meiyi
+    affiliation: Louisiana State University
+version: 1.0.0
+date-released: 2026-09-04
+license: MIT
+repository-code: "https://github.com/<owner>/asi-trace-power"
+references:
+  - type: conference-paper
+    title: "Heterogeneity at Hyperscale: Characterization and Scheduling of Large Production AI Clusters at Alibaba"
+    authors:
+      - family-names: Li
+        given-names: Suyi
+    collection-title: "20th USENIX Symposium on Operating Systems Design and Implementation (OSDI 26)"
+    year: 2026

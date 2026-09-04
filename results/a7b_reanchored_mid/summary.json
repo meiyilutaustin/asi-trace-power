@@ -1,0 +1,93 @@
+{
+  "hours_covered": 4439,
+  "mean_mw": {
+    "p50": 54.49281161134412,
+    "p5": 44.54080184463154,
+    "p95": 67.63200940947551,
+    "base": 50.47068145296992
+  },
+  "mean_it_mw_p50": 44.13270729380535,
+  "peak_mw_p50": 66.54608493221875,
+  "min_mw_p50": 42.974882333602196,
+  "load_factor_p50": 0.8188732915970697,
+  "peak_to_trough_p50": 1.5484878914999647,
+  "growth": {
+    "first_week_mean_mw": 45.13181798392966,
+    "last_week_mean_mw": 62.68491199652856,
+    "growth_pct": 38.89294692017311
+  },
+  "avg_daily_amplitude_mw": 3.4995835774172073,
+  "avg_daily_amplitude_pct_of_mean": 6.422101326643011,
+  "daily_profile_peak_hour": 17,
+  "daily_profile_trough_hour": 6,
+  "daily_profile_swing_pct": 3.220645418083738,
+  "autocorr_24h": 0.9492451530631022,
+  "autocorr_7d": 0.8439720666407042,
+  "component_share_pct_base": {
+    "gpu_active": 66.31734860062323,
+    "gpu_idle_floor": 1.4724202012459597,
+    "host": 32.2102311981308
+  },
+  "online_floor_share_of_it_pct_base": 15.54140485359485,
+  "standby_first_day": 109,
+  "base_params": {
+    "idle_frac": 0.18,
+    "null_g": 0.3,
+    "pue": 1.2,
+    "online_floor": 0.43,
+    "c0": 0.3048780487804878,
+    "host_idle": 1.5,
+    "host_peak": 4.0,
+    "family": "anchored"
+  },
+  "config": {
+    "online_floor_frac": {
+      "base": 0.43,
+      "range": [
+        0.35,
+        0.5
+      ]
+    },
+    "curve_families": {
+      "linear": {
+        "default": [
+          0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ]
+      },
+      "anchored": {
+        "training": [
+          0.0,
+          0.408,
+          0.613,
+          0.735,
+          0.817
+        ],
+        "online_inference": [
+          0.0,
+          0.211,
+          0.374,
+          0.48,
+          0.585
+        ],
+        "offline_inference": [
+          0.0,
+          0.307,
+          0.518,
+          0.72,
+          0.878
+        ],
+        "default": [
+          0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ]
+      }
+    }
+  }
+}

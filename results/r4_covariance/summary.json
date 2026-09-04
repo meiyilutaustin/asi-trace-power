@@ -1,0 +1,399 @@
+{
+  "n_clusters": 15,
+  "hours": 4439,
+  "fleet_mean_mw": 29.363258367388678,
+  "plateaus": [
+    {
+      "start_day": 26,
+      "end_day": 42,
+      "hours": 393,
+      "mean_mw": 27.0965487962367
+    },
+    {
+      "start_day": 42,
+      "end_day": 70,
+      "hours": 664,
+      "mean_mw": 27.863219264309624
+    },
+    {
+      "start_day": 70,
+      "end_day": 96,
+      "hours": 625,
+      "mean_mw": 28.927753338278073
+    },
+    {
+      "start_day": 97,
+      "end_day": 111,
+      "hours": 337,
+      "mean_mw": 31.117463167208022
+    },
+    {
+      "start_day": 111,
+      "end_day": 144,
+      "hours": 806,
+      "mean_mw": 31.192885877208525
+    },
+    {
+      "start_day": 153,
+      "end_day": 172,
+      "hours": 466,
+      "mean_mw": 32.37629487542403
+    }
+  ],
+  "capnorm_cluster_set": {
+    "kept": [
+      "1f28e063",
+      "27dc4b08",
+      "2f961135",
+      "3f39b4b6",
+      "4d6f06d0",
+      "6d5f55ee",
+      "70870b9a",
+      "87532e37",
+      "9089d80b",
+      "da8d7fb8"
+    ],
+    "dropped": {
+      "38b984d4": 0.4316287452128858,
+      "4e63968e": 0.51971164676729,
+      "65e98ec7": 0.0,
+      "86a11d5d": 0.31425996846136517,
+      "f8dd18ee": 0.31043027708943455
+    },
+    "rule": "cluster's 168 h mean stays above max(20% of its median, 0.05 MW) for >= 80% of hours",
+    "dropped_power_share_pct": 5.857618414724195
+  },
+  "masked_hours": {
+    "raw": {
+      "kept": 4439,
+      "dropped_vs_good": 0
+    },
+    "deseason": {
+      "kept": 4439,
+      "dropped_vs_good": 0
+    },
+    "capnorm": {
+      "kept": 4439,
+      "dropped_vs_good": 0
+    }
+  },
+  "full_window": {
+    "raw": {
+      "sync_ratio": 1.7527859035009605,
+      "excess_X": 2.0722584235116783,
+      "rho_weighted": 0.4058380879000957,
+      "rho_unweighted_mean": 0.4086577395120445,
+      "hhi_of_variance": 0.2610301385507406,
+      "n_clusters": 10,
+      "var_sum_mw2": 0.5786219124322056,
+      "sum_var_mw2": 0.18833764373597986
+    },
+    "deseason": {
+      "sync_ratio": 1.6641661150688762,
+      "excess_X": 1.7694488585434365,
+      "rho_weighted": 0.36192708938136414,
+      "rho_unweighted_mean": 0.3691514295775635,
+      "hhi_of_variance": 0.2828225696467496,
+      "n_clusters": 10,
+      "var_sum_mw2": 0.43077326306205754,
+      "sum_var_mw2": 0.15554476181539542
+    },
+    "capnorm": {
+      "sync_ratio": 1.5358136870475516,
+      "excess_X": 1.3587236813225947,
+      "rho_weighted": 0.3280447103592802,
+      "rho_unweighted_mean": 0.35239939924913316,
+      "hhi_of_variance": 0.3905137884612363,
+      "n_clusters": 10,
+      "var_sum_mw2": 0.5306269001689013,
+      "sum_var_mw2": 0.2249635700742046
+    }
+  },
+  "full_window_raw_all_clusters": {
+    "sync_ratio": 1.8730377209560671,
+    "excess_X": 2.508270304124298,
+    "rho_weighted": 0.328172894151591,
+    "rho_unweighted_mean": 0.2797527544864577,
+    "hhi_of_variance": 0.2151041158469867,
+    "n_clusters": 15,
+    "var_sum_mw2": 0.7334254377162348,
+    "sum_var_mw2": 0.2090561371095109
+  },
+  "plateau_decomposition": [
+    {
+      "start_day": 26,
+      "end_day": 42,
+      "raw": {
+        "sync_ratio": 1.6908120421954398,
+        "excess_X": 1.8588453620331138,
+        "rho_weighted": 0.3622356847461397,
+        "rho_unweighted_mean": 0.3768527792205233,
+        "hhi_of_variance": 0.2572749380733548,
+        "n_clusters": 10,
+        "var_sum_mw2": 0.38653421442412894,
+        "sum_var_mw2": 0.13520640869824416
+      },
+      "deseason": {
+        "sync_ratio": 1.4912029441165204,
+        "excess_X": 1.2236862205417784,
+        "rho_weighted": 0.2462011955666795,
+        "rho_unweighted_mean": 0.24596722467713228,
+        "hhi_of_variance": 0.254389246570775,
+        "n_clusters": 10,
+        "var_sum_mw2": 0.203555655913634,
+        "sum_var_mw2": 0.09153973885040298
+      },
+      "capnorm": {
+        "sync_ratio": 1.4803097634312774,
+        "excess_X": 1.1913169957099647,
+        "rho_weighted": 0.24809167754583536,
+        "rho_unweighted_mean": 0.24929985954841993,
+        "hhi_of_variance": 0.26799538020304514,
+        "n_clusters": 10,
+        "var_sum_mw2": 0.23417943595034568,
+        "sum_var_mw2": 0.10686698291886057
+      }
+    },
+    {
+      "start_day": 42,
+      "end_day": 70,
+      "raw": {
+        "sync_ratio": 1.7885998394378666,
+        "excess_X": 2.199089385637162,
+        "rho_weighted": 0.40399239821069804,
+        "rho_unweighted_mean": 0.4109911598201228,
+        "hhi_of_variance": 0.23968968169028412,
+        "n_clusters": 10,
+        "var_sum_mw2": 0.4363470240587375,
+        "sum_var_mw2": 0.1363972591756233
+      },
+      "deseason": {
+        "sync_ratio": 1.5465931306453506,
+        "excess_X": 1.3919503117593868,
+        "rho_weighted": 0.26947533847006677,
+        "rho_unweighted_mean": 0.28360394208283785,
+        "hhi_of_variance": 0.2673555949834394,
+        "n_clusters": 10,
+        "var_sum_mw2": 0.21489333974557526,
+        "sum_var_mw2": 0.08984021895819047
+      },
+      "capnorm": {
+        "sync_ratio": 1.5673354266644988,
+        "excess_X": 1.4565403396775864,
+        "rho_weighted": 0.27955991990135803,
+        "rho_unweighted_mean": 0.28986343379735957,
+        "hhi_of_variance": 0.2643500234996945,
+        "n_clusters": 10,
+        "var_sum_mw2": 0.223668002020283,
+        "sum_var_mw2": 0.09105000166601732
+      }
+    },
+    {
+      "start_day": 70,
+      "end_day": 96,
+      "raw": {
+        "sync_ratio": 1.7512343030504414,
+        "excess_X": 2.0668215841805653,
+        "rho_weighted": 0.35652874901447884,
+        "rho_unweighted_mean": 0.3671803662030996,
+        "hhi_of_variance": 0.22026790821061337,
+        "n_clusters": 10,
+        "var_sum_mw2": 0.4088326231656685,
+        "sum_var_mw2": 0.1333082515378559
+      },
+      "deseason": {
+        "sync_ratio": 1.4706801481717304,
+        "excess_X": 1.162900098226423,
+        "rho_weighted": 0.20684760979427536,
+        "rho_unweighted_mean": 0.26068227554962725,
+        "hhi_of_variance": 0.235731652674759,
+        "n_clusters": 10,
+        "var_sum_mw2": 0.18248495416971336,
+        "sum_var_mw2": 0.08437049603879113
+      },
+      "capnorm": {
+        "sync_ratio": 1.4923836739935543,
+        "excess_X": 1.2272090304024994,
+        "rho_weighted": 0.21269013750693022,
+        "rho_unweighted_mean": 0.2634520420394418,
+        "hhi_of_variance": 0.2216765423346314,
+        "n_clusters": 10,
+        "var_sum_mw2": 0.17631771956631412,
+        "sum_var_mw2": 0.0791653217814271
+      }
+    },
+    {
+      "start_day": 97,
+      "end_day": 111,
+      "raw": {
+        "sync_ratio": 1.644766639733582,
+        "excess_X": 1.705257299180499,
+        "rho_weighted": 0.2989142481047645,
+        "rho_unweighted_mean": 0.324960752787876,
+        "hhi_of_variance": 0.2104903378459162,
+        "n_clusters": 10,
+        "var_sum_mw2": 0.32862497698393195,
+        "sum_var_mw2": 0.1214764218854458
+      },
+      "deseason": {
+        "sync_ratio": 1.4106599566634146,
+        "excess_X": 0.9899615133336266,
+        "rho_weighted": 0.19810006707798042,
+        "rho_unweighted_mean": 0.24769368458359892,
+        "hhi_of_variance": 0.27378491543788125,
+        "n_clusters": 10,
+        "var_sum_mw2": 0.18942606276021456,
+        "sum_var_mw2": 0.09519081725499501
+      },
+      "capnorm": {
+        "sync_ratio": 1.4526907520796994,
+        "excess_X": 1.110310421177883,
+        "rho_weighted": 0.21391610136336017,
+        "rho_unweighted_mean": 0.25011028051890255,
+        "hhi_of_variance": 0.2540572030383158,
+        "n_clusters": 10,
+        "var_sum_mw2": 0.17251608539863403,
+        "sum_var_mw2": 0.08174915105728527
+      }
+    },
+    {
+      "start_day": 111,
+      "end_day": 144,
+      "raw": {
+        "sync_ratio": 1.900188640436477,
+        "excess_X": 2.6107168692438267,
+        "rho_weighted": 0.5114654252451362,
+        "rho_unweighted_mean": 0.46430109223392213,
+        "hhi_of_variance": 0.2708264043421074,
+        "n_clusters": 10,
+        "var_sum_mw2": 0.5764964836646835,
+        "sum_var_mw2": 0.15966261120479827
+      },
+      "deseason": {
+        "sync_ratio": 1.866270238432567,
+        "excess_X": 2.48296460285915,
+        "rho_weighted": 0.4783387250124279,
+        "rho_unweighted_mean": 0.4715859966346165,
+        "hhi_of_variance": 0.2530057988208726,
+        "n_clusters": 10,
+        "var_sum_mw2": 0.5212997212900528,
+        "sum_var_mw2": 0.1496712659273425
+      },
+      "capnorm": {
+        "sync_ratio": 1.874064418179591,
+        "excess_X": 2.512117443486809,
+        "rho_weighted": 0.4787004903334869,
+        "rho_unweighted_mean": 0.4768772953650611,
+        "hhi_of_variance": 0.24762990194951595,
+        "n_clusters": 10,
+        "var_sum_mw2": 0.504968167814116,
+        "sum_var_mw2": 0.14377883881718564
+      }
+    },
+    {
+      "start_day": 153,
+      "end_day": 172,
+      "raw": {
+        "sync_ratio": 1.8120983212379376,
+        "excess_X": 2.2837003258333515,
+        "rho_weighted": 0.386776758460081,
+        "rho_unweighted_mean": 0.3716136774390064,
+        "hhi_of_variance": 0.20660738145286547,
+        "n_clusters": 10,
+        "var_sum_mw2": 0.3802978345722885,
+        "sum_var_mw2": 0.11581380663163131
+      },
+      "deseason": {
+        "sync_ratio": 1.5385027184051088,
+        "excess_X": 1.366990614539909,
+        "rho_weighted": 0.22724231256376762,
+        "rho_unweighted_mean": 0.2668210997584275,
+        "hhi_of_variance": 0.19315911839608524,
+        "n_clusters": 10,
+        "var_sum_mw2": 0.20660444614145615,
+        "sum_var_mw2": 0.0872857056856626
+      },
+      "capnorm": {
+        "sync_ratio": 1.537877670991882,
+        "excess_X": 1.3650677309354151,
+        "rho_weighted": 0.22868692578914734,
+        "rho_unweighted_mean": 0.271698674068286,
+        "hhi_of_variance": 0.19346529237530655,
+        "n_clusters": 10,
+        "var_sum_mw2": 0.2093474044853718,
+        "sum_var_mw2": 0.08851645208595028
+      }
+    }
+  ],
+  "plateau_pooled": {
+    "raw": {
+      "n_plateaus": 6,
+      "sync_ratio_mean": 1.7646166310152909,
+      "sync_ratio_min": 1.644766639733582,
+      "sync_ratio_max": 1.900188640436477,
+      "excess_X_mean": 2.1207384710180865,
+      "rho_weighted_mean": 0.38665221063021643
+    },
+    "deseason": {
+      "n_plateaus": 6,
+      "sync_ratio_mean": 1.5539848560724485,
+      "sync_ratio_min": 1.4106599566634146,
+      "sync_ratio_max": 1.866270238432567,
+      "excess_X_mean": 1.436408893543379,
+      "rho_weighted_mean": 0.2710342080808663
+    },
+    "capnorm": {
+      "n_plateaus": 6,
+      "sync_ratio_mean": 1.5674436175567505,
+      "sync_ratio_min": 1.4526907520796994,
+      "sync_ratio_max": 1.874064418179591,
+      "excess_X_mean": 1.4770936602316926,
+      "rho_weighted_mean": 0.2769408754066863
+    }
+  },
+  "paired_bootstrap": {
+    "raw_minus_capnorm": {
+      "p5": 0.10076775221283703,
+      "p50": 0.20322930126181693,
+      "p95": 0.2719675131340749,
+      "excludes_zero": true
+    },
+    "raw_minus_deseason": {
+      "p5": 0.04141112485152838,
+      "p50": 0.09290937971728364,
+      "p95": 0.1592300350723831,
+      "excludes_zero": true
+    },
+    "deseason_minus_capnorm": {
+      "p5": 0.020597336790526888,
+      "p50": 0.10791636296456542,
+      "p95": 0.1631903725446405,
+      "excludes_zero": true
+    },
+    "raw": {
+      "p5": 1.6534064322009967,
+      "p50": 1.7581407162941163,
+      "p95": 1.8542372889600471,
+      "excludes_zero": true
+    },
+    "deseason": {
+      "p5": 1.5199607613897546,
+      "p50": 1.663394791141127,
+      "p95": 1.7923126161279017,
+      "excludes_zero": true
+    },
+    "capnorm": {
+      "p5": 1.4049398940117002,
+      "p50": 1.5563348121555833,
+      "p95": 1.7333775371806326,
+      "excludes_zero": true
+    }
+  },
+  "attribution": {
+    "raw_excess_X": 2.0722584235116783,
+    "share_of_excess_removed_by_deseasoning_pct": 14.61253874191504,
+    "share_of_excess_removed_by_capacity_normalisation_pct": 34.43271042324526,
+    "residual_excess_after_capnorm": 1.3587236813225947,
+    "note": "excess X = sync^2 - 1 is the exact covariance term; percentages are on the VARIANCE-excess scale, which is the scale on which the decomposition is additive"
+  }
+}

@@ -1,0 +1,404 @@
+{
+  "join": {
+    "n_spans": 77828076,
+    "n_matched": 36685018,
+    "js_rows": 40522321,
+    "js_unique_pods": 36685018,
+    "span_coverage_pct": 47.13596928697042,
+    "gpu_hour_coverage_pct": 58.845374549949156,
+    "coverage_gh_pct_days95_104": 47.947861949768395,
+    "coverage_gh_pct_days106_115": 88.86566502934002
+  },
+  "coverage_by_duration_bin": [
+    {
+      "span_h": "[1.0, 2.0)",
+      "spans_pct": "43.59498163206261",
+      "gpu_hours_pct": "50.355854136911645",
+      "n_spans": "42862461"
+    },
+    {
+      "span_h": "[2.0, 6.0)",
+      "spans_pct": "52.47099416304586",
+      "gpu_hours_pct": "50.011555278844334",
+      "n_spans": "27594015"
+    },
+    {
+      "span_h": "[6.0, 24.0)",
+      "spans_pct": "47.90508444653483",
+      "gpu_hours_pct": "44.738268760366616",
+      "n_spans": "5936182"
+    },
+    {
+      "span_h": "[24.0, 72.0)",
+      "spans_pct": "43.24920221870578",
+      "gpu_hours_pct": "42.19112649747989",
+      "n_spans": "835442"
+    },
+    {
+      "span_h": "[72.0, 168.0)",
+      "spans_pct": "42.02775456525611",
+      "gpu_hours_pct": "42.00546473290248",
+      "n_spans": "218991"
+    },
+    {
+      "span_h": "[168.0, 1000000000.0)",
+      "spans_pct": "58.58235888552043",
+      "gpu_hours_pct": "68.40670651443882",
+      "n_spans": "380985"
+    }
+  ],
+  "coverage_by_gpu_bin": [
+    {
+      "gpus": "[0.0, 1.0)",
+      "spans_pct": "47.1896987064087",
+      "gpu_hours_pct": "63.871321002233095",
+      "n_spans": "75131535"
+    },
+    {
+      "gpus": "[1.0, 2.0)",
+      "spans_pct": "45.26268503569414",
+      "gpu_hours_pct": "48.831635625176986",
+      "n_spans": "1645088"
+    },
+    {
+      "gpus": "[2.0, 8.0)",
+      "spans_pct": "47.69430822082197",
+      "gpu_hours_pct": "51.57037018180589",
+      "n_spans": "837471"
+    },
+    {
+      "gpus": "[8.0, 16.0)",
+      "spans_pct": "40.48754042585011",
+      "gpu_hours_pct": "44.10505075733685",
+      "n_spans": "213972"
+    },
+    {
+      "gpus": "[16.0, 64.0)",
+      "spans_pct": "40.0",
+      "gpu_hours_pct": "53.91705069124424",
+      "n_spans": "10"
+    }
+  ],
+  "implicit_coverage_by_label": [
+    {
+      "job_type_public": "dev",
+      "priority_class": "HP",
+      "matched_gh": "12109843.92088889",
+      "agg_gh": "18977872.801666666",
+      "implicit_coverage_pct": "63.81033347333525"
+    },
+    {
+      "job_type_public": "dev",
+      "priority_class": "LP",
+      "matched_gh": "60338.48333333333",
+      "agg_gh": "239595.55922222222",
+      "implicit_coverage_pct": "25.183473153344238"
+    },
+    {
+      "job_type_public": "dev",
+      "priority_class": "Other",
+      "matched_gh": "26121.54511111111",
+      "agg_gh": "83001.258",
+      "implicit_coverage_pct": "31.4712640995286"
+    },
+    {
+      "job_type_public": "offline_inference",
+      "priority_class": "HP",
+      "matched_gh": "756384.7",
+      "agg_gh": "3344188.4444444445",
+      "implicit_coverage_pct": "22.61788510323182"
+    },
+    {
+      "job_type_public": "offline_inference",
+      "priority_class": "LP",
+      "matched_gh": "53918785.75027778",
+      "agg_gh": "110656124.00711112",
+      "implicit_coverage_pct": "48.72643627641683"
+    },
+    {
+      "job_type_public": "offline_inference",
+      "priority_class": "Other",
+      "matched_gh": "874327.6805555555",
+      "agg_gh": "2112897.8097222224",
+      "implicit_coverage_pct": "41.380500113751424"
+    },
+    {
+      "job_type_public": "online_inference",
+      "priority_class": "HP",
+      "matched_gh": "205278611.24127778",
+      "agg_gh": "295433219.9893889",
+      "implicit_coverage_pct": "69.48392981962246"
+    },
+    {
+      "job_type_public": "online_inference",
+      "priority_class": "LP",
+      "matched_gh": "629203.5658333333",
+      "agg_gh": "4273597.326611111",
+      "implicit_coverage_pct": "14.723042854678143"
+    },
+    {
+      "job_type_public": "online_inference",
+      "priority_class": "Other",
+      "matched_gh": "17780.166666666668",
+      "agg_gh": "31901.3",
+      "implicit_coverage_pct": "55.73492825266264"
+    },
+    {
+      "job_type_public": "other",
+      "priority_class": "HP",
+      "matched_gh": "2574655.388888889",
+      "agg_gh": "4318706.366666666",
+      "implicit_coverage_pct": "59.616356619218394"
+    },
+    {
+      "job_type_public": "other",
+      "priority_class": "LP",
+      "matched_gh": "5296.938888888889",
+      "agg_gh": "20991.57222222222",
+      "implicit_coverage_pct": "25.23364535449809"
+    },
+    {
+      "job_type_public": "other",
+      "priority_class": "Other",
+      "matched_gh": "0.0",
+      "agg_gh": "1693.3777777777777",
+      "implicit_coverage_pct": "0.0"
+    },
+    {
+      "job_type_public": "training",
+      "priority_class": "HP",
+      "matched_gh": "47708760.799444444",
+      "agg_gh": "107593391.05138889",
+      "implicit_coverage_pct": "44.341720558521786"
+    },
+    {
+      "job_type_public": "training",
+      "priority_class": "LP",
+      "matched_gh": "2890425.6027777777",
+      "agg_gh": "7945893.555555556",
+      "implicit_coverage_pct": "36.37634436666811"
+    },
+    {
+      "job_type_public": "training",
+      "priority_class": "Other",
+      "matched_gh": "792513.3888888889",
+      "agg_gh": "1932448.8944444444",
+      "implicit_coverage_pct": "41.01083299885801"
+    },
+    {
+      "job_type_public": "unknown",
+      "priority_class": "HP",
+      "matched_gh": "1011397.9824444444",
+      "agg_gh": "1457050.635388889",
+      "implicit_coverage_pct": "69.41405863870345"
+    },
+    {
+      "job_type_public": "unknown",
+      "priority_class": "LP",
+      "matched_gh": "152626.6001111111",
+      "agg_gh": "370716.0603333333",
+      "implicit_coverage_pct": "41.17075477492808"
+    },
+    {
+      "job_type_public": "unknown",
+      "priority_class": "Other",
+      "matched_gh": "52676.62222222223",
+      "agg_gh": "60745.490277777775",
+      "implicit_coverage_pct": "86.71692660861223"
+    }
+  ],
+  "implicit_coverage_by_spec": [
+    {
+      "gpu_spec_public": "A10",
+      "matched_gh": "29323942.0445",
+      "agg_gh": "43728844.36338889",
+      "implicit_coverage_pct": "67.05857991767762"
+    },
+    {
+      "gpu_spec_public": "A100",
+      "matched_gh": "9062091.902722223",
+      "agg_gh": "17480058.23538889",
+      "implicit_coverage_pct": "51.84245830700811"
+    },
+    {
+      "gpu_spec_public": "A30",
+      "matched_gh": "156999.22222222222",
+      "agg_gh": "213857.94861111112",
+      "implicit_coverage_pct": "73.41285336450909"
+    },
+    {
+      "gpu_spec_public": "A800",
+      "matched_gh": "1105869.057388889",
+      "agg_gh": "1879819.5030555555",
+      "implicit_coverage_pct": "58.828470264903224"
+    },
+    {
+      "gpu_spec_public": "H20",
+      "matched_gh": "49736772.137555555",
+      "agg_gh": "95476936.52933334",
+      "implicit_coverage_pct": "52.09297024551574"
+    },
+    {
+      "gpu_spec_public": "H20-141GB",
+      "matched_gh": "2837185.202222222",
+      "agg_gh": "2837185.202222222",
+      "implicit_coverage_pct": "100.0"
+    },
+    {
+      "gpu_spec_public": "H800",
+      "matched_gh": "3750888.232611111",
+      "agg_gh": "7555114.013666667",
+      "implicit_coverage_pct": "49.64701030091696"
+    },
+    {
+      "gpu_spec_public": "L20",
+      "matched_gh": "38255073.969444446",
+      "agg_gh": "53977279.63227778",
+      "implicit_coverage_pct": "70.87254902443873"
+    },
+    {
+      "gpu_spec_public": "XPU-A",
+      "matched_gh": "51211289.880944446",
+      "agg_gh": "72110499.76844445",
+      "implicit_coverage_pct": "71.01779913520237"
+    },
+    {
+      "gpu_spec_public": "XPU-B",
+      "matched_gh": "23581493.189444445",
+      "agg_gh": "35723906.7075",
+      "implicit_coverage_pct": "66.01039853374621"
+    },
+    {
+      "gpu_spec_public": "XPU-C",
+      "matched_gh": "19232025.515777778",
+      "agg_gh": "30819654.456055555",
+      "implicit_coverage_pct": "62.40182070567959"
+    },
+    {
+      "gpu_spec_public": "XPU-D",
+      "matched_gh": "3496689.725",
+      "agg_gh": "7609816.975",
+      "implicit_coverage_pct": "45.94972174084384"
+    },
+    {
+      "gpu_spec_public": "XPU-E",
+      "matched_gh": "97109430.29777777",
+      "agg_gh": "189441062.16527778",
+      "implicit_coverage_pct": "51.261025032183724"
+    }
+  ],
+  "delay_stats_around_105": {
+    "days95_104": {
+      "gh_share_delay_ge1h": 0.12220093899923257,
+      "null_delay_gh_share": 0.011494020551278359,
+      "median_delay_s": 15.1
+    },
+    "days106_115": {
+      "gh_share_delay_ge1h": 0.05698139147359752,
+      "null_delay_gh_share": 0.009563328181569537,
+      "median_delay_s": 8.1
+    }
+  },
+  "changepoints_daily_p99_absD": {
+    "all": {
+      "day": 108,
+      "mean_before": 0.00914658695018947,
+      "mean_after": 0.1748462489992806,
+      "ratio_after_over_before": 19.116010152361664,
+      "sse_reduction_frac": 0.7665912028083104,
+      "ci90_day": [
+        108,
+        108
+      ]
+    },
+    "nvidia": {
+      "day": 105,
+      "mean_before": 0.001779660418107781,
+      "mean_after": 0.07936858133596683,
+      "ratio_after_over_before": 44.597598805032284,
+      "sse_reduction_frac": 0.7554618809926683,
+      "ci90_day": [
+        104,
+        106
+      ]
+    },
+    "xpu": {
+      "day": 108,
+      "mean_before": 0.006477708149889641,
+      "mean_after": 0.13355678413244584,
+      "ratio_after_over_before": 20.617906988403178,
+      "sse_reduction_frac": 0.6826409006377856,
+      "ci90_day": [
+        105,
+        109
+      ]
+    },
+    "type:dev": {
+      "day": 105,
+      "mean_before": 0.0003634489895550062,
+      "mean_after": 0.001699148208474609,
+      "ratio_after_over_before": 4.675066535623017,
+      "sse_reduction_frac": 0.433753400707505,
+      "ci90_day": [
+        101,
+        109
+      ]
+    },
+    "type:offline_inference": {
+      "day": 108,
+      "mean_before": 0.0009901896729760933,
+      "mean_after": 0.14104213636514915,
+      "ratio_after_over_before": 142.43951458434813,
+      "sse_reduction_frac": 0.7583435918540473,
+      "ci90_day": [
+        106,
+        108
+      ]
+    },
+    "type:online_inference": {
+      "day": 96,
+      "mean_before": 0.004716060580698392,
+      "mean_after": 0.01915936144908517,
+      "ratio_after_over_before": 4.062577467197824,
+      "sse_reduction_frac": 0.33153677182579433,
+      "ci90_day": [
+        84,
+        104
+      ]
+    },
+    "type:other": {
+      "day": 109,
+      "mean_before": 0.00016774151192710388,
+      "mean_after": 0.00883450554880364,
+      "ratio_after_over_before": 52.66737760562745,
+      "sse_reduction_frac": 0.4555822896535927,
+      "ci90_day": [
+        98,
+        118
+      ]
+    },
+    "type:training": {
+      "day": 105,
+      "mean_before": 0.0011663779149538739,
+      "mean_after": 0.08155719180747054,
+      "ratio_after_over_before": 69.92347056802411,
+      "sse_reduction_frac": 0.740158150887849,
+      "ci90_day": [
+        104,
+        107
+      ]
+    },
+    "type:unknown": {
+      "day": 110,
+      "mean_before": 4.202471066720132e-05,
+      "mean_after": 0.004044495974827389,
+      "ratio_after_over_before": 96.2408999518458,
+      "sse_reduction_frac": 0.1496926876153547,
+      "ci90_day": [
+        89,
+        126
+      ]
+    }
+  },
+  "wording": "schedule_delay = scheduling latency (observed queueing delay), not demonstrated tolerance"
+}

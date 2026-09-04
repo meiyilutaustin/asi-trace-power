@@ -1,0 +1,64 @@
+# util->power model parameters (see src/powermodel.py for the row model)
+# Skeleton: P_gpu = gpu_hours * TDP * [idle_frac + (1-idle_frac) * g_type(u)]
+# g_type piecewise-linear on knots u = [0, .25, .5, .75, 1]; values are the
+# fraction of the idle->TDP span. Anchors: POLCA (ASPLOS'24): idle ~0.2 TDP,
+# decode-dominated inference ~0.5-0.6 TDP total, training ~TDP.
+
+gpu_tdp_w:            # public NVIDIA specs; XPU-* are anonymized buckets
+  A10: 150
+  A30: 165
+  A100: {base: 400, range: [300, 460]}   # PCIe 300 W .. SXM4 400 W (+15%); explicit range 
+  A800: {base: 400, range: [300, 460]}
+  H800: 700
+  H20: 400
+  H20-141GB: 400
+  L20: 275
+tdp_rel_uncertainty: 0.15     # MC: TDP * U(1-x, 1+x) for NVIDIA models
+xpu_tdp_range_w: [250, 700]   # MC: unknown accelerator buckets XPU-A..E
+default_tdp_w: 400            # any unseen spec label
+
+idle_frac: {base: 0.20, range: [0.15, 0.25]}
+
+# knot values of g_type at u = 0, .25, .5, .75, 1
+curve_families:
+  linear:             # Fan-Weber-Barroso baseline: g(u) = u for every type
+    default: [0, 0.25, 0.5, 0.75, 1.0]
+  anchored:           # job_type-conditioned curves (POLCA-style anchors)
+    training:          [0, 0.50, 0.75, 0.90, 1.00]
+    online_inference:  [0, 0.20, 0.35, 0.45, 0.55]
+    offline_inference: [0, 0.30, 0.50, 0.70, 0.85]
+    default:           [0, 0.25, 0.50, 0.75, 1.00]
+
+# rows with null sm_util: g fixed at this span fraction (MC range)
+null_util_g: {base: 0.3, range: [0.1, 0.5]}
+
+# (revision 2): active-power FLOOR for online inference, as a fraction
+# of TDP. Decode is memory-bound (OSDI'26: GenAI serving median SM util 6%);
+# measured decode-dominated serving power 0.41-0.50 TDP (ML.ENERGY, Splitwise,
+# 1/W-law floor 0.43). Applied as an intercept c0=(floor-idle)/(1-idle) on the
+# active part of every online_inference row; the curve is compressed so the
+# saturation value is unchanged (see src/powermodel.py).
+online_floor_frac: {base: 0.43, range: [0.35, 0.50]}
+
+#: which part of a preempted LP pod's power is counted as curtailable.
+#   attributed | idle_retained (default: reclaimed GPU keeps drawing idle) | node_sleep
+curtail_boundary: idle_retained
+#: eligibility mapping for the curtail layer: conservative | central | liberal
+eligibility: central
+# facility conversion: average PUE (pue) vs marginal cooling response (=1.0)
+pue_marginal: 1.0
+
+# host (CPU/mem/fans) linear model, per server CPU core
+host_w_per_core: {idle: 1.5, peak: 4.0, idle_range: [1.0, 2.0], peak_range: [3.0, 6.0]}
+
+pue: {base: 1.2, range: [1.1, 1.4]}
+
+# state_public is "Unknown" for nearly all GPU pods in this trace (checked
+# 2026-09-03: only Standby appears, late and small). Activity is therefore
+# defined by used_gpu_hours > 0, not by state: every non-Standby pod's
+# gpu_hours get curve power; Standby pods burn idle power; occupancy (for the
+# idle floor) is total gpu_hours across all states.
+standby_as_idle: true
+
+mc_samples: 300
+mc_seed: 0

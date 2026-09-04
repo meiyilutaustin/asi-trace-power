@@ -1,0 +1,117 @@
+{
+  "n_points_used": 92,
+  "by_category": {
+    "idle: bare": {
+      "n": 13,
+      "min": 0.083,
+      "median": 0.107,
+      "max": 0.179,
+      "model_at_saturation": null
+    },
+    "idle: allocated": {
+      "n": 11,
+      "min": 0.171,
+      "median": 0.292,
+      "max": 0.889,
+      "model_at_saturation": 0.2
+    },
+    "training: comm trough": {
+      "n": 3,
+      "min": 0.2,
+      "median": 0.5,
+      "max": 0.75,
+      "model_at_saturation": null
+    },
+    "training: mean": {
+      "n": 26,
+      "min": 0.24,
+      "median": 0.77,
+      "max": 1.05,
+      "model_at_saturation": 1.0
+    },
+    "stress / compute phase": {
+      "n": 3,
+      "min": 0.955,
+      "median": 0.994,
+      "max": 1.0,
+      "model_at_saturation": 1.0
+    },
+    "inference: decode-dominated": {
+      "n": 3,
+      "min": 0.362,
+      "median": 0.429,
+      "max": 0.45999999999999996,
+      "model_at_saturation": 0.6400000000000001
+    },
+    "inference: online mixed": {
+      "n": 22,
+      "min": 0.375,
+      "median": 0.734,
+      "max": 0.931,
+      "model_at_saturation": 0.6400000000000001
+    },
+    "inference: prefill": {
+      "n": 1,
+      "min": 0.775,
+      "median": 0.775,
+      "max": 0.775,
+      "model_at_saturation": null
+    },
+    "inference: offline batch": {
+      "n": 9,
+      "min": 0.64,
+      "median": 0.807,
+      "max": 0.913,
+      "model_at_saturation": 0.8800000000000001
+    },
+    "inference: diffusion": {
+      "n": 1,
+      "min": 0.964,
+      "median": 0.964,
+      "max": 0.964,
+      "model_at_saturation": null
+    }
+  },
+  "diurnal_bars": [
+    {
+      "label": "Google campus: carbon-aware shaping swing",
+      "amplitude": 0.015,
+      "kind": "measured power"
+    },
+    {
+      "label": "Helios (SenseTime): GPU allocation util night dip",
+      "amplitude": 0.065,
+      "kind": "measured utilisation"
+    },
+    {
+      "label": "this work: reconstructed facility power (155k GPUs, 6 months)",
+      "amplitude": 0.073,
+      "kind": "measured-derived power"
+    },
+    {
+      "label": "NLR simulated facilities (n=8, min)",
+      "amplitude": 0.298,
+      "kind": "simulated power"
+    },
+    {
+      "label": "Azure LLM trace 2024 (conv): requests",
+      "amplitude": 0.579,
+      "kind": "request demand"
+    },
+    {
+      "label": "NLR simulated facilities (max)",
+      "amplitude": 0.71,
+      "kind": "simulated power"
+    },
+    {
+      "label": "BurstGPT: requests",
+      "amplitude": 1.682,
+      "kind": "request demand"
+    },
+    {
+      "label": "Azure LLM trace 2024 (code): requests",
+      "amplitude": 1.914,
+      "kind": "request demand"
+    }
+  ]
+}

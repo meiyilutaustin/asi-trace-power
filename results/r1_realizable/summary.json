@@ -1,0 +1,3257 @@
+{
+  "inputs": {
+    "mean_eligible_mw": 3.5465355236928358,
+    "hours": 4439
+  },
+  "params": {
+    "q": [
+      0.1,
+      0.25,
+      0.4,
+      0.5,
+      0.6,
+      0.75,
+      0.9,
+      1.0
+    ],
+    "rho": [
+      0.0,
+      0.5,
+      1.0
+    ],
+    "T_ckpt_h": [
+      0.0,
+      0.5,
+      1.0,
+      4.0
+    ],
+    "note": "q      realizable fraction of the eligible layer that a scheduler would in\n         fact release on call (SLA-safe, checkpointable, not gang-blocked).\n         q = 1 reproduces the v2 headline.\n  rho    fraction of the interrupted work that must be RE-EXECUTED afterwards\n         (rho = 0: best-effort work is dropped, as spot semantics allow;\n          rho = 1: every interrupted GPU-hour is redone).\n  T      checkpoint interval (h).  Work since the last checkpoint is lost, on\n         average T/2 per preempted pod, and must be redone on top of the\n         deferred work.  OSDI'26 reports a 60 s graceful-eviction budget\n         (mean 13 s, P95 48 s), so the ramp-down itself is sub-hourly and is\n         not modelled here."
+  },
+  "delivered_power": {
+    "h1_a0.9": {
+      "K_mw": 2.708771272075986,
+      "K_q_mw": {
+        "0.1": 0.2708771272075986,
+        "0.25": 0.6771928180189964,
+        "0.4": 1.0835085088303944,
+        "0.5": 1.354385636037993,
+        "0.6": 1.6252627632455914,
+        "0.75": 2.0315784540569894,
+        "0.9": 2.4378941448683875,
+        "1.0": 2.708771272075986
+      },
+      "homogeneity_max_rel_err": 1.6394489059599165e-16
+    },
+    "h1_a0.95": {
+      "K_mw": 2.5179440296630315,
+      "K_q_mw": {
+        "0.1": 0.2517944029663032,
+        "0.25": 0.6294860074157579,
+        "0.4": 1.0071776118652127,
+        "0.5": 1.2589720148315158,
+        "0.6": 1.5107664177978188,
+        "0.75": 1.8884580222472735,
+        "0.9": 2.2661496266967283,
+        "1.0": 2.5179440296630315
+      },
+      "homogeneity_max_rel_err": 8.818488509244061e-17
+    },
+    "h4_a0.9": {
+      "K_mw": 2.538929908731841,
+      "K_q_mw": {
+        "0.1": 0.2538929908731841,
+        "0.25": 0.6347324771829602,
+        "0.4": 1.0155719634927365,
+        "0.5": 1.2694649543659204,
+        "0.6": 1.5233579452391044,
+        "0.75": 1.9041974315488805,
+        "0.9": 2.285036917858657,
+        "1.0": 2.538929908731841
+      },
+      "homogeneity_max_rel_err": 0.0
+    },
+    "h4_a0.95": {
+      "K_mw": 2.3198574507836445,
+      "K_q_mw": {
+        "0.1": 0.23198574507836445,
+        "0.25": 0.5799643626959111,
+        "0.4": 0.9279429803134578,
+        "0.5": 1.1599287253918222,
+        "0.6": 1.3919144704701867,
+        "0.75": 1.7398930880877335,
+        "0.9": 2.0878717057052802,
+        "1.0": 2.3198574507836445
+      },
+      "homogeneity_max_rel_err": 0.0
+    },
+    "h24_a0.9": {
+      "K_mw": 2.1824611624210566,
+      "K_q_mw": {
+        "0.1": 0.21824611624210566,
+        "0.25": 0.5456152906052641,
+        "0.4": 0.8729844649684226,
+        "0.5": 1.0912305812105283,
+        "0.6": 1.309476697452634,
+        "0.75": 1.6368458718157926,
+        "0.9": 1.964215046178951,
+        "1.0": 2.1824611624210566
+      },
+      "homogeneity_max_rel_err": 0.0
+    },
+    "h24_a0.95": {
+      "K_mw": 1.9504805665157359,
+      "K_q_mw": {
+        "0.1": 0.1950480566515736,
+        "0.25": 0.48762014162893397,
+        "0.4": 0.7801922266062944,
+        "0.5": 0.9752402832578679,
+        "0.6": 1.1702883399094415,
+        "0.75": 1.4628604248868018,
+        "0.9": 1.7554325098641623,
+        "1.0": 1.9504805665157359
+      },
+      "homogeneity_max_rel_err": 0.0
+    }
+  },
+  "net_energy": {
+    "h1_rho0.0_T0.0": {
+      "net_over_gross": 1.0,
+      "rebound_energy_multiple": 0.0
+    },
+    "h1_rho0.0_T0.5": {
+      "net_over_gross": 1.0,
+      "rebound_energy_multiple": 0.0
+    },
+    "h1_rho0.0_T1.0": {
+      "net_over_gross": 1.0,
+      "rebound_energy_multiple": 0.0
+    },
+    "h1_rho0.0_T4.0": {
+      "net_over_gross": 1.0,
+      "rebound_energy_multiple": 0.0
+    },
+    "h1_rho0.5_T0.0": {
+      "net_over_gross": 0.5,
+      "rebound_energy_multiple": 0.5
+    },
+    "h1_rho0.5_T0.5": {
+      "net_over_gross": 0.375,
+      "rebound_energy_multiple": 0.625
+    },
+    "h1_rho0.5_T1.0": {
+      "net_over_gross": 0.25,
+      "rebound_energy_multiple": 0.75
+    },
+    "h1_rho0.5_T4.0": {
+      "net_over_gross": -0.5,
+      "rebound_energy_multiple": 1.5
+    },
+    "h1_rho1.0_T0.0": {
+      "net_over_gross": 0.0,
+      "rebound_energy_multiple": 1.0
+    },
+    "h1_rho1.0_T0.5": {
+      "net_over_gross": -0.25,
+      "rebound_energy_multiple": 1.25
+    },
+    "h1_rho1.0_T1.0": {
+      "net_over_gross": -0.5,
+      "rebound_energy_multiple": 1.5
+    },
+    "h1_rho1.0_T4.0": {
+      "net_over_gross": -2.0,
+      "rebound_energy_multiple": 3.0
+    },
+    "h4_rho0.0_T0.0": {
+      "net_over_gross": 1.0,
+      "rebound_energy_multiple": 0.0
+    },
+    "h4_rho0.0_T0.5": {
+      "net_over_gross": 1.0,
+      "rebound_energy_multiple": 0.0
+    },
+    "h4_rho0.0_T1.0": {
+      "net_over_gross": 1.0,
+      "rebound_energy_multiple": 0.0
+    },
+    "h4_rho0.0_T4.0": {
+      "net_over_gross": 1.0,
+      "rebound_energy_multiple": 0.0
+    },
+    "h4_rho0.5_T0.0": {
+      "net_over_gross": 0.5,
+      "rebound_energy_multiple": 0.5
+    },
+    "h4_rho0.5_T0.5": {
+      "net_over_gross": 0.46875,
+      "rebound_energy_multiple": 0.53125
+    },
+    "h4_rho0.5_T1.0": {
+      "net_over_gross": 0.4375,
+      "rebound_energy_multiple": 0.5625
+    },
+    "h4_rho0.5_T4.0": {
+      "net_over_gross": 0.25,
+      "rebound_energy_multiple": 0.75
+    },
+    "h4_rho1.0_T0.0": {
+      "net_over_gross": 0.0,
+      "rebound_energy_multiple": 1.0
+    },
+    "h4_rho1.0_T0.5": {
+      "net_over_gross": -0.0625,
+      "rebound_energy_multiple": 1.0625
+    },
+    "h4_rho1.0_T1.0": {
+      "net_over_gross": -0.125,
+      "rebound_energy_multiple": 1.125
+    },
+    "h4_rho1.0_T4.0": {
+      "net_over_gross": -0.5,
+      "rebound_energy_multiple": 1.5
+    },
+    "h24_rho0.0_T0.0": {
+      "net_over_gross": 1.0,
+      "rebound_energy_multiple": 0.0
+    },
+    "h24_rho0.0_T0.5": {
+      "net_over_gross": 1.0,
+      "rebound_energy_multiple": 0.0
+    },
+    "h24_rho0.0_T1.0": {
+      "net_over_gross": 1.0,
+      "rebound_energy_multiple": 0.0
+    },
+    "h24_rho0.0_T4.0": {
+      "net_over_gross": 1.0,
+      "rebound_energy_multiple": 0.0
+    },
+    "h24_rho0.5_T0.0": {
+      "net_over_gross": 0.5,
+      "rebound_energy_multiple": 0.5
+    },
+    "h24_rho0.5_T0.5": {
+      "net_over_gross": 0.49479166666666663,
+      "rebound_energy_multiple": 0.5052083333333334
+    },
+    "h24_rho0.5_T1.0": {
+      "net_over_gross": 0.48958333333333337,
+      "rebound_energy_multiple": 0.5104166666666666
+    },
+    "h24_rho0.5_T4.0": {
+      "net_over_gross": 0.45833333333333337,
+      "rebound_energy_multiple": 0.5416666666666666
+    },
+    "h24_rho1.0_T0.0": {
+      "net_over_gross": 0.0,
+      "rebound_energy_multiple": 1.0
+    },
+    "h24_rho1.0_T0.5": {
+      "net_over_gross": -0.01041666666666674,
+      "rebound_energy_multiple": 1.0104166666666667
+    },
+    "h24_rho1.0_T1.0": {
+      "net_over_gross": -0.02083333333333326,
+      "rebound_energy_multiple": 1.0208333333333333
+    },
+    "h24_rho1.0_T4.0": {
+      "net_over_gross": -0.08333333333333326,
+      "rebound_energy_multiple": 1.0833333333333333
+    }
+  },
+  "net_energy_note": "energy relief during the call is q*K*h; rebound is rho*q*K*(h + T/2). For rho=1 the call is energy-negative at every h and T>0: it moves energy, it does not save it. A capacity product only needs the power during the call, so this bounds the ENERGY claim, not the MW claim.",
+  "recovery": {
+    "h1_rho0.0_T0.0": {
+      "interrupted_power_mw": 2.5179440296630315,
+      "rebound_energy_mwh": 0.0,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.0,
+      "min_spacing_h": 1.0,
+      "max_calls_per_week": 168.0
+    },
+    "h1_rho0.0_T0.5": {
+      "interrupted_power_mw": 2.5179440296630315,
+      "rebound_energy_mwh": 0.0,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.0,
+      "min_spacing_h": 1.0,
+      "max_calls_per_week": 168.0
+    },
+    "h1_rho0.0_T1.0": {
+      "interrupted_power_mw": 2.5179440296630315,
+      "rebound_energy_mwh": 0.0,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.0,
+      "min_spacing_h": 1.0,
+      "max_calls_per_week": 168.0
+    },
+    "h1_rho0.0_T4.0": {
+      "interrupted_power_mw": 2.5179440296630315,
+      "rebound_energy_mwh": 0.0,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.0,
+      "min_spacing_h": 1.0,
+      "max_calls_per_week": 168.0
+    },
+    "h1_rho0.5_T0.0": {
+      "interrupted_power_mw": 2.5179440296630315,
+      "rebound_energy_mwh": 1.2589720148315158,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.5411638061221353,
+      "min_spacing_h": 1.5411638061221353,
+      "max_calls_per_week": 109.0085293546572
+    },
+    "h1_rho0.5_T0.5": {
+      "interrupted_power_mw": 2.5179440296630315,
+      "rebound_energy_mwh": 1.5737150185393947,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.6764547576526692,
+      "min_spacing_h": 1.6764547576526692,
+      "max_calls_per_week": 100.21147259305076
+    },
+    "h1_rho0.5_T1.0": {
+      "interrupted_power_mw": 2.5179440296630315,
+      "rebound_energy_mwh": 1.8884580222472738,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.8117457091832031,
+      "min_spacing_h": 1.811745709183203,
+      "max_calls_per_week": 92.72824500064092
+    },
+    "h1_rho0.5_T4.0": {
+      "interrupted_power_mw": 2.5179440296630315,
+      "rebound_energy_mwh": 3.7769160444945475,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 1.6234914183664062,
+      "min_spacing_h": 2.623491418366406,
+      "max_calls_per_week": 64.03680180688761
+    },
+    "h1_rho1.0_T0.0": {
+      "interrupted_power_mw": 2.5179440296630315,
+      "rebound_energy_mwh": 2.5179440296630315,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 1.0823276122442707,
+      "min_spacing_h": 2.0823276122442707,
+      "max_calls_per_week": 80.6789474490686
+    },
+    "h1_rho1.0_T0.5": {
+      "interrupted_power_mw": 2.5179440296630315,
+      "rebound_energy_mwh": 3.1474300370787893,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 1.3529095153053383,
+      "min_spacing_h": 2.3529095153053383,
+      "max_calls_per_week": 71.40096077098764
+    },
+    "h1_rho1.0_T1.0": {
+      "interrupted_power_mw": 2.5179440296630315,
+      "rebound_energy_mwh": 3.7769160444945475,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 1.6234914183664062,
+      "min_spacing_h": 2.623491418366406,
+      "max_calls_per_week": 64.03680180688761
+    },
+    "h1_rho1.0_T4.0": {
+      "interrupted_power_mw": 2.5179440296630315,
+      "rebound_energy_mwh": 7.553832088989095,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 3.2469828367328124,
+      "min_spacing_h": 4.246982836732812,
+      "max_calls_per_week": 39.55749445157677
+    },
+    "h4_rho0.0_T0.0": {
+      "interrupted_power_mw": 2.3198574507836445,
+      "rebound_energy_mwh": 0.0,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.0,
+      "min_spacing_h": 4.0,
+      "max_calls_per_week": 42.0
+    },
+    "h4_rho0.0_T0.5": {
+      "interrupted_power_mw": 2.3198574507836445,
+      "rebound_energy_mwh": 0.0,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.0,
+      "min_spacing_h": 4.0,
+      "max_calls_per_week": 42.0
+    },
+    "h4_rho0.0_T1.0": {
+      "interrupted_power_mw": 2.3198574507836445,
+      "rebound_energy_mwh": 0.0,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.0,
+      "min_spacing_h": 4.0,
+      "max_calls_per_week": 42.0
+    },
+    "h4_rho0.0_T4.0": {
+      "interrupted_power_mw": 2.3198574507836445,
+      "rebound_energy_mwh": 0.0,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.0,
+      "min_spacing_h": 4.0,
+      "max_calls_per_week": 42.0
+    },
+    "h4_rho0.5_T0.0": {
+      "interrupted_power_mw": 2.3198574507836445,
+      "rebound_energy_mwh": 4.639714901567289,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 1.9943618649774049,
+      "min_spacing_h": 5.994361864977405,
+      "max_calls_per_week": 28.02633604446789
+    },
+    "h4_rho0.5_T0.5": {
+      "interrupted_power_mw": 2.3198574507836445,
+      "rebound_energy_mwh": 4.929697082915244,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 2.119009481538493,
+      "min_spacing_h": 6.119009481538493,
+      "max_calls_per_week": 27.45542403666288
+    },
+    "h4_rho0.5_T1.0": {
+      "interrupted_power_mw": 2.3198574507836445,
+      "rebound_energy_mwh": 5.2196792642632,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 2.2436570980995802,
+      "min_spacing_h": 6.243657098099581,
+      "max_calls_per_week": 26.907307265662485
+    },
+    "h4_rho0.5_T4.0": {
+      "interrupted_power_mw": 2.3198574507836445,
+      "rebound_energy_mwh": 6.959572352350934,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 2.9915427974661073,
+      "min_spacing_h": 6.991542797466107,
+      "max_calls_per_week": 24.02903119764739
+    },
+    "h4_rho1.0_T0.0": {
+      "interrupted_power_mw": 2.3198574507836445,
+      "rebound_energy_mwh": 9.279429803134578,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 3.9887237299548097,
+      "min_spacing_h": 7.98872372995481,
+      "max_calls_per_week": 21.029641990254472
+    },
+    "h4_rho1.0_T0.5": {
+      "interrupted_power_mw": 2.3198574507836445,
+      "rebound_energy_mwh": 9.859394165830489,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 4.238018963076986,
+      "min_spacing_h": 8.238018963076986,
+      "max_calls_per_week": 20.393252401212035
+    },
+    "h4_rho1.0_T1.0": {
+      "interrupted_power_mw": 2.3198574507836445,
+      "rebound_energy_mwh": 10.4393585285264,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 4.4873141961991605,
+      "min_spacing_h": 8.487314196199161,
+      "max_calls_per_week": 19.794247758052215
+    },
+    "h4_rho1.0_T4.0": {
+      "interrupted_power_mw": 2.3198574507836445,
+      "rebound_energy_mwh": 13.919144704701868,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 5.983085594932215,
+      "min_spacing_h": 9.983085594932215,
+      "max_calls_per_week": 16.828464346262145
+    },
+    "h24_rho0.0_T0.0": {
+      "interrupted_power_mw": 1.9504805665157359,
+      "rebound_energy_mwh": 0.0,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.0,
+      "min_spacing_h": 24.0,
+      "max_calls_per_week": 7.0
+    },
+    "h24_rho0.0_T0.5": {
+      "interrupted_power_mw": 1.9504805665157359,
+      "rebound_energy_mwh": 0.0,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.0,
+      "min_spacing_h": 24.0,
+      "max_calls_per_week": 7.0
+    },
+    "h24_rho0.0_T1.0": {
+      "interrupted_power_mw": 1.9504805665157359,
+      "rebound_energy_mwh": 0.0,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.0,
+      "min_spacing_h": 24.0,
+      "max_calls_per_week": 7.0
+    },
+    "h24_rho0.0_T4.0": {
+      "interrupted_power_mw": 1.9504805665157359,
+      "rebound_energy_mwh": 0.0,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.0,
+      "min_spacing_h": 24.0,
+      "max_calls_per_week": 7.0
+    },
+    "h24_rho0.5_T0.0": {
+      "interrupted_power_mw": 1.9504805665157359,
+      "rebound_energy_mwh": 23.40576679818883,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 10.060870056281649,
+      "min_spacing_h": 34.06087005628165,
+      "max_calls_per_week": 4.932346112192654
+    },
+    "h24_rho0.5_T0.5": {
+      "interrupted_power_mw": 1.9504805665157359,
+      "rebound_energy_mwh": 23.649576869003297,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 10.165670786034584,
+      "min_spacing_h": 34.16567078603458,
+      "max_calls_per_week": 4.917216496409928
+    },
+    "h24_rho0.5_T1.0": {
+      "interrupted_power_mw": 1.9504805665157359,
+      "rebound_energy_mwh": 23.893386939817763,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 10.270471515787516,
+      "min_spacing_h": 34.27047151578752,
+      "max_calls_per_week": 4.9021794147946505
+    },
+    "h24_rho0.5_T4.0": {
+      "interrupted_power_mw": 1.9504805665157359,
+      "rebound_energy_mwh": 25.356247364704565,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 10.89927589430512,
+      "min_spacing_h": 34.89927589430512,
+      "max_calls_per_week": 4.81385345956173
+    },
+    "h24_rho1.0_T0.0": {
+      "interrupted_power_mw": 1.9504805665157359,
+      "rebound_energy_mwh": 46.81153359637766,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 20.121740112563298,
+      "min_spacing_h": 44.1217401125633,
+      "max_calls_per_week": 3.807646742204607
+    },
+    "h24_rho1.0_T0.5": {
+      "interrupted_power_mw": 1.9504805665157359,
+      "rebound_energy_mwh": 47.299153738006595,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 20.331341572069167,
+      "min_spacing_h": 44.331341572069164,
+      "max_calls_per_week": 3.789643941338512
+    },
+    "h24_rho1.0_T1.0": {
+      "interrupted_power_mw": 1.9504805665157359,
+      "rebound_energy_mwh": 47.786773879635525,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 20.540943031575033,
+      "min_spacing_h": 44.54094303157503,
+      "max_calls_per_week": 3.7718105761906515
+    },
+    "h24_rho1.0_T4.0": {
+      "interrupted_power_mw": 1.9504805665157359,
+      "rebound_energy_mwh": 50.71249472940913,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 21.79855178861024,
+      "min_spacing_h": 45.79855178861024,
+      "max_calls_per_week": 3.668238261668797
+    }
+  },
+  "recovery_by_q_sold_K": {
+    "0.1": {
+      "h1_rho0.0_T0.0": {
+        "interrupted_power_mw": 0.2517944029663032,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.0_T0.5": {
+        "interrupted_power_mw": 0.2517944029663032,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.0_T1.0": {
+        "interrupted_power_mw": 0.2517944029663032,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.0_T4.0": {
+        "interrupted_power_mw": 0.2517944029663032,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.5_T0.0": {
+        "interrupted_power_mw": 0.2517944029663032,
+        "rebound_energy_mwh": 0.1258972014831516,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.05411638061221354,
+        "min_spacing_h": 1.0541163806122136,
+        "max_calls_per_week": 159.37519147784076
+      },
+      "h1_rho0.5_T0.5": {
+        "interrupted_power_mw": 0.2517944029663032,
+        "rebound_energy_mwh": 0.1573715018539395,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.06764547576526693,
+        "min_spacing_h": 1.067645475765267,
+        "max_calls_per_week": 157.355605220526
+      },
+      "h1_rho0.5_T1.0": {
+        "interrupted_power_mw": 0.2517944029663032,
+        "rebound_energy_mwh": 0.18884580222472738,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.08117457091832031,
+        "min_spacing_h": 1.0811745709183203,
+        "max_calls_per_week": 155.3865624653985
+      },
+      "h1_rho0.5_T4.0": {
+        "interrupted_power_mw": 0.2517944029663032,
+        "rebound_energy_mwh": 0.37769160444945477,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.16234914183664062,
+        "min_spacing_h": 1.1623491418366405,
+        "max_calls_per_week": 144.5348853912701
+      },
+      "h1_rho1.0_T0.0": {
+        "interrupted_power_mw": 0.2517944029663032,
+        "rebound_energy_mwh": 0.2517944029663032,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.10823276122442708,
+        "min_spacing_h": 1.1082327612244272,
+        "max_calls_per_week": 151.59270315595595
+      },
+      "h1_rho1.0_T0.5": {
+        "interrupted_power_mw": 0.2517944029663032,
+        "rebound_energy_mwh": 0.314743003707879,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.13529095153053386,
+        "min_spacing_h": 1.1352909515305338,
+        "max_calls_per_week": 147.97968729823143
+      },
+      "h1_rho1.0_T1.0": {
+        "interrupted_power_mw": 0.2517944029663032,
+        "rebound_energy_mwh": 0.37769160444945477,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.16234914183664062,
+        "min_spacing_h": 1.1623491418366405,
+        "max_calls_per_week": 144.5348853912701
+      },
+      "h1_rho1.0_T4.0": {
+        "interrupted_power_mw": 0.2517944029663032,
+        "rebound_energy_mwh": 0.7553832088989095,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.32469828367328124,
+        "min_spacing_h": 1.3246982836732812,
+        "max_calls_per_week": 126.8213313707553
+      },
+      "h4_rho0.0_T0.0": {
+        "interrupted_power_mw": 0.23198574507836445,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.0_T0.5": {
+        "interrupted_power_mw": 0.23198574507836445,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.0_T1.0": {
+        "interrupted_power_mw": 0.23198574507836445,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.0_T4.0": {
+        "interrupted_power_mw": 0.23198574507836445,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.5_T0.0": {
+        "interrupted_power_mw": 0.23198574507836445,
+        "rebound_energy_mwh": 0.4639714901567289,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.19943618649774048,
+        "min_spacing_h": 4.19943618649774,
+        "max_calls_per_week": 40.005370373328425
+      },
+      "h4_rho0.5_T0.5": {
+        "interrupted_power_mw": 0.23198574507836445,
+        "rebound_energy_mwh": 0.4929697082915244,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.21190094815384924,
+        "min_spacing_h": 4.21190094815385,
+        "max_calls_per_week": 39.886977891452396
+      },
+      "h4_rho0.5_T1.0": {
+        "interrupted_power_mw": 0.23198574507836445,
+        "rebound_energy_mwh": 0.52196792642632,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.224365709809958,
+        "min_spacing_h": 4.224365709809958,
+        "max_calls_per_week": 39.769284086807396
+      },
+      "h4_rho0.5_T4.0": {
+        "interrupted_power_mw": 0.23198574507836445,
+        "rebound_energy_mwh": 0.6959572352350933,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.29915427974661074,
+        "min_spacing_h": 4.2991542797466105,
+        "max_calls_per_week": 39.07745316129986
+      },
+      "h4_rho1.0_T0.0": {
+        "interrupted_power_mw": 0.23198574507836445,
+        "rebound_energy_mwh": 0.9279429803134578,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.39887237299548095,
+        "min_spacing_h": 4.398872372995481,
+        "max_calls_per_week": 38.191605883213604
+      },
+      "h4_rho1.0_T0.5": {
+        "interrupted_power_mw": 0.23198574507836445,
+        "rebound_energy_mwh": 0.9859394165830488,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.4238018963076985,
+        "min_spacing_h": 4.423801896307698,
+        "max_calls_per_week": 37.976384100793545
+      },
+      "h4_rho1.0_T1.0": {
+        "interrupted_power_mw": 0.23198574507836445,
+        "rebound_energy_mwh": 1.04393585285264,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.448731419619916,
+        "min_spacing_h": 4.448731419619916,
+        "max_calls_per_week": 37.76357441114153
+      },
+      "h4_rho1.0_T4.0": {
+        "interrupted_power_mw": 0.23198574507836445,
+        "rebound_energy_mwh": 1.3919144704701867,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.5983085594932215,
+        "min_spacing_h": 4.598308559493222,
+        "max_calls_per_week": 36.53517327652219
+      },
+      "h24_rho0.0_T0.0": {
+        "interrupted_power_mw": 0.1950480566515736,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.0_T0.5": {
+        "interrupted_power_mw": 0.1950480566515736,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.0_T1.0": {
+        "interrupted_power_mw": 0.1950480566515736,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.0_T4.0": {
+        "interrupted_power_mw": 0.1950480566515736,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.5_T0.0": {
+        "interrupted_power_mw": 0.1950480566515736,
+        "rebound_energy_mwh": 2.3405766798188834,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.006087005628165,
+        "min_spacing_h": 25.006087005628164,
+        "max_calls_per_week": 6.718364211169383
+      },
+      "h24_rho0.5_T0.5": {
+        "interrupted_power_mw": 0.1950480566515736,
+        "rebound_energy_mwh": 2.36495768690033,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.0165670786034584,
+        "min_spacing_h": 25.016567078603458,
+        "max_calls_per_week": 6.715549718397995
+      },
+      "h24_rho0.5_T1.0": {
+        "interrupted_power_mw": 0.1950480566515736,
+        "rebound_energy_mwh": 2.3893386939817765,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.0270471515787516,
+        "min_spacing_h": 25.027047151578753,
+        "max_calls_per_week": 6.712737582763624
+      },
+      "h24_rho0.5_T4.0": {
+        "interrupted_power_mw": 0.1950480566515736,
+        "rebound_energy_mwh": 2.535624736470457,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.089927589430512,
+        "min_spacing_h": 25.089927589430513,
+        "max_calls_per_week": 6.695914103425806
+      },
+      "h24_rho1.0_T0.0": {
+        "interrupted_power_mw": 0.1950480566515736,
+        "rebound_energy_mwh": 4.681153359637767,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 2.01217401125633,
+        "min_spacing_h": 26.01217401125633,
+        "max_calls_per_week": 6.458514383584426
+      },
+      "h24_rho1.0_T0.5": {
+        "interrupted_power_mw": 0.1950480566515736,
+        "rebound_energy_mwh": 4.72991537380066,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 2.033134157206917,
+        "min_spacing_h": 26.033134157206916,
+        "max_calls_per_week": 6.4533144179065935
+      },
+      "h24_rho1.0_T1.0": {
+        "interrupted_power_mw": 0.1950480566515736,
+        "rebound_energy_mwh": 4.778677387963553,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 2.054094303157503,
+        "min_spacing_h": 26.054094303157502,
+        "max_calls_per_week": 6.448122818824681
+      },
+      "h24_rho1.0_T4.0": {
+        "interrupted_power_mw": 0.1950480566515736,
+        "rebound_energy_mwh": 5.071249472940914,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 2.179855178861024,
+        "min_spacing_h": 26.179855178861025,
+        "max_calls_per_week": 6.417147797503935
+      }
+    },
+    "0.25": {
+      "h1_rho0.0_T0.0": {
+        "interrupted_power_mw": 0.6294860074157579,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.0_T0.5": {
+        "interrupted_power_mw": 0.6294860074157579,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.0_T1.0": {
+        "interrupted_power_mw": 0.6294860074157579,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.0_T4.0": {
+        "interrupted_power_mw": 0.6294860074157579,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.5_T0.0": {
+        "interrupted_power_mw": 0.6294860074157579,
+        "rebound_energy_mwh": 0.31474300370787894,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.13529095153053383,
+        "min_spacing_h": 1.1352909515305338,
+        "max_calls_per_week": 147.97968729823143
+      },
+      "h1_rho0.5_T0.5": {
+        "interrupted_power_mw": 0.6294860074157579,
+        "rebound_energy_mwh": 0.39342875463484867,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.1691136894131673,
+        "min_spacing_h": 1.1691136894131673,
+        "max_calls_per_week": 143.69859964972872
+      },
+      "h1_rho0.5_T1.0": {
+        "interrupted_power_mw": 0.6294860074157579,
+        "rebound_energy_mwh": 0.47211450556181844,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.20293642729580078,
+        "min_spacing_h": 1.2029364272958007,
+        "max_calls_per_week": 139.65825307798164
+      },
+      "h1_rho0.5_T4.0": {
+        "interrupted_power_mw": 0.6294860074157579,
+        "rebound_energy_mwh": 0.9442290111236369,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.40587285459160155,
+        "min_spacing_h": 1.4058728545916015,
+        "max_calls_per_week": 119.49871530082505
+      },
+      "h1_rho1.0_T0.0": {
+        "interrupted_power_mw": 0.6294860074157579,
+        "rebound_energy_mwh": 0.6294860074157579,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.27058190306106766,
+        "min_spacing_h": 1.2705819030610677,
+        "max_calls_per_week": 132.22288118165136
+      },
+      "h1_rho1.0_T0.5": {
+        "interrupted_power_mw": 0.6294860074157579,
+        "rebound_energy_mwh": 0.7868575092696973,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.3382273788263346,
+        "min_spacing_h": 1.3382273788263346,
+        "max_calls_per_week": 125.53920406810165
+      },
+      "h1_rho1.0_T1.0": {
+        "interrupted_power_mw": 0.6294860074157579,
+        "rebound_energy_mwh": 0.9442290111236369,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.40587285459160155,
+        "min_spacing_h": 1.4058728545916015,
+        "max_calls_per_week": 119.49871530082505
+      },
+      "h1_rho1.0_T4.0": {
+        "interrupted_power_mw": 0.6294860074157579,
+        "rebound_energy_mwh": 1.8884580222472738,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.8117457091832031,
+        "min_spacing_h": 1.811745709183203,
+        "max_calls_per_week": 92.72824500064092
+      },
+      "h4_rho0.0_T0.0": {
+        "interrupted_power_mw": 0.5799643626959111,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.0_T0.5": {
+        "interrupted_power_mw": 0.5799643626959111,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.0_T1.0": {
+        "interrupted_power_mw": 0.5799643626959111,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.0_T4.0": {
+        "interrupted_power_mw": 0.5799643626959111,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.5_T0.0": {
+        "interrupted_power_mw": 0.5799643626959111,
+        "rebound_energy_mwh": 1.1599287253918222,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.4985904662443512,
+        "min_spacing_h": 4.498590466244352,
+        "max_calls_per_week": 37.3450309070376
+      },
+      "h4_rho0.5_T0.5": {
+        "interrupted_power_mw": 0.5799643626959111,
+        "rebound_energy_mwh": 1.232424270728811,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.5297523703846232,
+        "min_spacing_h": 4.529752370384623,
+        "max_calls_per_week": 37.08812011411014
+      },
+      "h4_rho0.5_T1.0": {
+        "interrupted_power_mw": 0.5799643626959111,
+        "rebound_energy_mwh": 1.3049198160658,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.5609142745248951,
+        "min_spacing_h": 4.560914274524895,
+        "max_calls_per_week": 36.83471994603546
+      },
+      "h4_rho0.5_T4.0": {
+        "interrupted_power_mw": 0.5799643626959111,
+        "rebound_energy_mwh": 1.7398930880877335,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.7478856993665268,
+        "min_spacing_h": 4.747885699366527,
+        "max_calls_per_week": 35.38417111060928
+      },
+      "h4_rho1.0_T0.0": {
+        "interrupted_power_mw": 0.5799643626959111,
+        "rebound_energy_mwh": 2.3198574507836445,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.9971809324887024,
+        "min_spacing_h": 4.997180932488702,
+        "max_calls_per_week": 33.61895482065974
+      },
+      "h4_rho1.0_T0.5": {
+        "interrupted_power_mw": 0.5799643626959111,
+        "rebound_energy_mwh": 2.464848541457622,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.0595047407692464,
+        "min_spacing_h": 5.059504740769246,
+        "max_calls_per_week": 33.20483102748458
+      },
+      "h4_rho1.0_T1.0": {
+        "interrupted_power_mw": 0.5799643626959111,
+        "rebound_energy_mwh": 2.6098396321316,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.1218285490497901,
+        "min_spacing_h": 5.12182854904979,
+        "max_calls_per_week": 32.80078557708997
+      },
+      "h4_rho1.0_T4.0": {
+        "interrupted_power_mw": 0.5799643626959111,
+        "rebound_energy_mwh": 3.479786176175467,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.4957713987330536,
+        "min_spacing_h": 5.495771398733053,
+        "max_calls_per_week": 30.56895707829646
+      },
+      "h24_rho0.0_T0.0": {
+        "interrupted_power_mw": 0.48762014162893397,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.0_T0.5": {
+        "interrupted_power_mw": 0.48762014162893397,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.0_T1.0": {
+        "interrupted_power_mw": 0.48762014162893397,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.0_T4.0": {
+        "interrupted_power_mw": 0.48762014162893397,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.5_T0.0": {
+        "interrupted_power_mw": 0.48762014162893397,
+        "rebound_energy_mwh": 5.851441699547207,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 2.5152175140704123,
+        "min_spacing_h": 26.51521751407041,
+        "max_calls_per_week": 6.335984229088451
+      },
+      "h24_rho0.5_T0.5": {
+        "interrupted_power_mw": 0.48762014162893397,
+        "rebound_energy_mwh": 5.912394217250824,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 2.541417696508646,
+        "min_spacing_h": 26.541417696508645,
+        "max_calls_per_week": 6.329729704758738
+      },
+      "h24_rho0.5_T1.0": {
+        "interrupted_power_mw": 0.48762014162893397,
+        "rebound_energy_mwh": 5.973346734954441,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 2.567617878946879,
+        "min_spacing_h": 26.56761787894688,
+        "max_calls_per_week": 6.323487516475052
+      },
+      "h24_rho0.5_T4.0": {
+        "interrupted_power_mw": 0.48762014162893397,
+        "rebound_energy_mwh": 6.339061841176141,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 2.72481897357628,
+        "min_spacing_h": 26.72481897357628,
+        "max_calls_per_week": 6.286291411968298
+      },
+      "h24_rho1.0_T0.0": {
+        "interrupted_power_mw": 0.48762014162893397,
+        "rebound_energy_mwh": 11.702883399094414,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 5.0304350281408245,
+        "min_spacing_h": 29.030435028140825,
+        "max_calls_per_week": 5.787030054394576
+      },
+      "h24_rho1.0_T0.5": {
+        "interrupted_power_mw": 0.48762014162893397,
+        "rebound_energy_mwh": 11.824788434501649,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 5.082835393017292,
+        "min_spacing_h": 29.08283539301729,
+        "max_calls_per_week": 5.776603200124577
+      },
+      "h24_rho1.0_T1.0": {
+        "interrupted_power_mw": 0.48762014162893397,
+        "rebound_energy_mwh": 11.946693469908881,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 5.135235757893758,
+        "min_spacing_h": 29.13523575789376,
+        "max_calls_per_week": 5.76621385170988
+      },
+      "h24_rho1.0_T4.0": {
+        "interrupted_power_mw": 0.48762014162893397,
+        "rebound_energy_mwh": 12.678123682352282,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 5.44963794715256,
+        "min_spacing_h": 29.44963794715256,
+        "max_calls_per_week": 5.704654172709232
+      }
+    },
+    "0.4": {
+      "h1_rho0.0_T0.0": {
+        "interrupted_power_mw": 1.0071776118652127,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.0_T0.5": {
+        "interrupted_power_mw": 1.0071776118652127,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.0_T1.0": {
+        "interrupted_power_mw": 1.0071776118652127,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.0_T4.0": {
+        "interrupted_power_mw": 1.0071776118652127,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.5_T0.0": {
+        "interrupted_power_mw": 1.0071776118652127,
+        "rebound_energy_mwh": 0.5035888059326064,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.21646552244885417,
+        "min_spacing_h": 1.216465522448854,
+        "max_calls_per_week": 138.1050238578081
+      },
+      "h1_rho0.5_T0.5": {
+        "interrupted_power_mw": 1.0071776118652127,
+        "rebound_energy_mwh": 0.629486007415758,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.2705819030610677,
+        "min_spacing_h": 1.2705819030610677,
+        "max_calls_per_week": 132.22288118165136
+      },
+      "h1_rho0.5_T1.0": {
+        "interrupted_power_mw": 1.0071776118652127,
+        "rebound_energy_mwh": 0.7553832088989095,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.32469828367328124,
+        "min_spacing_h": 1.3246982836732812,
+        "max_calls_per_week": 126.8213313707553
+      },
+      "h1_rho0.5_T4.0": {
+        "interrupted_power_mw": 1.0071776118652127,
+        "rebound_energy_mwh": 1.510766417797819,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.6493965673465625,
+        "min_spacing_h": 1.6493965673465625,
+        "max_calls_per_week": 101.85543205674729
+      },
+      "h1_rho1.0_T0.0": {
+        "interrupted_power_mw": 1.0071776118652127,
+        "rebound_energy_mwh": 1.0071776118652127,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.43293104489770834,
+        "min_spacing_h": 1.4329310448977084,
+        "max_calls_per_week": 117.24220826829311
+      },
+      "h1_rho1.0_T0.5": {
+        "interrupted_power_mw": 1.0071776118652127,
+        "rebound_energy_mwh": 1.258972014831516,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.5411638061221354,
+        "min_spacing_h": 1.5411638061221353,
+        "max_calls_per_week": 109.0085293546572
+      },
+      "h1_rho1.0_T1.0": {
+        "interrupted_power_mw": 1.0071776118652127,
+        "rebound_energy_mwh": 1.510766417797819,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.6493965673465625,
+        "min_spacing_h": 1.6493965673465625,
+        "max_calls_per_week": 101.85543205674729
+      },
+      "h1_rho1.0_T4.0": {
+        "interrupted_power_mw": 1.0071776118652127,
+        "rebound_energy_mwh": 3.021532835595638,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.298793134693125,
+        "min_spacing_h": 2.298793134693125,
+        "max_calls_per_week": 73.08182605235899
+      },
+      "h4_rho0.0_T0.0": {
+        "interrupted_power_mw": 0.9279429803134578,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.0_T0.5": {
+        "interrupted_power_mw": 0.9279429803134578,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.0_T1.0": {
+        "interrupted_power_mw": 0.9279429803134578,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.0_T4.0": {
+        "interrupted_power_mw": 0.9279429803134578,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.5_T0.0": {
+        "interrupted_power_mw": 0.9279429803134578,
+        "rebound_energy_mwh": 1.8558859606269156,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.7977447459909619,
+        "min_spacing_h": 4.797744745990962,
+        "max_calls_per_week": 35.01645229050217
+      },
+      "h4_rho0.5_T0.5": {
+        "interrupted_power_mw": 0.9279429803134578,
+        "rebound_energy_mwh": 1.9718788331660977,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.847603792615397,
+        "min_spacing_h": 4.847603792615397,
+        "max_calls_per_week": 34.65629766523473
+      },
+      "h4_rho0.5_T1.0": {
+        "interrupted_power_mw": 0.9279429803134578,
+        "rebound_energy_mwh": 2.08787170570528,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.897462839239832,
+        "min_spacing_h": 4.897462839239832,
+        "max_calls_per_week": 34.303476210975475
+      },
+      "h4_rho0.5_T4.0": {
+        "interrupted_power_mw": 0.9279429803134578,
+        "rebound_energy_mwh": 2.7838289409403734,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.196617118986443,
+        "min_spacing_h": 5.196617118986443,
+        "max_calls_per_week": 32.32872388966132
+      },
+      "h4_rho1.0_T0.0": {
+        "interrupted_power_mw": 0.9279429803134578,
+        "rebound_energy_mwh": 3.711771921253831,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.5954894919819238,
+        "min_spacing_h": 5.595489491981924,
+        "max_calls_per_week": 30.02418291388737
+      },
+      "h4_rho1.0_T0.5": {
+        "interrupted_power_mw": 0.9279429803134578,
+        "rebound_energy_mwh": 3.9437576663321954,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.695207585230794,
+        "min_spacing_h": 5.6952075852307935,
+        "max_calls_per_week": 29.498485785780527
+      },
+      "h4_rho1.0_T1.0": {
+        "interrupted_power_mw": 0.9279429803134578,
+        "rebound_energy_mwh": 4.17574341141056,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.794925678479664,
+        "min_spacing_h": 5.7949256784796646,
+        "max_calls_per_week": 28.990880870809693
+      },
+      "h4_rho1.0_T4.0": {
+        "interrupted_power_mw": 0.9279429803134578,
+        "rebound_energy_mwh": 5.567657881880747,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 2.393234237972886,
+        "min_spacing_h": 6.3932342379728855,
+        "max_calls_per_week": 26.277779562988147
+      },
+      "h24_rho0.0_T0.0": {
+        "interrupted_power_mw": 0.7801922266062944,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.0_T0.5": {
+        "interrupted_power_mw": 0.7801922266062944,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.0_T1.0": {
+        "interrupted_power_mw": 0.7801922266062944,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.0_T4.0": {
+        "interrupted_power_mw": 0.7801922266062944,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.5_T0.0": {
+        "interrupted_power_mw": 0.7801922266062944,
+        "rebound_energy_mwh": 9.362306719275534,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 4.02434802251266,
+        "min_spacing_h": 28.02434802251266,
+        "max_calls_per_week": 5.994787099597871
+      },
+      "h24_rho0.5_T0.5": {
+        "interrupted_power_mw": 0.7801922266062944,
+        "rebound_energy_mwh": 9.45983074760132,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 4.066268314413834,
+        "min_spacing_h": 28.066268314413833,
+        "max_calls_per_week": 5.985833175895394
+      },
+      "h24_rho0.5_T1.0": {
+        "interrupted_power_mw": 0.7801922266062944,
+        "rebound_energy_mwh": 9.557354775927106,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 4.108188606315006,
+        "min_spacing_h": 28.108188606315007,
+        "max_calls_per_week": 5.976905959790514
+      },
+      "h24_rho0.5_T4.0": {
+        "interrupted_power_mw": 0.7801922266062944,
+        "rebound_energy_mwh": 10.142498945881828,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 4.359710357722048,
+        "min_spacing_h": 28.359710357722047,
+        "max_calls_per_week": 5.923896890373402
+      },
+      "h24_rho1.0_T0.0": {
+        "interrupted_power_mw": 0.7801922266062944,
+        "rebound_energy_mwh": 18.724613438551067,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 8.04869604502532,
+        "min_spacing_h": 32.04869604502532,
+        "max_calls_per_week": 5.242022944208907
+      },
+      "h24_rho1.0_T0.5": {
+        "interrupted_power_mw": 0.7801922266062944,
+        "rebound_energy_mwh": 18.91966149520264,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 8.132536628827667,
+        "min_spacing_h": 32.132536628827665,
+        "max_calls_per_week": 5.228345397707538
+      },
+      "h24_rho1.0_T1.0": {
+        "interrupted_power_mw": 0.7801922266062944,
+        "rebound_energy_mwh": 19.11470955185421,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 8.216377212630013,
+        "min_spacing_h": 32.216377212630015,
+        "max_calls_per_week": 5.214739040680768
+      },
+      "h24_rho1.0_T4.0": {
+        "interrupted_power_mw": 0.7801922266062944,
+        "rebound_energy_mwh": 20.284997891763656,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 8.719420715444096,
+        "min_spacing_h": 32.719420715444095,
+        "max_calls_per_week": 5.1345652314896055
+      }
+    },
+    "0.5": {
+      "h1_rho0.0_T0.0": {
+        "interrupted_power_mw": 1.2589720148315158,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.0_T0.5": {
+        "interrupted_power_mw": 1.2589720148315158,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.0_T1.0": {
+        "interrupted_power_mw": 1.2589720148315158,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.0_T4.0": {
+        "interrupted_power_mw": 1.2589720148315158,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.5_T0.0": {
+        "interrupted_power_mw": 1.2589720148315158,
+        "rebound_energy_mwh": 0.6294860074157579,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.27058190306106766,
+        "min_spacing_h": 1.2705819030610677,
+        "max_calls_per_week": 132.22288118165136
+      },
+      "h1_rho0.5_T0.5": {
+        "interrupted_power_mw": 1.2589720148315158,
+        "rebound_energy_mwh": 0.7868575092696973,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.3382273788263346,
+        "min_spacing_h": 1.3382273788263346,
+        "max_calls_per_week": 125.53920406810165
+      },
+      "h1_rho0.5_T1.0": {
+        "interrupted_power_mw": 1.2589720148315158,
+        "rebound_energy_mwh": 0.9442290111236369,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.40587285459160155,
+        "min_spacing_h": 1.4058728545916015,
+        "max_calls_per_week": 119.49871530082505
+      },
+      "h1_rho0.5_T4.0": {
+        "interrupted_power_mw": 1.2589720148315158,
+        "rebound_energy_mwh": 1.8884580222472738,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.8117457091832031,
+        "min_spacing_h": 1.811745709183203,
+        "max_calls_per_week": 92.72824500064092
+      },
+      "h1_rho1.0_T0.0": {
+        "interrupted_power_mw": 1.2589720148315158,
+        "rebound_energy_mwh": 1.2589720148315158,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.5411638061221353,
+        "min_spacing_h": 1.5411638061221353,
+        "max_calls_per_week": 109.0085293546572
+      },
+      "h1_rho1.0_T0.5": {
+        "interrupted_power_mw": 1.2589720148315158,
+        "rebound_energy_mwh": 1.5737150185393947,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.6764547576526692,
+        "min_spacing_h": 1.6764547576526692,
+        "max_calls_per_week": 100.21147259305076
+      },
+      "h1_rho1.0_T1.0": {
+        "interrupted_power_mw": 1.2589720148315158,
+        "rebound_energy_mwh": 1.8884580222472738,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.8117457091832031,
+        "min_spacing_h": 1.811745709183203,
+        "max_calls_per_week": 92.72824500064092
+      },
+      "h1_rho1.0_T4.0": {
+        "interrupted_power_mw": 1.2589720148315158,
+        "rebound_energy_mwh": 3.7769160444945475,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.6234914183664062,
+        "min_spacing_h": 2.623491418366406,
+        "max_calls_per_week": 64.03680180688761
+      },
+      "h4_rho0.0_T0.0": {
+        "interrupted_power_mw": 1.1599287253918222,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.0_T0.5": {
+        "interrupted_power_mw": 1.1599287253918222,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.0_T1.0": {
+        "interrupted_power_mw": 1.1599287253918222,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.0_T4.0": {
+        "interrupted_power_mw": 1.1599287253918222,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.5_T0.0": {
+        "interrupted_power_mw": 1.1599287253918222,
+        "rebound_energy_mwh": 2.3198574507836445,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.9971809324887024,
+        "min_spacing_h": 4.997180932488702,
+        "max_calls_per_week": 33.61895482065974
+      },
+      "h4_rho0.5_T0.5": {
+        "interrupted_power_mw": 1.1599287253918222,
+        "rebound_energy_mwh": 2.464848541457622,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.0595047407692464,
+        "min_spacing_h": 5.059504740769246,
+        "max_calls_per_week": 33.20483102748458
+      },
+      "h4_rho0.5_T1.0": {
+        "interrupted_power_mw": 1.1599287253918222,
+        "rebound_energy_mwh": 2.6098396321316,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.1218285490497901,
+        "min_spacing_h": 5.12182854904979,
+        "max_calls_per_week": 32.80078557708997
+      },
+      "h4_rho0.5_T4.0": {
+        "interrupted_power_mw": 1.1599287253918222,
+        "rebound_energy_mwh": 3.479786176175467,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.4957713987330536,
+        "min_spacing_h": 5.495771398733053,
+        "max_calls_per_week": 30.56895707829646
+      },
+      "h4_rho1.0_T0.0": {
+        "interrupted_power_mw": 1.1599287253918222,
+        "rebound_energy_mwh": 4.639714901567289,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.9943618649774049,
+        "min_spacing_h": 5.994361864977405,
+        "max_calls_per_week": 28.02633604446789
+      },
+      "h4_rho1.0_T0.5": {
+        "interrupted_power_mw": 1.1599287253918222,
+        "rebound_energy_mwh": 4.929697082915244,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 2.119009481538493,
+        "min_spacing_h": 6.119009481538493,
+        "max_calls_per_week": 27.45542403666288
+      },
+      "h4_rho1.0_T1.0": {
+        "interrupted_power_mw": 1.1599287253918222,
+        "rebound_energy_mwh": 5.2196792642632,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 2.2436570980995802,
+        "min_spacing_h": 6.243657098099581,
+        "max_calls_per_week": 26.907307265662485
+      },
+      "h4_rho1.0_T4.0": {
+        "interrupted_power_mw": 1.1599287253918222,
+        "rebound_energy_mwh": 6.959572352350934,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 2.9915427974661073,
+        "min_spacing_h": 6.991542797466107,
+        "max_calls_per_week": 24.02903119764739
+      },
+      "h24_rho0.0_T0.0": {
+        "interrupted_power_mw": 0.9752402832578679,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.0_T0.5": {
+        "interrupted_power_mw": 0.9752402832578679,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.0_T1.0": {
+        "interrupted_power_mw": 0.9752402832578679,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.0_T4.0": {
+        "interrupted_power_mw": 0.9752402832578679,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.5_T0.0": {
+        "interrupted_power_mw": 0.9752402832578679,
+        "rebound_energy_mwh": 11.702883399094414,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 5.0304350281408245,
+        "min_spacing_h": 29.030435028140825,
+        "max_calls_per_week": 5.787030054394576
+      },
+      "h24_rho0.5_T0.5": {
+        "interrupted_power_mw": 0.9752402832578679,
+        "rebound_energy_mwh": 11.824788434501649,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 5.082835393017292,
+        "min_spacing_h": 29.08283539301729,
+        "max_calls_per_week": 5.776603200124577
+      },
+      "h24_rho0.5_T1.0": {
+        "interrupted_power_mw": 0.9752402832578679,
+        "rebound_energy_mwh": 11.946693469908881,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 5.135235757893758,
+        "min_spacing_h": 29.13523575789376,
+        "max_calls_per_week": 5.76621385170988
+      },
+      "h24_rho0.5_T4.0": {
+        "interrupted_power_mw": 0.9752402832578679,
+        "rebound_energy_mwh": 12.678123682352282,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 5.44963794715256,
+        "min_spacing_h": 29.44963794715256,
+        "max_calls_per_week": 5.704654172709232
+      },
+      "h24_rho1.0_T0.0": {
+        "interrupted_power_mw": 0.9752402832578679,
+        "rebound_energy_mwh": 23.40576679818883,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 10.060870056281649,
+        "min_spacing_h": 34.06087005628165,
+        "max_calls_per_week": 4.932346112192654
+      },
+      "h24_rho1.0_T0.5": {
+        "interrupted_power_mw": 0.9752402832578679,
+        "rebound_energy_mwh": 23.649576869003297,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 10.165670786034584,
+        "min_spacing_h": 34.16567078603458,
+        "max_calls_per_week": 4.917216496409928
+      },
+      "h24_rho1.0_T1.0": {
+        "interrupted_power_mw": 0.9752402832578679,
+        "rebound_energy_mwh": 23.893386939817763,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 10.270471515787516,
+        "min_spacing_h": 34.27047151578752,
+        "max_calls_per_week": 4.9021794147946505
+      },
+      "h24_rho1.0_T4.0": {
+        "interrupted_power_mw": 0.9752402832578679,
+        "rebound_energy_mwh": 25.356247364704565,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 10.89927589430512,
+        "min_spacing_h": 34.89927589430512,
+        "max_calls_per_week": 4.81385345956173
+      }
+    },
+    "0.6": {
+      "h1_rho0.0_T0.0": {
+        "interrupted_power_mw": 1.5107664177978188,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.0_T0.5": {
+        "interrupted_power_mw": 1.5107664177978188,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.0_T1.0": {
+        "interrupted_power_mw": 1.5107664177978188,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.0_T4.0": {
+        "interrupted_power_mw": 1.5107664177978188,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.5_T0.0": {
+        "interrupted_power_mw": 1.5107664177978188,
+        "rebound_energy_mwh": 0.7553832088989094,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.3246982836732812,
+        "min_spacing_h": 1.3246982836732812,
+        "max_calls_per_week": 126.8213313707553
+      },
+      "h1_rho0.5_T0.5": {
+        "interrupted_power_mw": 1.5107664177978188,
+        "rebound_energy_mwh": 0.9442290111236368,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.4058728545916015,
+        "min_spacing_h": 1.4058728545916015,
+        "max_calls_per_week": 119.49871530082505
+      },
+      "h1_rho0.5_T1.0": {
+        "interrupted_power_mw": 1.5107664177978188,
+        "rebound_energy_mwh": 1.1330748133483641,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.4870474255099218,
+        "min_spacing_h": 1.4870474255099217,
+        "max_calls_per_week": 112.97554948013263
+      },
+      "h1_rho0.5_T4.0": {
+        "interrupted_power_mw": 1.5107664177978188,
+        "rebound_energy_mwh": 2.2661496266967283,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.9740948510198436,
+        "min_spacing_h": 1.9740948510198435,
+        "max_calls_per_week": 85.10229379971736
+      },
+      "h1_rho1.0_T0.0": {
+        "interrupted_power_mw": 1.5107664177978188,
+        "rebound_energy_mwh": 1.5107664177978188,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.6493965673465624,
+        "min_spacing_h": 1.6493965673465625,
+        "max_calls_per_week": 101.85543205674729
+      },
+      "h1_rho1.0_T0.5": {
+        "interrupted_power_mw": 1.5107664177978188,
+        "rebound_energy_mwh": 1.8884580222472735,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.811745709183203,
+        "min_spacing_h": 1.811745709183203,
+        "max_calls_per_week": 92.72824500064092
+      },
+      "h1_rho1.0_T1.0": {
+        "interrupted_power_mw": 1.5107664177978188,
+        "rebound_energy_mwh": 2.2661496266967283,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.9740948510198436,
+        "min_spacing_h": 1.9740948510198435,
+        "max_calls_per_week": 85.10229379971736
+      },
+      "h1_rho1.0_T4.0": {
+        "interrupted_power_mw": 1.5107664177978188,
+        "rebound_energy_mwh": 4.5322992533934565,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.9481897020396872,
+        "min_spacing_h": 2.948189702039687,
+        "max_calls_per_week": 56.98412143688387
+      },
+      "h4_rho0.0_T0.0": {
+        "interrupted_power_mw": 1.3919144704701867,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.0_T0.5": {
+        "interrupted_power_mw": 1.3919144704701867,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.0_T1.0": {
+        "interrupted_power_mw": 1.3919144704701867,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.0_T4.0": {
+        "interrupted_power_mw": 1.3919144704701867,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.5_T0.0": {
+        "interrupted_power_mw": 1.3919144704701867,
+        "rebound_energy_mwh": 2.7838289409403734,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.196617118986443,
+        "min_spacing_h": 5.196617118986443,
+        "max_calls_per_week": 32.32872388966132
+      },
+      "h4_rho0.5_T0.5": {
+        "interrupted_power_mw": 1.3919144704701867,
+        "rebound_energy_mwh": 2.9578182497491468,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.2714056889230956,
+        "min_spacing_h": 5.271405688923096,
+        "max_calls_per_week": 31.870057042473807
+      },
+      "h4_rho0.5_T1.0": {
+        "interrupted_power_mw": 1.3919144704701867,
+        "rebound_energy_mwh": 3.13180755855792,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.3461942588597482,
+        "min_spacing_h": 5.346194258859748,
+        "max_calls_per_week": 31.424222889317814
+      },
+      "h4_rho0.5_T4.0": {
+        "interrupted_power_mw": 1.3919144704701867,
+        "rebound_energy_mwh": 4.17574341141056,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.794925678479664,
+        "min_spacing_h": 5.7949256784796646,
+        "max_calls_per_week": 28.990880870809693
+      },
+      "h4_rho1.0_T0.0": {
+        "interrupted_power_mw": 1.3919144704701867,
+        "rebound_energy_mwh": 5.567657881880747,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 2.393234237972886,
+        "min_spacing_h": 6.3932342379728855,
+        "max_calls_per_week": 26.277779562988147
+      },
+      "h4_rho1.0_T0.5": {
+        "interrupted_power_mw": 1.3919144704701867,
+        "rebound_energy_mwh": 5.9156364994982935,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 2.542811377846191,
+        "min_spacing_h": 6.542811377846191,
+        "max_calls_per_week": 25.677035497132646
+      },
+      "h4_rho1.0_T1.0": {
+        "interrupted_power_mw": 1.3919144704701867,
+        "rebound_energy_mwh": 6.26361511711584,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 2.6923885177194964,
+        "min_spacing_h": 6.692388517719497,
+        "max_calls_per_week": 25.103145096131957
+      },
+      "h4_rho1.0_T4.0": {
+        "interrupted_power_mw": 1.3919144704701867,
+        "rebound_energy_mwh": 8.35148682282112,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 3.589851356959328,
+        "min_spacing_h": 7.589851356959328,
+        "max_calls_per_week": 22.134820841511807
+      },
+      "h24_rho0.0_T0.0": {
+        "interrupted_power_mw": 1.1702883399094415,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.0_T0.5": {
+        "interrupted_power_mw": 1.1702883399094415,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.0_T1.0": {
+        "interrupted_power_mw": 1.1702883399094415,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.0_T4.0": {
+        "interrupted_power_mw": 1.1702883399094415,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.5_T0.0": {
+        "interrupted_power_mw": 1.1702883399094415,
+        "rebound_energy_mwh": 14.043460078913299,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 6.03652203376899,
+        "min_spacing_h": 30.03652203376899,
+        "max_calls_per_week": 5.593190843171643
+      },
+      "h24_rho0.5_T0.5": {
+        "interrupted_power_mw": 1.1702883399094415,
+        "rebound_energy_mwh": 14.189746121401978,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 6.09940247162075,
+        "min_spacing_h": 30.09940247162075,
+        "max_calls_per_week": 5.581506149778188
+      },
+      "h24_rho0.5_T1.0": {
+        "interrupted_power_mw": 1.1702883399094415,
+        "rebound_energy_mwh": 14.336032163890659,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 6.16228290947251,
+        "min_spacing_h": 30.16228290947251,
+        "max_calls_per_week": 5.569870175418298
+      },
+      "h24_rho0.5_T4.0": {
+        "interrupted_power_mw": 1.1702883399094415,
+        "rebound_energy_mwh": 15.213748418822739,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 6.539565536583072,
+        "min_spacing_h": 30.539565536583073,
+        "max_calls_per_week": 5.501060576606903
+      },
+      "h24_rho1.0_T0.0": {
+        "interrupted_power_mw": 1.1702883399094415,
+        "rebound_energy_mwh": 28.086920157826597,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 12.07304406753798,
+        "min_spacing_h": 36.07304406753798,
+        "max_calls_per_week": 4.6572171643031
+      },
+      "h24_rho1.0_T0.5": {
+        "interrupted_power_mw": 1.1702883399094415,
+        "rebound_energy_mwh": 28.379492242803956,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 12.1988049432415,
+        "min_spacing_h": 36.1988049432415,
+        "max_calls_per_week": 4.641037190686773
+      },
+      "h24_rho1.0_T1.0": {
+        "interrupted_power_mw": 1.1702883399094415,
+        "rebound_energy_mwh": 28.672064327781317,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 12.32456581894502,
+        "min_spacing_h": 36.32456581894502,
+        "max_calls_per_week": 4.624969251865906
+      },
+      "h24_rho1.0_T4.0": {
+        "interrupted_power_mw": 1.1702883399094415,
+        "rebound_energy_mwh": 30.427496837645478,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 13.079131073166144,
+        "min_spacing_h": 37.079131073166145,
+        "max_calls_per_week": 4.530850511801238
+      }
+    },
+    "0.75": {
+      "h1_rho0.0_T0.0": {
+        "interrupted_power_mw": 1.8884580222472738,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.0_T0.5": {
+        "interrupted_power_mw": 1.8884580222472738,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.0_T1.0": {
+        "interrupted_power_mw": 1.8884580222472738,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.0_T4.0": {
+        "interrupted_power_mw": 1.8884580222472738,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.5_T0.0": {
+        "interrupted_power_mw": 1.8884580222472738,
+        "rebound_energy_mwh": 0.9442290111236369,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.40587285459160155,
+        "min_spacing_h": 1.4058728545916015,
+        "max_calls_per_week": 119.49871530082505
+      },
+      "h1_rho0.5_T0.5": {
+        "interrupted_power_mw": 1.8884580222472738,
+        "rebound_energy_mwh": 1.1802862639045462,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.507341068239502,
+        "min_spacing_h": 1.5073410682395019,
+        "max_calls_per_week": 111.45453642831845
+      },
+      "h1_rho0.5_T1.0": {
+        "interrupted_power_mw": 1.8884580222472738,
+        "rebound_energy_mwh": 1.4163435166854552,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.6088092818874022,
+        "min_spacing_h": 1.6088092818874022,
+        "max_calls_per_week": 104.42505640128326
+      },
+      "h1_rho0.5_T4.0": {
+        "interrupted_power_mw": 1.8884580222472738,
+        "rebound_energy_mwh": 2.8326870333709104,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.2176185637748045,
+        "min_spacing_h": 2.2176185637748045,
+        "max_calls_per_week": 75.75694158784113
+      },
+      "h1_rho1.0_T0.0": {
+        "interrupted_power_mw": 1.8884580222472738,
+        "rebound_energy_mwh": 1.8884580222472738,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.8117457091832031,
+        "min_spacing_h": 1.811745709183203,
+        "max_calls_per_week": 92.72824500064092
+      },
+      "h1_rho1.0_T0.5": {
+        "interrupted_power_mw": 1.8884580222472738,
+        "rebound_energy_mwh": 2.3605725278090923,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.014682136479004,
+        "min_spacing_h": 2.0146821364790037,
+        "max_calls_per_week": 83.38784414578087
+      },
+      "h1_rho1.0_T1.0": {
+        "interrupted_power_mw": 1.8884580222472738,
+        "rebound_energy_mwh": 2.8326870333709104,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.2176185637748045,
+        "min_spacing_h": 2.2176185637748045,
+        "max_calls_per_week": 75.75694158784113
+      },
+      "h1_rho1.0_T4.0": {
+        "interrupted_power_mw": 1.8884580222472738,
+        "rebound_energy_mwh": 5.665374066741821,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 2.435237127549609,
+        "min_spacing_h": 3.435237127549609,
+        "max_calls_per_week": 48.90492090129341
+      },
+      "h4_rho0.0_T0.0": {
+        "interrupted_power_mw": 1.7398930880877335,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.0_T0.5": {
+        "interrupted_power_mw": 1.7398930880877335,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.0_T1.0": {
+        "interrupted_power_mw": 1.7398930880877335,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.0_T4.0": {
+        "interrupted_power_mw": 1.7398930880877335,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.5_T0.0": {
+        "interrupted_power_mw": 1.7398930880877335,
+        "rebound_energy_mwh": 3.479786176175467,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.4957713987330536,
+        "min_spacing_h": 5.495771398733053,
+        "max_calls_per_week": 30.56895707829646
+      },
+      "h4_rho0.5_T0.5": {
+        "interrupted_power_mw": 1.7398930880877335,
+        "rebound_energy_mwh": 3.6972728121864336,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.5892571111538696,
+        "min_spacing_h": 5.58925711115387,
+        "max_calls_per_week": 30.057661807101475
+      },
+      "h4_rho0.5_T1.0": {
+        "interrupted_power_mw": 1.7398930880877335,
+        "rebound_energy_mwh": 3.9147594481974,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.6827428235746853,
+        "min_spacing_h": 5.682742823574685,
+        "max_calls_per_week": 29.563188976818928
+      },
+      "h4_rho0.5_T4.0": {
+        "interrupted_power_mw": 1.7398930880877335,
+        "rebound_energy_mwh": 5.219679264263201,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 2.2436570980995807,
+        "min_spacing_h": 6.243657098099581,
+        "max_calls_per_week": 26.907307265662485
+      },
+      "h4_rho1.0_T0.0": {
+        "interrupted_power_mw": 1.7398930880877335,
+        "rebound_energy_mwh": 6.959572352350934,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 2.9915427974661073,
+        "min_spacing_h": 6.991542797466107,
+        "max_calls_per_week": 24.02903119764739
+      },
+      "h4_rho1.0_T0.5": {
+        "interrupted_power_mw": 1.7398930880877335,
+        "rebound_energy_mwh": 7.394545624372867,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 3.178514222307739,
+        "min_spacing_h": 7.178514222307739,
+        "max_calls_per_week": 23.40317157524438
+      },
+      "h4_rho1.0_T1.0": {
+        "interrupted_power_mw": 1.7398930880877335,
+        "rebound_energy_mwh": 7.8295188963948,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 3.3654856471493706,
+        "min_spacing_h": 7.36548564714937,
+        "max_calls_per_week": 22.80908660313801
+      },
+      "h4_rho1.0_T4.0": {
+        "interrupted_power_mw": 1.7398930880877335,
+        "rebound_energy_mwh": 10.439358528526402,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 4.487314196199161,
+        "min_spacing_h": 8.487314196199161,
+        "max_calls_per_week": 19.794247758052215
+      },
+      "h24_rho0.0_T0.0": {
+        "interrupted_power_mw": 1.4628604248868018,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.0_T0.5": {
+        "interrupted_power_mw": 1.4628604248868018,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.0_T1.0": {
+        "interrupted_power_mw": 1.4628604248868018,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.0_T4.0": {
+        "interrupted_power_mw": 1.4628604248868018,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.5_T0.0": {
+        "interrupted_power_mw": 1.4628604248868018,
+        "rebound_energy_mwh": 17.55432509864162,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 7.5456525422112355,
+        "min_spacing_h": 31.545652542211236,
+        "max_calls_per_week": 5.325614988474219
+      },
+      "h24_rho0.5_T0.5": {
+        "interrupted_power_mw": 1.4628604248868018,
+        "rebound_energy_mwh": 17.737182651752473,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 7.624253089525937,
+        "min_spacing_h": 31.624253089525936,
+        "max_calls_per_week": 5.312378430706469
+      },
+      "h24_rho0.5_T1.0": {
+        "interrupted_power_mw": 1.4628604248868018,
+        "rebound_energy_mwh": 17.920040204863323,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 7.702853636840637,
+        "min_spacing_h": 31.702853636840636,
+        "max_calls_per_week": 5.299207507452068
+      },
+      "h24_rho0.5_T4.0": {
+        "interrupted_power_mw": 1.4628604248868018,
+        "rebound_energy_mwh": 19.017185523528422,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 8.174456920728838,
+        "min_spacing_h": 32.17445692072884,
+        "max_calls_per_week": 5.221533355292275
+      },
+      "h24_rho1.0_T0.0": {
+        "interrupted_power_mw": 1.4628604248868018,
+        "rebound_energy_mwh": 35.10865019728324,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 15.091305084422471,
+        "min_spacing_h": 39.09130508442247,
+        "max_calls_per_week": 4.297630883317489
+      },
+      "h24_rho1.0_T0.5": {
+        "interrupted_power_mw": 1.4628604248868018,
+        "rebound_energy_mwh": 35.474365303504946,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 15.248506179051875,
+        "min_spacing_h": 39.24850617905187,
+        "max_calls_per_week": 4.28041768605366
+      },
+      "h24_rho1.0_T1.0": {
+        "interrupted_power_mw": 1.4628604248868018,
+        "rebound_energy_mwh": 35.840080409726646,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 15.405707273681275,
+        "min_spacing_h": 39.40570727368127,
+        "max_calls_per_week": 4.263341825923924
+      },
+      "h24_rho1.0_T4.0": {
+        "interrupted_power_mw": 1.4628604248868018,
+        "rebound_energy_mwh": 38.034371047056844,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 16.348913841457676,
+        "min_spacing_h": 40.34891384145767,
+        "max_calls_per_week": 4.163680852974622
+      }
+    },
+    "0.9": {
+      "h1_rho0.0_T0.0": {
+        "interrupted_power_mw": 2.2661496266967283,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.0_T0.5": {
+        "interrupted_power_mw": 2.2661496266967283,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.0_T1.0": {
+        "interrupted_power_mw": 2.2661496266967283,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.0_T4.0": {
+        "interrupted_power_mw": 2.2661496266967283,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.5_T0.0": {
+        "interrupted_power_mw": 2.2661496266967283,
+        "rebound_energy_mwh": 1.1330748133483641,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.4870474255099218,
+        "min_spacing_h": 1.4870474255099217,
+        "max_calls_per_week": 112.97554948013263
+      },
+      "h1_rho0.5_T0.5": {
+        "interrupted_power_mw": 2.2661496266967283,
+        "rebound_energy_mwh": 1.4163435166854552,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.6088092818874022,
+        "min_spacing_h": 1.6088092818874022,
+        "max_calls_per_week": 104.42505640128326
+      },
+      "h1_rho0.5_T1.0": {
+        "interrupted_power_mw": 2.2661496266967283,
+        "rebound_energy_mwh": 1.699612220022546,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.7305711382648826,
+        "min_spacing_h": 1.7305711382648825,
+        "max_calls_per_week": 97.0777775529305
+      },
+      "h1_rho0.5_T4.0": {
+        "interrupted_power_mw": 2.2661496266967283,
+        "rebound_energy_mwh": 3.399224440045092,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.4611422765297652,
+        "min_spacing_h": 2.461142276529765,
+        "max_calls_per_week": 68.2609866167029
+      },
+      "h1_rho1.0_T0.0": {
+        "interrupted_power_mw": 2.2661496266967283,
+        "rebound_energy_mwh": 2.2661496266967283,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.9740948510198436,
+        "min_spacing_h": 1.9740948510198435,
+        "max_calls_per_week": 85.10229379971736
+      },
+      "h1_rho1.0_T0.5": {
+        "interrupted_power_mw": 2.2661496266967283,
+        "rebound_energy_mwh": 2.8326870333709104,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.2176185637748045,
+        "min_spacing_h": 2.2176185637748045,
+        "max_calls_per_week": 75.75694158784113
+      },
+      "h1_rho1.0_T1.0": {
+        "interrupted_power_mw": 2.2661496266967283,
+        "rebound_energy_mwh": 3.399224440045092,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.4611422765297652,
+        "min_spacing_h": 2.461142276529765,
+        "max_calls_per_week": 68.2609866167029
+      },
+      "h1_rho1.0_T4.0": {
+        "interrupted_power_mw": 2.2661496266967283,
+        "rebound_energy_mwh": 6.798448880090184,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 2.9222845530595305,
+        "min_spacing_h": 3.9222845530595305,
+        "max_calls_per_week": 42.83218051300068
+      },
+      "h4_rho0.0_T0.0": {
+        "interrupted_power_mw": 2.0878717057052802,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.0_T0.5": {
+        "interrupted_power_mw": 2.0878717057052802,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.0_T1.0": {
+        "interrupted_power_mw": 2.0878717057052802,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.0_T4.0": {
+        "interrupted_power_mw": 2.0878717057052802,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.5_T0.0": {
+        "interrupted_power_mw": 2.0878717057052802,
+        "rebound_energy_mwh": 4.1757434114105605,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.7949256784796646,
+        "min_spacing_h": 5.7949256784796646,
+        "max_calls_per_week": 28.990880870809693
+      },
+      "h4_rho0.5_T0.5": {
+        "interrupted_power_mw": 2.0878717057052802,
+        "rebound_energy_mwh": 4.436727374623721,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.9071085333846436,
+        "min_spacing_h": 5.907108533384644,
+        "max_calls_per_week": 28.44031035667118
+      },
+      "h4_rho0.5_T1.0": {
+        "interrupted_power_mw": 2.0878717057052802,
+        "rebound_energy_mwh": 4.69771133783688,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 2.0192913882896226,
+        "min_spacing_h": 6.019291388289623,
+        "max_calls_per_week": 27.910262049589374
+      },
+      "h4_rho0.5_T4.0": {
+        "interrupted_power_mw": 2.0878717057052802,
+        "rebound_energy_mwh": 6.26361511711584,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 2.6923885177194964,
+        "min_spacing_h": 6.692388517719497,
+        "max_calls_per_week": 25.103145096131957
+      },
+      "h4_rho1.0_T0.0": {
+        "interrupted_power_mw": 2.0878717057052802,
+        "rebound_energy_mwh": 8.351486822821121,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 3.589851356959329,
+        "min_spacing_h": 7.589851356959329,
+        "max_calls_per_week": 22.134820841511804
+      },
+      "h4_rho1.0_T0.5": {
+        "interrupted_power_mw": 2.0878717057052802,
+        "rebound_energy_mwh": 8.873454749247442,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 3.814217066769287,
+        "min_spacing_h": 7.814217066769287,
+        "max_calls_per_week": 21.499274791640513
+      },
+      "h4_rho1.0_T1.0": {
+        "interrupted_power_mw": 2.0878717057052802,
+        "rebound_energy_mwh": 9.39542267567376,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 4.038582776579245,
+        "min_spacing_h": 8.038582776579245,
+        "max_calls_per_week": 20.899206323964865
+      },
+      "h4_rho1.0_T4.0": {
+        "interrupted_power_mw": 2.0878717057052802,
+        "rebound_energy_mwh": 12.52723023423168,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 5.384777035438993,
+        "min_spacing_h": 9.384777035438994,
+        "max_calls_per_week": 17.901330992264903
+      },
+      "h24_rho0.0_T0.0": {
+        "interrupted_power_mw": 1.7554325098641623,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.0_T0.5": {
+        "interrupted_power_mw": 1.7554325098641623,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.0_T1.0": {
+        "interrupted_power_mw": 1.7554325098641623,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.0_T4.0": {
+        "interrupted_power_mw": 1.7554325098641623,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.5_T0.0": {
+        "interrupted_power_mw": 1.7554325098641623,
+        "rebound_energy_mwh": 21.065190118369948,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 9.054783050653485,
+        "min_spacing_h": 33.054783050653484,
+        "max_calls_per_week": 5.082471718012945
+      },
+      "h24_rho0.5_T0.5": {
+        "interrupted_power_mw": 1.7554325098641623,
+        "rebound_energy_mwh": 21.28461918210297,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 9.149103707431125,
+        "min_spacing_h": 33.149103707431124,
+        "max_calls_per_week": 5.068010329411681
+      },
+      "h24_rho0.5_T1.0": {
+        "interrupted_power_mw": 1.7554325098641623,
+        "rebound_energy_mwh": 21.50404824583599,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 9.243424364208765,
+        "min_spacing_h": 33.243424364208764,
+        "max_calls_per_week": 5.053631002613428
+      },
+      "h24_rho0.5_T4.0": {
+        "interrupted_power_mw": 1.7554325098641623,
+        "rebound_energy_mwh": 22.820622628234112,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 9.809348304874609,
+        "min_spacing_h": 33.80934830487461,
+        "max_calls_per_week": 4.969039878706502
+      },
+      "h24_rho1.0_T0.0": {
+        "interrupted_power_mw": 1.7554325098641623,
+        "rebound_energy_mwh": 42.130380236739896,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 18.10956610130697,
+        "min_spacing_h": 42.10956610130697,
+        "max_calls_per_week": 3.9895922839913975
+      },
+      "h24_rho1.0_T0.5": {
+        "interrupted_power_mw": 1.7554325098641623,
+        "rebound_energy_mwh": 42.56923836420594,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 18.29820741486225,
+        "min_spacing_h": 42.29820741486225,
+        "max_calls_per_week": 3.9717995221937024
+      },
+      "h24_rho1.0_T1.0": {
+        "interrupted_power_mw": 1.7554325098641623,
+        "rebound_energy_mwh": 43.00809649167198,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 18.48684872841753,
+        "min_spacing_h": 42.48684872841753,
+        "max_calls_per_week": 3.9541647598738576
+      },
+      "h24_rho1.0_T4.0": {
+        "interrupted_power_mw": 1.7554325098641623,
+        "rebound_energy_mwh": 45.641245256468224,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 19.618696609749218,
+        "min_spacing_h": 43.61869660974922,
+        "max_calls_per_week": 3.8515593783801942
+      }
+    },
+    "1.0": {
+      "h1_rho0.0_T0.0": {
+        "interrupted_power_mw": 2.5179440296630315,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.0_T0.5": {
+        "interrupted_power_mw": 2.5179440296630315,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.0_T1.0": {
+        "interrupted_power_mw": 2.5179440296630315,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.0_T4.0": {
+        "interrupted_power_mw": 2.5179440296630315,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 1.0,
+        "max_calls_per_week": 168.0
+      },
+      "h1_rho0.5_T0.0": {
+        "interrupted_power_mw": 2.5179440296630315,
+        "rebound_energy_mwh": 1.2589720148315158,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.5411638061221353,
+        "min_spacing_h": 1.5411638061221353,
+        "max_calls_per_week": 109.0085293546572
+      },
+      "h1_rho0.5_T0.5": {
+        "interrupted_power_mw": 2.5179440296630315,
+        "rebound_energy_mwh": 1.5737150185393947,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.6764547576526692,
+        "min_spacing_h": 1.6764547576526692,
+        "max_calls_per_week": 100.21147259305076
+      },
+      "h1_rho0.5_T1.0": {
+        "interrupted_power_mw": 2.5179440296630315,
+        "rebound_energy_mwh": 1.8884580222472738,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.8117457091832031,
+        "min_spacing_h": 1.811745709183203,
+        "max_calls_per_week": 92.72824500064092
+      },
+      "h1_rho0.5_T4.0": {
+        "interrupted_power_mw": 2.5179440296630315,
+        "rebound_energy_mwh": 3.7769160444945475,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.6234914183664062,
+        "min_spacing_h": 2.623491418366406,
+        "max_calls_per_week": 64.03680180688761
+      },
+      "h1_rho1.0_T0.0": {
+        "interrupted_power_mw": 2.5179440296630315,
+        "rebound_energy_mwh": 2.5179440296630315,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.0823276122442707,
+        "min_spacing_h": 2.0823276122442707,
+        "max_calls_per_week": 80.6789474490686
+      },
+      "h1_rho1.0_T0.5": {
+        "interrupted_power_mw": 2.5179440296630315,
+        "rebound_energy_mwh": 3.1474300370787893,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.3529095153053383,
+        "min_spacing_h": 2.3529095153053383,
+        "max_calls_per_week": 71.40096077098764
+      },
+      "h1_rho1.0_T1.0": {
+        "interrupted_power_mw": 2.5179440296630315,
+        "rebound_energy_mwh": 3.7769160444945475,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.6234914183664062,
+        "min_spacing_h": 2.623491418366406,
+        "max_calls_per_week": 64.03680180688761
+      },
+      "h1_rho1.0_T4.0": {
+        "interrupted_power_mw": 2.5179440296630315,
+        "rebound_energy_mwh": 7.553832088989095,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 3.2469828367328124,
+        "min_spacing_h": 4.246982836732812,
+        "max_calls_per_week": 39.55749445157677
+      },
+      "h4_rho0.0_T0.0": {
+        "interrupted_power_mw": 2.3198574507836445,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.0_T0.5": {
+        "interrupted_power_mw": 2.3198574507836445,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.0_T1.0": {
+        "interrupted_power_mw": 2.3198574507836445,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.0_T4.0": {
+        "interrupted_power_mw": 2.3198574507836445,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 4.0,
+        "max_calls_per_week": 42.0
+      },
+      "h4_rho0.5_T0.0": {
+        "interrupted_power_mw": 2.3198574507836445,
+        "rebound_energy_mwh": 4.639714901567289,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 1.9943618649774049,
+        "min_spacing_h": 5.994361864977405,
+        "max_calls_per_week": 28.02633604446789
+      },
+      "h4_rho0.5_T0.5": {
+        "interrupted_power_mw": 2.3198574507836445,
+        "rebound_energy_mwh": 4.929697082915244,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 2.119009481538493,
+        "min_spacing_h": 6.119009481538493,
+        "max_calls_per_week": 27.45542403666288
+      },
+      "h4_rho0.5_T1.0": {
+        "interrupted_power_mw": 2.3198574507836445,
+        "rebound_energy_mwh": 5.2196792642632,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 2.2436570980995802,
+        "min_spacing_h": 6.243657098099581,
+        "max_calls_per_week": 26.907307265662485
+      },
+      "h4_rho0.5_T4.0": {
+        "interrupted_power_mw": 2.3198574507836445,
+        "rebound_energy_mwh": 6.959572352350934,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 2.9915427974661073,
+        "min_spacing_h": 6.991542797466107,
+        "max_calls_per_week": 24.02903119764739
+      },
+      "h4_rho1.0_T0.0": {
+        "interrupted_power_mw": 2.3198574507836445,
+        "rebound_energy_mwh": 9.279429803134578,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 3.9887237299548097,
+        "min_spacing_h": 7.98872372995481,
+        "max_calls_per_week": 21.029641990254472
+      },
+      "h4_rho1.0_T0.5": {
+        "interrupted_power_mw": 2.3198574507836445,
+        "rebound_energy_mwh": 9.859394165830489,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 4.238018963076986,
+        "min_spacing_h": 8.238018963076986,
+        "max_calls_per_week": 20.393252401212035
+      },
+      "h4_rho1.0_T1.0": {
+        "interrupted_power_mw": 2.3198574507836445,
+        "rebound_energy_mwh": 10.4393585285264,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 4.4873141961991605,
+        "min_spacing_h": 8.487314196199161,
+        "max_calls_per_week": 19.794247758052215
+      },
+      "h4_rho1.0_T4.0": {
+        "interrupted_power_mw": 2.3198574507836445,
+        "rebound_energy_mwh": 13.919144704701868,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 5.983085594932215,
+        "min_spacing_h": 9.983085594932215,
+        "max_calls_per_week": 16.828464346262145
+      },
+      "h24_rho0.0_T0.0": {
+        "interrupted_power_mw": 1.9504805665157359,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.0_T0.5": {
+        "interrupted_power_mw": 1.9504805665157359,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.0_T1.0": {
+        "interrupted_power_mw": 1.9504805665157359,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.0_T4.0": {
+        "interrupted_power_mw": 1.9504805665157359,
+        "rebound_energy_mwh": 0.0,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 0.0,
+        "min_spacing_h": 24.0,
+        "max_calls_per_week": 7.0
+      },
+      "h24_rho0.5_T0.0": {
+        "interrupted_power_mw": 1.9504805665157359,
+        "rebound_energy_mwh": 23.40576679818883,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 10.060870056281649,
+        "min_spacing_h": 34.06087005628165,
+        "max_calls_per_week": 4.932346112192654
+      },
+      "h24_rho0.5_T0.5": {
+        "interrupted_power_mw": 1.9504805665157359,
+        "rebound_energy_mwh": 23.649576869003297,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 10.165670786034584,
+        "min_spacing_h": 34.16567078603458,
+        "max_calls_per_week": 4.917216496409928
+      },
+      "h24_rho0.5_T1.0": {
+        "interrupted_power_mw": 1.9504805665157359,
+        "rebound_energy_mwh": 23.893386939817763,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 10.270471515787516,
+        "min_spacing_h": 34.27047151578752,
+        "max_calls_per_week": 4.9021794147946505
+      },
+      "h24_rho0.5_T4.0": {
+        "interrupted_power_mw": 1.9504805665157359,
+        "rebound_energy_mwh": 25.356247364704565,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 10.89927589430512,
+        "min_spacing_h": 34.89927589430512,
+        "max_calls_per_week": 4.81385345956173
+      },
+      "h24_rho1.0_T0.0": {
+        "interrupted_power_mw": 1.9504805665157359,
+        "rebound_energy_mwh": 46.81153359637766,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 20.121740112563298,
+        "min_spacing_h": 44.1217401125633,
+        "max_calls_per_week": 3.807646742204607
+      },
+      "h24_rho1.0_T0.5": {
+        "interrupted_power_mw": 1.9504805665157359,
+        "rebound_energy_mwh": 47.299153738006595,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 20.331341572069167,
+        "min_spacing_h": 44.331341572069164,
+        "max_calls_per_week": 3.789643941338512
+      },
+      "h24_rho1.0_T1.0": {
+        "interrupted_power_mw": 1.9504805665157359,
+        "rebound_energy_mwh": 47.786773879635525,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 20.540943031575033,
+        "min_spacing_h": 44.54094303157503,
+        "max_calls_per_week": 3.7718105761906515
+      },
+      "h24_rho1.0_T4.0": {
+        "interrupted_power_mw": 1.9504805665157359,
+        "rebound_energy_mwh": 50.71249472940913,
+        "rebound_absorption_rate_mw": 2.3264157739096434,
+        "R_min_h_at_10pct_headroom": 21.79855178861024,
+        "min_spacing_h": 45.79855178861024,
+        "max_calls_per_week": 3.668238261668797
+      }
+    }
+  },
+  "recovery_mean_eligible_stress_only": {
+    "h1_rho0.0_T0.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 0.0,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.0,
+      "min_spacing_h": 1.0,
+      "max_calls_per_week": 168.0
+    },
+    "h1_rho0.0_T0.5": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 0.0,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.0,
+      "min_spacing_h": 1.0,
+      "max_calls_per_week": 168.0
+    },
+    "h1_rho0.0_T1.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 0.0,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.0,
+      "min_spacing_h": 1.0,
+      "max_calls_per_week": 168.0
+    },
+    "h1_rho0.0_T4.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 0.0,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.0,
+      "min_spacing_h": 1.0,
+      "max_calls_per_week": 168.0
+    },
+    "h1_rho0.5_T0.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 1.7732677618464179,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.7622316619983899,
+      "min_spacing_h": 1.7622316619983898,
+      "max_calls_per_week": 95.3336633445152
+    },
+    "h1_rho0.5_T0.5": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 2.2165847023080225,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.9527895774979874,
+      "min_spacing_h": 1.9527895774979873,
+      "max_calls_per_week": 86.0307746087267
+    },
+    "h1_rho0.5_T1.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 2.659901642769627,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 1.1433474929975849,
+      "min_spacing_h": 2.143347492997585,
+      "max_calls_per_week": 78.3820638271973
+    },
+    "h1_rho0.5_T4.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 5.319803285539254,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 2.2866949859951697,
+      "min_spacing_h": 3.2866949859951697,
+      "max_calls_per_week": 51.115178230976525
+    },
+    "h1_rho1.0_T0.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 3.5465355236928358,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 1.5244633239967798,
+      "min_spacing_h": 2.5244633239967795,
+      "max_calls_per_week": 66.54879807642408
+    },
+    "h1_rho1.0_T0.5": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 4.433169404616045,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 1.9055791549959749,
+      "min_spacing_h": 2.9055791549959746,
+      "max_calls_per_week": 57.81979806371262
+    },
+    "h1_rho1.0_T1.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 5.319803285539254,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 2.2866949859951697,
+      "min_spacing_h": 3.2866949859951697,
+      "max_calls_per_week": 51.115178230976525
+    },
+    "h1_rho1.0_T4.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 10.639606571078508,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 4.5733899719903395,
+      "min_spacing_h": 5.5733899719903395,
+      "max_calls_per_week": 30.14323434109254
+    },
+    "h4_rho0.0_T0.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 0.0,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.0,
+      "min_spacing_h": 4.0,
+      "max_calls_per_week": 42.0
+    },
+    "h4_rho0.0_T0.5": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 0.0,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.0,
+      "min_spacing_h": 4.0,
+      "max_calls_per_week": 42.0
+    },
+    "h4_rho0.0_T1.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 0.0,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.0,
+      "min_spacing_h": 4.0,
+      "max_calls_per_week": 42.0
+    },
+    "h4_rho0.0_T4.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 0.0,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.0,
+      "min_spacing_h": 4.0,
+      "max_calls_per_week": 42.0
+    },
+    "h4_rho0.5_T0.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 7.0930710473856715,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 3.0489266479935595,
+      "min_spacing_h": 7.048926647993559,
+      "max_calls_per_week": 23.8334158361288
+    },
+    "h4_rho0.5_T0.5": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 7.536387987847276,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 3.239484563493157,
+      "min_spacing_h": 7.239484563493157,
+      "max_calls_per_week": 23.20607199678005
+    },
+    "h4_rho0.5_T1.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 7.97970492830888,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 3.430042478992754,
+      "min_spacing_h": 7.430042478992754,
+      "max_calls_per_week": 22.6109070674889
+    },
+    "h4_rho0.5_T4.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 10.639606571078508,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 4.5733899719903395,
+      "min_spacing_h": 8.57338997199034,
+      "max_calls_per_week": 19.595515956799325
+    },
+    "h4_rho1.0_T0.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 14.186142094771343,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 6.097853295987119,
+      "min_spacing_h": 10.097853295987118,
+      "max_calls_per_week": 16.63719951910602
+    },
+    "h4_rho1.0_T0.5": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 15.072775975694553,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 6.478969126986314,
+      "min_spacing_h": 10.478969126986314,
+      "max_calls_per_week": 16.03211136173237
+    },
+    "h4_rho1.0_T1.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 15.95940985661776,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 6.860084957985508,
+      "min_spacing_h": 10.860084957985508,
+      "max_calls_per_week": 15.469492241537967
+    },
+    "h4_rho1.0_T4.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 21.279213142157015,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 9.146779943980679,
+      "min_spacing_h": 13.146779943980679,
+      "max_calls_per_week": 12.778794557744131
+    },
+    "h24_rho0.0_T0.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 0.0,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.0,
+      "min_spacing_h": 24.0,
+      "max_calls_per_week": 7.0
+    },
+    "h24_rho0.0_T0.5": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 0.0,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.0,
+      "min_spacing_h": 24.0,
+      "max_calls_per_week": 7.0
+    },
+    "h24_rho0.0_T1.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 0.0,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.0,
+      "min_spacing_h": 24.0,
+      "max_calls_per_week": 7.0
+    },
+    "h24_rho0.0_T4.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 0.0,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 0.0,
+      "min_spacing_h": 24.0,
+      "max_calls_per_week": 7.0
+    },
+    "h24_rho0.5_T0.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 42.55842628431403,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 18.293559887961358,
+      "min_spacing_h": 42.29355988796136,
+      "max_calls_per_week": 3.972235972688133
+    },
+    "h24_rho0.5_T0.5": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 43.00174322477563,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 18.484117803460954,
+      "min_spacing_h": 42.484117803460954,
+      "max_calls_per_week": 3.9544189378533816
+    },
+    "h24_rho0.5_T1.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 43.44506016523724,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 18.67467571896055,
+      "min_spacing_h": 42.67467571896055,
+      "max_calls_per_week": 3.9367610220727896
+    },
+    "h24_rho0.5_T4.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 46.10496180800686,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 19.818023211958135,
+      "min_spacing_h": 43.818023211958135,
+      "max_calls_per_week": 3.8340387741214226
+    },
+    "h24_rho1.0_T0.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 85.11685256862806,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 36.587119775922716,
+      "min_spacing_h": 60.587119775922716,
+      "max_calls_per_week": 2.772866586517669
+    },
+    "h24_rho1.0_T0.5": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 86.00348644955126,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 36.96823560692191,
+      "min_spacing_h": 60.96823560692191,
+      "max_calls_per_week": 2.7555332432963904
+    },
+    "h24_rho1.0_T1.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 86.89012033047447,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 37.3493514379211,
+      "min_spacing_h": 61.3493514379211,
+      "max_calls_per_week": 2.7384152572500753
+    },
+    "h24_rho1.0_T4.0": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 92.20992361601373,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 39.63604642391627,
+      "min_spacing_h": 63.63604642391627,
+      "max_calls_per_week": 2.6400131598505583
+    }
+  },
+  "recovery_note": "Primary calculation uses sold K_q(0.95,h)=q*K and a fixed rebound-absorption rate equal to 10% of the mean non-eligible layer (23.26 MW); recovery time scales linearly with q; call spacing changes with q but is not proportional to q because it also includes the fixed interruption duration. The mean-eligible calculation is retained only as a conservative stress scenario and must not be quoted as the sold-product result.",
+  "headroom_vs_q": {
+    "m": 0.05,
+    "budget_pct": 0.5,
+    "by_q_mw": {
+      "0.1": {
+        "p50": 1690.4208978394308,
+        "p5": 1639.3883333685153,
+        "p95": 1745.4323528054374
+      },
+      "0.25": {
+        "p50": 1710.2368186897365,
+        "p5": 1655.2772364793782,
+        "p95": 1764.0342545691965
+      },
+      "0.4": {
+        "p50": 1729.5339353404415,
+        "p5": 1673.041530696537,
+        "p95": 1782.7651433817664
+      },
+      "0.5": {
+        "p50": 1741.8770425319963,
+        "p5": 1682.8779668312563,
+        "p95": 1795.4222730322726
+      },
+      "0.6": {
+        "p50": 1753.5060299633187,
+        "p5": 1692.9109483980938,
+        "p95": 1808.2604210821955
+      },
+      "0.75": {
+        "p50": 1771.5808891261986,
+        "p5": 1708.0215728356052,
+        "p95": 1827.865639913398
+      },
+      "0.9": {
+        "p50": 1790.9854939352954,
+        "p5": 1723.4083177199864,
+        "p95": 1843.430942994928
+      },
+      "1.0": {
+        "p50": 1804.348638488591,
+        "p5": 1733.8478225556173,
+        "p95": 1861.4480684173031
+      }
+    },
+    "no_flex_mw": 1676.3590958348036,
+    "tier20_mw": 2095.448869786196,
+    "gain_over_noflex_pct": {
+      "0.1": 0.8388299404087141,
+      "0.25": 2.020910850133939,
+      "0.4": 3.172043486253018,
+      "0.5": 3.908347970311543,
+      "0.6": 4.602053004049056,
+      "0.75": 5.680274204255498,
+      "0.9": 6.837818841160015,
+      "1.0": 7.634971705752003
+    },
+    "q_at_half_of_full_gain": 0.48765970880216325,
+    "q_break_even_vs_tier20": null
+  },
+  "headline": {
+    "K95_4h_mw_by_q": {
+      "0.1": 0.23198574507836445,
+      "0.25": 0.5799643626959111,
+      "0.4": 0.9279429803134578,
+      "0.5": 1.1599287253918222,
+      "0.6": 1.3919144704701867,
+      "0.75": 1.7398930880877335,
+      "0.9": 2.0878717057052802,
+      "1.0": 2.3198574507836445
+    },
+    "q_needed_for_K95_4h_ge_1MW": 0.431060968708315,
+    "q_needed_for_K95_4h_ge_1.8MW": 0.775909743674967,
+    "recovery_sold_K_q1_h4_rho1_T1": {
+      "interrupted_power_mw": 2.3198574507836445,
+      "rebound_energy_mwh": 10.4393585285264,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 4.4873141961991605,
+      "min_spacing_h": 8.487314196199161,
+      "max_calls_per_week": 19.794247758052215
+    },
+    "recovery_mean_eligible_stress_q1_h4_rho1_T1": {
+      "interrupted_power_mw": 3.5465355236928358,
+      "rebound_energy_mwh": 15.95940985661776,
+      "rebound_absorption_rate_mw": 2.3264157739096434,
+      "R_min_h_at_10pct_headroom": 6.860084957985508,
+      "min_spacing_h": 10.860084957985508,
+      "max_calls_per_week": 15.469492241537967
+    },
+    "interpretation": "K is exactly linear in q, so the surface's SHAPE (duration and aggregation dependence) is invariant to the realizable fraction; only the level scales. The story survives any q; the absolute MW claim does not."
+  }
+}

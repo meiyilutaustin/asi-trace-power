@@ -1,0 +1,93 @@
+{
+  "hours_covered": 4439,
+  "mean_mw": {
+    "p50": 55.8344168341452,
+    "p5": 45.742161057976176,
+    "p95": 69.09895456667576,
+    "base": 52.32203756071998
+  },
+  "mean_it_mw_p50": 45.07869348568593,
+  "peak_mw_p50": 68.07179922778278,
+  "min_mw_p50": 44.02589482212099,
+  "load_factor_p50": 0.8202283099248092,
+  "peak_to_trough_p50": 1.5461763923894132,
+  "growth": {
+    "first_week_mean_mw": 46.27590734511008,
+    "last_week_mean_mw": 64.24895320227652,
+    "growth_pct": 38.83888374814468
+  },
+  "avg_daily_amplitude_mw": 3.4222359722135294,
+  "avg_daily_amplitude_pct_of_mean": 6.129258916376255,
+  "daily_profile_peak_hour": 17,
+  "daily_profile_trough_hour": 6,
+  "daily_profile_swing_pct": 3.0355612731015946,
+  "autocorr_24h": 0.9504949570362082,
+  "autocorr_7d": 0.8462796880804052,
+  "component_share_pct_base": {
+    "gpu_active": 67.35135775134357,
+    "gpu_idle_floor": 1.5781336423970889,
+    "host": 31.070508606259317
+  },
+  "online_floor_share_of_it_pct_base": 13.792170638694484,
+  "standby_first_day": 109,
+  "base_params": {
+    "idle_frac": 0.2,
+    "null_g": 0.3,
+    "pue": 1.2,
+    "online_floor": 0.43,
+    "c0": 0.2875,
+    "host_idle": 1.5,
+    "host_peak": 4.0,
+    "family": "anchored"
+  },
+  "config": {
+    "online_floor_frac": {
+      "base": 0.43,
+      "range": [
+        0.35,
+        0.5
+      ]
+    },
+    "curve_families": {
+      "linear": {
+        "default": [
+          0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ]
+      },
+      "anchored": {
+        "training": [
+          0,
+          0.5,
+          0.75,
+          0.9,
+          1.0
+        ],
+        "online_inference": [
+          0,
+          0.2,
+          0.35,
+          0.45,
+          0.55
+        ],
+        "offline_inference": [
+          0,
+          0.3,
+          0.5,
+          0.7,
+          0.85
+        ],
+        "default": [
+          0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ]
+      }
+    }
+  }
+}

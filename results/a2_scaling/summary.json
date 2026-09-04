@@ -1,0 +1,428 @@
+{
+  "config": {
+    "roll_h": 169,
+    "min_hours": 1500,
+    "min_mean_mw": 0.01,
+    "nboot": 500,
+    "residuals": [
+      "raw",
+      "deseason",
+      "capnorm"
+    ]
+  },
+  "u_shape_quadfit": {
+    "c2": 0.14855564638635776,
+    "c1": -0.08421993498060042,
+    "c0": 0.08230785978081791,
+    "n_clusters": 14,
+    "c2_ci90_bootstrap": [
+      -1.207158083426705,
+      10.007459802000763
+    ],
+    "c2_ci_excludes_zero": false
+  },
+  "anchored": {
+    "raw": {
+      "taylor": {
+        "cluster_type_prio": {
+          "beta": 0.4703426124563902,
+          "intercept": -1.0852373689415706,
+          "r2": 0.5018332118687894,
+          "n_units": 78,
+          "beta_ci90": [
+            0.3867789021898621,
+            0.5388128822169642
+          ]
+        },
+        "cluster_type": {
+          "beta": 0.5972736270671293,
+          "intercept": -1.0490933086880119,
+          "r2": 0.6372461789856212,
+          "n_units": 53,
+          "beta_ci90": [
+            0.49163727871693874,
+            0.6972616713204061
+          ]
+        },
+        "cluster": {
+          "beta": 0.6615193108180096,
+          "intercept": -1.2495514196972035,
+          "r2": 0.8356397901718567,
+          "n_units": 14,
+          "beta_ci90": [
+            0.5469552320505788,
+            0.987461760455913
+          ]
+        },
+        "fleet": null
+      },
+      "n_units": {
+        "cluster_type_prio": 78,
+        "cluster_type": 53,
+        "cluster": 14,
+        "fleet": 1
+      },
+      "fleet_cv": 0.029184884770521457,
+      "sync_median": {
+        "cluster_type_prio->cluster_type": 0.9842368255560424,
+        "cluster_type->cluster": 0.654267950299669,
+        "cluster->fleet": 1.7579733433753975
+      },
+      "cluster_fleet_sync": {
+        "ratio": 1.7579733433753975,
+        "n_clusters": 14,
+        "loo_min": 1.6194438077180668,
+        "loo_max": 1.7661709780678065,
+        "jackknife_se": 0.1614413907682136,
+        "ci90_jackknife": [
+          1.492402255561686,
+          2.0235444311891086
+        ],
+        "rho_bar_pairwise": 0.3226949944591401,
+        "rho_median_pairwise": 0.31372590618515295,
+        "equal_weight_identity_sqrt_1_plus_n1_rho": 2.2792619261438167
+      },
+      "excluded_clusters": [
+        {
+          "unit": "2113326128600da0b24465008fa9a048",
+          "mu_mw": 0.011261139930538634,
+          "hours": 1213
+        },
+        {
+          "unit": "86a11d5db8cfc8e706e5e8107e3484ae",
+          "mu_mw": 0.7414303839962789,
+          "hours": 1473
+        }
+      ],
+      "excluded_cluster_power_share_pct": 2.393580113595523
+    },
+    "deseason": {
+      "taylor": {
+        "cluster_type_prio": {
+          "beta": 0.4254559549985067,
+          "intercept": -1.1997601796916881,
+          "r2": 0.40322045815367336,
+          "n_units": 78
+        },
+        "cluster_type": {
+          "beta": 0.59074248821857,
+          "intercept": -1.1295378352158028,
+          "r2": 0.5981780938005257,
+          "n_units": 53
+        },
+        "cluster": {
+          "beta": 0.6487433012297525,
+          "intercept": -1.3010276685213011,
+          "r2": 0.8141642594566181,
+          "n_units": 14
+        },
+        "fleet": null
+      },
+      "n_units": {
+        "cluster_type_prio": 78,
+        "cluster_type": 53,
+        "cluster": 14,
+        "fleet": 1
+      },
+      "fleet_cv": 0.02508288100956848,
+      "sync_median": {
+        "cluster_type_prio->cluster_type": 0.9887158820345416,
+        "cluster_type->cluster": 0.6656105887899443,
+        "cluster->fleet": 1.631369163054255
+      },
+      "cluster_fleet_sync": {
+        "ratio": 1.631369163054255,
+        "n_clusters": 14,
+        "loo_min": 1.4982866394387129,
+        "loo_max": 1.6577948416444146,
+        "jackknife_se": 0.1692385563969352,
+        "ci90_jackknife": [
+          1.3529717377812966,
+          1.9097665883272135
+        ],
+        "rho_bar_pairwise": 0.2633145177284118,
+        "rho_median_pairwise": 0.2794782388312329,
+        "equal_weight_identity_sqrt_1_plus_n1_rho": 2.1031140555065844
+      },
+      "excluded_clusters": [
+        {
+          "unit": "2113326128600da0b24465008fa9a048",
+          "mu_mw": 0.011261139930538634,
+          "hours": 1213
+        },
+        {
+          "unit": "86a11d5db8cfc8e706e5e8107e3484ae",
+          "mu_mw": 0.7414303839962789,
+          "hours": 1473
+        }
+      ],
+      "excluded_cluster_power_share_pct": 2.393580113595523
+    },
+    "capnorm": {
+      "taylor": {
+        "cluster_type_prio": {
+          "beta": 0.47045667222720444,
+          "intercept": -1.164129727782514,
+          "r2": 0.39260833277630836,
+          "n_units": 62
+        },
+        "cluster_type": {
+          "beta": 0.6765883838036215,
+          "intercept": -1.0779788372053594,
+          "r2": 0.587741615824616,
+          "n_units": 46
+        },
+        "cluster": {
+          "beta": 0.7541382186298075,
+          "intercept": -1.2505107163143736,
+          "r2": 0.4923201747351707,
+          "n_units": 13
+        },
+        "fleet": null
+      },
+      "n_units": {
+        "cluster_type_prio": 66,
+        "cluster_type": 47,
+        "cluster": 13,
+        "fleet": 1
+      },
+      "fleet_cv": 0.02506091772740151,
+      "sync_median": {
+        "cluster_type_prio->cluster_type": 0.9937683745586776,
+        "cluster_type->cluster": 0.716014820923428,
+        "cluster->fleet": 1.2677427251623425
+      },
+      "cluster_fleet_sync": {
+        "ratio": 1.2677427251623425,
+        "n_clusters": 13,
+        "loo_min": 1.1233189025126256,
+        "loo_max": 1.4637553531915533,
+        "jackknife_se": 0.2749684202152496,
+        "ci90_jackknife": [
+          0.815419673908257,
+          1.720065776416428
+        ],
+        "rho_bar_pairwise": 0.2719554447661406,
+        "rho_median_pairwise": 0.2944463420087728,
+        "equal_weight_identity_sqrt_1_plus_n1_rho": 2.06481605408174
+      },
+      "excluded_clusters": [
+        {
+          "unit": "86a11d5db8cfc8e706e5e8107e3484ae",
+          "mu_mw": 0.7414303839962789,
+          "hours": 1473
+        }
+      ],
+      "excluded_cluster_power_share_pct": 2.3594283443649893
+    }
+  },
+  "linear": {
+    "raw": {
+      "taylor": {
+        "cluster_type_prio": {
+          "beta": 0.49095173229304656,
+          "intercept": -1.0350793645319438,
+          "r2": 0.5423094285574898,
+          "n_units": 78,
+          "beta_ci90": [
+            0.41891199828855197,
+            0.5657448561243716
+          ]
+        },
+        "cluster_type": {
+          "beta": 0.6239303654774363,
+          "intercept": -1.0057660416780037,
+          "r2": 0.6934365868402044,
+          "n_units": 53,
+          "beta_ci90": [
+            0.5321045466375376,
+            0.7292091148934916
+          ]
+        },
+        "cluster": {
+          "beta": 0.6658445516234384,
+          "intercept": -1.2217348366919722,
+          "r2": 0.8567789786543639,
+          "n_units": 14,
+          "beta_ci90": [
+            0.5535008790164611,
+            0.9352433027351352
+          ]
+        },
+        "fleet": null
+      },
+      "n_units": {
+        "cluster_type_prio": 78,
+        "cluster_type": 53,
+        "cluster": 14,
+        "fleet": 1
+      },
+      "fleet_cv": 0.03072560940728585,
+      "sync_median": {
+        "cluster_type_prio->cluster_type": 0.9854594510562665,
+        "cluster_type->cluster": 0.6572814062283339,
+        "cluster->fleet": 1.7897642913832827
+      },
+      "cluster_fleet_sync": {
+        "ratio": 1.7897642913832827,
+        "n_clusters": 14,
+        "loo_min": 1.661436268087043,
+        "loo_max": 1.7929721104263252,
+        "jackknife_se": 0.14872450237182755,
+        "ci90_jackknife": [
+          1.5451124849816265,
+          2.034416097784939
+        ],
+        "rho_bar_pairwise": 0.3365563835482865,
+        "rho_median_pairwise": 0.3379222902598726,
+        "equal_weight_identity_sqrt_1_plus_n1_rho": 2.318454870409973
+      },
+      "excluded_clusters": [
+        {
+          "unit": "2113326128600da0b24465008fa9a048",
+          "mu_mw": 0.011734938949201277,
+          "hours": 1213
+        },
+        {
+          "unit": "86a11d5db8cfc8e706e5e8107e3484ae",
+          "mu_mw": 0.7609942116380866,
+          "hours": 1473
+        }
+      ],
+      "excluded_cluster_power_share_pct": 2.3780039092011505
+    },
+    "deseason": {
+      "taylor": {
+        "cluster_type_prio": {
+          "beta": 0.4355504313395997,
+          "intercept": -1.1643599191977834,
+          "r2": 0.42875799813560284,
+          "n_units": 78
+        },
+        "cluster_type": {
+          "beta": 0.6063015155999153,
+          "intercept": -1.1009995424601309,
+          "r2": 0.6350259342148804,
+          "n_units": 53
+        },
+        "cluster": {
+          "beta": 0.6546781198060919,
+          "intercept": -1.2727147597116422,
+          "r2": 0.8390094754889692,
+          "n_units": 14
+        },
+        "fleet": null
+      },
+      "n_units": {
+        "cluster_type_prio": 78,
+        "cluster_type": 53,
+        "cluster": 14,
+        "fleet": 1
+      },
+      "fleet_cv": 0.026589920804954488,
+      "sync_median": {
+        "cluster_type_prio->cluster_type": 0.9926170391821094,
+        "cluster_type->cluster": 0.6818991171179569,
+        "cluster->fleet": 1.657862493364661
+      },
+      "cluster_fleet_sync": {
+        "ratio": 1.657862493364661,
+        "n_clusters": 14,
+        "loo_min": 1.5183103539550067,
+        "loo_max": 1.6799069585075597,
+        "jackknife_se": 0.16620591503917587,
+        "ci90_jackknife": [
+          1.3844537631252167,
+          1.9312712236041054
+        ],
+        "rho_bar_pairwise": 0.26893567948113584,
+        "rho_median_pairwise": 0.2875246497953691,
+        "equal_weight_identity_sqrt_1_plus_n1_rho": 2.1204159576023676
+      },
+      "excluded_clusters": [
+        {
+          "unit": "2113326128600da0b24465008fa9a048",
+          "mu_mw": 0.011734938949201277,
+          "hours": 1213
+        },
+        {
+          "unit": "86a11d5db8cfc8e706e5e8107e3484ae",
+          "mu_mw": 0.7609942116380866,
+          "hours": 1473
+        }
+      ],
+      "excluded_cluster_power_share_pct": 2.3780039092011505
+    },
+    "capnorm": {
+      "taylor": {
+        "cluster_type_prio": {
+          "beta": 0.5216854503603396,
+          "intercept": -1.1168998923327607,
+          "r2": 0.48879844711698267,
+          "n_units": 64
+        },
+        "cluster_type": {
+          "beta": 0.6912391230994561,
+          "intercept": -1.0515562223623018,
+          "r2": 0.6284040134804362,
+          "n_units": 46
+        },
+        "cluster": {
+          "beta": 0.736895187064451,
+          "intercept": -1.215793831689303,
+          "r2": 0.49738999917926163,
+          "n_units": 13
+        },
+        "fleet": null
+      },
+      "n_units": {
+        "cluster_type_prio": 67,
+        "cluster_type": 47,
+        "cluster": 13,
+        "fleet": 1
+      },
+      "fleet_cv": 0.026415332806921946,
+      "sync_median": {
+        "cluster_type_prio->cluster_type": 0.9895103779102953,
+        "cluster_type->cluster": 0.7300519738359033,
+        "cluster->fleet": 1.2918368448222606
+      },
+      "cluster_fleet_sync": {
+        "ratio": 1.2918368448222606,
+        "n_clusters": 13,
+        "loo_min": 1.1440927702334978,
+        "loo_max": 1.4871810854702634,
+        "jackknife_se": 0.2786372794982102,
+        "ci90_jackknife": [
+          0.8334785200477048,
+          1.7501951695968163
+        ],
+        "rho_bar_pairwise": 0.2764892799024191,
+        "rho_median_pairwise": 0.30258255919699995,
+        "equal_weight_identity_sqrt_1_plus_n1_rho": 2.077948834507007
+      },
+      "excluded_clusters": [
+        {
+          "unit": "86a11d5db8cfc8e706e5e8107e3484ae",
+          "mu_mw": 0.7609942116380866,
+          "hours": 1473
+        }
+      ],
+      "excluded_cluster_power_share_pct": 2.3435653386010196
+    }
+  },
+  "sync_by_train_share": {
+    "low": {
+      "median_sync_ratio": 0.668759166399597,
+      "n": 4
+    },
+    "mid": {
+      "median_sync_ratio": 0.6217124729647667,
+      "n": 4
+    },
+    "high": {
+      "median_sync_ratio": 0.6393498337834922,
+      "n": 4
+    }
+  }
+}

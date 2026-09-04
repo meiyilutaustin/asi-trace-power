@@ -1,0 +1,114 @@
+{
+  "calculation": "A6 13-cluster workload scalar calibrated by construction to K(0.95, 4 h)",
+  "source_a6_summary": "results/a6_availability/summary.json",
+  "scope": {
+    "n_clusters": 13,
+    "included_cluster_ids": [
+      "9089d80b",
+      "6d5f55ee",
+      "27dc4b08",
+      "1f28e063",
+      "2f961135",
+      "4d6f06d0",
+      "70870b9a",
+      "4e63968e",
+      "38b984d4",
+      "87532e37",
+      "86a11d5d",
+      "da8d7fb8",
+      "f8dd18ee"
+    ],
+    "excluded_clusters": [
+      {
+        "cluster": "3f39b4b6",
+        "mean_curtail_mw": 0.013812969572820657,
+        "mean_workload_mw": 0.3779395203643024
+      },
+      {
+        "cluster": "21133261",
+        "mean_curtail_mw": 0.0018662782250172742,
+        "mean_workload_mw": 0.0030765231386809377
+      },
+      {
+        "cluster": "65e98ec7",
+        "mean_curtail_mw": 0.0,
+        "mean_workload_mw": 0.010847042791765996
+      }
+    ],
+    "minimum_cluster_mean_eligible_mw": 0.02,
+    "eligibility": "central",
+    "preemption_boundary": "idle_retained",
+    "power_boundary": "GPU-side workload power; facility-marginal ratio is numerically identical at response multiplier 1.0",
+    "scalar_denominator": "the same 13-cluster A6 GPU-side workload-power series L(t)",
+    "mean_eligible_mw": 3.53085274373735,
+    "mean_workload_mw": 28.97438421996517,
+    "mean_eligible_share_of_workload": 0.12186118320693665
+  },
+  "product": {
+    "alpha": 0.95,
+    "calibration_duration_hours": 4,
+    "definition": "K(alpha,h) is the (1-alpha) quantile of h-hour running minima"
+  },
+  "formula": {
+    "mean_scalar": "K_mean(h) = p_mean K_L(h)",
+    "tail_share": "p_tail = K_C(4,0.95) / K_L(4,0.95)",
+    "tail_ratio": "K_tail(h)/K_C(h) = [K_mean(h)/K_C(h)] / [K_mean(4)/K_C(4)]"
+  },
+  "calibration": {
+    "tail_share_of_workload": 0.09713903411957073,
+    "tail_share_of_workload_pct": 9.713903411957073,
+    "tail_share_over_mean_share": 0.7971285979934694,
+    "four_hour_closure_error_mw": 0.0
+  },
+  "by_horizon": {
+    "1": {
+      "observed_k_mw": 2.507773954914842,
+      "mean_calibrated_scalar_k_mw": 2.944684973497968,
+      "mean_calibrated_scalar_over_observed": 1.174222647829502,
+      "implied_workload_k_mw": 24.16425719827041,
+      "tail_calibrated_scalar_k_mw": 2.3472926044568716,
+      "tail_calibrated_scalar_over_observed": 0.9360064529965102
+    },
+    "4": {
+      "observed_k_mw": 2.316797571285743,
+      "mean_calibrated_scalar_k_mw": 2.9064288712230137,
+      "mean_calibrated_scalar_over_observed": 1.2545027270595963,
+      "implied_workload_k_mw": 23.850325384478726,
+      "tail_calibrated_scalar_k_mw": 2.316797571285743,
+      "tail_calibrated_scalar_over_observed": 1.0
+    },
+    "24": {
+      "observed_k_mw": 1.9465669946147905,
+      "mean_calibrated_scalar_k_mw": 2.8544255353490073,
+      "mean_calibrated_scalar_over_observed": 1.466389568530558,
+      "implied_workload_k_mw": 23.423582967365494,
+      "tail_calibrated_scalar_k_mw": 2.2753442250695124,
+      "tail_calibrated_scalar_over_observed": 1.1689010608750119
+    }
+  },
+  "stale_table_values": {
+    "reported_ratios_h1_h4_h24": [
+      0.79,
+      0.857,
+      1.019
+    ],
+    "status": "invalid as a by-construction 4 h calibration because the 4 h ratio is not 1",
+    "replacement_ratios_h1_h4_h24": [
+      0.9360064529965102,
+      1.0,
+      1.1689010608750119
+    ]
+  },
+  "k_surface_figure_audit": {
+    "plot_source": "src/replot_v2.py",
+    "res_figure": "figures/F_k_surface.png",
+    "paper_figure": "figures/F_k_surface.png",
+    "res_figure_sha256": "0360cd00ea86c265611594eca8652e445ba320e5f3c2561f16e32ac9a70fea04",
+    "paper_figure_sha256": "0360cd00ea86c265611594eca8652e445ba320e5f3c2561f16e32ac9a70fea04",
+    "figures_identical": true,
+    "mean_calibrated_scalar_present": true,
+    "tail_calibrated_scalar_present": false,
+    "regeneration_required_for_this_correction": false,
+    "reason": "The plot reads A6 fleet.k_const and labels it as calibrated to the mean; it does not display the stale tail-calibrated table series."
+  }
+}

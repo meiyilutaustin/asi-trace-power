@@ -1,0 +1,78 @@
+{
+  "censoring": {
+    "n_pods": 36685018,
+    "n_spans": 77828076,
+    "joined_pct_spans": 47.13596928697042,
+    "excluded_censored_pct": 0.022679558178218696,
+    "null_delay_gh_pct": 1.019656362268819,
+    "gh_weighted_mean_delay_h": 0.4739958409525815
+  },
+  "watts_per_busy_gpu": {
+    "dev|nvidia": 123.8,
+    "dev|xpu": 165.3,
+    "offline_inference|nvidia": 187.2,
+    "offline_inference|xpu": 226.3,
+    "online_inference|nvidia": 132.9,
+    "online_inference|xpu": 227.0,
+    "other|nvidia": 301.6,
+    "other|xpu": 352.0,
+    "training|nvidia": 356.1,
+    "training|xpu": 396.1,
+    "unknown|nvidia": 157.2,
+    "unknown|xpu": 223.6
+  },
+  "cover_day": 109,
+  "battery_full_window": {
+    "window": "day 14-184",
+    "hours": 4080,
+    "mean_actual_mw": 16.204129582497007,
+    "p99_discharge_mw": 0.20803288946908424,
+    "p99_charge_mw": 0.1842156723782049,
+    "p99_discharge_pct_of_load": 1.2838263753073926,
+    "p99_charge_pct_of_load": 1.1368439843704201,
+    "max_abs_mw": 0.33660355603360514,
+    "E_range_mwh": 15.50735588621875,
+    "daily_cycle_median_mwh": 0.18952936752246963,
+    "daily_cycle_p90_mwh": 1.2894435018872281,
+    "daily_cycle_med_pct_of_daily_energy": 0.048734842188826705
+  },
+  "battery_post_coverage": {
+    "window": "day 110-184",
+    "hours": 1776,
+    "mean_actual_mw": 31.24088040605476,
+    "p99_discharge_mw": 0.24473892918866458,
+    "p99_charge_mw": 0.22571891139928457,
+    "p99_discharge_pct_of_load": 0.7833931886926977,
+    "p99_charge_pct_of_load": 0.722511364806282,
+    "max_abs_mw": 0.33660355603360514,
+    "E_range_mwh": 7.682037291589346,
+    "daily_cycle_median_mwh": 0.8270158154977292,
+    "daily_cycle_p90_mwh": 1.6065997934439915,
+    "daily_cycle_med_pct_of_daily_energy": 0.11030096419986589
+  },
+  "shifted_energy_total_mwh": 352.21437521961315,
+  "backlog_replay": {
+    "h1": {
+      "mean_deferrable_arrival_mw_post": 0.007941114192233624,
+      "p10_mw_post": 0.0,
+      "k95_mw_post": 0.0,
+      "mean_energy_per_invocation_mwh_post": 0.007941114192233624,
+      "share_of_shift_layer_pct_post": 0.08260779807078664,
+      "mean_deferrable_arrival_mw_full": 0.0035837017990237277,
+      "eligible_pods": 20570,
+      "eligible_gh_pct": 2.0791451919093586
+    },
+    "h4": {
+      "mean_deferrable_arrival_mw_post": 0.003529397710792907,
+      "p10_mw_post": 0.0,
+      "k95_mw_post": 0.0,
+      "mean_energy_per_invocation_mwh_post": 0.012315741201395567,
+      "share_of_shift_layer_pct_post": 0.03671471865872642,
+      "mean_deferrable_arrival_mw_full": 0.001570508023943148,
+      "eligible_pods": 9708,
+      "eligible_gh_pct": 1.0123543102194463
+    }
+  },
+  "shift_layer_mean_mw_post": 9.613032156393858,
+  "note": "D(t) before the coverage jump is dominated by missing records; use the post-coverage window. Backlog replay counts only newly-arriving HP shiftable pods whose observed queueing delay >= h; running pods are not paused."
+}

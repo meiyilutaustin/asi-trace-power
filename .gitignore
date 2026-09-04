@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.log
+*.out
+.DS_Store
+# raw trace and large aggregates live under $ASI_ROOT, never here
+data/aggregates/
+*.zip

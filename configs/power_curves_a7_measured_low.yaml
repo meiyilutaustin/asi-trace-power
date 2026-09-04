@@ -1,0 +1,92 @@
+gpu_tdp_w:
+  A10: 150
+  A30: 165
+  A100:
+    base: 400
+    range:
+    - 300
+    - 460
+  A800:
+    base: 400
+    range:
+    - 300
+    - 460
+  H800: 700
+  H20: 400
+  H20-141GB: 400
+  L20: 275
+tdp_rel_uncertainty: 0.15
+xpu_tdp_range_w:
+- 250
+- 700
+default_tdp_w: 400
+idle_frac:
+  base: 0.18
+  range:
+  - 0.15
+  - 0.21
+curve_families:
+  linear:
+    default:
+    - 0
+    - 0.25
+    - 0.5
+    - 0.75
+    - 1.0
+  anchored:
+    training:
+    - 0.0
+    - 0.397
+    - 0.595
+    - 0.714
+    - 0.793
+    online_inference:
+    - 0.0
+    - 0.11
+    - 0.195
+    - 0.25
+    - 0.305
+    offline_inference:
+    - 0.0
+    - 0.196
+    - 0.331
+    - 0.46
+    - 0.561
+    default:
+    - 0
+    - 0.25
+    - 0.5
+    - 0.75
+    - 1.0
+null_util_g:
+  base: 0.3
+  range:
+  - 0.1
+  - 0.5
+host_w_per_core:
+  idle: 1.5
+  peak: 4.0
+  idle_range:
+  - 1.0
+  - 2.0
+  peak_range:
+  - 3.0
+  - 6.0
+pue:
+  base: 1.2
+  range:
+  - 1.1
+  - 1.4
+standby_as_idle: true
+mc_samples: 300
+mc_seed: 0
+_variant_note: 'A7: decode-dominated inference lower bound; training 0.83 | v2 (revision plan
+ /P0-5): online floor 0.43, saturation train 0.83/online 0.43/offline 0.64 TDP'
+online_floor_frac:
+  base: 0.43
+  range:
+  - 0.35
+  - 0.5
+curtail_boundary: idle_retained
+eligibility: central
+pue_marginal: 1.0

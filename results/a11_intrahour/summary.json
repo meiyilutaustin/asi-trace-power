@@ -1,0 +1,68 @@
+{
+  "offline inference": {
+    "n_windows": 78,
+    "hour_mean_frac_tdp": 0.8545188938213133,
+    "r_1min_median": 0.7990941935676872,
+    "r_1min_p10": 0.7391917352560256,
+    "r_1min_node_p10": 0.7392120769925411,
+    "r_5min_median": 0.9417526584563147,
+    "r_5min_p10": 0.9189183846671419,
+    "r_5min_node_p10": 0.9189248922698376,
+    "r_15min_median": 0.9809021487935492,
+    "r_15min_p10": 0.9704587974671318,
+    "r_15min_node_p10": 0.9704583644777538
+  },
+  "online inference (finite)": {
+    "n_windows": 113,
+    "hour_mean_frac_tdp": 0.5295528563744505,
+    "r_1min_median": 0.7767169329024117,
+    "r_1min_p10": 0.5085076046470174,
+    "r_1min_node_p10": 0.5085302125414455,
+    "r_5min_median": 0.8904186109559391,
+    "r_5min_p10": 0.8417869291166287,
+    "r_5min_node_p10": 0.8417687305698819,
+    "r_15min_median": 0.9620594060520549,
+    "r_15min_p10": 0.9143771153675034,
+    "r_15min_node_p10": 0.9143757490429023
+  },
+  "online inference (rate sweep)": {
+    "n_windows": 101,
+    "hour_mean_frac_tdp": 0.7916135981704113,
+    "r_1min_median": 0.47611703504690395,
+    "r_1min_p10": 0.41349463616590465,
+    "r_1min_node_p10": 0.41349526345594534,
+    "r_5min_median": 0.9597497968885433,
+    "r_5min_p10": 0.9124128576931151,
+    "r_5min_node_p10": 0.9124133018230041,
+    "r_15min_median": 0.981228758306709,
+    "r_15min_p10": 0.9447914016888098,
+    "r_15min_node_p10": 0.9447918389169117
+  },
+  "training (LoRA)": {
+    "n_windows": 32,
+    "hour_mean_frac_tdp": 0.8768286865522423,
+    "r_1min_median": 0.8972030990169191,
+    "r_1min_p10": 0.1415318078733407,
+    "r_1min_node_p10": 0.1415551975972261,
+    "r_5min_median": 0.9599329431361923,
+    "r_5min_p10": 0.47967533183356076,
+    "r_5min_node_p10": 0.4796772264333825,
+    "r_15min_median": 0.9864169113867178,
+    "r_15min_p10": 0.9621640311954739,
+    "r_15min_node_p10": 0.9621665283905286
+  },
+  "training (SD)": {
+    "n_windows": 442,
+    "hour_mean_frac_tdp": 0.858117513429567,
+    "r_1min_median": 0.5220292937527276,
+    "r_1min_p10": 0.26359404447322515,
+    "r_1min_node_p10": 0.26365065941494953,
+    "r_5min_median": 0.9043355772087855,
+    "r_5min_p10": 0.8448252913614612,
+    "r_5min_node_p10": 0.8448351586948307,
+    "r_15min_median": 0.9606714421014455,
+    "r_15min_p10": 0.9374163782532782,
+    "r_15min_node_p10": 0.9374181143864014
+  },
+  "_note": "ratio = min short-interval mean / hourly mean per GPU (node = 4-GPU sum). Single-node benchmark runs (NLR 2604.07345 raw NVML, 5 Hz); fleet aggregation would raise the ratios."
+}

@@ -1,0 +1,267 @@
+{
+  "formulations": {
+    "facility_marginal": {
+      "duke_full": {
+        "K95_1h_mw": 44.502299394640175,
+        "K95_4h_mw": 44.114914834089305,
+        "K95_24h_mw": 43.53731012294836,
+        "mean_mw": 52.32203756071998,
+        "mean_frac_of_facility": 1.0
+      },
+      "tier_30_50_20_interruptible_only": {
+        "K95_1h_mw": 8.900459878928036,
+        "K95_4h_mw": 8.822982966817861,
+        "K95_24h_mw": 8.707462024589672,
+        "mean_mw": 10.464407512143996,
+        "mean_frac_of_facility": 0.2,
+        "note": "20% at any hour; 5% annual-energy cap not binding for <= 438 h/yr of full use"
+      },
+      "tier_30_50_20_interruptible_plus_flexible": {
+        "K95_1h_mw": 31.15160957624812,
+        "K95_4h_mw": 30.88044038386251,
+        "K95_24h_mw": 8.707462024589672,
+        "mean_mw": 36.62542629250399,
+        "mean_frac_of_facility": 0.7000000000000001,
+        "note": "flexible 50% assumes intra-day shift with 12 h recovery: valid for h<=4, NOT for 24 h"
+      },
+      "const_mean": {
+        "K95_1h_mw": 3.0164915788293656,
+        "K95_4h_mw": 2.9902335588940865,
+        "K95_24h_mw": 2.9510818797505443,
+        "mean_mw": 3.546535523692836,
+        "mean_frac_of_facility": 0.06778282515425865
+      },
+      "const_K_nameplate": {
+        "K95_1h_mw": 1.9882677045255293,
+        "K95_4h_mw": 1.9882677045255293,
+        "K95_24h_mw": 1.9882677045255293,
+        "mean_mw": 2.319857450783644,
+        "mean_frac_of_facility": 0.04433805637044311
+      },
+      "measured_idle_retained": {
+        "K95_1h_mw": 2.5179440296630315,
+        "K95_4h_mw": 2.3198574507836445,
+        "K95_24h_mw": 1.9504805665157359,
+        "mean_mw": 3.5465355236928358,
+        "mean_frac_of_facility": 0.06778282515425865
+      },
+      "measured_attributed": {
+        "K95_1h_mw": 4.376398907895735,
+        "K95_4h_mw": 4.187503578278984,
+        "K95_24h_mw": 3.7120913445916246,
+        "mean_mw": 5.988070010744849,
+        "mean_frac_of_facility": 0.11444642238551327
+      },
+      "ratios_vs_measured": {
+        "duke_full": {
+          "1h": 17.674062199307812,
+          "4h": 19.01621792286735,
+          "24h": 22.321324739329114
+        },
+        "tier_30_50_20_interruptible_only": {
+          "1h": 3.534812439861563,
+          "4h": 3.8032435845734702,
+          "24h": 4.464264947865823
+        },
+        "tier_30_50_20_interruptible_plus_flexible": {
+          "1h": 12.371843539515467,
+          "4h": 13.311352546007145,
+          "24h": 4.464264947865823
+        },
+        "const_mean": {
+          "1h": 1.1979978678211736,
+          "4h": 1.2889729745609972,
+          "24h": 1.5130024520173735
+        },
+        "const_K_nameplate": {
+          "1h": 0.7896393569922254,
+          "4h": 0.8570646027642325,
+          "24h": 1.019373245065084
+        },
+        "measured_attributed": {
+          "1h": 1.7380842688871898,
+          "4h": 1.8050693489224743,
+          "24h": 1.903167562044857
+        }
+      },
+      "shares": {
+        "mean_eligible_share_of_facility": 0.06778282515425865,
+        "K95_4h_share_of_nameplate": 0.042652741539775434
+      }
+    },
+    "facility_avg_pue": {
+      "duke_full": {
+        "K95_1h_mw": 44.502299394640175,
+        "K95_4h_mw": 44.114914834089305,
+        "K95_24h_mw": 43.53731012294836,
+        "mean_mw": 52.32203756071998,
+        "mean_frac_of_facility": 1.0
+      },
+      "tier_30_50_20_interruptible_only": {
+        "K95_1h_mw": 8.900459878928036,
+        "K95_4h_mw": 8.822982966817861,
+        "K95_24h_mw": 8.707462024589672,
+        "mean_mw": 10.464407512143996,
+        "mean_frac_of_facility": 0.2,
+        "note": "20% at any hour; 5% annual-energy cap not binding for <= 438 h/yr of full use"
+      },
+      "tier_30_50_20_interruptible_plus_flexible": {
+        "K95_1h_mw": 31.15160957624812,
+        "K95_4h_mw": 30.88044038386251,
+        "K95_24h_mw": 8.707462024589672,
+        "mean_mw": 36.62542629250399,
+        "mean_frac_of_facility": 0.7000000000000001,
+        "note": "flexible 50% assumes intra-day shift with 12 h recovery: valid for h<=4, NOT for 24 h"
+      },
+      "const_mean": {
+        "K95_1h_mw": 3.6197898945952383,
+        "K95_4h_mw": 3.5882802706729033,
+        "K95_24h_mw": 3.5412982557006525,
+        "mean_mw": 4.255842628431403,
+        "mean_frac_of_facility": 0.08133939018511038
+      },
+      "const_K_nameplate": {
+        "K95_1h_mw": 2.385921245430635,
+        "K95_4h_mw": 2.385921245430635,
+        "K95_24h_mw": 2.385921245430635,
+        "mean_mw": 2.7838289409403734,
+        "mean_frac_of_facility": 0.05320566764453174
+      },
+      "measured_idle_retained": {
+        "K95_1h_mw": 3.0215328355956377,
+        "K95_4h_mw": 2.7838289409403734,
+        "K95_24h_mw": 2.340576679818883,
+        "mean_mw": 4.255842628431402,
+        "mean_frac_of_facility": 0.08133939018511037
+      },
+      "measured_attributed": {
+        "K95_1h_mw": 5.251678689474881,
+        "K95_4h_mw": 5.0250042939347805,
+        "K95_24h_mw": 4.454509613509949,
+        "mean_mw": 7.185684012893819,
+        "mean_frac_of_facility": 0.13733570686261592
+      },
+      "ratios_vs_measured": {
+        "duke_full": {
+          "1h": 14.728385166089845,
+          "4h": 15.846848269056126,
+          "24h": 18.60110394944093
+        },
+        "tier_30_50_20_interruptible_only": {
+          "1h": 2.945677033217969,
+          "4h": 3.1693696538112253,
+          "24h": 3.720220789888186
+        },
+        "tier_30_50_20_interruptible_plus_flexible": {
+          "1h": 10.30986961626289,
+          "4h": 11.092793788339288,
+          "24h": 3.720220789888186
+        },
+        "const_mean": {
+          "1h": 1.1979978678211736,
+          "4h": 1.288972974560997,
+          "24h": 1.5130024520173733
+        },
+        "const_K_nameplate": {
+          "1h": 0.7896393569922255,
+          "4h": 0.8570646027642325,
+          "24h": 1.019373245065084
+        },
+        "measured_attributed": {
+          "1h": 1.7380842688871896,
+          "4h": 1.805069348922474,
+          "24h": 1.903167562044857
+        }
+      },
+      "shares": {
+        "mean_eligible_share_of_facility": 0.08133939018511037,
+        "K95_4h_share_of_nameplate": 0.051183289847730525
+      }
+    }
+  },
+  "repeat_event_budget": {
+    "h1_a0.9": {
+      "K_mw": 2.708771272075986,
+      "events_per_week_mean": 151.0,
+      "events_per_week_min": 83,
+      "events_per_week_p10": 120.0,
+      "events_per_week_median": 161.5,
+      "max_possible_per_week": 168,
+      "weeks": 26
+    },
+    "h1_a0.95": {
+      "K_mw": 2.5179440296630315,
+      "events_per_week_mean": 159.53846153846155,
+      "events_per_week_min": 105,
+      "events_per_week_p10": 145.0,
+      "events_per_week_median": 167.0,
+      "max_possible_per_week": 168,
+      "weeks": 26
+    },
+    "h4_a0.9": {
+      "K_mw": 2.538929908731841,
+      "events_per_week_mean": 38.65384615384615,
+      "events_per_week_min": 21,
+      "events_per_week_p10": 33.0,
+      "events_per_week_median": 41.0,
+      "max_possible_per_week": 42,
+      "weeks": 26
+    },
+    "h4_a0.95": {
+      "K_mw": 2.3198574507836445,
+      "events_per_week_mean": 40.30769230769231,
+      "events_per_week_min": 26,
+      "events_per_week_p10": 36.5,
+      "events_per_week_median": 42.0,
+      "max_possible_per_week": 42,
+      "weeks": 26
+    },
+    "h4_level80pct_of_K95": {
+      "level_mw": 1.8558859606269156,
+      "events_per_week_mean": 41.84615384615385,
+      "events_per_week_min": 39,
+      "events_per_week_p10": 42.0
+    },
+    "h4_level60pct_of_K95": {
+      "level_mw": 1.3919144704701867,
+      "events_per_week_mean": 42.0,
+      "events_per_week_min": 42,
+      "events_per_week_p10": 42.0
+    }
+  },
+  "host_side": {
+    "cpu_dynamic_mw_mean": 0.14706733421089574,
+    "cpu_dynamic_pct_of_gpu_curtail": 4.146788696416656,
+    "allowance_mem_nic_fans_mw": {
+      "low": {
+        "assumed_nongpu_share": 0.34,
+        "assumed_dynamic_frac": 0.1,
+        "mw": 0.18270031485690372,
+        "total_host_addon_mw": 0.32976764906779943,
+        "total_host_addon_pct_of_gpu_curtail": 9.298303847931807
+      },
+      "central": {
+        "assumed_nongpu_share": 0.42,
+        "assumed_dynamic_frac": 0.2,
+        "mw": 0.5136361792934452,
+        "total_host_addon_mw": 0.6607035135043409,
+        "total_host_addon_pct_of_gpu_curtail": 18.629547317106308
+      },
+      "high": {
+        "assumed_nongpu_share": 0.5,
+        "assumed_dynamic_frac": 0.3,
+        "mw": 1.0639606571078506,
+        "total_host_addon_mw": 1.2110279913187463,
+        "total_host_addon_pct_of_gpu_curtail": 34.14678869641665
+      }
+    },
+    "sources": "POLCA (GPUs ~50% provisioned / 60% consumed server power), Acme (GPU 65.7% of server), NLR node idle 420 W"
+  },
+  "denominators": {
+    "facility_mean_mw": 52.32203756071998,
+    "nameplate_mean_mw": 54.38941008329516,
+    "it_mean_mw": 43.60169796726665,
+    "workload_gpu_side_mean_mw": 29.366335583594072,
+    "curtail_idle_retained_gpu_side_mean_mw": 3.5465355236928358
+  }
+}

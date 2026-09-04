@@ -1,0 +1,35 @@
+{
+  "phi": 0.2,
+  "online_floor": 0.43,
+  "c0": 0.2875,
+  "curves": {
+    "training": {
+      "worst_case_rel_error_max": 0.3289473684210527,
+      "worst_case_rel_error_at_m0.3": 0.31250000000000006,
+      "duty_cycle_rel_error_at_m0.3": -0.1812500000000001,
+      "duty_cycle_rel_error_at_m0.6": -0.19822405149823402,
+      "sign_duty_cycle": "model too high (curve concave)"
+    },
+    "online_inference (v2, floor)": {
+      "worst_case_rel_error_max": 0.0508064516129033,
+      "worst_case_rel_error_at_m0.3": 0.04792837078651701,
+      "duty_cycle_rel_error_at_m0.3": -0.025807584269663106,
+      "duty_cycle_rel_error_at_m0.6": -0.03958440643691064,
+      "sign_duty_cycle": "model too high (curve concave)"
+    },
+    "offline_inference": {
+      "worst_case_rel_error_max": 0.15591397849462363,
+      "worst_case_rel_error_at_m0.3": 0.14406779661016952,
+      "duty_cycle_rel_error_at_m0.3": -0.08474576271186436,
+      "duty_cycle_rel_error_at_m0.6": -0.08439193545576516,
+      "sign_duty_cycle": "model too high (curve concave)"
+    },
+    "linear (FWB)": {
+      "worst_case_rel_error_max": 4.785444071660158e-16,
+      "worst_case_rel_error_at_m0.3": 2.523234146875356e-16,
+      "duty_cycle_rel_error_at_m0.3": 0.0,
+      "duty_cycle_rel_error_at_m0.6": -8.360113137237646e-17,
+      "sign_duty_cycle": "model too high (curve concave)"
+    }
+  }
+}
