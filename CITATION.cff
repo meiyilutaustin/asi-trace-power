@@ -8,7 +8,7 @@ authors:
 version: 1.0.0
 date-released: 2026-09-04
 license: MIT
-repository-code: "https://github.com/<owner>/asi-trace-power"
+repository-code: "https://github.com/meiyilutaustin/asi-trace-power"
 references:
   - type: conference-paper
     title: "Heterogeneity at Hyperscale: Characterization and Scheduling of Large Production AI Clusters at Alibaba"

@@ -3,7 +3,7 @@
 Code, configuration, derived data products and result tables for
 
 > **Duration, reliability and portfolio terms for data-center flexibility: evidence from a
-> 155,410-GPU production trace** (manuscript under review; preprint link to be added).
+> 155,410-GPU production trace** (ACM e-Energy 2027 submission; preprint link to be added).
 
 The pipeline turns the public Alibaba `cluster-trace-gpu-v2026` (per-pod hourly GPU
 utilisation, job type, priority, scheduling delay; 185 days) into an hourly electric
