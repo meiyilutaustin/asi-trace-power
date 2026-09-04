@@ -2,8 +2,8 @@
 
 Code, configuration, derived data products and result tables for
 
-> **Duration, reliability and portfolio terms for data-center flexibility: evidence from a
-> 155,410-GPU production trace** (ACM e-Energy 2027 submission; preprint link to be added).
+> **Beyond Scalar Flexibility: From Eligible AI Workloads to Dependable Load Relief**
+> (Meiyi Li, Louisiana State University; ACM e-Energy 2027 submission; preprint link to be added).
 
 The pipeline turns the public Alibaba `cluster-trace-gpu-v2026` (per-pod hourly GPU
 utilisation, job type, priority, scheduling delay; 185 days) into an hourly electric
@@ -60,7 +60,7 @@ containing `data/` = raw trace and `agg/` = aggregates) and `REPO`.
 1. Download the four archives of `cluster-trace-gpu-v2026` from the Alibaba ClusterData
    repository into `$ASI_ROOT/data/` and unzip (~332 GB). We do not redistribute the trace.
 2. `python src/aggregate_pod_hourly.py` → `$ASI_ROOT/agg/pod_hourly_agg.parquet`
-   (or download the aggregate from the archived data release, see below, and skip 1–2).
+   (or download `pod_hourly_agg.parquet` from the v1.0.0 GitHub release and skip 1–2).
 3. Run stages 1, 5, 6, 8, 9 in that order with the base config, then r1/r2/r4 and the
    6′ post-processing; stage 3 needs the span extraction first. Each script writes
    `summary.json` plus figures to `$OUT_DIR`.
@@ -84,8 +84,8 @@ and in `configs/power_curves.yaml`.
   NREL/NLR raw NVML dataset (DOI 10.7799/3025227) is not redistributed.
 * **Derived products** (`data/products/`): hourly fleet power band, fleet and per-cluster
   envelopes, the K surface, and the server aggregate. The 49 MB pod aggregate table with
-  sufficient statistics is distributed with the archived data release (DOI to be added on
-  acceptance) rather than in this repository.
+  sufficient statistics is attached to the `v1.0.0` GitHub release rather than tracked in
+  git; an archival (Zenodo) DOI for the release will be added on acceptance.
 
 Derived products inherit the research/study-use condition of the source trace; please cite
 both the OSDI 2026 trace paper and this work.
