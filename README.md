@@ -1,5 +1,7 @@
 # asi-trace-power
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22308423.svg)](https://doi.org/10.5281/zenodo.22308423)
+
 Code, configuration, derived data products and result tables for
 
 > **Beyond Scalar Flexibility: From Eligible AI Workloads to Dependable Load Relief**
@@ -84,8 +86,8 @@ and in `configs/power_curves.yaml`.
   NREL/NLR raw NVML dataset (DOI 10.7799/3025227) is not redistributed.
 * **Derived products** (`data/products/`): hourly fleet power band, fleet and per-cluster
   envelopes, the K surface, and the server aggregate. The 49 MB pod aggregate table with
-  sufficient statistics is attached to the `v1.0.0` GitHub release rather than tracked in
-  git; an archival (Zenodo) DOI for the release will be added on acceptance.
+  sufficient statistics is attached to the GitHub releases (`v1.0.0`, `v1.0.1`) rather than
+  tracked in git; release `v1.0.1` is archived at Zenodo, DOI 10.5281/zenodo.22308423.
 
 Derived products inherit the research/study-use condition of the source trace; please cite
 both the OSDI 2026 trace paper and this work.
@@ -97,4 +99,4 @@ use, subject to the source-trace terms (`DATA_LICENSE.md`).
 
 ## Citation
 
-See `CITATION.cff`. Preprint and archive DOIs will be added when available.
+See `CITATION.cff`. Archived release: https://doi.org/10.5281/zenodo.22308423 (v1.0.1). Preprint link to be added.

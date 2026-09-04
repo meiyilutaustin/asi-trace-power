@@ -13,6 +13,6 @@
 | `products/server_hourly_agg.parquet` | server inventory aggregate (GPU count, CPU cores) per hour × cluster × GPU model | stage 0 |
 
 The 858,816-row pod aggregate table (`pod_hourly_agg.parquet`, 49 MB) that every
-downstream stage reads is attached to the `v1.0.0` GitHub release; place it under
+downstream stage reads is attached to the GitHub releases (v1.0.0 and v1.0.1, DOI 10.5281/zenodo.22308423); place it under
 `$ASI_ROOT/agg/`. All MW in the products are GPU-side workload power unless the column
 name states a boundary; see `src/powermodel.py`.
