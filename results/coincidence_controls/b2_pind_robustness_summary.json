@@ -1,0 +1,206 @@
+{
+  "substrate": {
+    "n_clusters": 13,
+    "valid_hours": 4439,
+    "mean_eligible_mw": 3.53085274373735,
+    "measured_scope_share": 0.12186118320693665
+  },
+  "alpha": 0.95,
+  "horizons": [
+    1,
+    4,
+    24
+  ],
+  "n_shift": 200,
+  "note": "P_obs is the honest coincident envelope; P_ind is the independent (decorrelated) benchmark. R = P_obs/P_ind is the coincidence factor (<1 = coincident low periods reduce firm power). 'calendar'/'week' preserve diurnal/weekly phase; 'pooled_joint_quantile' takes one quantile of the pooled decorrelated sample instead of averaging per-draw quantiles.",
+  "results": {
+    "full_record": {
+      "window": "full_record",
+      "n_hours": 4439,
+      "mean_eligible_mw": 3.53085274373735,
+      "P_obs_mw": {
+        "h1": 2.507773954914842,
+        "h4": 2.316797571285743,
+        "h24": 1.9465669946147905
+      },
+      "P_ind_mw": {
+        "free_detrend_restore__avg_of_quantiles": {
+          "h1": 2.6880915960947784,
+          "h4": 2.5665998315881575,
+          "h24": 2.3381194338264724
+        },
+        "free_detrend_restore__pooled_joint_quantile": {
+          "h1": 2.688013112615069,
+          "h4": 2.564538875012572,
+          "h24": 2.340858920902396
+        },
+        "calendar__avg_of_quantiles": {
+          "h1": 2.615538750787488,
+          "h4": 2.48832319249677,
+          "h24": 2.2640073786720696
+        },
+        "calendar__pooled_joint_quantile": {
+          "h1": 2.6151777274438364,
+          "h4": 2.4877138309127322,
+          "h24": 2.2688324571948795
+        },
+        "week__avg_of_quantiles": {
+          "h1": 2.6084736322521813,
+          "h4": 2.479100965749166,
+          "h24": 2.2423681520666174
+        },
+        "week__pooled_joint_quantile": {
+          "h1": 2.6078132879241367,
+          "h4": 2.478244196190319,
+          "h24": 2.2440298664969327
+        },
+        "free_whole_series__avg_of_quantiles": {
+          "h1": 2.675403055340421,
+          "h4": 2.576825157520707,
+          "h24": 2.369160607573591
+        },
+        "free_whole_series__pooled_joint_quantile": {
+          "h1": 2.6536464103762065,
+          "h4": 2.551547205561373,
+          "h24": 2.339386938081786
+        }
+      },
+      "coincidence_factor_R": {
+        "free_detrend_restore__avg_of_quantiles": {
+          "h1": 0.932919830022943,
+          "h4": 0.9026719096494905,
+          "h24": 0.832535312975487
+        },
+        "free_detrend_restore__pooled_joint_quantile": {
+          "h1": 0.9329470690249427,
+          "h4": 0.9033973295781627,
+          "h24": 0.8315610040541842
+        },
+        "calendar__avg_of_quantiles": {
+          "h1": 0.9587982415323802,
+          "h4": 0.9310677882486321,
+          "h24": 0.8597882731974705
+        },
+        "calendar__pooled_joint_quantile": {
+          "h1": 0.9589306029177702,
+          "h4": 0.9312958518366717,
+          "h24": 0.8579597794636062
+        },
+        "week__avg_of_quantiles": {
+          "h1": 0.9613951714549653,
+          "h4": 0.9345313495877018,
+          "h24": 0.8680853734123856
+        },
+        "week__pooled_joint_quantile": {
+          "h1": 0.9616386136720212,
+          "h4": 0.9348544323627348,
+          "h24": 0.8674425522034162
+        },
+        "free_whole_series__avg_of_quantiles": {
+          "h1": 0.9373443563611953,
+          "h4": 0.8990899380673737,
+          "h24": 0.821627283685252
+        },
+        "free_whole_series__pooled_joint_quantile": {
+          "h1": 0.9450294301113448,
+          "h4": 0.9079971423754309,
+          "h24": 0.832084236655141
+        }
+      }
+    },
+    "stable_capacity": {
+      "window": "stable_capacity_trendband_0.10",
+      "n_hours": 2282,
+      "mean_eligible_mw": 3.5892911065430524,
+      "P_obs_mw": {
+        "h1": 2.688825295513434,
+        "h4": 2.3885131814976197,
+        "h24": 2.1378987148864543
+      },
+      "P_ind_mw": {
+        "free_detrend_restore__avg_of_quantiles": {
+          "h1": 3.149548692229962,
+          "h4": 3.289359608201751,
+          "h24": 3.0116981292492966
+        },
+        "free_detrend_restore__pooled_joint_quantile": {
+          "h1": 2.786658265040664,
+          "h4": 2.9701063777854486,
+          "h24": 2.7158518102727194
+        },
+        "calendar__avg_of_quantiles": {
+          "h1": 3.239716780587334,
+          "h4": 3.172133282630253,
+          "h24": 2.809947735690262
+        },
+        "calendar__pooled_joint_quantile": {
+          "h1": 2.991616678521931,
+          "h4": 3.046791093461977,
+          "h24": 2.3651036663948575
+        },
+        "week__avg_of_quantiles": {
+          "h1": 2.8957762115117722,
+          "h4": 2.8915220923959533,
+          "h24": 2.749121433031101
+        },
+        "week__pooled_joint_quantile": {
+          "h1": 2.43063529116249,
+          "h4": 2.5377151785695293,
+          "h24": 2.0983000383750516
+        },
+        "free_whole_series__avg_of_quantiles": {
+          "h1": 3.1083199707795077,
+          "h4": 3.365837622182102,
+          "h24": 3.0257449451803016
+        },
+        "free_whole_series__pooled_joint_quantile": {
+          "h1": 2.6963314242667247,
+          "h4": 2.7892900178838405,
+          "h24": 2.708654703160662
+        }
+      },
+      "coincidence_factor_R": {
+        "free_detrend_restore__avg_of_quantiles": {
+          "h1": 0.8537176460065065,
+          "h4": 0.7261331888255866,
+          "h24": 0.7098648746112388
+        },
+        "free_detrend_restore__pooled_joint_quantile": {
+          "h1": 0.9648923692027224,
+          "h4": 0.804184388600427,
+          "h24": 0.7871926983644117
+        },
+        "calendar__avg_of_quantiles": {
+          "h1": 0.8299568998207221,
+          "h4": 0.7529674728916576,
+          "h24": 0.7608321990235455
+        },
+        "calendar__pooled_joint_quantile": {
+          "h1": 0.8987867044657282,
+          "h4": 0.7839438636351086,
+          "h24": 0.9039344639574581
+        },
+        "week__avg_of_quantiles": {
+          "h1": 0.9285335257691418,
+          "h4": 0.82604009417008,
+          "h24": 0.7776661624325811
+        },
+        "week__pooled_joint_quantile": {
+          "h1": 1.1062232599393635,
+          "h4": 0.9412061691036532,
+          "h24": 1.0188717894424995
+        },
+        "free_whole_series__avg_of_quantiles": {
+          "h1": 0.8650413473485253,
+          "h4": 0.7096341088341409,
+          "h24": 0.7065693750201602
+        },
+        "free_whole_series__pooled_joint_quantile": {
+          "h1": 0.997216169835156,
+          "h4": 0.8563158245228729,
+          "h24": 0.789284330849478
+        }
+      }
+    }
+  }
+}

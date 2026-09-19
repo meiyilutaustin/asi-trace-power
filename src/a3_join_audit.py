@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""A3 join audit + day~105 attribution (revision 2).
+"""A3 join audit + day~105 attribution (RERUN_PLAN_v1 P1-3).
 
 (1) Coverage audit of the pod_spans x job_execution_summary join:
     - by day of first observation, span duration bin, GPU-count bin (all spans);
@@ -32,9 +32,9 @@ import matplotlib.pyplot as plt
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import powermodel as pm  # noqa: E402
 
-DATA = os.environ.get("DATA_DIR", os.path.join(os.environ.get("ASI_ROOT", "."), "data"))
-AGG = os.environ.get("AGG_DIR", os.path.join(os.environ.get("ASI_ROOT", "."), "agg"))
-OUT = os.environ.get("OUT_DIR", os.path.join(os.environ.get("ASI_ROOT", "."), "a3audit_out"))
+DATA = os.environ.get("DATA_DIR", "/project/mli30/mli30/asi-trace/data")
+AGG = os.environ.get("AGG_DIR", "/project/mli30/mli30/asi-trace/agg")
+OUT = os.environ.get("OUT_DIR", "/project/mli30/mli30/asi-trace/a3audit_out")
 CFG = os.environ.get("POWER_CFG", os.path.join(os.path.dirname(__file__), "power_curves.yaml"))
 os.makedirs(OUT, exist_ok=True)
 EDGE_DAYS = 14

@@ -21,8 +21,8 @@ import pandas as pd
 import pyarrow.compute as pc
 import pyarrow.parquet as pq
 
-DATA = os.environ.get("DATA_DIR", os.path.join(os.environ.get("ASI_ROOT", "."), "data"))
-AGG = os.environ.get("AGG_DIR", os.path.join(os.environ.get("ASI_ROOT", "."), "agg"))
+DATA = os.environ.get("DATA_DIR", "/project/mli30/mli30/asi-trace/data")
+AGG = os.environ.get("AGG_DIR", "/project/mli30/mli30/asi-trace/agg")
 NPROC = int(os.environ.get("NPROC", "16"))
 NBUCKET = 16
 POD_DIR = os.path.join(DATA, "asi_opensource_pod_hourly")
@@ -45,7 +45,7 @@ def day_spans(day_dir):
         for f in sorted(glob.glob(os.path.join(hour_dir, "*.parquet"))):
             t = pq.read_table(f, columns=COLS)
             # filter in arrow BEFORE pandas: keeps string materialization to
-            # the ~7% of rows that are GPU pods (OOM fix, an earlier job)
+            # the ~7% of rows that are GPU pods (OOM fix, job 571543)
             t = t.filter(pc.greater(pc.fill_null(t["gpu_request"], 0.0), 0.0))
             df = t.select(["pod_id", "used_gpu_hours"]).to_pandas()
             df["t"] = day * 24 + hour

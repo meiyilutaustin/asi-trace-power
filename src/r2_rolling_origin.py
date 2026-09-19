@@ -1,7 +1,8 @@
 #!/usr/bin/env python
-"""R2 (reviewer-requested robustness check): rolling-origin validation of K.
+"""R2 (Codex v1 review, must-do): rolling-origin validation of K.
 
-A first-half/second-half holdout is flattered by growth: the eligible mean rises from 3.24 to 3.82 MW, so a K fitted on the
+The v2 holdout (first half -> second half, coverage 0.985-1.0) is flattered by
+growth: the eligible mean rises from 3.24 to 3.82 MW, so a K fitted on the
 early half is easy to meet later.  This script does prospective validation:
 
   for each origin o (weekly step):
@@ -30,22 +31,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from numpy.lib.stride_tricks import sliding_window_view
 
-
-def _find(base, *parts):
-    """Locate a product: flat under base (data/products), a stage subdir (run dir),
-    or the public results/ tree next to data/ (summary tables)."""
-    import os as _os
-    stage_map = {"a1": "a1_load", "a5": "a5_envelope", "a6": "a6_availability"}
-    cands = [_os.path.join(base, parts[-1]), _os.path.join(base, *parts)]
-    root = _os.path.abspath(_os.path.join(base, _os.pardir, _os.pardir))
-    if len(parts) == 2 and parts[0] in stage_map:
-        cands.append(_os.path.join(root, "results", stage_map[parts[0]], parts[1]))
-    for c in cands:
-        if _os.path.exists(c):
-            return c
-    return cands[-1]
-
-RERUN = sys.argv[1]   # data/products (public layout) or a run directory with stage subdirs
+RERUN = sys.argv[1]
 OUT = sys.argv[2]
 os.makedirs(OUT, exist_ok=True)
 HS = [1, 4, 24]
@@ -66,7 +52,7 @@ def kval(s, h, a):
 
 
 def main():
-    env = pd.read_parquet(_find(RERUN, "a5", "envelope_hourly.parquet"))
+    env = pd.read_parquet(os.path.join(RERUN, "a5", "envelope_hourly.parquet"))
     good = env["good"].to_numpy().astype(bool)
     C = np.where(good, env["curtail_idle_retained"].to_numpy(), np.nan)
     nt = len(C)

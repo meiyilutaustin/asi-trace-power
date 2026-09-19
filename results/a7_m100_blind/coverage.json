@@ -1,0 +1,659 @@
+{
+  "22-03": {
+    "ipmi_pub__total_power": {
+      "bins": 8734470,
+      "distinct_timestamps": 130976911,
+      "min": 260.0,
+      "max": 1800.0,
+      "raw_compute_rows": 130976911,
+      "duplicate_timestamp_rows": 0
+    },
+    "ipmi_pub__ps0_input_power": {
+      "bins": 8737803,
+      "distinct_timestamps": 131029174,
+      "min": 8.0,
+      "max": 932.0,
+      "raw_compute_rows": 131029174,
+      "duplicate_timestamp_rows": 0
+    },
+    "ipmi_pub__ps1_input_power": {
+      "bins": 8738794,
+      "distinct_timestamps": 131044036,
+      "min": 8.333333333333334,
+      "max": 1359.3333333333333,
+      "raw_compute_rows": 131044036,
+      "duplicate_timestamp_rows": 0
+    },
+    "ipmi_pub__p0_power": {
+      "bins": 8734469,
+      "distinct_timestamps": 130976880,
+      "min": 4.0,
+      "max": 236.93333333333334,
+      "raw_compute_rows": 130976880,
+      "duplicate_timestamp_rows": 0
+    },
+    "ipmi_pub__p1_power": {
+      "bins": 8734469,
+      "distinct_timestamps": 130976890,
+      "min": 2.0,
+      "max": 228.93333333333334,
+      "raw_compute_rows": 130976890,
+      "duplicate_timestamp_rows": 0
+    },
+    "ipmi_pub__p0_mem_power": {
+      "bins": 8734469,
+      "distinct_timestamps": 130976885,
+      "min": 14.933333333333334,
+      "max": 52.4,
+      "raw_compute_rows": 130976885,
+      "duplicate_timestamp_rows": 0
+    },
+    "ipmi_pub__p1_mem_power": {
+      "bins": 8734469,
+      "distinct_timestamps": 130976877,
+      "min": 2.0,
+      "max": 51.2,
+      "raw_compute_rows": 130976877,
+      "duplicate_timestamp_rows": 0
+    },
+    "ipmi_pub__p0_io_power": {
+      "bins": 8734469,
+      "distinct_timestamps": 130976886,
+      "min": 46.2,
+      "max": 90.06666666666666,
+      "raw_compute_rows": 130976886,
+      "duplicate_timestamp_rows": 0
+    },
+    "ipmi_pub__p1_io_power": {
+      "bins": 8734469,
+      "distinct_timestamps": 130976899,
+      "min": 1.0,
+      "max": 86.46666666666667,
+      "raw_compute_rows": 130976899,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu0_gpu_utilization": {
+      "bins": 7993244,
+      "distinct_timestamps": 137473693,
+      "min": 0.0,
+      "max": 100.0,
+      "raw_compute_rows": 137473693,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu0_power_usage": {
+      "bins": 8045888,
+      "distinct_timestamps": 138966962,
+      "min": 34.226733144124346,
+      "max": 340.4859924316406,
+      "raw_compute_rows": 138966962,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu1_gpu_utilization": {
+      "bins": 7985086,
+      "distinct_timestamps": 137332098,
+      "min": 0.0,
+      "max": 100.0,
+      "raw_compute_rows": 137332098,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu1_power_usage": {
+      "bins": 8037739,
+      "distinct_timestamps": 138822883,
+      "min": 34.33106638590495,
+      "max": 353.5740051269531,
+      "raw_compute_rows": 138822883,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu2_gpu_utilization": {
+      "bins": 7985066,
+      "distinct_timestamps": 137331579,
+      "min": 0.0,
+      "max": 100.0,
+      "raw_compute_rows": 137331579,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu2_power_usage": {
+      "bins": 8037724,
+      "distinct_timestamps": 138821472,
+      "min": 33.780167738596596,
+      "max": 348.4620056152344,
+      "raw_compute_rows": 138821472,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu3_gpu_utilization": {
+      "bins": 7985064,
+      "distinct_timestamps": 137331224,
+      "min": 0.0,
+      "max": 100.0,
+      "raw_compute_rows": 137331224,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu3_power_usage": {
+      "bins": 8037715,
+      "distinct_timestamps": 138819588,
+      "min": 34.28585597446987,
+      "max": 360.29400634765625,
+      "raw_compute_rows": 138819588,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__cpu_idle": {
+      "bins": 7836665,
+      "distinct_timestamps": 33385930,
+      "min": 0.0,
+      "max": 100.0,
+      "raw_compute_rows": 33385930,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__cpu_num": {
+      "bins": 7737853,
+      "distinct_timestamps": 37163953,
+      "min": 128.0,
+      "max": 128.0,
+      "raw_compute_rows": 37163953,
+      "duplicate_timestamp_rows": 0
+    },
+    "common_bins": 6806321,
+    "ganglia_pub__Gpu0_power_management_limit": {
+      "bins": 6459516,
+      "distinct_timestamps": 96783950,
+      "min": 300.0,
+      "max": 300.0,
+      "raw_compute_rows": 96783950,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu0_sm_clock": {
+      "bins": 8045885,
+      "distinct_timestamps": 138957378,
+      "min": 135.0,
+      "max": 1530.0,
+      "raw_compute_rows": 138957378,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu1_power_management_limit": {
+      "bins": 6452992,
+      "distinct_timestamps": 96686287,
+      "min": 300.0,
+      "max": 300.0,
+      "raw_compute_rows": 96686287,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu1_sm_clock": {
+      "bins": 8037729,
+      "distinct_timestamps": 138814036,
+      "min": 135.0,
+      "max": 1530.0,
+      "raw_compute_rows": 138814036,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu2_power_management_limit": {
+      "bins": 6452987,
+      "distinct_timestamps": 96686226,
+      "min": 300.0,
+      "max": 300.0,
+      "raw_compute_rows": 96686226,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu2_sm_clock": {
+      "bins": 8037716,
+      "distinct_timestamps": 138814318,
+      "min": 135.0,
+      "max": 1530.0,
+      "raw_compute_rows": 138814318,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu3_power_management_limit": {
+      "bins": 6452987,
+      "distinct_timestamps": 96686191,
+      "min": 300.0,
+      "max": 300.0,
+      "raw_compute_rows": 96686191,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu3_sm_clock": {
+      "bins": 8037717,
+      "distinct_timestamps": 138813038,
+      "min": 135.0,
+      "max": 1530.0,
+      "raw_compute_rows": 138813038,
+      "duplicate_timestamp_rows": 0
+    }
+  },
+  "22-07": {
+    "ipmi_pub__total_power": {
+      "bins": 8183024,
+      "distinct_timestamps": 122679082,
+      "min": 270.0,
+      "max": 1801.3333333333333,
+      "raw_compute_rows": 122679082,
+      "duplicate_timestamp_rows": 0
+    },
+    "ipmi_pub__ps0_input_power": {
+      "bins": 8356104,
+      "distinct_timestamps": 125288052,
+      "min": 0.0,
+      "max": 1158.6666666666667,
+      "raw_compute_rows": 125288052,
+      "duplicate_timestamp_rows": 0
+    },
+    "ipmi_pub__ps1_input_power": {
+      "bins": 8356115,
+      "distinct_timestamps": 125288203,
+      "min": 0.0,
+      "max": 1406.0,
+      "raw_compute_rows": 125288203,
+      "duplicate_timestamp_rows": 0
+    },
+    "ipmi_pub__p0_power": {
+      "bins": 8183024,
+      "distinct_timestamps": 122679073,
+      "min": 3.0,
+      "max": 234.0,
+      "raw_compute_rows": 122679073,
+      "duplicate_timestamp_rows": 0
+    },
+    "ipmi_pub__p1_power": {
+      "bins": 8183024,
+      "distinct_timestamps": 122679078,
+      "min": 2.0,
+      "max": 227.2,
+      "raw_compute_rows": 122679078,
+      "duplicate_timestamp_rows": 0
+    },
+    "ipmi_pub__p0_mem_power": {
+      "bins": 8183024,
+      "distinct_timestamps": 122679074,
+      "min": 16.0,
+      "max": 51.733333333333334,
+      "raw_compute_rows": 122679074,
+      "duplicate_timestamp_rows": 0
+    },
+    "ipmi_pub__p1_mem_power": {
+      "bins": 8183024,
+      "distinct_timestamps": 122679072,
+      "min": 14.666666666666666,
+      "max": 50.0,
+      "raw_compute_rows": 122679072,
+      "duplicate_timestamp_rows": 0
+    },
+    "ipmi_pub__p0_io_power": {
+      "bins": 8183024,
+      "distinct_timestamps": 122679060,
+      "min": 47.0,
+      "max": 86.46666666666667,
+      "raw_compute_rows": 122679060,
+      "duplicate_timestamp_rows": 0
+    },
+    "ipmi_pub__p1_io_power": {
+      "bins": 8183024,
+      "distinct_timestamps": 122679066,
+      "min": 43.0,
+      "max": 83.33333333333333,
+      "raw_compute_rows": 122679066,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu0_gpu_utilization": {
+      "bins": 7233998,
+      "distinct_timestamps": 111258014,
+      "min": 0.0,
+      "max": 100.0,
+      "raw_compute_rows": 111258014,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu0_power_usage": {
+      "bins": 7234000,
+      "distinct_timestamps": 111257836,
+      "min": 34.33126576741537,
+      "max": 366.1440124511719,
+      "raw_compute_rows": 111257836,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu1_gpu_utilization": {
+      "bins": 7234000,
+      "distinct_timestamps": 111257862,
+      "min": 0.0,
+      "max": 100.0,
+      "raw_compute_rows": 111257862,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu1_power_usage": {
+      "bins": 7230303,
+      "distinct_timestamps": 111201968,
+      "min": 34.75486755371094,
+      "max": 344.3869934082031,
+      "raw_compute_rows": 111201968,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu2_gpu_utilization": {
+      "bins": 7234001,
+      "distinct_timestamps": 111258057,
+      "min": 0.0,
+      "max": 100.0,
+      "raw_compute_rows": 111258057,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu2_power_usage": {
+      "bins": 7233277,
+      "distinct_timestamps": 111246886,
+      "min": 33.82733205159505,
+      "max": 321.1189880371094,
+      "raw_compute_rows": 111246886,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu3_gpu_utilization": {
+      "bins": 7234000,
+      "distinct_timestamps": 111257394,
+      "min": 0.0,
+      "max": 100.0,
+      "raw_compute_rows": 111257394,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu3_power_usage": {
+      "bins": 7234000,
+      "distinct_timestamps": 111257482,
+      "min": 33.95313415527344,
+      "max": 316.97100830078125,
+      "raw_compute_rows": 111257482,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__cpu_idle": {
+      "bins": 8134544,
+      "distinct_timestamps": 31348699,
+      "min": 0.0,
+      "max": 100.0,
+      "raw_compute_rows": 31348699,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__cpu_num": {
+      "bins": 8092400,
+      "distinct_timestamps": 39521932,
+      "min": 124.0,
+      "max": 128.0,
+      "raw_compute_rows": 39521932,
+      "duplicate_timestamp_rows": 0
+    },
+    "common_bins": 6084789,
+    "ganglia_pub__Gpu0_power_management_limit": {
+      "bins": 7233997,
+      "distinct_timestamps": 111257368,
+      "min": 150.0,
+      "max": 300.0,
+      "raw_compute_rows": 111257368,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu0_sm_clock": {
+      "bins": 7234009,
+      "distinct_timestamps": 111258626,
+      "min": 135.0,
+      "max": 1530.0,
+      "raw_compute_rows": 111258626,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu1_power_management_limit": {
+      "bins": 7233999,
+      "distinct_timestamps": 111257446,
+      "min": 150.0,
+      "max": 300.0,
+      "raw_compute_rows": 111257446,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu1_sm_clock": {
+      "bins": 7230315,
+      "distinct_timestamps": 111202381,
+      "min": 135.0,
+      "max": 1530.0,
+      "raw_compute_rows": 111202381,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu2_power_management_limit": {
+      "bins": 7233998,
+      "distinct_timestamps": 111257240,
+      "min": 150.0,
+      "max": 300.0,
+      "raw_compute_rows": 111257240,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu2_sm_clock": {
+      "bins": 7233286,
+      "distinct_timestamps": 111247238,
+      "min": 135.0,
+      "max": 1530.0,
+      "raw_compute_rows": 111247238,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu3_power_management_limit": {
+      "bins": 7233997,
+      "distinct_timestamps": 111257801,
+      "min": 150.0,
+      "max": 300.0,
+      "raw_compute_rows": 111257801,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu3_sm_clock": {
+      "bins": 7234009,
+      "distinct_timestamps": 111256881,
+      "min": 135.0,
+      "max": 1530.0,
+      "raw_compute_rows": 111256881,
+      "duplicate_timestamp_rows": 0
+    }
+  },
+  "22-09": {
+    "ipmi_pub__total_power": {
+      "bins": 7857490,
+      "distinct_timestamps": 117410598,
+      "min": 312.0,
+      "max": 1820.0,
+      "raw_compute_rows": 117410598,
+      "duplicate_timestamp_rows": 0
+    },
+    "ipmi_pub__ps0_input_power": {
+      "bins": 7858639,
+      "distinct_timestamps": 117427861,
+      "min": 8.666666666666666,
+      "max": 1003.3333333333334,
+      "raw_compute_rows": 117427861,
+      "duplicate_timestamp_rows": 0
+    },
+    "ipmi_pub__ps1_input_power": {
+      "bins": 7858576,
+      "distinct_timestamps": 117427407,
+      "min": 9.285714285714286,
+      "max": 1432.0,
+      "raw_compute_rows": 117427407,
+      "duplicate_timestamp_rows": 0
+    },
+    "ipmi_pub__p0_power": {
+      "bins": 7857499,
+      "distinct_timestamps": 117410496,
+      "min": 6.0,
+      "max": 264.0,
+      "raw_compute_rows": 117410496,
+      "duplicate_timestamp_rows": 0
+    },
+    "ipmi_pub__p1_power": {
+      "bins": 7857538,
+      "distinct_timestamps": 117410413,
+      "min": 8.0,
+      "max": 262.0,
+      "raw_compute_rows": 117410413,
+      "duplicate_timestamp_rows": 0
+    },
+    "ipmi_pub__p0_mem_power": {
+      "bins": 7857535,
+      "distinct_timestamps": 117411328,
+      "min": 14.0,
+      "max": 56.0,
+      "raw_compute_rows": 117411328,
+      "duplicate_timestamp_rows": 0
+    },
+    "ipmi_pub__p1_mem_power": {
+      "bins": 7857534,
+      "distinct_timestamps": 117410732,
+      "min": 12.0,
+      "max": 52.8,
+      "raw_compute_rows": 117410732,
+      "duplicate_timestamp_rows": 0
+    },
+    "ipmi_pub__p0_io_power": {
+      "bins": 7857495,
+      "distinct_timestamps": 117410763,
+      "min": 46.0,
+      "max": 85.4,
+      "raw_compute_rows": 117410763,
+      "duplicate_timestamp_rows": 0
+    },
+    "ipmi_pub__p1_io_power": {
+      "bins": 7857479,
+      "distinct_timestamps": 117410607,
+      "min": 43.0,
+      "max": 87.0,
+      "raw_compute_rows": 117410607,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu0_gpu_utilization": {
+      "bins": 7825174,
+      "distinct_timestamps": 116861640,
+      "min": 0.0,
+      "max": 100.0,
+      "raw_compute_rows": 116861640,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu0_power_usage": {
+      "bins": 7824961,
+      "distinct_timestamps": 116858913,
+      "min": 33.761690873366135,
+      "max": 349.9580078125,
+      "raw_compute_rows": 116858913,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu1_gpu_utilization": {
+      "bins": 7825179,
+      "distinct_timestamps": 116861576,
+      "min": 0.0,
+      "max": 100.0,
+      "raw_compute_rows": 116861576,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu1_power_usage": {
+      "bins": 7825159,
+      "distinct_timestamps": 116861522,
+      "min": 34.44922214084201,
+      "max": 358.6629943847656,
+      "raw_compute_rows": 116861522,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu2_gpu_utilization": {
+      "bins": 7825188,
+      "distinct_timestamps": 116861695,
+      "min": 0.0,
+      "max": 100.0,
+      "raw_compute_rows": 116861695,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu2_power_usage": {
+      "bins": 7825173,
+      "distinct_timestamps": 116861718,
+      "min": 33.74893391927083,
+      "max": 344.3590087890625,
+      "raw_compute_rows": 116861718,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu3_gpu_utilization": {
+      "bins": 7825190,
+      "distinct_timestamps": 116861524,
+      "min": 0.0,
+      "max": 100.0,
+      "raw_compute_rows": 116861524,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu3_power_usage": {
+      "bins": 7825171,
+      "distinct_timestamps": 116861865,
+      "min": 33.81350088119507,
+      "max": 351.1369934082031,
+      "raw_compute_rows": 116861865,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__cpu_idle": {
+      "bins": 7587608,
+      "distinct_timestamps": 30731249,
+      "min": 0.0,
+      "max": 100.0,
+      "raw_compute_rows": 30731249,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__cpu_num": {
+      "bins": 7498789,
+      "distinct_timestamps": 35955428,
+      "min": 128.0,
+      "max": 128.0,
+      "raw_compute_rows": 35955428,
+      "duplicate_timestamp_rows": 0
+    },
+    "common_bins": 6908492,
+    "ganglia_pub__Gpu0_power_management_limit": {
+      "bins": 7825178,
+      "distinct_timestamps": 116861379,
+      "min": 300.0,
+      "max": 300.0,
+      "raw_compute_rows": 116861379,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu0_sm_clock": {
+      "bins": 7825108,
+      "distinct_timestamps": 116862021,
+      "min": 135.0,
+      "max": 1530.0,
+      "raw_compute_rows": 116862021,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu1_power_management_limit": {
+      "bins": 7825175,
+      "distinct_timestamps": 116861862,
+      "min": 300.0,
+      "max": 300.0,
+      "raw_compute_rows": 116861862,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu1_sm_clock": {
+      "bins": 7825152,
+      "distinct_timestamps": 116861975,
+      "min": 135.0,
+      "max": 1530.0,
+      "raw_compute_rows": 116861975,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu2_power_management_limit": {
+      "bins": 7825179,
+      "distinct_timestamps": 116861696,
+      "min": 300.0,
+      "max": 300.0,
+      "raw_compute_rows": 116861696,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu2_sm_clock": {
+      "bins": 7825159,
+      "distinct_timestamps": 116862307,
+      "min": 135.0,
+      "max": 1530.0,
+      "raw_compute_rows": 116862307,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu3_power_management_limit": {
+      "bins": 7825180,
+      "distinct_timestamps": 116861725,
+      "min": 300.0,
+      "max": 300.0,
+      "raw_compute_rows": 116861725,
+      "duplicate_timestamp_rows": 0
+    },
+    "ganglia_pub__Gpu3_sm_clock": {
+      "bins": 7825153,
+      "distinct_timestamps": 116861388,
+      "min": 135.0,
+      "max": 1530.0,
+      "raw_compute_rows": 116861388,
+      "duplicate_timestamp_rows": 0
+    }
+  }
+}

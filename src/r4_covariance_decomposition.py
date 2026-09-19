@@ -1,10 +1,12 @@
 #!/usr/bin/env python
-"""R4 (reviewer-requested robustness check): exact weighted
+"""R4 (Codex v1 review, must-do if L1 stays a contribution): exact weighted
 covariance decomposition of the cluster -> fleet synchrony ratio, on stable
 capacity plateaus, with a PAIRED interval on the raw -> capacity-normalised
 change.
 
-An earlier version of the scaling analysis attributed the fleet-level covariance to synchronised capacity expansion.  A reviewer objected that the capacity-normalised
+A2 v2 reports synchrony ratios 1.76 (raw) -> 1.63 (deseasonalised) -> 1.00
+(capacity-normalised), and the outline currently says fleet covariance is
+"driven by synchronised expansion".  Codex objects that the capacity-normalised
 CI is 0.55-1.46 and that the unweighted mean correlation is only 0.22, so the
 causal wording outruns the evidence.  This script replaces the ratio talk with
 the exact identity and a paired test.
@@ -34,22 +36,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-
-def _find(base, *parts):
-    """Locate a product: flat under base (data/products), a stage subdir (run dir),
-    or the public results/ tree next to data/ (summary tables)."""
-    import os as _os
-    stage_map = {"a1": "a1_load", "a5": "a5_envelope", "a6": "a6_availability"}
-    cands = [_os.path.join(base, parts[-1]), _os.path.join(base, *parts)]
-    root = _os.path.abspath(_os.path.join(base, _os.pardir, _os.pardir))
-    if len(parts) == 2 and parts[0] in stage_map:
-        cands.append(_os.path.join(root, "results", stage_map[parts[0]], parts[1]))
-    for c in cands:
-        if _os.path.exists(c):
-            return c
-    return cands[-1]
-
-RERUN = sys.argv[1]   # data/products (public layout) or a run directory with stage subdirs
+RERUN = sys.argv[1]
 OUT = sys.argv[2]
 os.makedirs(OUT, exist_ok=True)
 ROLL = 169
@@ -74,7 +61,8 @@ def resid(wide, kind):
     itself.  Hours where cap_i falls below CAP_FLOOR_FRAC of the cluster's
     median cap are masked: four clusters idle to ~0 MW for stretches, and the
     unguarded ratio w/cap reaches 168x there, which previously let those four
-    clusters carry 97% of the normalised variance (an earlier unguarded version produced that artefact).
+    clusters carry 97% of the normalised variance (A2 v2 "capnorm 1.00" was
+    that artefact).
     """
     tr = wide.rolling(ROLL, center=True, min_periods=24).mean()
     r = wide - tr
@@ -132,7 +120,7 @@ def plateaus(fleet, good):
 
 
 def main():
-    cl = pd.read_parquet(_find(RERUN, "a5", "envelope_cluster_hourly.parquet"))
+    cl = pd.read_parquet(os.path.join(RERUN, "a5", "envelope_cluster_hourly.parquet"))
     cl["total"] = cl[["floor", "shift", "curtail", "standby"]].sum(axis=1)
     wide = cl.pivot(index="t", columns="cluster_id", values="total")
     good = cl.groupby("t")["good"].first().to_numpy().astype(bool)

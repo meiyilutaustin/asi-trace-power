@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""A5 (v2, revision 2): hourly flexibility envelope.
+"""A5 (v2, RERUN_PLAN_v1 P0-1/P0-2/P0-3/P1-1): hourly flexibility envelope.
 
 Layers per hour (fleet and per cluster), from the A1 aggregate table with the
 shared power model (src/powermodel.py; online-inference floor included):
@@ -9,13 +9,13 @@ shared power model (src/powermodel.py; online-inference floor included):
            delay share s_tau(type, priority) = P(delay >= tau) for tau=1,4,24 h
   standby  Standby-state pods (idle power held in reserve)
 
-Curtailment is reported on THREE electrical boundaries :
+Curtailment is reported on THREE electrical boundaries (P0-1):
   attributed    = whole pod GPU power (old headline, upper bound)
   idle_retained = only the active part (the reclaimed GPU keeps idling; default)
   node_sleep    = attributed (node power-gated)
 plus an optional host add-on (dynamic CPU power of the evicted pods).
 Facility conversion: average PUE (cfg.pue.base) and marginal (cfg.pue_marginal).
-Shift products are horizon-specific : the "DR" headline = curtail + shift_ge1h
+Shift products are horizon-specific (P0-3): the "DR" headline = curtail + shift_ge1h
 and is stated for the 1 h product only.
 MC bands (formerly a5_uncertainty.py) are computed here for the headline metrics.
 Outputs to $OUT_DIR: envelope_hourly.parquet (fleet), envelope_cluster_hourly.parquet
@@ -37,9 +37,9 @@ import matplotlib.pyplot as plt
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import powermodel as pm  # noqa: E402
 
-DATA = os.environ.get("DATA_DIR", os.path.join(os.environ.get("ASI_ROOT", "."), "data"))
-AGG = os.environ.get("AGG_DIR", os.path.join(os.environ.get("ASI_ROOT", "."), "agg"))
-OUT = os.environ.get("OUT_DIR", os.path.join(os.environ.get("ASI_ROOT", "."), "a5_out"))
+DATA = os.environ.get("DATA_DIR", "/project/mli30/mli30/asi-trace/data")
+AGG = os.environ.get("AGG_DIR", "/project/mli30/mli30/asi-trace/agg")
+OUT = os.environ.get("OUT_DIR", "/project/mli30/mli30/asi-trace/a5_out")
 CFG = os.environ.get("POWER_CFG", os.path.join(
     os.path.dirname(__file__), "power_curves.yaml"))
 os.makedirs(OUT, exist_ok=True)

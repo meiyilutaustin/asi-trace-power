@@ -1,0 +1,46 @@
+{
+  "alpha": 0.95,
+  "method": "numpy.quantile default = 'linear' (interpolated), position (N-1)*(1-alpha) 0-indexed",
+  "by_horizon": [
+    {
+      "T": 1,
+      "N": 4439,
+      "naive_rank_1maN": 221.95,
+      "interp_pos_1indexed": 222.9,
+      "bracket_order_stats_1idx": [
+        222,
+        223
+      ],
+      "value_mw": 2.5078,
+      "lo_val": 2.5038,
+      "hi_val": 2.5082
+    },
+    {
+      "T": 4,
+      "N": 4433,
+      "naive_rank_1maN": 221.65,
+      "interp_pos_1indexed": 222.6,
+      "bracket_order_stats_1idx": [
+        222,
+        223
+      ],
+      "value_mw": 2.3168,
+      "lo_val": 2.3168,
+      "hi_val": 2.3168
+    },
+    {
+      "T": 24,
+      "N": 4393,
+      "naive_rank_1maN": 219.65,
+      "interp_pos_1indexed": 220.6,
+      "bracket_order_stats_1idx": [
+        220,
+        221
+      ],
+      "value_mw": 1.9466,
+      "lo_val": 1.9466,
+      "hi_val": 1.9466
+    }
+  ],
+  "shapley_dur_leg_same_lowtail": true
+}

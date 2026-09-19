@@ -1,0 +1,209 @@
+{
+  "phi_metered_m100_july": 0.138,
+  "phi_model": 0.2,
+  "alpha": 0.95,
+  "horizons": [
+    1,
+    4,
+    24
+  ],
+  "n_shift": 200,
+  "pue": 1.2,
+  "note": "SENSITIVITY: M100 (V100) util-dependent total-GPU-power correction applied to (i) the LP-active eligible series (as B3) and (ii) the facility GPU term (all allocated pods, LP+non-LP). Host, unallocated idle, PUE unchanged. Not a recalibration of the ASI fleet.",
+  "families": {
+    "training": {
+      "n_clusters": 13,
+      "scope": {
+        "mean_workload_mw": {
+          "uncorrected": 29.36633558359407,
+          "corrected": 17.60584337616141,
+          "shift_pct": -40.04753052676695
+        },
+        "mean_IT_mw": {
+          "uncorrected": 43.60169796726665,
+          "corrected": 31.841205759833986,
+          "shift_pct": -26.97255555566136
+        },
+        "mean_facility_mw": {
+          "uncorrected": 52.322037560719984,
+          "corrected": 38.20944691180078,
+          "shift_pct": -26.97255555566136
+        },
+        "scope_share_uncorrected": {
+          "workload": 0.12023470663155918,
+          "IT": 0.08097970740469985,
+          "facility": 0.06748308950391654
+        },
+        "scope_share_corrected": {
+          "workload": 0.11003880136269831,
+          "IT": 0.06084335865622395,
+          "facility": 0.050702798880186625
+        }
+      },
+      "envelope_and_factors": {
+        "mean_eligible_mw_uncorrected": 3.53085274373735,
+        "mean_eligible_mw_corrected": 1.9373259020922031,
+        "envelope": {
+          "uncorrected": {
+            "h1": {
+              "P_envelope_P3_mw": 2.507773954914842,
+              "P_ind_P2_mw": 2.6880915960947784,
+              "P1_mean_mw": 3.53085274373735,
+              "a_persist": 0.7613151244731542,
+              "a_coinc": 0.932919830022943
+            },
+            "h4": {
+              "P_envelope_P3_mw": 2.316797571285743,
+              "P_ind_P2_mw": 2.5665998315881575,
+              "P1_mean_mw": 3.53085274373735,
+              "a_persist": 0.7269065061239155,
+              "a_coinc": 0.9026719096494905
+            },
+            "h24": {
+              "P_envelope_P3_mw": 1.9465669946147905,
+              "P_ind_P2_mw": 2.3381194338264724,
+              "P1_mean_mw": 3.53085274373735,
+              "a_persist": 0.6621968129295619,
+              "a_coinc": 0.832535312975487
+            }
+          },
+          "corrected": {
+            "h1": {
+              "P_envelope_P3_mw": 1.3486564966434207,
+              "P_ind_P2_mw": 1.4213953843462497,
+              "P1_mean_mw": 1.9373259020922031,
+              "a_persist": 0.7336893512915006,
+              "a_coinc": 0.9488257183723133
+            },
+            "h4": {
+              "P_envelope_P3_mw": 1.2530818660677314,
+              "P_ind_P2_mw": 1.3516069164826354,
+              "P1_mean_mw": 1.9373259020922031,
+              "a_persist": 0.697666259983917,
+              "a_coinc": 0.9271052484169722
+            },
+            "h24": {
+              "P_envelope_P3_mw": 1.0937376437257937,
+              "P_ind_P2_mw": 1.2241570307914136,
+              "P1_mean_mw": 1.9373259020922031,
+              "a_persist": 0.6318797624444048,
+              "a_coinc": 0.8934618812904223
+            }
+          }
+        },
+        "factors": {}
+      },
+      "binding_hour_utilization": {
+        "h1": {
+          "n_binding_hours": 222,
+          "mean_curtail_row_util": 0.2603484347837687
+        },
+        "h4": {
+          "n_binding_hours": 311,
+          "mean_curtail_row_util": 0.28009893787843476
+        },
+        "h24": {
+          "n_binding_hours": 427,
+          "mean_curtail_row_util": 0.3043449747849466
+        }
+      }
+    },
+    "linear": {
+      "n_clusters": 13,
+      "scope": {
+        "mean_workload_mw": {
+          "uncorrected": 29.36633558359407,
+          "corrected": 20.97496178719708,
+          "shift_pct": -28.574807273825986
+        },
+        "mean_IT_mw": {
+          "uncorrected": 43.60169796726665,
+          "corrected": 35.210324170869654,
+          "shift_pct": -19.245520673751514
+        },
+        "mean_facility_mw": {
+          "uncorrected": 52.322037560719984,
+          "corrected": 42.25238900504358,
+          "shift_pct": -19.245520673751525
+        },
+        "scope_share_uncorrected": {
+          "workload": 0.12023470663155918,
+          "IT": 0.08097970740469985,
+          "facility": 0.06748308950391654
+        },
+        "scope_share_corrected": {
+          "workload": 0.11857302820319976,
+          "IT": 0.07063453103939228,
+          "facility": 0.05886210919949357
+        }
+      },
+      "envelope_and_factors": {
+        "mean_eligible_mw_uncorrected": 3.53085274373735,
+        "mean_eligible_mw_corrected": 2.4870647355543567,
+        "envelope": {
+          "uncorrected": {
+            "h1": {
+              "P_envelope_P3_mw": 2.507773954914842,
+              "P_ind_P2_mw": 2.6880915960947784,
+              "P1_mean_mw": 3.53085274373735,
+              "a_persist": 0.7613151244731542,
+              "a_coinc": 0.932919830022943
+            },
+            "h4": {
+              "P_envelope_P3_mw": 2.316797571285743,
+              "P_ind_P2_mw": 2.5665998315881575,
+              "P1_mean_mw": 3.53085274373735,
+              "a_persist": 0.7269065061239155,
+              "a_coinc": 0.9026719096494905
+            },
+            "h24": {
+              "P_envelope_P3_mw": 1.9465669946147905,
+              "P_ind_P2_mw": 2.3381194338264724,
+              "P1_mean_mw": 3.53085274373735,
+              "a_persist": 0.6621968129295619,
+              "a_coinc": 0.832535312975487
+            }
+          },
+          "corrected": {
+            "h1": {
+              "P_envelope_P3_mw": 1.7767831527495301,
+              "P_ind_P2_mw": 1.8966835916956706,
+              "P1_mean_mw": 2.4870647355543567,
+              "a_persist": 0.7626193096549646,
+              "a_coinc": 0.936784163963296
+            },
+            "h4": {
+              "P_envelope_P3_mw": 1.6490290861285797,
+              "P_ind_P2_mw": 1.8130560934681808,
+              "P1_mean_mw": 2.4870647355543567,
+              "a_persist": 0.728994331168488,
+              "a_coinc": 0.9095300978659545
+            },
+            "h24": {
+              "P_envelope_P3_mw": 1.379957779174411,
+              "P_ind_P2_mw": 1.6546444421046376,
+              "P1_mean_mw": 2.4870647355543567,
+              "a_persist": 0.6653001099852047,
+              "a_coinc": 0.8339905202952022
+            }
+          }
+        },
+        "factors": {}
+      },
+      "binding_hour_utilization": {
+        "h1": {
+          "n_binding_hours": 222,
+          "mean_curtail_row_util": 0.2603484347837687
+        },
+        "h4": {
+          "n_binding_hours": 311,
+          "mean_curtail_row_util": 0.28009893787843476
+        },
+        "h24": {
+          "n_binding_hours": 427,
+          "mean_curtail_row_util": 0.3043449747849466
+        }
+      }
+    }
+  }
+}

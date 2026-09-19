@@ -1,0 +1,96 @@
+{
+  "analysis_choice_sensitivity": {
+    "note": "alpha and s0 sweep are the full E1/E2 grids above.",
+    "alphas": [
+      0.9,
+      0.95,
+      0.99
+    ],
+    "s0_sweep": [
+      "measured_scope",
+      "literature_value_PLACEHOLDER"
+    ]
+  },
+  "ensemble_structure": {
+    "n_ensemble": 200,
+    "fraction_persist_monotone_in_T": 1.0,
+    "fraction_coinc_monotone_in_T": 0.98,
+    "fraction_all_factors_below_one": 1.0,
+    "factor_bands": {
+      "h1": {
+        "a_persist": {
+          "p5": 0.6761097154054109,
+          "p50": 0.7564050264081212,
+          "p95": 0.79662219619129
+        },
+        "a_coinc": {
+          "p5": 0.8903090990023423,
+          "p50": 0.928369648450148,
+          "p95": 0.9655137886153157
+        }
+      },
+      "h4": {
+        "a_persist": {
+          "p5": 0.6390266872664546,
+          "p50": 0.7190447327370683,
+          "p95": 0.7636254867879662
+        },
+        "a_coinc": {
+          "p5": 0.8522041577281072,
+          "p50": 0.8977766141004108,
+          "p95": 0.9446358630975115
+        }
+      },
+      "h24": {
+        "a_persist": {
+          "p5": 0.5689414715357402,
+          "p50": 0.6538091106936808,
+          "p95": 0.703694524996237
+        },
+        "a_coinc": {
+          "p5": 0.7885161624726862,
+          "p50": 0.8400801189685845,
+          "p95": 0.9055858401509638
+        }
+      }
+    }
+  },
+  "external_coincidence": {
+    "Helios_allocated_GPU": {
+      "n_sites": 4,
+      "a0.95": {
+        "h1": 0.9696022643885437,
+        "h4": 0.9689044061405582,
+        "h24": 0.9377401586451988,
+        "coinc_below_one_all_T": true,
+        "coinc_grows_with_T": true
+      }
+    }
+  },
+  "provenance": {
+    "script_sha256": "0b7d31cda858685fb2351cd9390aef9acd36dce8e28d9528f697a725749574cd",
+    "powermodel_sha256": "4a030522028ecf0171f7319663af48508588f5e49087c50eef35919f5fbc44ed",
+    "input_agg_sha256": "46e99955d9c3db8cb2ad5c8ae8296a9fc00932f99a7ef4f5ab72212f966b85f7",
+    "config_sha256": "b82279008c2b5eb77e74f2d6c6543b36afc03fa719f68a677a6993638d6fdef9",
+    "generated_at_utc": "2026-09-15T19:00:35.312296+00:00",
+    "command": [
+      "src/flex_decomposition.py",
+      "--agg",
+      "/project/mli30/mli30/asi-trace/agg/pod_hourly_agg.parquet",
+      "--config",
+      "configs/power_curves.yaml",
+      "--out",
+      "/work/mli30/res-gpu-power/2026-09-15_flexibility-decomposition",
+      "--nboot",
+      "1000",
+      "--n-ensemble",
+      "200",
+      "--n-shift",
+      "12",
+      "--n-shift-boot",
+      "3",
+      "--helios-data",
+      "/work/mli30/res-gpu-power/external-data/helios/HeliosData/data"
+    ]
+  }
+}

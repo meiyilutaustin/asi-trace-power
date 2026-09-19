@@ -1,0 +1,50 @@
+{
+  "cluster": "smic",
+  "node": "smic022",
+  "slurm_job": "581010",
+  "allocation": "hpc_gridopt02",
+  "nnodes": "1",
+  "ntasks": "4",
+  "python": "3.11.5",
+  "git_commit": "",
+  "driver": null,
+  "arguments": {
+    "helios_data": "/work/mli30/res-gpu-power/external-data/helios/HeliosData/data",
+    "asi_pod": "/project/mli30/mli30/asi-trace/agg/pod_hourly_agg.parquet",
+    "asi_server": "/project/mli30/mli30/asi-trace/agg/server_hourly_agg.parquet",
+    "config": "configs/power_curves.yaml",
+    "out": "/work/mli30/res-gpu-power/2026-09-09_covariance-robustness-v2",
+    "nboot": 1000,
+    "blocks": [
+      168,
+      336
+    ],
+    "self_test": false
+  },
+  "input_sha256": {
+    "/work/mli30/res-gpu-power/external-data/helios/HeliosData/data/Venus/cluster_log.csv": "41153105b5a1beedfc9f3d5151126d8a2b446ba5699a60a41522a6795e726cac",
+    "/work/mli30/res-gpu-power/external-data/helios/HeliosData/data/Venus/cluster_gpu_number.csv": "08c05fc4d2ac94aceb43f2bfd28d731a089df8e9bb7c3412d2bd211cab2ed57c",
+    "/work/mli30/res-gpu-power/external-data/helios/HeliosData/data/Earth/cluster_log.csv": "bb62d7842ee50a093c1f872afa293a8e27500f38dfc5cd1dab3b10c53746b3db",
+    "/work/mli30/res-gpu-power/external-data/helios/HeliosData/data/Earth/cluster_gpu_number.csv": "cd85b21f9b2651a64ed7ecb86f2c5dea771a3bd55d41537eea976b61aa00642f",
+    "/work/mli30/res-gpu-power/external-data/helios/HeliosData/data/Saturn/cluster_log.csv": "f991918de22dd88fd87ed4f4d8b3b8beb34a19a57007037298c08e48d56c2377",
+    "/work/mli30/res-gpu-power/external-data/helios/HeliosData/data/Saturn/cluster_gpu_number.csv": "d8760e0e69a43ef2c86eb4316436cdebdf513fc5c2742d43875ddcf546bfae5a",
+    "/work/mli30/res-gpu-power/external-data/helios/HeliosData/data/Uranus/cluster_log.csv": "785e4154cefb45dba55bdfb8c3d313f101cd75dbe78b158a09f387ef8f4418af",
+    "/work/mli30/res-gpu-power/external-data/helios/HeliosData/data/Uranus/cluster_gpu_number.csv": "b824e9d839423571f7570a72b3712b0a547926f70ab3d73b9d18b0df3be17e49",
+    "/project/mli30/mli30/asi-trace/agg/pod_hourly_agg.parquet": "46e99955d9c3db8cb2ad5c8ae8296a9fc00932f99a7ef4f5ab72212f966b85f7",
+    "/project/mli30/mli30/asi-trace/agg/server_hourly_agg.parquet": "380d6fcb8eb4f9d6029682fe0b5a4e476a49874dbab2620fa65a8666b93fe3ee",
+    "configs/power_curves.yaml": "b82279008c2b5eb77e74f2d6c6543b36afc03fa719f68a677a6993638d6fdef9"
+  },
+  "script_sha256": "ed0757ac8bdeeaffa17fb0b00159fa0c845703c4a934c37753e3b02bd1b8ae89",
+  "fixed_preprocessing": true,
+  "missing_hours_preserved": true,
+  "ci_level": 0.9,
+  "asi_known_invalid_hour": 126,
+  "asi_missing_cluster_hours": "NaN, not zero-filled",
+  "supporting_code_sha256": {
+    "powermodel.py": "4a030522028ecf0171f7319663af48508588f5e49087c50eef35919f5fbc44ed",
+    "provenance.py": "9d578add9d72ad5885f9cafafc0450e5f200f842fa540e4be87052285551503d"
+  },
+  "mask_definition": "allocation >= 25% published/inventory GPU capacity, all selected clusters; subsets use full-portfolio common support",
+  "primary": "full",
+  "interpretation": "historical covariance; no causal attribution or response eligibility"
+}

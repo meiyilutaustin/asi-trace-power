@@ -1,0 +1,74 @@
+{
+  "boundary": "idle_retained",
+  "eligibility": "central",
+  "n_clusters": 13,
+  "cluster_ids": [
+    "9089d80b",
+    "6d5f55ee",
+    "27dc4b08",
+    "1f28e063",
+    "2f961135",
+    "4d6f06d0",
+    "70870b9a",
+    "4e63968e",
+    "38b984d4",
+    "87532e37",
+    "86a11d5d",
+    "da8d7fb8",
+    "f8dd18ee"
+  ],
+  "excluded_clusters": [
+    "3f39b4b6",
+    "21133261",
+    "65e98ec7"
+  ],
+  "min_cluster_mw": 0.02,
+  "valid_hours": 4439,
+  "calendar_hours": 4440,
+  "mean_eligible_mw": 3.53085274373735,
+  "mean_workload_mw": 28.97438421996517,
+  "measured_scope_share": 0.12186118320693665,
+  "basis": "GPU-side workload MW == facility-marginal at multiplier 1.0",
+  "quantity": "P(x,T,alpha) = (1-alpha) quantile of T-hour running min",
+  "horizons": [
+    1,
+    4,
+    24
+  ],
+  "alphas": [
+    0.9,
+    0.95,
+    0.99
+  ],
+  "alpha_primary": 0.95,
+  "s0_sweep": {
+    "measured_scope": 0.12186118320693665,
+    "literature_value_PLACEHOLDER": 0.15
+  },
+  "provenance": {
+    "script_sha256": "0b7d31cda858685fb2351cd9390aef9acd36dce8e28d9528f697a725749574cd",
+    "powermodel_sha256": "4a030522028ecf0171f7319663af48508588f5e49087c50eef35919f5fbc44ed",
+    "input_agg_sha256": "46e99955d9c3db8cb2ad5c8ae8296a9fc00932f99a7ef4f5ab72212f966b85f7",
+    "config_sha256": "b82279008c2b5eb77e74f2d6c6543b36afc03fa719f68a677a6993638d6fdef9",
+    "generated_at_utc": "2026-09-15T19:00:35.312296+00:00",
+    "command": [
+      "src/flex_decomposition.py",
+      "--agg",
+      "/project/mli30/mli30/asi-trace/agg/pod_hourly_agg.parquet",
+      "--config",
+      "configs/power_curves.yaml",
+      "--out",
+      "/work/mli30/res-gpu-power/2026-09-15_flexibility-decomposition",
+      "--nboot",
+      "1000",
+      "--n-ensemble",
+      "200",
+      "--n-shift",
+      "12",
+      "--n-shift-boot",
+      "3",
+      "--helios-data",
+      "/work/mli30/res-gpu-power/external-data/helios/HeliosData/data"
+    ]
+  }
+}

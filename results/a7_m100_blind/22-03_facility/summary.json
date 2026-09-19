@@ -1,0 +1,52 @@
+{
+  "metrics_present": [
+    "Pue",
+    "Tot",
+    "Tot_cdz",
+    "Tot_chiller",
+    "Tot_ict",
+    "Tot_qpompe",
+    "Tot_servizi"
+  ],
+  "devices": [
+    "pue",
+    "pue_sala_n"
+  ],
+  "m100_room_mean_kw": {
+    "Tot": 1140.60546875,
+    "Tot_ict": 883.8174438476562,
+    "Tot_chiller": 206.75238037109375,
+    "Tot_cdz": 22.275375366210938,
+    "Tot_qpompe": 24.217317581176758,
+    "Tot_servizi": 3.8739354610443115
+  },
+  "effective_pue_m100_room_Tot_over_Tot_ict": {
+    "n_hours": 735,
+    "mean": 1.2900183200836182,
+    "p5": 1.189552640914917,
+    "p50": 1.2710216045379639,
+    "p95": 1.4327401995658875,
+    "min": 1.1691488027572632,
+    "max": 1.4672930240631104,
+    "paper_central": 1.2,
+    "paper_mc_range": [
+      1.1,
+      1.4
+    ]
+  },
+  "overhead_shares_of_it": {
+    "Tot_chiller": 0.23393109440803528,
+    "Tot_cdz": 0.02520359307527542,
+    "Tot_qpompe": 0.02740081399679184,
+    "Tot_servizi": 0.00438318494707346
+  },
+  "reported_Pue_device_pue": {
+    "n_hours": 735,
+    "mean": 1.2904205322265625,
+    "p5": 1.1896507263183593,
+    "p95": 1.4323972225189208
+  },
+  "other_room_pue_sala_n_mean": {
+    "Pue": 2.092015504837036
+  }
+}

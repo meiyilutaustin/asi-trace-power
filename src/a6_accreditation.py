@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""A6 (v2, revision 2): duration-reliability-aggregation surface of
+"""A6 (v2, RERUN_PLAN_v1): duration-reliability-aggregation surface of
 eligible curtailment.
 
     K_{alpha,h}(S) = (1-alpha) quantile of the h-hour running minimum of the
@@ -9,20 +9,20 @@ C uses the shared power model (online floor) and the curtail boundary from the
 config (default idle_retained: the reclaimed GPU keeps idling).  Products:
   curtail      LP eligible curtailment only
   curtail+s_h  + HP shiftable layer scaled by the horizon-specific observed
-               queueing-delay share s_h (h<=1: s_1; 2-4: s_4; >4: s_24 = 0)  
+               queueing-delay share s_h (h<=1: s_1; 2-4: s_4; >4: s_24 = 0)  (P0-3)
 Baselines (mis-specifications a planner might use):
   const   constant share of load calibrated to the MEAN eligible share
   shuf    hours jointly permuted (marginals + covariance kept, persistence lost)
   indep   v2: each cluster's DETRENDED residual circularly shifted and its own
-          168 h trend added back (covariance lost, growth phases kept) ;
+          168 h trend added back (covariance lost, growth phases kept) (P1-5);
           v1 (raw circular shift) also reported for comparison
 Uncertainty: B replicates = power-MC draw x block bootstrap (block 168 h; 24 and
-336 h sensitivity), with PAIRED baselines inside each replicate .
-Robustness : eras (day<105 / >=105 and Standby first day), monthly K,
+336 h sensitivity), with PAIRED baselines inside each replicate (P1-6).
+Robustness (P1-2): eras (day<105 / >=105 and Standby first day), monthly K,
 first-half -> second-half holdout coverage, effective sample counts.
-Missing hours are NaN gaps: any window that spans one is dropped .
+Missing hours are NaN gaps: any window that spans one is dropped (P1-7).
 Electrical boundary columns: workload (GPU side), facility marginal (x1.0),
-facility average (x PUE) .
+facility average (x PUE) (P1-8).
 """
 import itertools
 import json
@@ -42,9 +42,9 @@ from numpy.lib.stride_tricks import sliding_window_view
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import powermodel as pm  # noqa: E402
 
-DATA = os.environ.get("DATA_DIR", os.path.join(os.environ.get("ASI_ROOT", "."), "data"))
-AGG = os.environ.get("AGG_DIR", os.path.join(os.environ.get("ASI_ROOT", "."), "agg"))
-OUT = os.environ.get("OUT_DIR", os.path.join(os.environ.get("ASI_ROOT", "."), "a6_out"))
+DATA = os.environ.get("DATA_DIR", "/project/mli30/mli30/asi-trace/data")
+AGG = os.environ.get("AGG_DIR", "/project/mli30/mli30/asi-trace/agg")
+OUT = os.environ.get("OUT_DIR", "/project/mli30/mli30/asi-trace/a6_out")
 CFG = os.environ.get("POWER_CFG", os.path.join(
     os.path.dirname(__file__), "power_curves.yaml"))
 os.makedirs(OUT, exist_ok=True)
@@ -227,7 +227,7 @@ def main():
             base_row["k_obs_curtail_plus_shift_h"] = kval(prod, h, a)
             base_row["mean_curtail_plus_shift_h"] = float(np.nanmean(prod))
             rows.append(base_row)
-    # portfolios: enumerate when feasible 
+    # portfolios: enumerate when feasible (P1-5)
     for n in range(1, N + 1):
         if comb(N, n) <= 3003:
             combos = list(itertools.combinations(range(N), n))
@@ -258,7 +258,7 @@ def main():
                                  k_const=const_baseline(agg, w, h, a), mean=float(np.nanmean(agg)),
                                  k_shuf=np.nan, k_indep_v1=np.nan,
                                  k_indep_v2=null_indep_v2(curt_g[idx], rng, h, a, n=6) if n > 1 else kval(agg, h, a)))
-    # eras 
+    # eras (P1-2)
     day = np.arange(nt) // 24
     eras = {"pre105": day < REGIME_DAY, "post105": day >= REGIME_DAY,
             "first_half": np.arange(nt) < nt // 2, "second_half": np.arange(nt) >= nt // 2}

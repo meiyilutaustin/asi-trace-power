@@ -14,30 +14,15 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-
-def _find(base, *parts):
-    """Locate a product: flat under base (data/products), a stage subdir (run dir),
-    or the public results/ tree next to data/ (summary tables)."""
-    import os as _os
-    stage_map = {"a1": "a1_load", "a5": "a5_envelope", "a6": "a6_availability"}
-    cands = [_os.path.join(base, parts[-1]), _os.path.join(base, *parts)]
-    root = _os.path.abspath(_os.path.join(base, _os.pardir, _os.pardir))
-    if len(parts) == 2 and parts[0] in stage_map:
-        cands.append(_os.path.join(root, "results", stage_map[parts[0]], parts[1]))
-    for c in cands:
-        if _os.path.exists(c):
-            return c
-    return cands[-1]
-
-R = sys.argv[1]   # data/products (public layout) or a run directory with stage subdirs
+R = sys.argv[1]
 OUT = os.path.join(R, "figs_paper")
 os.makedirs(OUT, exist_ok=True)
 HS = [1, 2, 4, 8, 24]
 ALPHAS = [0.5, 0.9, 0.95, 0.99]
 
 # ---- A6: K vs duration, legend outside -------------------------------------------
-a6 = json.load(open(_find(R, "a6", "summary.json")))
-surf = pd.read_parquet(_find(R, "a6", "k_surface.parquet"))
+a6 = json.load(open(os.path.join(R, "a6", "summary.json")))
+surf = pd.read_parquet(os.path.join(R, "a6", "k_surface.parquet"))
 fl = surf[surf.scope == "fleet"]
 pick = lambda df, h, a: df[(df.h == h) & (df.alpha == a)].iloc[0]
 mean_c = a6["fleet_mean_mw"]["curtail"]
@@ -76,8 +61,8 @@ ax.legend(fontsize=7.5, loc="lower right")
 fig.savefig(os.path.join(OUT, "F_portfolio.png"), dpi=200, bbox_inches="tight"); plt.close(fig)
 
 # ---- A5: average-day envelope, idle-retained as the main boundary -----------------
-env = pd.read_parquet(_find(R, "a5", "envelope_hourly.parquet"))
-a5 = json.load(open(_find(R, "a5", "summary.json")))
+env = pd.read_parquet(os.path.join(R, "a5", "envelope_hourly.parquet"))
+a5 = json.load(open(os.path.join(R, "a5", "summary.json")))
 good = env["good"].to_numpy().astype(bool)
 hod = env["t"].to_numpy() % 24
 avg = lambda col: np.array([env.loc[good & (hod == h), col].mean() for h in range(24)])

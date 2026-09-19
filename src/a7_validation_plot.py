@@ -2,7 +2,7 @@
 """A7a: external validation of the util->power model against published
 measurements (no cluster needed; runs on the laptop venv).
 
-Inputs (data/validation/):
+Inputs (collected 2026-09-03, see runs/2026-09-03_a7-validation/data/):
   validation_points.csv  per-GPU / per-node measured power fractions of TDP
   diurnal_profiles.csv   daily-shape metrics from traces, papers, simulations
 Our model: P/TDP = idle + (1-idle) * g_type(u); base idle 0.20 (0.15-0.25),

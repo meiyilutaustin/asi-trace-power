@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""A8 (v2, revision 2): illustrative peak-cap screening on MISO South.
+"""A8 (v2, RERUN_PLAN_v1 P0-4): illustrative peak-cap screening on MISO South.
 
 RULE (exactly what the code enforces, for the Methods text):
   Let D_t be regional demand (EIA-930 sub-region 8910, hourly, 2024-2025;
@@ -11,7 +11,8 @@ RULE (exactly what the code enforces, for the Methods text):
       (ii) #{t : r_t > 0} <= budget (hours per year in which response is invoked).
   Headroom = sup admissible L (bisection).  Scenarios differ only in c_t:
       full      c_t = s_t            (Duke "Rethinking Load Growth": fully curtailable)
-      const20   c_t = 0.20*s_t       (DCFlex / Dvorkin-style interruptible tier)
+      cap25     c_t = 0.25*IT_t      (25% cluster-power cap; Colangelo et al. Nature Energy 2025,
+                                      Phoenix demo arXiv:2507.00909; IT mapped to facility via PUE)
       constM    c_t = m_bar*s_t      (constant share = our mean eligible share)
       measured  c_t = our hourly eligible curtailment (idle_retained boundary)
       measured_attributed  same with the attributed boundary (upper bound)
@@ -37,17 +38,17 @@ if not PLOT_ONLY:
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-AGG = os.environ.get("AGG_DIR", os.path.join(os.environ.get("ASI_ROOT", "."), "agg"))
-A1 = os.environ.get("A1_DIR", os.path.join(os.environ.get("ASI_ROOT", "."), "a1_out"))
-A5 = os.environ.get("A5_DIR", os.path.join(os.environ.get("ASI_ROOT", "."), "a5_out"))
-OUT = os.environ.get("OUT_DIR", os.path.join(os.environ.get("ASI_ROOT", "."), "a8_out"))
+AGG = os.environ.get("AGG_DIR", "/project/mli30/mli30/asi-trace/agg")
+A1 = os.environ.get("A1_DIR", "/project/mli30/mli30/asi-trace/a1_out")
+A5 = os.environ.get("A5_DIR", "/project/mli30/mli30/asi-trace/a5_out")
+OUT = os.environ.get("OUT_DIR", "/project/mli30/mli30/asi-trace/a8_out")
 CFG = os.environ.get("POWER_CFG", os.path.join(os.path.dirname(__file__), "power_curves.yaml"))
 SYS = os.environ.get("SYS_CSV", os.path.join(AGG, "miso_south_hourly_2024_2025.csv"))
 os.makedirs(OUT, exist_ok=True)
 N_ALIGN = int(os.environ.get("A8_NALIGN", 200))
 BUDGETS_PCT = [0.25, 0.5, 1.0, 2.0]
 MARGINS = [0.0, 0.02, 0.05, 0.10]
-SCEN = ["full", "const20", "constM", "measured", "measured_attributed"]
+SCEN = ["full", "cap25", "constM", "measured", "measured_attributed"]
 HYPERION_MW = 2000.0
 EVENT_MARGIN = 0.05
 EVENT_BUDGET_PCT = 0.5
@@ -69,9 +70,9 @@ def plot_headroom_by_scenario(summary):
     Keeping this plot independent of the expensive offset sweep allows label-only
     corrections to be reproduced without rerunning the screening calculation.
     """
-    cols = {"full": "#999", "const20": "tab:orange", "constM": "tab:blue", "measured": "tab:green",
+    cols = {"full": "#999", "cap25": "tab:orange", "constM": "tab:blue", "measured": "tab:green",
             "measured_attributed": "tab:olive"}
-    labels = {"full": "fully curtailable (Duke assumption)", "const20": "20% interruptible tier (DCFlex-style)",
+    labels = {"full": "fully curtailable (Duke assumption)", "cap25": "25% cluster-power cap (Nature Energy demo)",
               "constM": "constant share = our mean eligible share", "measured": "hourly eligibility, idle-retained (this work)",
               "measured_attributed": "hourly eligibility, attributed boundary (upper bound)"}
     budget_pct = EVENT_BUDGET_PCT
@@ -104,7 +105,7 @@ def plot_headroom_ratio(summary):
     fig, axes = plt.subplots(1, 2, figsize=(11.5, 4.8), constrained_layout=True)
     for ax, key, ttl in [
             (axes[0], "measured_over_constM", "hourly / constant mean"),
-            (axes[1], "measured_over_const20", "hourly / 20% tier")]:
+            (axes[1], "measured_over_cap25", "hourly / 25% cap")]:
         matrix = np.array([
             [summary["tiers"]["facility_marginal_pue1.0"]["ratios_p50_unrounded"]
              [f"m{m}"][f"{b}%"][key] for b in BUDGETS_PCT]
@@ -146,6 +147,12 @@ def load_dc(cfg, pue_factor):
     for b in ["idle_retained", "attributed"]:
         c = env[f"curtail_{b}"].to_numpy()
         C[b] = np.interp(t, t[good], c[good]) * pue_factor
+    # cap25: 25% of cluster/IT power (Colangelo et al., Nature Energy 2025; Phoenix
+    # demonstration arXiv:2507.00909), mapped to the facility node with the SAME
+    # PUE treatment as the measured curtailable series so the two are comparable.
+    # F is facility power; IT power = F / pue_base, so cap25 = 0.25 * (F/pue_base) * pue_factor.
+    pue_base = cfg["pue"]["base"]
+    C["cap25"] = 0.25 * (F / pue_base) * pue_factor
     cap = pd.Series(F).rolling(168, min_periods=24).max().bfill().to_numpy()
     return F / cap, {b: c / cap for b, c in C.items()}, int(good.sum())
 
@@ -272,7 +279,7 @@ def run(D, s, c, rng):
     noflex = {m: np.zeros(N_ALIGN) for m in MARGINS}
     for i, off in enumerate(offsets):
         s_al = tile(s, off)
-        avail = {"full": s_al, "const20": 0.20 * s_al, "constM": mean_share * s_al,
+        avail = {"full": s_al, "cap25": tile(c["cap25"], off), "constM": mean_share * s_al,
                  "measured": tile(c["idle_retained"], off), "measured_attributed": tile(c["attributed"], off)}
         for m in MARGINS:
             cap = Pcap0 * (1 + m)
@@ -335,10 +342,10 @@ def main():
             "ratios_p50_unrounded": {f"m{m}": {f"{b}%": {
                 "measured_over_noflex": med(m, "measured", b) / max(float(np.median(noflex[m])), 1e-9),
                 "measured_over_constM": med(m, "measured", b) / max(med(m, "constM", b), 1e-9),
-                "measured_over_const20": med(m, "measured", b) / max(med(m, "const20", b), 1e-9),
+                "measured_over_cap25": med(m, "measured", b) / max(med(m, "cap25", b), 1e-9),
                 "measured_over_full": med(m, "measured", b) / max(med(m, "full", b), 1e-9),
                 "attributed_over_measured": med(m, "measured_attributed", b) / max(med(m, "measured", b), 1e-9),
-                "const20_over_measured": med(m, "const20", b) / max(med(m, "measured", b), 1e-9),
+                "cap25_over_measured": med(m, "cap25", b) / max(med(m, "measured", b), 1e-9),
                 "full_over_measured": med(m, "full", b) / max(med(m, "measured", b), 1e-9),
                 "measured_in_hyperion_units": med(m, "measured", b) / HYPERION_MW}
                 for b in BUDGETS_PCT} for m in MARGINS}}

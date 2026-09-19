@@ -1,5 +1,5 @@
 {
-  "rule": "(exactly what the code enforces, for the Methods text):\n  Let D_t be regional demand (EIA-930 sub-region 8910, hourly, 2024-2025;\n  gaps <= 48 h interpolated), P_cap = max_t D_t * (1 + m).  A candidate load L\n  (MW, = \"nameplate\" = the datacenter's 7-day rolling-max facility draw) has\n  hourly draw L*s_t and hourly curtailable capability L*c_t.  Residual excess\n  r_t = max(0, D_t + L*s_t - P_cap).  L is ADMISSIBLE iff\n      (i)  r_t <= L*c_t for EVERY hour t  (no post-response violation), and\n      (ii) #{t : r_t > 0} <= budget (hours per year in which response is invoked).\n  Headroom = sup admissible L (bisection).  Scenarios differ only in c_t:\n      full      c_t = s_t            (Duke \"Rethinking Load Growth\": fully curtailable)\n      const20   c_t = 0.20*s_t       (DCFlex / Dvorkin-style interruptible tier)\n      constM    c_t = m_bar*s_t      (constant share = our mean eligible share)\n      measured  c_t = our hourly eligible curtailment (idle_retained boundary)\n      measured_attributed  same with the attributed boundary (upper bound)\n  Time alignment: the 185-day trace (4,440 h) is circularly rolled by a random\n  offset and tiled (np.resize) to the 17,544 system hours; 200 offsets ->\n  P5/P50/P95.  Missing trace hours are linearly interpolated before tiling.\n  Facility conversion of c_t: marginal (x1.0) and average PUE (x cfg.pue).",
+  "rule": "(exactly what the code enforces, for the Methods text):\n  Let D_t be regional demand (EIA-930 sub-region 8910, hourly, 2024-2025;\n  gaps <= 48 h interpolated), P_cap = max_t D_t * (1 + m).  A candidate load L\n  (MW, = \"nameplate\" = the datacenter's 7-day rolling-max facility draw) has\n  hourly draw L*s_t and hourly curtailable capability L*c_t.  Residual excess\n  r_t = max(0, D_t + L*s_t - P_cap).  L is ADMISSIBLE iff\n      (i)  r_t <= L*c_t for EVERY hour t  (no post-response violation), and\n      (ii) #{t : r_t > 0} <= budget (hours per year in which response is invoked).\n  Headroom = sup admissible L (bisection).  Scenarios differ only in c_t:\n      full      c_t = s_t            (Duke \"Rethinking Load Growth\": fully curtailable)\n      cap25     c_t = 0.25*IT_t      (25% cluster-power cap; Colangelo et al. Nature Energy 2025,\n                                      Phoenix demo arXiv:2507.00909; IT mapped to facility via PUE)\n      constM    c_t = m_bar*s_t      (constant share = our mean eligible share)\n      measured  c_t = our hourly eligible curtailment (idle_retained boundary)\n      measured_attributed  same with the attributed boundary (upper bound)\n  Time alignment: the 185-day trace (4,440 h) is circularly rolled by a random\n  offset and tiled (np.resize) to the 17,544 system hours; 200 offsets ->\n  P5/P50/P95.  Missing trace hours are linearly interpolated before tiling.\n  Facility conversion of c_t: marginal (x1.0) and average PUE (x cfg.pue).",
   "system": {
     "region": "MISO South (EIA-930 sub-region 8910: AR/LA/MS/E-TX)",
     "hours": 17544,
@@ -61,7 +61,7 @@
               "p95": 3135.7658765609813
             }
           },
-          "const20": {
+          "cap25": {
             "0.25%": {
               "p5": 0.0,
               "p50": 0.0,
@@ -173,26 +173,26 @@
               "p95": 3815.594657150541
             }
           },
-          "const20": {
+          "cap25": {
             "0.25%": {
-              "p5": 816.8941389330939,
-              "p50": 842.1380400886846,
-              "p95": 892.9949853663855
+              "p5": 825.4930246039294,
+              "p50": 851.002651033923,
+              "p95": 902.3949325837747
             },
             "0.5%": {
-              "p5": 816.8941389330939,
-              "p50": 842.1380400886846,
-              "p95": 892.9949853663855
+              "p5": 825.4930246039294,
+              "p50": 851.002651033923,
+              "p95": 902.3949325837747
             },
             "1.0%": {
-              "p5": 816.8941389330939,
-              "p50": 842.1380400886846,
-              "p95": 892.9949853663855
+              "p5": 825.4930246039294,
+              "p50": 851.002651033923,
+              "p95": 902.3949325837747
             },
             "2.0%": {
-              "p5": 816.8941389330939,
-              "p50": 842.1380400886846,
-              "p95": 892.9949853663855
+              "p5": 825.4930246039294,
+              "p50": 851.002651033923,
+              "p95": 902.3949325837747
             }
           },
           "constM": {
@@ -285,26 +285,26 @@
               "p95": 4846.0879487092825
             }
           },
-          "const20": {
+          "cap25": {
             "0.25%": {
-              "p5": 2042.23534735047,
-              "p50": 2105.345100226259,
-              "p95": 2176.5581481122354
+              "p5": 2063.7325615352893,
+              "p50": 2127.5066275939025,
+              "p95": 2199.469286515523
             },
             "0.5%": {
-              "p5": 2042.23534735047,
-              "p50": 2105.345100226259,
-              "p95": 2176.5581481122354
+              "p5": 2063.7325615352893,
+              "p50": 2127.5066275939025,
+              "p95": 2199.469286515523
             },
             "1.0%": {
-              "p5": 2042.23534735047,
-              "p50": 2105.345100226259,
-              "p95": 2176.5581481122354
+              "p5": 2063.7325615352893,
+              "p50": 2127.5066275939025,
+              "p95": 2199.469286515523
             },
             "2.0%": {
-              "p5": 2042.23534735047,
-              "p50": 2105.345100226259,
-              "p95": 2176.5581481122354
+              "p5": 2063.7325615352893,
+              "p50": 2127.5066275939025,
+              "p95": 2199.469286515523
             }
           },
           "constM": {
@@ -397,26 +397,26 @@
               "p95": 6556.141916196793
             }
           },
-          "const20": {
+          "cap25": {
             "0.25%": {
-              "p5": 4084.4706947182203,
-              "p50": 4184.8319402288325,
-              "p95": 4277.524702670235
+              "p5": 4127.465123088768,
+              "p50": 4228.88280276311,
+              "p95": 4305.876389969853
             },
             "0.5%": {
-              "p5": 4084.4706947182203,
-              "p50": 4184.8319402288325,
-              "p95": 4280.852764154588
+              "p5": 4127.465123088768,
+              "p50": 4228.88280276311,
+              "p95": 4325.914372191619
             },
             "1.0%": {
-              "p5": 4084.4706947182203,
-              "p50": 4184.8319402288325,
-              "p95": 4280.852764154588
+              "p5": 4127.465123088768,
+              "p50": 4228.88280276311,
+              "p95": 4325.914372191619
             },
             "2.0%": {
-              "p5": 4084.4706947182203,
-              "p50": 4184.8319402288325,
-              "p95": 4280.852764154588
+              "p5": 4127.465123088768,
+              "p50": 4228.88280276311,
+              "p95": 4325.914372191619
             }
           },
           "constM": {
@@ -514,40 +514,40 @@
           "0.25%": {
             "measured_over_noflex": 0.0,
             "measured_over_constM": 0.0,
-            "measured_over_const20": 0.0,
+            "measured_over_cap25": 0.0,
             "measured_over_full": 0.0,
             "attributed_over_measured": 0.0,
-            "const20_over_measured": 0.0,
+            "cap25_over_measured": 0.0,
             "full_over_measured": 936788896497.0916,
             "measured_in_hyperion_units": 0.0
           },
           "0.5%": {
             "measured_over_noflex": 0.0,
             "measured_over_constM": 0.0,
-            "measured_over_const20": 0.0,
+            "measured_over_cap25": 0.0,
             "measured_over_full": 0.0,
             "attributed_over_measured": 0.0,
-            "const20_over_measured": 0.0,
+            "cap25_over_measured": 0.0,
             "full_over_measured": 1372474893423.714,
             "measured_in_hyperion_units": 0.0
           },
           "1.0%": {
             "measured_over_noflex": 0.0,
             "measured_over_constM": 0.0,
-            "measured_over_const20": 0.0,
+            "measured_over_cap25": 0.0,
             "measured_over_full": 0.0,
             "attributed_over_measured": 0.0,
-            "const20_over_measured": 0.0,
+            "cap25_over_measured": 0.0,
             "full_over_measured": 2122328189389.0088,
             "measured_in_hyperion_units": 0.0
           },
           "2.0%": {
             "measured_over_noflex": 0.0,
             "measured_over_constM": 0.0,
-            "measured_over_const20": 0.0,
+            "measured_over_cap25": 0.0,
             "measured_over_full": 0.0,
             "attributed_over_measured": 0.0,
-            "const20_over_measured": 0.0,
+            "cap25_over_measured": 0.0,
             "full_over_measured": 3090665967984.023,
             "measured_in_hyperion_units": 0.0
           }
@@ -556,40 +556,40 @@
           "0.25%": {
             "measured_over_noflex": 1.075302781237779,
             "measured_over_constM": 1.0023732006909973,
-            "measured_over_const20": 0.8602422249934045,
+            "measured_over_cap25": 0.8512813684861211,
             "measured_over_full": 0.45097418486894947,
             "attributed_over_measured": 1.053627646725892,
-            "const20_over_measured": 1.1624632817898086,
+            "cap25_over_measured": 1.1746997373833672,
             "full_over_measured": 2.217421824911318,
             "measured_in_hyperion_units": 0.3622213506787375
           },
           "0.5%": {
             "measured_over_noflex": 1.075302781237779,
             "measured_over_constM": 1.0023732006909973,
-            "measured_over_const20": 0.8602422249934045,
+            "measured_over_cap25": 0.8512813684861211,
             "measured_over_full": 0.35461346334240906,
             "attributed_over_measured": 1.053627646725892,
-            "const20_over_measured": 1.1624632817898086,
+            "cap25_over_measured": 1.1746997373833672,
             "full_over_measured": 2.819971894395944,
             "measured_in_hyperion_units": 0.3622213506787375
           },
           "1.0%": {
             "measured_over_noflex": 1.075302781237779,
             "measured_over_constM": 1.0023732006909973,
-            "measured_over_const20": 0.8602422249934045,
+            "measured_over_cap25": 0.8512813684861211,
             "measured_over_full": 0.25928731302741664,
             "attributed_over_measured": 1.053627646725892,
-            "const20_over_measured": 1.1624632817898086,
+            "cap25_over_measured": 1.1746997373833672,
             "full_over_measured": 3.8567255309335615,
             "measured_in_hyperion_units": 0.3622213506787375
           },
           "2.0%": {
             "measured_over_noflex": 1.075302781237779,
             "measured_over_constM": 1.0023732006909973,
-            "measured_over_const20": 0.8602422249934045,
+            "measured_over_cap25": 0.8512813684861211,
             "measured_over_full": 0.19248291938621537,
             "attributed_over_measured": 1.053627646725892,
-            "const20_over_measured": 1.1624632817898086,
+            "cap25_over_measured": 1.1746997373833672,
             "full_over_measured": 5.1952661731688945,
             "measured_in_hyperion_units": 0.3622213506787375
           }
@@ -598,40 +598,40 @@
           "0.25%": {
             "measured_over_noflex": 1.0743355497796765,
             "measured_over_constM": 1.0014715691604335,
-            "measured_over_const20": 0.8594684398250634,
+            "measured_over_cap25": 0.8505156435781487,
             "measured_over_full": 0.6926730077966199,
             "attributed_over_measured": 1.0501198729863703,
-            "const20_over_measured": 1.1635098552351038,
+            "cap25_over_measured": 1.1757573273937274,
             "full_over_measured": 1.4436826449770024,
             "measured_in_hyperion_units": 0.9047388342924023
           },
           "0.5%": {
             "measured_over_noflex": 1.0743355497796765,
             "measured_over_constM": 1.0014715691604335,
-            "measured_over_const20": 0.8594684398250634,
+            "measured_over_cap25": 0.8505156435781487,
             "measured_over_full": 0.592557002243932,
             "attributed_over_measured": 1.0501198729863703,
-            "const20_over_measured": 1.1635098552351038,
+            "cap25_over_measured": 1.1757573273937274,
             "full_over_measured": 1.6876013551660636,
             "measured_in_hyperion_units": 0.9047388342924023
           },
           "1.0%": {
             "measured_over_noflex": 1.0743355497796765,
             "measured_over_constM": 1.0014715691604335,
-            "measured_over_const20": 0.8594684398250634,
+            "measured_over_cap25": 0.8505156435781487,
             "measured_over_full": 0.47589014039659866,
             "attributed_over_measured": 1.0501198729863703,
-            "const20_over_measured": 1.1635098552351038,
+            "cap25_over_measured": 1.1757573273937274,
             "full_over_measured": 2.101325316735113,
             "measured_in_hyperion_units": 0.9047388342924023
           },
           "2.0%": {
             "measured_over_noflex": 1.0743355497796765,
             "measured_over_constM": 1.0014715691604335,
-            "measured_over_const20": 0.8594684398250634,
+            "measured_over_cap25": 0.8505156435781487,
             "measured_over_full": 0.3790319162036991,
             "attributed_over_measured": 1.0501198729863703,
-            "const20_over_measured": 1.1635098552351038,
+            "cap25_over_measured": 1.1757573273937274,
             "full_over_measured": 2.6383002519043295,
             "measured_in_hyperion_units": 0.9047388342924023
           }
@@ -640,53 +640,85 @@
           "0.25%": {
             "measured_over_noflex": 1.0695076536032737,
             "measured_over_constM": 0.9969711123268981,
-            "measured_over_const20": 0.8556061228850007,
+            "measured_over_cap25": 0.8466935591038368,
             "measured_over_full": 0.8347717235395031,
             "attributed_over_measured": 1.0475652051946038,
-            "const20_over_measured": 1.1687620895326467,
+            "cap25_over_measured": 1.1810648483713833,
             "full_over_measured": 1.1979322871166682,
             "measured_in_hyperion_units": 1.7902839156522532
           },
           "0.5%": {
             "measured_over_noflex": 1.0695076536032737,
             "measured_over_constM": 0.9969711123268981,
-            "measured_over_const20": 0.8556061228850007,
+            "measured_over_cap25": 0.8466935591038368,
             "measured_over_full": 0.7558021843891365,
             "attributed_over_measured": 1.0475652051946038,
-            "const20_over_measured": 1.1687620895326467,
+            "cap25_over_measured": 1.1810648483713833,
             "full_over_measured": 1.3230975255889634,
             "measured_in_hyperion_units": 1.7902839156522532
           },
           "1.0%": {
             "measured_over_noflex": 1.0695076536032737,
             "measured_over_constM": 0.9969711123268981,
-            "measured_over_const20": 0.8556061228850007,
+            "measured_over_cap25": 0.8466935591038368,
             "measured_over_full": 0.6536158722292175,
             "attributed_over_measured": 1.0475652051946038,
-            "const20_over_measured": 1.1687620895326467,
+            "cap25_over_measured": 1.1810648483713833,
             "full_over_measured": 1.5299506062932766,
             "measured_in_hyperion_units": 1.7902839156522532
           },
           "2.0%": {
             "measured_over_noflex": 1.0695076536032737,
             "measured_over_constM": 0.9969711123268981,
-            "measured_over_const20": 0.8556061228850007,
+            "measured_over_cap25": 0.8466935591038368,
             "measured_over_full": 0.5543977683209658,
             "attributed_over_measured": 1.0475652051946038,
-            "const20_over_measured": 1.1687620895326467,
+            "cap25_over_measured": 1.1810648483713833,
             "full_over_measured": 1.803759064594674,
             "measured_in_hyperion_units": 1.7902839156522532
           }
         }
       },
       "event_structure_measured_m0.05_0.5pct": {
-        "L_mw": 1809.4776685848046,
-        "n_events": 3,
-        "hours": 4,
-        "max_event_h": 2,
-        "median_event_h": 1.0,
-        "curtailed_energy_pct_of_dc": 0.0009238215640241452,
-        "max_depth_frac_of_load": 0.07402828989650609
+        "definition": "Each random trace-to-system offset is evaluated at its own admissible measured-scenario headroom L for margin=5% and invoked-hours budget=0.5%; P5/P50/P95 are across offsets.",
+        "n_alignments": 200,
+        "all_alignments_feasible": true,
+        "budget_hours": 87.72,
+        "L_mw": {
+          "p5": 1741.553690559158,
+          "p50": 1809.4776685848046,
+          "p95": 1864.6798920844958
+        },
+        "n_events": {
+          "p5": 2.0,
+          "p50": 3.0,
+          "p95": 3.0
+        },
+        "hours_invoked": {
+          "p5": 2.0,
+          "p50": 3.0,
+          "p95": 4.0
+        },
+        "max_event_h": {
+          "p5": 1.0,
+          "p50": 2.0,
+          "p95": 2.0
+        },
+        "median_event_h": {
+          "p5": 1.0,
+          "p50": 1.0,
+          "p95": 1.5
+        },
+        "curtailed_energy_pct_of_dc": {
+          "p5": 0.0003744720320701197,
+          "p50": 0.0007389470130660253,
+          "p95": 0.001193001669368294
+        },
+        "max_depth_frac_of_load": {
+          "p5": 0.05114725427869009,
+          "p50": 0.06601763257389982,
+          "p95": 0.0874500541547227
+        }
       }
     },
     "facility_avg_pue": {
@@ -722,7 +754,7 @@
               "p95": 3135.7658765609813
             }
           },
-          "const20": {
+          "cap25": {
             "0.25%": {
               "p5": 0.0,
               "p50": 0.0,
@@ -834,26 +866,26 @@
               "p95": 3815.594657150541
             }
           },
-          "const20": {
+          "cap25": {
             "0.25%": {
-              "p5": 816.8941389330939,
-              "p50": 842.1380400886846,
-              "p95": 892.9949853663855
+              "p5": 871.3537482090032,
+              "p50": 898.2805760933843,
+              "p95": 952.5279843974203
             },
             "0.5%": {
-              "p5": 816.8941389330939,
-              "p50": 842.1380400886846,
-              "p95": 892.9949853663855
+              "p5": 871.3537482090032,
+              "p50": 898.2805760933843,
+              "p95": 952.5279843974203
             },
             "1.0%": {
-              "p5": 816.8941389330939,
-              "p50": 842.1380400886846,
-              "p95": 892.9949853663855
+              "p5": 871.3537482090032,
+              "p50": 898.2805760933843,
+              "p95": 952.5279843974203
             },
             "2.0%": {
-              "p5": 816.8941389330939,
-              "p50": 842.1380400886846,
-              "p95": 892.9949853663855
+              "p5": 871.3537482090032,
+              "p50": 898.2805760933843,
+              "p95": 952.5279843974203
             }
           },
           "constM": {
@@ -946,26 +978,26 @@
               "p95": 4846.0879487092825
             }
           },
-          "const20": {
+          "cap25": {
             "0.25%": {
-              "p5": 2042.23534735047,
-              "p50": 2105.345100226259,
-              "p95": 2176.5581481122354
+              "p5": 2178.3843705234176,
+              "p50": 2245.7014402334607,
+              "p95": 2321.662024660327
             },
             "0.5%": {
-              "p5": 2042.23534735047,
-              "p50": 2105.345100226259,
-              "p95": 2176.5581481122354
+              "p5": 2178.3843705234176,
+              "p50": 2245.7014402334607,
+              "p95": 2321.662024660327
             },
             "1.0%": {
-              "p5": 2042.23534735047,
-              "p50": 2105.345100226259,
-              "p95": 2176.5581481122354
+              "p5": 2178.3843705234176,
+              "p50": 2245.7014402334607,
+              "p95": 2321.662024660327
             },
             "2.0%": {
-              "p5": 2042.23534735047,
-              "p50": 2105.345100226259,
-              "p95": 2176.5581481122354
+              "p5": 2178.3843705234176,
+              "p50": 2245.7014402334607,
+              "p95": 2321.662024660327
             }
           },
           "constM": {
@@ -1058,26 +1090,26 @@
               "p95": 6556.141916196793
             }
           },
-          "const20": {
+          "cap25": {
             "0.25%": {
-              "p5": 4084.4706947182203,
-              "p50": 4184.8319402288325,
-              "p95": 4277.524702670235
+              "p5": 4233.465495179189,
+              "p50": 4289.277811330976,
+              "p95": 4404.664755729755
             },
             "0.5%": {
-              "p5": 4084.4706947182203,
-              "p50": 4184.8319402288325,
-              "p95": 4280.852764154588
+              "p5": 4356.768741046835,
+              "p50": 4463.820736245907,
+              "p95": 4566.24294842004
             },
             "1.0%": {
-              "p5": 4084.4706947182203,
-              "p50": 4184.8319402288325,
-              "p95": 4280.852764154588
+              "p5": 4356.768741046835,
+              "p50": 4463.820736245907,
+              "p95": 4566.24294842004
             },
             "2.0%": {
-              "p5": 4084.4706947182203,
-              "p50": 4184.8319402288325,
-              "p95": 4280.852764154588
+              "p5": 4356.768741046835,
+              "p50": 4463.820736245907,
+              "p95": 4566.24294842004
             }
           },
           "constM": {
@@ -1175,40 +1207,40 @@
           "0.25%": {
             "measured_over_noflex": 0.0,
             "measured_over_constM": 0.0,
-            "measured_over_const20": 0.0,
+            "measured_over_cap25": 0.0,
             "measured_over_full": 0.0,
             "attributed_over_measured": 0.0,
-            "const20_over_measured": 0.0,
+            "cap25_over_measured": 0.0,
             "full_over_measured": 936788896497.0916,
             "measured_in_hyperion_units": 0.0
           },
           "0.5%": {
             "measured_over_noflex": 0.0,
             "measured_over_constM": 0.0,
-            "measured_over_const20": 0.0,
+            "measured_over_cap25": 0.0,
             "measured_over_full": 0.0,
             "attributed_over_measured": 0.0,
-            "const20_over_measured": 0.0,
+            "cap25_over_measured": 0.0,
             "full_over_measured": 1372474893423.714,
             "measured_in_hyperion_units": 0.0
           },
           "1.0%": {
             "measured_over_noflex": 0.0,
             "measured_over_constM": 0.0,
-            "measured_over_const20": 0.0,
+            "measured_over_cap25": 0.0,
             "measured_over_full": 0.0,
             "attributed_over_measured": 0.0,
-            "const20_over_measured": 0.0,
+            "cap25_over_measured": 0.0,
             "full_over_measured": 2122328189389.0088,
             "measured_in_hyperion_units": 0.0
           },
           "2.0%": {
             "measured_over_noflex": 0.0,
             "measured_over_constM": 0.0,
-            "measured_over_const20": 0.0,
+            "measured_over_cap25": 0.0,
             "measured_over_full": 0.0,
             "attributed_over_measured": 0.0,
-            "const20_over_measured": 0.0,
+            "cap25_over_measured": 0.0,
             "full_over_measured": 3090665967984.023,
             "measured_in_hyperion_units": 0.0
           }
@@ -1217,40 +1249,40 @@
           "0.25%": {
             "measured_over_noflex": 1.092290299328511,
             "measured_over_constM": 1.0033922422328545,
-            "measured_over_const20": 0.8738322394660405,
+            "measured_over_cap25": 0.8192177245005189,
             "measured_over_full": 0.45809862670764345,
             "attributed_over_measured": 1.0642964299656361,
-            "const20_over_measured": 1.1443844193835822,
+            "cap25_over_measured": 1.2206767140075063,
             "full_over_measured": 2.182936035383917,
             "measured_in_hyperion_units": 0.36794368475511874
           },
           "0.5%": {
             "measured_over_noflex": 1.092290299328511,
             "measured_over_constM": 1.0033922422328545,
-            "measured_over_const20": 0.8738322394660405,
+            "measured_over_cap25": 0.8192177245005189,
             "measured_over_full": 0.3602156088300382,
             "attributed_over_measured": 1.0642964299656361,
-            "const20_over_measured": 1.1443844193835822,
+            "cap25_over_measured": 1.2206767140075063,
             "full_over_measured": 2.7761151251828,
             "measured_in_hyperion_units": 0.36794368475511874
           },
           "1.0%": {
             "measured_over_noflex": 1.092290299328511,
             "measured_over_constM": 1.0033922422328545,
-            "measured_over_const20": 0.8738322394660405,
+            "measured_over_cap25": 0.8192177245005189,
             "measured_over_full": 0.2633835062090992,
             "attributed_over_measured": 1.0642964299656361,
-            "const20_over_measured": 1.1443844193835822,
+            "cap25_over_measured": 1.2206767140075063,
             "full_over_measured": 3.7967449609623753,
             "measured_in_hyperion_units": 0.36794368475511874
           },
           "2.0%": {
             "measured_over_noflex": 1.092290299328511,
             "measured_over_constM": 1.0033922422328545,
-            "measured_over_const20": 0.8738322394660405,
+            "measured_over_cap25": 0.8192177245005189,
             "measured_over_full": 0.19552374391702,
             "attributed_over_measured": 1.0642964299656361,
-            "const20_over_measured": 1.1443844193835822,
+            "cap25_over_measured": 1.2206767140075063,
             "full_over_measured": 5.1144683503216815,
             "measured_in_hyperion_units": 0.36794368475511874
           }
@@ -1259,40 +1291,40 @@
           "0.25%": {
             "measured_over_noflex": 1.0906817713623094,
             "measured_over_constM": 1.0019146272767447,
-            "measured_over_const20": 0.8725454170911897,
+            "measured_over_cap25": 0.8180113285258614,
             "measured_over_full": 0.7032121605520828,
             "attributed_over_measured": 1.0591008451504003,
-            "const20_over_measured": 1.1460721475493008,
+            "cap25_over_measured": 1.2224769573816299,
             "full_over_measured": 1.4220459430265155,
             "measured_in_hyperion_units": 0.9185046092989069
           },
           "0.5%": {
             "measured_over_noflex": 1.0906817713623094,
             "measured_over_constM": 1.0019146272767447,
-            "measured_over_const20": 0.8725454170911897,
+            "measured_over_cap25": 0.8180113285258614,
             "measured_over_full": 0.601572870760064,
             "attributed_over_measured": 1.0591008451504003,
-            "const20_over_measured": 1.1460721475493008,
+            "cap25_over_measured": 1.2224769573816299,
             "full_over_measured": 1.662309004620735,
             "measured_in_hyperion_units": 0.9185046092989069
           },
           "1.0%": {
             "measured_over_noflex": 1.0906817713623094,
             "measured_over_constM": 1.0019146272767447,
-            "measured_over_const20": 0.8725454170911897,
+            "measured_over_cap25": 0.8180113285258614,
             "measured_over_full": 0.4831309002183399,
             "attributed_over_measured": 1.0591008451504003,
-            "const20_over_measured": 1.1460721475493008,
+            "cap25_over_measured": 1.2224769573816299,
             "full_over_measured": 2.0698324192223536,
             "measured_in_hyperion_units": 0.9185046092989069
           },
           "2.0%": {
             "measured_over_noflex": 1.0906817713623094,
             "measured_over_constM": 1.0019146272767447,
-            "measured_over_const20": 0.8725454170911897,
+            "measured_over_cap25": 0.8180113285258614,
             "measured_over_full": 0.38479895955475096,
             "attributed_over_measured": 1.0591008451504003,
-            "const20_over_measured": 1.1460721475493008,
+            "cap25_over_measured": 1.2224769573816299,
             "full_over_measured": 2.5987596254342664,
             "measured_in_hyperion_units": 0.9185046092989069
           }
@@ -1301,53 +1333,85 @@
           "0.25%": {
             "measured_over_noflex": 1.0851916169744424,
             "measured_over_constM": 0.9968712992082649,
-            "measured_over_const20": 0.8681532935819707,
+            "measured_over_cap25": 0.8470133649070716,
             "measured_over_full": 0.8470133649070716,
             "attributed_over_measured": 1.0571089372172318,
-            "const20_over_measured": 1.1518703060769768,
+            "cap25_over_measured": 1.1806189151569209,
             "full_over_measured": 1.1806189151569209,
             "measured_in_hyperion_units": 1.8165378159983447
           },
           "0.5%": {
             "measured_over_noflex": 1.0851916169744424,
             "measured_over_constM": 0.9968712992082649,
-            "measured_over_const20": 0.8681532935819707,
+            "measured_over_cap25": 0.8138937127327658,
             "measured_over_full": 0.7668857645167507,
             "attributed_over_measured": 1.0571089372172318,
-            "const20_over_measured": 1.1518703060769768,
+            "cap25_over_measured": 1.2286616598159426,
             "full_over_measured": 1.3039751763160516,
             "measured_in_hyperion_units": 1.8165378159983447
           },
           "1.0%": {
             "measured_over_noflex": 1.0851916169744424,
             "measured_over_constM": 0.9968712992082649,
-            "measured_over_const20": 0.8681532935819707,
+            "measured_over_cap25": 0.8138937127327658,
             "measured_over_full": 0.6632009250937949,
             "attributed_over_measured": 1.0571089372172318,
-            "const20_over_measured": 1.1518703060769768,
+            "cap25_over_measured": 1.2286616598159426,
             "full_over_measured": 1.5078386687391494,
             "measured_in_hyperion_units": 1.8165378159983447
           },
           "2.0%": {
             "measured_over_noflex": 1.0851916169744424,
             "measured_over_constM": 0.9968712992082649,
-            "measured_over_const20": 0.8681532935819707,
+            "measured_over_cap25": 0.8138937127327658,
             "measured_over_full": 0.5625278216797323,
             "attributed_over_measured": 1.0571089372172318,
-            "const20_over_measured": 1.1518703060769768,
+            "cap25_over_measured": 1.2286616598159426,
             "full_over_measured": 1.7776898518796047,
             "measured_in_hyperion_units": 1.8165378159983447
           }
         }
       },
       "event_structure_measured_m0.05_0.5pct": {
-        "L_mw": 1837.0092185978137,
-        "n_events": 3,
-        "hours": 4,
-        "max_event_h": 2,
-        "median_event_h": 1.0,
-        "curtailed_energy_pct_of_dc": 0.0012543002999604964,
-        "max_depth_frac_of_load": 0.08790597553316574
+        "definition": "Each random trace-to-system offset is evaluated at its own admissible measured-scenario headroom L for margin=5% and invoked-hours budget=0.5%; P5/P50/P95 are across offsets.",
+        "n_alignments": 200,
+        "all_alignments_feasible": true,
+        "budget_hours": 87.72,
+        "L_mw": {
+          "p5": 1762.0828875242296,
+          "p50": 1837.0092185978137,
+          "p95": 1898.7390032343683
+        },
+        "n_events": {
+          "p5": 2.0,
+          "p50": 3.0,
+          "p95": 4.0
+        },
+        "hours_invoked": {
+          "p5": 3.0,
+          "p50": 4.0,
+          "p95": 6.0
+        },
+        "max_event_h": {
+          "p5": 1.0,
+          "p50": 2.0,
+          "p95": 3.0
+        },
+        "median_event_h": {
+          "p5": 1.0,
+          "p50": 1.0,
+          "p95": 2.0
+        },
+        "curtailed_energy_pct_of_dc": {
+          "p5": 0.0005333986823310932,
+          "p50": 0.0010289637235355769,
+          "p95": 0.0015930251700061698
+        },
+        "max_depth_frac_of_load": {
+          "p5": 0.060782797081579326,
+          "p50": 0.07922115908595981,
+          "p95": 0.10107003735769977
+        }
       }
     },
     "facility_marginal_linear_k0.1": {
@@ -1383,7 +1447,7 @@
               "p95": 3135.7658765609813
             }
           },
-          "const20": {
+          "cap25": {
             "0.25%": {
               "p5": 0.0,
               "p50": 0.0,
@@ -1495,26 +1559,26 @@
               "p95": 3815.594657150541
             }
           },
-          "const20": {
+          "cap25": {
             "0.25%": {
-              "p5": 816.8941389330939,
-              "p50": 842.1380400886846,
-              "p95": 892.9949853663855
+              "p5": 847.6355466200403,
+              "p50": 873.1273835019238,
+              "p95": 924.4869562007806
             },
             "0.5%": {
-              "p5": 816.8941389330939,
-              "p50": 842.1380400886846,
-              "p95": 892.9949853663855
+              "p5": 847.6355466200403,
+              "p50": 873.1273835019238,
+              "p95": 924.4869562007806
             },
             "1.0%": {
-              "p5": 816.8941389330939,
-              "p50": 842.1380400886846,
-              "p95": 892.9949853663855
+              "p5": 847.6355466200403,
+              "p50": 873.1273835019238,
+              "p95": 924.4869562007806
             },
             "2.0%": {
-              "p5": 816.8941389330939,
-              "p50": 842.1380400886846,
-              "p95": 892.9949853663855
+              "p5": 847.6355466200403,
+              "p50": 873.1273835019238,
+              "p95": 924.4869562007806
             }
           },
           "constM": {
@@ -1607,26 +1671,26 @@
               "p95": 4846.0879487092825
             }
           },
-          "const20": {
+          "cap25": {
             "0.25%": {
-              "p5": 2042.23534735047,
-              "p50": 2105.345100226259,
-              "p95": 2176.5581481122354
+              "p5": 2119.08886654237,
+              "p50": 2182.8184587775468,
+              "p95": 2257.357088947174
             },
             "0.5%": {
-              "p5": 2042.23534735047,
-              "p50": 2105.345100226259,
-              "p95": 2176.5581481122354
+              "p5": 2119.08886654237,
+              "p50": 2182.8184587775468,
+              "p95": 2257.357088947174
             },
             "1.0%": {
-              "p5": 2042.23534735047,
-              "p50": 2105.345100226259,
-              "p95": 2176.5581481122354
+              "p5": 2119.08886654237,
+              "p50": 2182.8184587775468,
+              "p95": 2257.357088947174
             },
             "2.0%": {
-              "p5": 2042.23534735047,
-              "p50": 2105.345100226259,
-              "p95": 2176.5581481122354
+              "p5": 2119.08886654237,
+              "p50": 2182.8184587775468,
+              "p95": 2257.357088947174
             }
           },
           "constM": {
@@ -1719,26 +1783,26 @@
               "p95": 6556.141916196793
             }
           },
-          "const20": {
+          "cap25": {
             "0.25%": {
-              "p5": 4084.4706947182203,
-              "p50": 4184.8319402288325,
-              "p95": 4277.524702670235
+              "p5": 4218.473839312537,
+              "p50": 4283.200316631337,
+              "p95": 4388.5560037651885
             },
             "0.5%": {
-              "p5": 4084.4706947182203,
-              "p50": 4184.8319402288325,
-              "p95": 4280.852764154588
+              "p5": 4238.17773310202,
+              "p50": 4339.857631175619,
+              "p95": 4436.509209811447
             },
             "1.0%": {
-              "p5": 4084.4706947182203,
-              "p50": 4184.8319402288325,
-              "p95": 4280.852764154588
+              "p5": 4238.17773310202,
+              "p50": 4339.857631175619,
+              "p95": 4436.509209811447
             },
             "2.0%": {
-              "p5": 4084.4706947182203,
-              "p50": 4184.8319402288325,
-              "p95": 4280.852764154588
+              "p5": 4238.17773310202,
+              "p50": 4339.857631175619,
+              "p95": 4436.509209811447
             }
           },
           "constM": {
@@ -1836,40 +1900,40 @@
           "0.25%": {
             "measured_over_noflex": 0.0,
             "measured_over_constM": 0.0,
-            "measured_over_const20": 0.0,
+            "measured_over_cap25": 0.0,
             "measured_over_full": 0.0,
             "attributed_over_measured": 0.0,
-            "const20_over_measured": 0.0,
+            "cap25_over_measured": 0.0,
             "full_over_measured": 936788896497.0916,
             "measured_in_hyperion_units": 0.0
           },
           "0.5%": {
             "measured_over_noflex": 0.0,
             "measured_over_constM": 0.0,
-            "measured_over_const20": 0.0,
+            "measured_over_cap25": 0.0,
             "measured_over_full": 0.0,
             "attributed_over_measured": 0.0,
-            "const20_over_measured": 0.0,
+            "cap25_over_measured": 0.0,
             "full_over_measured": 1372474893423.714,
             "measured_in_hyperion_units": 0.0
           },
           "1.0%": {
             "measured_over_noflex": 0.0,
             "measured_over_constM": 0.0,
-            "measured_over_const20": 0.0,
+            "measured_over_cap25": 0.0,
             "measured_over_full": 0.0,
             "attributed_over_measured": 0.0,
-            "const20_over_measured": 0.0,
+            "cap25_over_measured": 0.0,
             "full_over_measured": 2122328189389.0088,
             "measured_in_hyperion_units": 0.0
           },
           "2.0%": {
             "measured_over_noflex": 0.0,
             "measured_over_constM": 0.0,
-            "measured_over_const20": 0.0,
+            "measured_over_cap25": 0.0,
             "measured_over_full": 0.0,
             "attributed_over_measured": 0.0,
-            "const20_over_measured": 0.0,
+            "cap25_over_measured": 0.0,
             "full_over_measured": 3090665967984.023,
             "measured_in_hyperion_units": 0.0
           }
@@ -1878,40 +1942,40 @@
           "0.25%": {
             "measured_over_noflex": 1.083776305351863,
             "measured_over_constM": 1.003190763812136,
-            "measured_over_const20": 0.8670210442846968,
+            "measured_over_cap25": 0.8362484292052336,
             "measured_over_full": 0.4545279194049261,
             "attributed_over_measured": 1.0585171918415308,
-            "const20_over_measured": 1.1533745421658277,
+            "cap25_over_measured": 1.195816894927259,
             "full_over_measured": 2.2000848733543434,
             "measured_in_hyperion_units": 0.36507570147477963
           },
           "0.5%": {
             "measured_over_noflex": 1.083776305351863,
             "measured_over_constM": 1.003190763812136,
-            "measured_over_const20": 0.8670210442846968,
+            "measured_over_cap25": 0.8362484292052336,
             "measured_over_full": 0.3574078630084751,
             "attributed_over_measured": 1.0585171918415308,
-            "const20_over_measured": 1.1533745421658277,
+            "cap25_over_measured": 1.195816894927259,
             "full_over_measured": 2.79792389451792,
             "measured_in_hyperion_units": 0.36507570147477963
           },
           "1.0%": {
             "measured_over_noflex": 1.083776305351863,
             "measured_over_constM": 1.003190763812136,
-            "measured_over_const20": 0.8670210442846968,
+            "measured_over_cap25": 0.8362484292052336,
             "measured_over_full": 0.2613305303776822,
             "attributed_over_measured": 1.0585171918415308,
-            "const20_over_measured": 1.1533745421658277,
+            "cap25_over_measured": 1.195816894927259,
             "full_over_measured": 3.8265716545050132,
             "measured_in_hyperion_units": 0.36507570147477963
           },
           "2.0%": {
             "measured_over_noflex": 1.083776305351863,
             "measured_over_constM": 1.003190763812136,
-            "measured_over_const20": 0.8670210442846968,
+            "measured_over_cap25": 0.8362484292052336,
             "measured_over_full": 0.19399970952888657,
             "attributed_over_measured": 1.0585171918415308,
-            "const20_over_measured": 1.1533745421658277,
+            "cap25_over_measured": 1.195816894927259,
             "full_over_measured": 5.154646893175373,
             "measured_in_hyperion_units": 0.36507570147477963
           }
@@ -1920,40 +1984,40 @@
           "0.25%": {
             "measured_over_noflex": 1.081764141968109,
             "measured_over_constM": 1.0013282173337898,
-            "measured_over_const20": 0.8654113135758185,
+            "measured_over_cap25": 0.8346958316165224,
             "measured_over_full": 0.6974625591578414,
             "attributed_over_measured": 1.0539848556310771,
-            "const20_over_measured": 1.15551990632994,
+            "cap25_over_measured": 1.1980412050978373,
             "full_over_measured": 1.433768719008316,
             "measured_in_hyperion_units": 0.91099473435861
           },
           "0.5%": {
             "measured_over_noflex": 1.081764141968109,
             "measured_over_constM": 1.0013282173337898,
-            "measured_over_const20": 0.8654113135758185,
+            "measured_over_cap25": 0.8346958316165224,
             "measured_over_full": 0.5966542922563243,
             "attributed_over_measured": 1.0539848556310771,
-            "const20_over_measured": 1.15551990632994,
+            "cap25_over_measured": 1.1980412050978373,
             "full_over_measured": 1.676012412846931,
             "measured_in_hyperion_units": 0.91099473435861
           },
           "1.0%": {
             "measured_over_noflex": 1.081764141968109,
             "measured_over_constM": 1.0013282173337898,
-            "measured_over_const20": 0.8654113135758185,
+            "measured_over_cap25": 0.8346958316165224,
             "measured_over_full": 0.479180726638697,
             "attributed_over_measured": 1.0539848556310771,
-            "const20_over_measured": 1.15551990632994,
+            "cap25_over_measured": 1.1980412050978373,
             "full_over_measured": 2.086895286909153,
             "measured_in_hyperion_units": 0.91099473435861
           },
           "2.0%": {
             "measured_over_noflex": 1.081764141968109,
             "measured_over_constM": 1.0013282173337898,
-            "measured_over_const20": 0.8654113135758185,
+            "measured_over_cap25": 0.8346958316165224,
             "measured_over_full": 0.3816527673264743,
             "attributed_over_measured": 1.0539848556310771,
-            "const20_over_measured": 1.15551990632994,
+            "cap25_over_measured": 1.1980412050978373,
             "full_over_measured": 2.6201827567113583,
             "measured_in_hyperion_units": 0.91099473435861
           }
@@ -1962,53 +2026,85 @@
           "0.25%": {
             "measured_over_noflex": 1.0771648637417575,
             "measured_over_constM": 0.9970709241886389,
-            "measured_over_const20": 0.8617318909958048,
+            "measured_over_cap25": 0.8419412763279891,
             "measured_over_full": 0.8407483264027654,
             "attributed_over_measured": 1.0522907143400946,
-            "const20_over_measured": 1.1604537448932226,
+            "cap25_over_measured": 1.1877312920936272,
             "full_over_measured": 1.1894165811529003,
             "measured_in_hyperion_units": 1.8031015706765174
           },
           "0.5%": {
             "measured_over_noflex": 1.0771648637417575,
             "measured_over_constM": 0.9970709241886389,
-            "measured_over_const20": 0.8617318909958048,
+            "measured_over_cap25": 0.8309496411697161,
             "measured_over_full": 0.7612133996614112,
             "attributed_over_measured": 1.0522907143400946,
-            "const20_over_measured": 1.1604537448932226,
+            "cap25_over_measured": 1.203442363357079,
             "full_over_measured": 1.3136920611812686,
             "measured_in_hyperion_units": 1.8031015706765174
           },
           "1.0%": {
             "measured_over_noflex": 1.0771648637417575,
             "measured_over_constM": 0.9970709241886389,
-            "measured_over_const20": 0.8617318909958048,
+            "measured_over_cap25": 0.8309496411697161,
             "measured_over_full": 0.6582954779025809,
             "attributed_over_measured": 1.0522907143400946,
-            "const20_over_measured": 1.1604537448932226,
+            "cap25_over_measured": 1.203442363357079,
             "full_over_measured": 1.5190746914837334,
             "measured_in_hyperion_units": 1.8031015706765174
           },
           "2.0%": {
             "measured_over_noflex": 1.0771648637417575,
             "measured_over_constM": 0.9970709241886389,
-            "measured_over_const20": 0.8617318909958048,
+            "measured_over_cap25": 0.8309496411697161,
             "measured_over_full": 0.5583670154769238,
             "attributed_over_measured": 1.0522907143400946,
-            "const20_over_measured": 1.1604537448932226,
+            "cap25_over_measured": 1.203442363357079,
             "full_over_measured": 1.7909367356627603,
             "measured_in_hyperion_units": 1.8031015706765174
           }
         }
       },
       "event_structure_measured_m0.05_0.5pct": {
-        "L_mw": 1821.98946871722,
-        "n_events": 3,
-        "hours": 4,
-        "max_event_h": 2,
-        "median_event_h": 1.0,
-        "curtailed_energy_pct_of_dc": 0.001075246754877915,
-        "max_depth_frac_of_load": 0.0803870384864443
+        "definition": "Each random trace-to-system offset is evaluated at its own admissible measured-scenario headroom L for margin=5% and invoked-hours budget=0.5%; P5/P50/P95 are across offsets.",
+        "n_alignments": 200,
+        "all_alignments_feasible": true,
+        "budget_hours": 87.72,
+        "L_mw": {
+          "p5": 1752.3525817432528,
+          "p50": 1821.98946871722,
+          "p95": 1879.7335325334643
+        },
+        "n_events": {
+          "p5": 2.0,
+          "p50": 3.0,
+          "p95": 4.0
+        },
+        "hours_invoked": {
+          "p5": 2.0,
+          "p50": 4.0,
+          "p95": 5.0
+        },
+        "max_event_h": {
+          "p5": 1.0,
+          "p50": 2.0,
+          "p95": 2.0
+        },
+        "median_event_h": {
+          "p5": 1.0,
+          "p50": 1.0,
+          "p95": 1.5
+        },
+        "curtailed_energy_pct_of_dc": {
+          "p5": 0.0004426008853838311,
+          "p50": 0.0008758868897369904,
+          "p95": 0.0013759724302777822
+        },
+        "max_depth_frac_of_load": {
+          "p5": 0.0556146681749034,
+          "p50": 0.0725183241921771,
+          "p95": 0.09423081387901991
+        }
       }
     }
   }

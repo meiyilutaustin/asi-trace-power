@@ -29,11 +29,11 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import provenance as provenance_lib  # noqa: E402
 
 
-DATA = Path(os.environ.get("DATA_DIR", os.path.join(os.environ.get("ASI_ROOT", "."), "data")))
-AGG = Path(os.environ.get("AGG_DIR", os.path.join(os.environ.get("ASI_ROOT", "."), "agg")))
+DATA = Path(os.environ.get("DATA_DIR", "/project/mli30/mli30/asi-trace/data"))
+AGG = Path(os.environ.get("AGG_DIR", "/project/mli30/mli30/asi-trace/agg"))
 OUT = Path(
     os.environ.get(
-        "OUT_DIR", os.path.join(os.environ.get("ASI_ROOT", "."), "a3_matched_unmatched_audit")
+        "OUT_DIR", "/project/mli30/mli30/asi-trace/a3_matched_unmatched_audit"
     )
 )
 DAY_START = int(os.environ.get("DAY_START", "110"))

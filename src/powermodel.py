@@ -1,4 +1,4 @@
-"""Shared util->power model for A1/A5/A6/A7b/A8 (revision 2, 2026-09-03).
+"""Shared util->power model for A1/A5/A6/A7b/A8 (RERUN_PLAN_v1, 2026-09-03).
 
 Row model (per aggregate row = one (t, cluster, spec, job_type, priority,
 state) cell with gpu_hours w, null-util gpu_hours wn and sufficient stats S_b):

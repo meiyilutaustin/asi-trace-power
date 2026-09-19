@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""A2 (v2, revision 2 / /): fluctuation scaling and
+"""A2 (v2, RERUN_PLAN_v1 P1-4 / P0-5 / P2-3): fluctuation scaling and
 cross-cluster synchrony of reconstructed GPU power.
 
 Levels: (cluster, job_type, priority) -> (cluster, job_type) -> cluster -> fleet.
@@ -17,10 +17,10 @@ v2 additions:
   * bootstrap CI for beta (unit resampling), jackknife / leave-one-cluster-out
     intervals for the cluster->fleet synchrony ratio
   * the equal-weight identity sqrt(1 + (n-1) rho_bar) reported next to the
-    measured cluster->fleet ratio (the reviewer #23)
-  * excluded clusters listed with their power share 
-  * U-shape: bootstrap CI for c2 
-  * missing hours are NaN gaps ; power from src/powermodel.py (online floor)
+    measured cluster->fleet ratio (Codex #23)
+  * excluded clusters listed with their power share (P0-5)
+  * U-shape: bootstrap CI for c2 (P2-3)
+  * missing hours are NaN gaps (P1-7); power from src/powermodel.py (online floor)
 """
 import json
 import os
@@ -37,8 +37,8 @@ import matplotlib.pyplot as plt
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import powermodel as pm  # noqa: E402
 
-AGG = os.environ.get("AGG_DIR", os.path.join(os.environ.get("ASI_ROOT", "."), "agg"))
-OUT = os.environ.get("OUT_DIR", os.path.join(os.environ.get("ASI_ROOT", "."), "a2_out"))
+AGG = os.environ.get("AGG_DIR", "/project/mli30/mli30/asi-trace/agg")
+OUT = os.environ.get("OUT_DIR", "/project/mli30/mli30/asi-trace/a2_out")
 CFG = os.environ.get("POWER_CFG", os.path.join(os.path.dirname(__file__), "power_curves.yaml"))
 os.makedirs(OUT, exist_ok=True)
 MIN_HOURS = 1500
@@ -49,7 +49,7 @@ LEVELS = [("cluster_type_prio", ["cluster_id", "job_type_public", "priority_clas
           ("cluster_type", ["cluster_id", "job_type_public"]),
           ("cluster", ["cluster_id"]), ("fleet", [])]
 RESIDS = ["raw", "deseason", "capnorm"]
-CAP_FLOOR_FRAC = 0.2   # guard for the capacity-normalised residual (see r4_covariance_decomposition.py)
+CAP_FLOOR_FRAC = 0.2   # guard for the capacity-normalised residual (see R4)
 
 
 def log(m):
@@ -82,7 +82,8 @@ def residuals(wide, kind):
         # Guarded: hours where the unit's 168 h mean falls below 20% of its own
         # median (or 0.05 MW) are masked. The earlier unguarded form divided the
         # LEVEL by cap, and units that idle to ~0 MW then produced ratios up to
-        # 168x and carried 97% of the normalised variance -> an earlier unguarded version produced that artefact (see r4_covariance_decomposition.py).
+        # 168x and carried 97% of the normalised variance -> the "capnorm sync
+        # = 1.00" result of 2026-09-03 was that artefact (see R4).
         cap = wide.rolling(168, min_periods=24).mean().bfill()
         floor = np.maximum(cap.median() * CAP_FLOOR_FRAC, 0.05)
         valid = cap.ge(floor, axis=1)

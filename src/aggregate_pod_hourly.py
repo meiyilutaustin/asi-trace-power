@@ -25,8 +25,8 @@ import numpy as np
 import pandas as pd
 import pyarrow.parquet as pq
 
-DATA = os.environ.get("DATA_DIR", os.path.join(os.environ.get("ASI_ROOT", "."), "data"))
-AGG = os.environ.get("AGG_DIR", os.path.join(os.environ.get("ASI_ROOT", "."), "agg"))
+DATA = os.environ.get("DATA_DIR", "/project/mli30/mli30/asi-trace/data")
+AGG = os.environ.get("AGG_DIR", "/project/mli30/mli30/asi-trace/agg")
 NPROC = int(os.environ.get("NPROC", "16"))
 POD_DIR = os.path.join(DATA, "asi_opensource_pod_hourly")
 KNOTS = [0.0, 0.25, 0.5, 0.75]

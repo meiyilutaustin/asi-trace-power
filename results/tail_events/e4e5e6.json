@@ -1,0 +1,1295 @@
+{
+  "generated": "2026-09-18T22:38:29.895618+00:00",
+  "substrate": {
+    "n_clusters": 13,
+    "valid_hours": 4439
+  },
+  "E4_trough_events": {
+    "T1_a0.95": {
+      "threshold_mw": 2.507773954914842,
+      "n_subthreshold_windows": 222,
+      "n_windows_total": 4439,
+      "order_stat_k": 221.9500000000002,
+      "n_events": 74,
+      "event_durations_h": [
+        1,
+        11,
+        7,
+        2,
+        10,
+        1,
+        2,
+        1,
+        11,
+        12,
+        6,
+        10,
+        2,
+        6,
+        1,
+        4,
+        6,
+        1,
+        1,
+        5,
+        3,
+        2,
+        3,
+        1,
+        3,
+        6,
+        13,
+        3,
+        2,
+        1,
+        1,
+        2,
+        7,
+        1,
+        1,
+        4,
+        1,
+        1,
+        1,
+        2,
+        3,
+        5,
+        1,
+        2,
+        1,
+        3,
+        2,
+        1,
+        1,
+        1,
+        3,
+        2,
+        1,
+        2,
+        1,
+        3,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        3,
+        2,
+        2,
+        1,
+        2,
+        2,
+        2,
+        1,
+        2,
+        2,
+        3
+      ],
+      "total_event_hours": 222,
+      "n_distinct_weeks": 16,
+      "weeks": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        19,
+        20,
+        21,
+        23,
+        25,
+        26
+      ],
+      "events_hour_ranges": [
+        [
+          0,
+          0
+        ],
+        [
+          6,
+          16
+        ],
+        [
+          19,
+          25
+        ],
+        [
+          27,
+          28
+        ],
+        [
+          31,
+          40
+        ],
+        [
+          63,
+          63
+        ],
+        [
+          67,
+          68
+        ],
+        [
+          133,
+          133
+        ],
+        [
+          137,
+          147
+        ],
+        [
+          149,
+          160
+        ],
+        [
+          163,
+          168
+        ],
+        [
+          174,
+          183
+        ],
+        [
+          189,
+          190
+        ],
+        [
+          284,
+          289
+        ],
+        [
+          291,
+          291
+        ],
+        [
+          294,
+          297
+        ],
+        [
+          326,
+          331
+        ],
+        [
+          347,
+          347
+        ],
+        [
+          352,
+          352
+        ],
+        [
+          381,
+          385
+        ],
+        [
+          390,
+          392
+        ],
+        [
+          399,
+          400
+        ],
+        [
+          441,
+          443
+        ],
+        [
+          452,
+          452
+        ],
+        [
+          456,
+          458
+        ],
+        [
+          462,
+          467
+        ],
+        [
+          469,
+          481
+        ],
+        [
+          490,
+          492
+        ],
+        [
+          543,
+          544
+        ],
+        [
+          549,
+          549
+        ],
+        [
+          551,
+          551
+        ],
+        [
+          561,
+          562
+        ],
+        [
+          565,
+          571
+        ],
+        [
+          574,
+          574
+        ],
+        [
+          1000,
+          1000
+        ],
+        [
+          1313,
+          1316
+        ],
+        [
+          1509,
+          1509
+        ],
+        [
+          1511,
+          1511
+        ],
+        [
+          1523,
+          1523
+        ],
+        [
+          1526,
+          1527
+        ],
+        [
+          1533,
+          1535
+        ],
+        [
+          1553,
+          1557
+        ],
+        [
+          1559,
+          1559
+        ],
+        [
+          1654,
+          1655
+        ],
+        [
+          1815,
+          1815
+        ],
+        [
+          1859,
+          1861
+        ],
+        [
+          1979,
+          1980
+        ],
+        [
+          3359,
+          3359
+        ],
+        [
+          3387,
+          3387
+        ],
+        [
+          3415,
+          3415
+        ],
+        [
+          3429,
+          3431
+        ],
+        [
+          3434,
+          3435
+        ],
+        [
+          3437,
+          3437
+        ],
+        [
+          3454,
+          3455
+        ],
+        [
+          3461,
+          3461
+        ],
+        [
+          3502,
+          3504
+        ],
+        [
+          3527,
+          3528
+        ],
+        [
+          3534,
+          3534
+        ],
+        [
+          3536,
+          3536
+        ],
+        [
+          3552,
+          3552
+        ],
+        [
+          3557,
+          3557
+        ],
+        [
+          3581,
+          3582
+        ],
+        [
+          3945,
+          3946
+        ],
+        [
+          3954,
+          3956
+        ],
+        [
+          3979,
+          3980
+        ],
+        [
+          3996,
+          3997
+        ],
+        [
+          3999,
+          3999
+        ],
+        [
+          4019,
+          4020
+        ],
+        [
+          4269,
+          4270
+        ],
+        [
+          4287,
+          4288
+        ],
+        [
+          4301,
+          4301
+        ],
+        [
+          4343,
+          4344
+        ],
+        [
+          4366,
+          4367
+        ],
+        [
+          4395,
+          4397
+        ]
+      ],
+      "exploratory": false
+    },
+    "T1_a0.99": {
+      "threshold_mw": 2.063094571426675,
+      "n_subthreshold_windows": 45,
+      "n_windows_total": 4439,
+      "order_stat_k": 44.390000000000036,
+      "n_events": 19,
+      "event_durations_h": [
+        3,
+        5,
+        4,
+        4,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        9,
+        1,
+        5,
+        1,
+        1,
+        1,
+        1
+      ],
+      "total_event_hours": 45,
+      "n_distinct_weeks": 7,
+      "weeks": [
+        0,
+        1,
+        2,
+        3,
+        20,
+        21,
+        25
+      ],
+      "events_hour_ranges": [
+        [
+          11,
+          13
+        ],
+        [
+          20,
+          24
+        ],
+        [
+          32,
+          35
+        ],
+        [
+          137,
+          140
+        ],
+        [
+          143,
+          144
+        ],
+        [
+          156,
+          156
+        ],
+        [
+          177,
+          178
+        ],
+        [
+          286,
+          286
+        ],
+        [
+          288,
+          288
+        ],
+        [
+          384,
+          384
+        ],
+        [
+          390,
+          390
+        ],
+        [
+          456,
+          456
+        ],
+        [
+          472,
+          480
+        ],
+        [
+          491,
+          491
+        ],
+        [
+          566,
+          570
+        ],
+        [
+          3430,
+          3430
+        ],
+        [
+          3435,
+          3435
+        ],
+        [
+          3528,
+          3528
+        ],
+        [
+          4269,
+          4269
+        ]
+      ],
+      "exploratory": false
+    },
+    "T4_a0.95": {
+      "threshold_mw": 2.316797571285743,
+      "n_subthreshold_windows": 224,
+      "n_windows_total": 4433,
+      "order_stat_k": 221.6500000000002,
+      "n_events": 23,
+      "event_durations_h": [
+        44,
+        8,
+        38,
+        13,
+        17,
+        11,
+        17,
+        31,
+        8,
+        19,
+        7,
+        7,
+        7,
+        13,
+        14,
+        7,
+        7,
+        7,
+        7,
+        8,
+        7,
+        7,
+        7
+      ],
+      "total_event_hours": 311,
+      "n_distinct_weeks": 11,
+      "weeks": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        9,
+        19,
+        20,
+        21,
+        25,
+        26
+      ],
+      "events_hour_ranges": [
+        [
+          0,
+          43
+        ],
+        [
+          64,
+          71
+        ],
+        [
+          134,
+          171
+        ],
+        [
+          173,
+          185
+        ],
+        [
+          282,
+          298
+        ],
+        [
+          324,
+          334
+        ],
+        [
+          378,
+          394
+        ],
+        [
+          453,
+          483
+        ],
+        [
+          487,
+          494
+        ],
+        [
+          559,
+          577
+        ],
+        [
+          1311,
+          1317
+        ],
+        [
+          1550,
+          1556
+        ],
+        [
+          3356,
+          3362
+        ],
+        [
+          3426,
+          3438
+        ],
+        [
+          3451,
+          3464
+        ],
+        [
+          3500,
+          3506
+        ],
+        [
+          3525,
+          3531
+        ],
+        [
+          3554,
+          3560
+        ],
+        [
+          3578,
+          3584
+        ],
+        [
+          4266,
+          4273
+        ],
+        [
+          4285,
+          4291
+        ],
+        [
+          4298,
+          4304
+        ],
+        [
+          4394,
+          4400
+        ]
+      ],
+      "exploratory": false
+    },
+    "T4_a0.99": {
+      "threshold_mw": 1.9125941143206078,
+      "n_subthreshold_windows": 46,
+      "n_windows_total": 4433,
+      "order_stat_k": 44.33000000000004,
+      "n_events": 9,
+      "event_durations_h": [
+        7,
+        8,
+        7,
+        7,
+        14,
+        7,
+        9,
+        7,
+        7
+      ],
+      "total_event_hours": 73,
+      "n_distinct_weeks": 6,
+      "weeks": [
+        0,
+        1,
+        2,
+        3,
+        20,
+        25
+      ],
+      "events_hour_ranges": [
+        [
+          20,
+          26
+        ],
+        [
+          31,
+          38
+        ],
+        [
+          174,
+          180
+        ],
+        [
+          381,
+          387
+        ],
+        [
+          470,
+          483
+        ],
+        [
+          488,
+          494
+        ],
+        [
+          565,
+          573
+        ],
+        [
+          3525,
+          3531
+        ],
+        [
+          4266,
+          4272
+        ]
+      ],
+      "exploratory": false
+    },
+    "T24_a0.95": {
+      "threshold_mw": 1.9465669946147905,
+      "n_subthreshold_windows": 243,
+      "n_windows_total": 4393,
+      "order_stat_k": 219.6500000000002,
+      "n_events": 8,
+      "event_durations_h": [
+        59,
+        48,
+        47,
+        82,
+        50,
+        47,
+        47,
+        47
+      ],
+      "total_event_hours": 427,
+      "n_distinct_weeks": 5,
+      "weeks": [
+        0,
+        2,
+        3,
+        20,
+        25
+      ],
+      "events_hour_ranges": [
+        [
+          0,
+          58
+        ],
+        [
+          154,
+          201
+        ],
+        [
+          361,
+          407
+        ],
+        [
+          433,
+          514
+        ],
+        [
+          544,
+          593
+        ],
+        [
+          3412,
+          3458
+        ],
+        [
+          3505,
+          3551
+        ],
+        [
+          4246,
+          4292
+        ]
+      ],
+      "exploratory": false
+    },
+    "T24_a0.99": {
+      "threshold_mw": 1.635282835642138,
+      "n_subthreshold_windows": 49,
+      "n_windows_total": 4393,
+      "order_stat_k": 43.93000000000004,
+      "n_events": 2,
+      "event_durations_h": [
+        48,
+        47
+      ],
+      "total_event_hours": 95,
+      "n_distinct_weeks": 2,
+      "weeks": [
+        2,
+        3
+      ],
+      "events_hour_ranges": [
+        [
+          451,
+          498
+        ],
+        [
+          547,
+          593
+        ]
+      ],
+      "exploratory": true
+    }
+  },
+  "E5_time_ranges": {
+    "n_origins": 15,
+    "n_calibration": 7,
+    "n_test": 8,
+    "origins": [
+      {
+        "origin_day": 56,
+        "train_days": [
+          0.0,
+          56.0
+        ],
+        "test_days": [
+          56.0,
+          84.0
+        ]
+      },
+      {
+        "origin_day": 63,
+        "train_days": [
+          7.0,
+          63.0
+        ],
+        "test_days": [
+          63.0,
+          91.0
+        ]
+      },
+      {
+        "origin_day": 70,
+        "train_days": [
+          14.0,
+          70.0
+        ],
+        "test_days": [
+          70.0,
+          98.0
+        ]
+      },
+      {
+        "origin_day": 77,
+        "train_days": [
+          21.0,
+          77.0
+        ],
+        "test_days": [
+          77.0,
+          105.0
+        ]
+      },
+      {
+        "origin_day": 84,
+        "train_days": [
+          28.0,
+          84.0
+        ],
+        "test_days": [
+          84.0,
+          112.0
+        ]
+      },
+      {
+        "origin_day": 91,
+        "train_days": [
+          35.0,
+          91.0
+        ],
+        "test_days": [
+          91.0,
+          119.0
+        ]
+      },
+      {
+        "origin_day": 98,
+        "train_days": [
+          42.0,
+          98.0
+        ],
+        "test_days": [
+          98.0,
+          126.0
+        ]
+      },
+      {
+        "origin_day": 105,
+        "train_days": [
+          49.0,
+          105.0
+        ],
+        "test_days": [
+          105.0,
+          133.0
+        ]
+      },
+      {
+        "origin_day": 112,
+        "train_days": [
+          56.0,
+          112.0
+        ],
+        "test_days": [
+          112.0,
+          140.0
+        ]
+      },
+      {
+        "origin_day": 119,
+        "train_days": [
+          63.0,
+          119.0
+        ],
+        "test_days": [
+          119.0,
+          147.0
+        ]
+      },
+      {
+        "origin_day": 126,
+        "train_days": [
+          70.0,
+          126.0
+        ],
+        "test_days": [
+          126.0,
+          154.0
+        ]
+      },
+      {
+        "origin_day": 133,
+        "train_days": [
+          77.0,
+          133.0
+        ],
+        "test_days": [
+          133.0,
+          161.0
+        ]
+      },
+      {
+        "origin_day": 140,
+        "train_days": [
+          84.0,
+          140.0
+        ],
+        "test_days": [
+          140.0,
+          168.0
+        ]
+      },
+      {
+        "origin_day": 147,
+        "train_days": [
+          91.0,
+          147.0
+        ],
+        "test_days": [
+          147.0,
+          175.0
+        ]
+      },
+      {
+        "origin_day": 154,
+        "train_days": [
+          98.0,
+          154.0
+        ],
+        "test_days": [
+          154.0,
+          182.0
+        ]
+      }
+    ],
+    "calibration_test_window_union_days": [
+      56.0,
+      126.0
+    ],
+    "test_test_window_union_days": [
+      105.0,
+      182.0
+    ],
+    "scored_hours_overlap_h": 504,
+    "scored_hours_overlap_days": 21.0,
+    "scored_hours_overlap_weeks": 3.0,
+    "test_train_vs_calib_test_overlap_days": 70.0,
+    "calendar_convention": "trace-relative days from trace start (day 0); absolute anchor not required to prove disjointness \u2014 hour indices are exact.",
+    "note": "Forward split calibrates the derating on the earlier half of origins and scores the later half. The scored test windows of the two halves OVERLAP by the reported amount because 8+4-week origins stepped weekly share calendar hours. Reported transparently per reviewer line 88."
+  },
+  "E6_derating_le1": {
+    "T1h": {
+      "mean_train_K_mw": 2.752853488253901,
+      "curve": [
+        {
+          "d": 0.5,
+          "deliverable_mw": 1.3764267441269504,
+          "pooled_coverage": 1.0,
+          "per_start_coverage_mean": 1.0,
+          "per_start_coverage_worst": 1.0,
+          "frac_starts_meeting_target": 1.0
+        },
+        {
+          "d": 0.55,
+          "deliverable_mw": 1.5140694185396455,
+          "pooled_coverage": 1.0,
+          "per_start_coverage_mean": 1.0,
+          "per_start_coverage_worst": 1.0,
+          "frac_starts_meeting_target": 1.0
+        },
+        {
+          "d": 0.6,
+          "deliverable_mw": 1.6517120929523406,
+          "pooled_coverage": 1.0,
+          "per_start_coverage_mean": 1.0,
+          "per_start_coverage_worst": 1.0,
+          "frac_starts_meeting_target": 1.0
+        },
+        {
+          "d": 0.65,
+          "deliverable_mw": 1.7893547673650356,
+          "pooled_coverage": 1.0,
+          "per_start_coverage_mean": 1.0,
+          "per_start_coverage_worst": 1.0,
+          "frac_starts_meeting_target": 1.0
+        },
+        {
+          "d": 0.7,
+          "deliverable_mw": 1.9269974417777305,
+          "pooled_coverage": 0.9990699404761905,
+          "per_start_coverage_mean": 0.9990699404761905,
+          "per_start_coverage_worst": 0.9970238095238095,
+          "frac_starts_meeting_target": 1.0
+        },
+        {
+          "d": 0.75,
+          "deliverable_mw": 2.0646401161904255,
+          "pooled_coverage": 0.9970238095238095,
+          "per_start_coverage_mean": 0.9970238095238095,
+          "per_start_coverage_worst": 0.9955357142857143,
+          "frac_starts_meeting_target": 1.0
+        },
+        {
+          "d": 0.8,
+          "deliverable_mw": 2.2022827906031206,
+          "pooled_coverage": 0.9946056547619048,
+          "per_start_coverage_mean": 0.9946056547619049,
+          "per_start_coverage_worst": 0.9866071428571429,
+          "frac_starts_meeting_target": 1.0
+        },
+        {
+          "d": 0.85,
+          "deliverable_mw": 2.3399254650158157,
+          "pooled_coverage": 0.9866071428571429,
+          "per_start_coverage_mean": 0.9866071428571428,
+          "per_start_coverage_worst": 0.9776785714285714,
+          "frac_starts_meeting_target": 1.0
+        },
+        {
+          "d": 0.9,
+          "deliverable_mw": 2.4775681394285107,
+          "pooled_coverage": 0.9709821428571429,
+          "per_start_coverage_mean": 0.9709821428571428,
+          "per_start_coverage_worst": 0.9389880952380952,
+          "frac_starts_meeting_target": 0.625
+        },
+        {
+          "d": 0.95,
+          "deliverable_mw": 2.615210813841206,
+          "pooled_coverage": 0.94921875,
+          "per_start_coverage_mean": 0.94921875,
+          "per_start_coverage_worst": 0.8973214285714286,
+          "frac_starts_meeting_target": 0.625
+        },
+        {
+          "d": 1.0,
+          "deliverable_mw": 2.752853488253901,
+          "pooled_coverage": 0.9215029761904762,
+          "per_start_coverage_mean": 0.9215029761904762,
+          "per_start_coverage_worst": 0.8422619047619048,
+          "frac_starts_meeting_target": 0.375
+        }
+      ]
+    },
+    "T4h": {
+      "mean_train_K_mw": 2.6130910675661227,
+      "curve": [
+        {
+          "d": 0.5,
+          "deliverable_mw": 1.3065455337830614,
+          "pooled_coverage": 1.0,
+          "per_start_coverage_mean": 1.0,
+          "per_start_coverage_worst": 1.0,
+          "frac_starts_meeting_target": 1.0
+        },
+        {
+          "d": 0.55,
+          "deliverable_mw": 1.4372000871613677,
+          "pooled_coverage": 1.0,
+          "per_start_coverage_mean": 1.0,
+          "per_start_coverage_worst": 1.0,
+          "frac_starts_meeting_target": 1.0
+        },
+        {
+          "d": 0.6,
+          "deliverable_mw": 1.5678546405396736,
+          "pooled_coverage": 1.0,
+          "per_start_coverage_mean": 1.0,
+          "per_start_coverage_worst": 1.0,
+          "frac_starts_meeting_target": 1.0
+        },
+        {
+          "d": 0.65,
+          "deliverable_mw": 1.69850919391798,
+          "pooled_coverage": 1.0,
+          "per_start_coverage_mean": 1.0,
+          "per_start_coverage_worst": 1.0,
+          "frac_starts_meeting_target": 1.0
+        },
+        {
+          "d": 0.7,
+          "deliverable_mw": 1.8291637472962858,
+          "pooled_coverage": 0.9992526158445441,
+          "per_start_coverage_mean": 0.9992526158445441,
+          "per_start_coverage_worst": 0.9940209267563528,
+          "frac_starts_meeting_target": 1.0
+        },
+        {
+          "d": 0.75,
+          "deliverable_mw": 1.9598183006745922,
+          "pooled_coverage": 0.9930866965620329,
+          "per_start_coverage_mean": 0.9930866965620329,
+          "per_start_coverage_worst": 0.9820627802690582,
+          "frac_starts_meeting_target": 1.0
+        },
+        {
+          "d": 0.8,
+          "deliverable_mw": 2.0904728540528983,
+          "pooled_coverage": 0.9878550074738416,
+          "per_start_coverage_mean": 0.9878550074738416,
+          "per_start_coverage_worst": 0.9701046337817638,
+          "frac_starts_meeting_target": 1.0
+        },
+        {
+          "d": 0.85,
+          "deliverable_mw": 2.2211274074312044,
+          "pooled_coverage": 0.976644245142003,
+          "per_start_coverage_mean": 0.976644245142003,
+          "per_start_coverage_worst": 0.9476831091180867,
+          "frac_starts_meeting_target": 0.75
+        },
+        {
+          "d": 0.9,
+          "deliverable_mw": 2.3517819608095105,
+          "pooled_coverage": 0.9590807174887892,
+          "per_start_coverage_mean": 0.9590807174887892,
+          "per_start_coverage_worst": 0.8938714499252616,
+          "frac_starts_meeting_target": 0.625
+        },
+        {
+          "d": 0.95,
+          "deliverable_mw": 2.4824365141878166,
+          "pooled_coverage": 0.9347907324364724,
+          "per_start_coverage_mean": 0.9347907324364724,
+          "per_start_coverage_worst": 0.8355754857997011,
+          "frac_starts_meeting_target": 0.5
+        },
+        {
+          "d": 1.0,
+          "deliverable_mw": 2.6130910675661227,
+          "pooled_coverage": 0.9015321375186846,
+          "per_start_coverage_mean": 0.9015321375186847,
+          "per_start_coverage_worst": 0.7533632286995515,
+          "frac_starts_meeting_target": 0.25
+        }
+      ]
+    },
+    "T24h": {
+      "mean_train_K_mw": 2.3788645312953602,
+      "curve": [
+        {
+          "d": 0.5,
+          "deliverable_mw": 1.1894322656476801,
+          "pooled_coverage": 1.0,
+          "per_start_coverage_mean": 1.0,
+          "per_start_coverage_worst": 1.0,
+          "frac_starts_meeting_target": 1.0
+        },
+        {
+          "d": 0.55,
+          "deliverable_mw": 1.3083754922124482,
+          "pooled_coverage": 1.0,
+          "per_start_coverage_mean": 1.0,
+          "per_start_coverage_worst": 1.0,
+          "frac_starts_meeting_target": 1.0
+        },
+        {
+          "d": 0.6,
+          "deliverable_mw": 1.427318718777216,
+          "pooled_coverage": 1.0,
+          "per_start_coverage_mean": 1.0,
+          "per_start_coverage_worst": 1.0,
+          "frac_starts_meeting_target": 1.0
+        },
+        {
+          "d": 0.65,
+          "deliverable_mw": 1.5462619453419841,
+          "pooled_coverage": 1.0,
+          "per_start_coverage_mean": 1.0,
+          "per_start_coverage_worst": 1.0,
+          "frac_starts_meeting_target": 1.0
+        },
+        {
+          "d": 0.7,
+          "deliverable_mw": 1.665205171906752,
+          "pooled_coverage": 1.0,
+          "per_start_coverage_mean": 1.0,
+          "per_start_coverage_worst": 1.0,
+          "frac_starts_meeting_target": 1.0
+        },
+        {
+          "d": 0.75,
+          "deliverable_mw": 1.7841483984715203,
+          "pooled_coverage": 0.9953775038520801,
+          "per_start_coverage_mean": 0.9953775038520801,
+          "per_start_coverage_worst": 0.963020030816641,
+          "frac_starts_meeting_target": 1.0
+        },
+        {
+          "d": 0.8,
+          "deliverable_mw": 1.9030916250362884,
+          "pooled_coverage": 0.9693759630200308,
+          "per_start_coverage_mean": 0.9693759630200307,
+          "per_start_coverage_worst": 0.9183359013867488,
+          "frac_starts_meeting_target": 0.625
+        },
+        {
+          "d": 0.85,
+          "deliverable_mw": 2.022034851601056,
+          "pooled_coverage": 0.9462634822804314,
+          "per_start_coverage_mean": 0.9462634822804314,
+          "per_start_coverage_worst": 0.8443759630200308,
+          "frac_starts_meeting_target": 0.625
+        },
+        {
+          "d": 0.9,
+          "deliverable_mw": 2.140978078165824,
+          "pooled_coverage": 0.8906009244992296,
+          "per_start_coverage_mean": 0.8906009244992296,
+          "per_start_coverage_worst": 0.7395993836671803,
+          "frac_starts_meeting_target": 0.5
+        },
+        {
+          "d": 0.95,
+          "deliverable_mw": 2.259921304730592,
+          "pooled_coverage": 0.8516949152542372,
+          "per_start_coverage_mean": 0.8516949152542372,
+          "per_start_coverage_worst": 0.6040061633281972,
+          "frac_starts_meeting_target": 0.5
+        },
+        {
+          "d": 1.0,
+          "deliverable_mw": 2.3788645312953602,
+          "pooled_coverage": 0.8260785824345146,
+          "per_start_coverage_mean": 0.8260785824345147,
+          "per_start_coverage_worst": 0.551617873651772,
+          "frac_starts_meeting_target": 0.5
+        }
+      ]
+    }
+  },
+  "runtime_sec": 0.6
+}

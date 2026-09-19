@@ -1,0 +1,1150 @@
+{
+  "by_s0": {
+    "measured_scope": {
+      "h1_a0.9": {
+        "shapley_factor": {
+          "scope": 1.0,
+          "dur": 0.7877133274316123,
+          "coinc": 0.9704886355294673
+        },
+        "shapley_log": {
+          "scope": 0.0,
+          "dur": -0.2386210529903051,
+          "coinc": -0.029955586354598884
+        },
+        "spread": {
+          "scope": {
+            "factor_min": 1.0,
+            "factor_max": 1.0,
+            "log_spread": 0.0
+          },
+          "dur": {
+            "factor_min": 0.7644668323274818,
+            "factor_max": 0.8116667198290903,
+            "log_spread": 0.05991117270919777
+          },
+          "coinc": {
+            "factor_min": 0.9418481916918472,
+            "factor_max": 1.0,
+            "log_spread": 0.05991117270919777
+          }
+        },
+        "per_order": {
+          "scope->dur->coinc": {
+            "scope": 1.0,
+            "dur": 0.8116667198290903,
+            "coinc": 0.9418481916918472
+          },
+          "scope->coinc->dur": {
+            "scope": 1.0,
+            "dur": 0.7644668323274818,
+            "coinc": 1.0
+          },
+          "dur->scope->coinc": {
+            "scope": 1.0,
+            "dur": 0.8116667198290903,
+            "coinc": 0.9418481916918472
+          },
+          "dur->coinc->scope": {
+            "scope": 1.0,
+            "dur": 0.8116667198290903,
+            "coinc": 0.9418481916918472
+          },
+          "coinc->scope->dur": {
+            "scope": 1.0,
+            "dur": 0.7644668323274818,
+            "coinc": 1.0
+          },
+          "coinc->dur->scope": {
+            "scope": 1.0,
+            "dur": 0.7644668323274818,
+            "coinc": 1.0
+          }
+        },
+        "total_log_overstatement": -0.26857663934490394
+      },
+      "h4_a0.9": {
+        "shapley_factor": {
+          "scope": 1.0,
+          "dur": 0.7441238623958722,
+          "coinc": 0.9634495785611562
+        },
+        "shapley_log": {
+          "scope": 0.0,
+          "dur": -0.29554777629070594,
+          "coinc": -0.03723512403711465
+        },
+        "spread": {
+          "scope": {
+            "factor_min": 1.0,
+            "factor_max": 1.0,
+            "log_spread": 0.0
+          },
+          "dur": {
+            "factor_min": 0.7169258216226029,
+            "factor_max": 0.772353716223706,
+            "log_spread": 0.0744702480742293
+          },
+          "coinc": {
+            "factor_min": 0.9282350904296695,
+            "factor_max": 1.0,
+            "log_spread": 0.0744702480742293
+          }
+        },
+        "per_order": {
+          "scope->dur->coinc": {
+            "scope": 1.0,
+            "dur": 0.772353716223706,
+            "coinc": 0.9282350904296695
+          },
+          "scope->coinc->dur": {
+            "scope": 1.0,
+            "dur": 0.7169258216226029,
+            "coinc": 1.0
+          },
+          "dur->scope->coinc": {
+            "scope": 1.0,
+            "dur": 0.772353716223706,
+            "coinc": 0.9282350904296695
+          },
+          "dur->coinc->scope": {
+            "scope": 1.0,
+            "dur": 0.772353716223706,
+            "coinc": 0.9282350904296695
+          },
+          "coinc->scope->dur": {
+            "scope": 1.0,
+            "dur": 0.7169258216226029,
+            "coinc": 1.0
+          },
+          "coinc->dur->scope": {
+            "scope": 1.0,
+            "dur": 0.7169258216226029,
+            "coinc": 1.0
+          }
+        },
+        "total_log_overstatement": -0.33278290032782054
+      },
+      "h24_a0.9": {
+        "shapley_factor": {
+          "scope": 1.0,
+          "dur": 0.6590515243784041,
+          "coinc": 0.9341943124194877
+        },
+        "shapley_log": {
+          "scope": 0.0,
+          "dur": -0.41695356183277976,
+          "coinc": -0.06807081911561286
+        },
+        "spread": {
+          "scope": {
+            "factor_min": 1.0,
+            "factor_max": 1.0,
+            "log_spread": 0.0
+          },
+          "dur": {
+            "factor_min": 0.6156821856656984,
+            "factor_max": 0.7054758476012489,
+            "log_spread": 0.13614163823122571
+          },
+          "coinc": {
+            "factor_min": 0.8727190133569195,
+            "factor_max": 1.0,
+            "log_spread": 0.13614163823122571
+          }
+        },
+        "per_order": {
+          "scope->dur->coinc": {
+            "scope": 1.0,
+            "dur": 0.7054758476012489,
+            "coinc": 0.8727190133569195
+          },
+          "scope->coinc->dur": {
+            "scope": 1.0,
+            "dur": 0.6156821856656984,
+            "coinc": 1.0
+          },
+          "dur->scope->coinc": {
+            "scope": 1.0,
+            "dur": 0.7054758476012489,
+            "coinc": 0.8727190133569195
+          },
+          "dur->coinc->scope": {
+            "scope": 1.0,
+            "dur": 0.7054758476012489,
+            "coinc": 0.8727190133569195
+          },
+          "coinc->scope->dur": {
+            "scope": 1.0,
+            "dur": 0.6156821856656984,
+            "coinc": 1.0
+          },
+          "coinc->dur->scope": {
+            "scope": 1.0,
+            "dur": 0.6156821856656984,
+            "coinc": 1.0
+          }
+        },
+        "total_log_overstatement": -0.4850243809483926
+      },
+      "h1_a0.95": {
+        "shapley_factor": {
+          "scope": 1.0,
+          "dur": 0.7375781152142227,
+          "coinc": 0.962943397949255
+        },
+        "shapley_log": {
+          "scope": 0.0,
+          "dur": -0.30438327744263727,
+          "coinc": -0.037760645703485696
+        },
+        "spread": {
+          "scope": {
+            "factor_min": 1.0,
+            "factor_max": 1.0,
+            "log_spread": 0.0
+          },
+          "dur": {
+            "factor_min": 0.7102459765173906,
+            "factor_max": 0.7659620667061174,
+            "log_spread": 0.07552129140697139
+          },
+          "coinc": {
+            "factor_min": 0.9272599876540573,
+            "factor_max": 1.0,
+            "log_spread": 0.07552129140697139
+          }
+        },
+        "per_order": {
+          "scope->dur->coinc": {
+            "scope": 1.0,
+            "dur": 0.7659620667061174,
+            "coinc": 0.9272599876540573
+          },
+          "scope->coinc->dur": {
+            "scope": 1.0,
+            "dur": 0.7102459765173906,
+            "coinc": 1.0
+          },
+          "dur->scope->coinc": {
+            "scope": 1.0,
+            "dur": 0.7659620667061174,
+            "coinc": 0.9272599876540573
+          },
+          "dur->coinc->scope": {
+            "scope": 1.0,
+            "dur": 0.7659620667061174,
+            "coinc": 0.9272599876540573
+          },
+          "coinc->scope->dur": {
+            "scope": 1.0,
+            "dur": 0.7102459765173906,
+            "coinc": 1.0
+          },
+          "coinc->dur->scope": {
+            "scope": 1.0,
+            "dur": 0.7102459765173906,
+            "coinc": 1.0
+          }
+        },
+        "total_log_overstatement": -0.34214392314612296
+      },
+      "h4_a0.95": {
+        "shapley_factor": {
+          "scope": 1.0,
+          "dur": 0.690410523378465,
+          "coinc": 0.9503883005847885
+        },
+        "shapley_log": {
+          "scope": 0.0,
+          "dur": -0.3704688968921413,
+          "coinc": -0.050884640440277906
+        },
+        "spread": {
+          "scope": {
+            "factor_min": 1.0,
+            "factor_max": 1.0,
+            "log_spread": 0.0
+          },
+          "dur": {
+            "factor_min": 0.6561580840195138,
+            "factor_max": 0.7264509916143167,
+            "log_spread": 0.10176928088055581
+          },
+          "coinc": {
+            "factor_min": 0.9032379218884424,
+            "factor_max": 1.0,
+            "log_spread": 0.10176928088055581
+          }
+        },
+        "per_order": {
+          "scope->dur->coinc": {
+            "scope": 1.0,
+            "dur": 0.7264509916143167,
+            "coinc": 0.9032379218884424
+          },
+          "scope->coinc->dur": {
+            "scope": 1.0,
+            "dur": 0.6561580840195138,
+            "coinc": 1.0
+          },
+          "dur->scope->coinc": {
+            "scope": 1.0,
+            "dur": 0.7264509916143167,
+            "coinc": 0.9032379218884424
+          },
+          "dur->coinc->scope": {
+            "scope": 1.0,
+            "dur": 0.7264509916143167,
+            "coinc": 0.9032379218884424
+          },
+          "coinc->scope->dur": {
+            "scope": 1.0,
+            "dur": 0.6561580840195138,
+            "coinc": 1.0
+          },
+          "coinc->dur->scope": {
+            "scope": 1.0,
+            "dur": 0.6561580840195138,
+            "coinc": 1.0
+          }
+        },
+        "total_log_overstatement": -0.4213535373324192
+      },
+      "h24_a0.95": {
+        "shapley_factor": {
+          "scope": 1.0,
+          "dur": 0.6082919911665458,
+          "coinc": 0.906311835285598
+        },
+        "shapley_log": {
+          "scope": 0.0,
+          "dur": -0.4971002636692479,
+          "coinc": -0.09837184310167163
+        },
+        "spread": {
+          "scope": {
+            "factor_min": 1.0,
+            "factor_max": 1.0,
+            "log_spread": 0.0
+          },
+          "dur": {
+            "factor_min": 0.5513022309036828,
+            "factor_max": 0.6711729533741111,
+            "log_spread": 0.19674368620334326
+          },
+          "coinc": {
+            "factor_min": 0.821401142778749,
+            "factor_max": 1.0,
+            "log_spread": 0.19674368620334326
+          }
+        },
+        "per_order": {
+          "scope->dur->coinc": {
+            "scope": 1.0,
+            "dur": 0.6711729533741111,
+            "coinc": 0.821401142778749
+          },
+          "scope->coinc->dur": {
+            "scope": 1.0,
+            "dur": 0.5513022309036828,
+            "coinc": 1.0
+          },
+          "dur->scope->coinc": {
+            "scope": 1.0,
+            "dur": 0.6711729533741111,
+            "coinc": 0.821401142778749
+          },
+          "dur->coinc->scope": {
+            "scope": 1.0,
+            "dur": 0.6711729533741111,
+            "coinc": 0.821401142778749
+          },
+          "coinc->scope->dur": {
+            "scope": 1.0,
+            "dur": 0.5513022309036828,
+            "coinc": 1.0
+          },
+          "coinc->dur->scope": {
+            "scope": 1.0,
+            "dur": 0.5513022309036828,
+            "coinc": 1.0
+          }
+        },
+        "total_log_overstatement": -0.5954721067709196
+      },
+      "h1_a0.99": {
+        "shapley_factor": {
+          "scope": 1.0,
+          "dur": 0.6255996071751709,
+          "coinc": 0.9339918003790701
+        },
+        "shapley_log": {
+          "scope": 0.0,
+          "dur": -0.4690447176681591,
+          "coinc": -0.06828761982922849
+        },
+        "spread": {
+          "scope": {
+            "factor_min": 1.0,
+            "factor_max": 1.0,
+            "log_spread": 0.0
+          },
+          "dur": {
+            "factor_min": 0.584304903421977,
+            "factor_max": 0.6698127402416862,
+            "log_spread": 0.13657523965845697
+          },
+          "coinc": {
+            "factor_min": 0.8723406831753369,
+            "factor_max": 1.0,
+            "log_spread": 0.13657523965845697
+          }
+        },
+        "per_order": {
+          "scope->dur->coinc": {
+            "scope": 1.0,
+            "dur": 0.6698127402416862,
+            "coinc": 0.8723406831753369
+          },
+          "scope->coinc->dur": {
+            "scope": 1.0,
+            "dur": 0.584304903421977,
+            "coinc": 1.0
+          },
+          "dur->scope->coinc": {
+            "scope": 1.0,
+            "dur": 0.6698127402416862,
+            "coinc": 0.8723406831753369
+          },
+          "dur->coinc->scope": {
+            "scope": 1.0,
+            "dur": 0.6698127402416862,
+            "coinc": 0.8723406831753369
+          },
+          "coinc->scope->dur": {
+            "scope": 1.0,
+            "dur": 0.584304903421977,
+            "coinc": 1.0
+          },
+          "coinc->dur->scope": {
+            "scope": 1.0,
+            "dur": 0.584304903421977,
+            "coinc": 1.0
+          }
+        },
+        "total_log_overstatement": -0.5373323374973875
+      },
+      "h4_a0.99": {
+        "shapley_factor": {
+          "scope": 1.0,
+          "dur": 0.5931912447122456,
+          "coinc": 0.9131633594507254
+        },
+        "shapley_log": {
+          "scope": 0.0,
+          "dur": -0.5222384282469618,
+          "coinc": -0.09084048837858072
+        },
+        "spread": {
+          "scope": {
+            "factor_min": 1.0,
+            "factor_max": 1.0,
+            "log_spread": 0.0
+          },
+          "dur": {
+            "factor_min": 0.5416805098181914,
+            "factor_max": 0.6496003574530789,
+            "log_spread": 0.18168097675716144
+          },
+          "coinc": {
+            "factor_min": 0.8338673210433346,
+            "factor_max": 1.0,
+            "log_spread": 0.18168097675716144
+          }
+        },
+        "per_order": {
+          "scope->dur->coinc": {
+            "scope": 1.0,
+            "dur": 0.6496003574530789,
+            "coinc": 0.8338673210433346
+          },
+          "scope->coinc->dur": {
+            "scope": 1.0,
+            "dur": 0.5416805098181914,
+            "coinc": 1.0
+          },
+          "dur->scope->coinc": {
+            "scope": 1.0,
+            "dur": 0.6496003574530789,
+            "coinc": 0.8338673210433346
+          },
+          "dur->coinc->scope": {
+            "scope": 1.0,
+            "dur": 0.6496003574530789,
+            "coinc": 0.8338673210433346
+          },
+          "coinc->scope->dur": {
+            "scope": 1.0,
+            "dur": 0.5416805098181914,
+            "coinc": 1.0
+          },
+          "coinc->dur->scope": {
+            "scope": 1.0,
+            "dur": 0.5416805098181914,
+            "coinc": 1.0
+          }
+        },
+        "total_log_overstatement": -0.6130789166255426
+      },
+      "h24_a0.99": {
+        "shapley_factor": {
+          "scope": 1.0,
+          "dur": 0.5197926548490365,
+          "coinc": 0.8910111415117504
+        },
+        "shapley_log": {
+          "scope": 0.0,
+          "dur": -0.6543252875997956,
+          "coinc": -0.11539834708698271
+        },
+        "spread": {
+          "scope": {
+            "factor_min": 1.0,
+            "factor_max": 1.0,
+            "log_spread": 0.0
+          },
+          "dur": {
+            "factor_min": 0.4631410467464633,
+            "factor_max": 0.583373911539558,
+            "log_spread": 0.23079669417396542
+          },
+          "coinc": {
+            "factor_min": 0.7939008542980724,
+            "factor_max": 1.0,
+            "log_spread": 0.23079669417396542
+          }
+        },
+        "per_order": {
+          "scope->dur->coinc": {
+            "scope": 1.0,
+            "dur": 0.583373911539558,
+            "coinc": 0.7939008542980724
+          },
+          "scope->coinc->dur": {
+            "scope": 1.0,
+            "dur": 0.4631410467464633,
+            "coinc": 1.0
+          },
+          "dur->scope->coinc": {
+            "scope": 1.0,
+            "dur": 0.583373911539558,
+            "coinc": 0.7939008542980724
+          },
+          "dur->coinc->scope": {
+            "scope": 1.0,
+            "dur": 0.583373911539558,
+            "coinc": 0.7939008542980724
+          },
+          "coinc->scope->dur": {
+            "scope": 1.0,
+            "dur": 0.4631410467464633,
+            "coinc": 1.0
+          },
+          "coinc->dur->scope": {
+            "scope": 1.0,
+            "dur": 0.4631410467464633,
+            "coinc": 1.0
+          }
+        },
+        "total_log_overstatement": -0.7697236346867783
+      }
+    },
+    "literature_value_PLACEHOLDER": {
+      "h1_a0.9": {
+        "shapley_factor": {
+          "scope": 0.8124078880462443,
+          "dur": 0.786625850193518,
+          "coinc": 0.9718302953550474
+        },
+        "shapley_log": {
+          "scope": -0.2077527397634138,
+          "dur": -0.24000255632390502,
+          "coinc": -0.02857408302099888
+        },
+        "spread": {
+          "scope": {
+            "factor_min": 0.8124078880462442,
+            "factor_max": 0.8124078880462443,
+            "log_spread": 1.1102230246251565e-16
+          },
+          "dur": {
+            "factor_min": 0.7644668323274818,
+            "factor_max": 0.8094271746345724,
+            "log_spread": 0.057148166041997794
+          },
+          "coinc": {
+            "factor_min": 0.9444541229698786,
+            "factor_max": 1.0,
+            "log_spread": 0.057148166041997794
+          }
+        },
+        "per_order": {
+          "scope->dur->coinc": {
+            "scope": 0.8124078880462443,
+            "dur": 0.8094271746345724,
+            "coinc": 0.9444541229698786
+          },
+          "scope->coinc->dur": {
+            "scope": 0.8124078880462443,
+            "dur": 0.7644668323274818,
+            "coinc": 1.0
+          },
+          "dur->scope->coinc": {
+            "scope": 0.8124078880462443,
+            "dur": 0.8094271746345724,
+            "coinc": 0.9444541229698786
+          },
+          "dur->coinc->scope": {
+            "scope": 0.8124078880462442,
+            "dur": 0.8094271746345724,
+            "coinc": 0.9444541229698787
+          },
+          "coinc->scope->dur": {
+            "scope": 0.8124078880462443,
+            "dur": 0.7644668323274818,
+            "coinc": 1.0
+          },
+          "coinc->dur->scope": {
+            "scope": 0.8124078880462442,
+            "dur": 0.7644668323274819,
+            "coinc": 1.0
+          }
+        },
+        "total_log_overstatement": -0.47632937910831774
+      },
+      "h4_a0.9": {
+        "shapley_factor": {
+          "scope": 0.8124078880462444,
+          "dur": 0.7429444353273316,
+          "coinc": 0.9649790583689273
+        },
+        "shapley_log": {
+          "scope": -0.2077527397634137,
+          "dur": -0.2971340212770996,
+          "coinc": -0.03564887905072104
+        },
+        "spread": {
+          "scope": {
+            "factor_min": 0.8124078880462443,
+            "factor_max": 0.8124078880462445,
+            "log_spread": 2.220446049250313e-16
+          },
+          "dur": {
+            "factor_min": 0.7169258216226029,
+            "factor_max": 0.7699073144479492,
+            "log_spread": 0.07129775810144223
+          },
+          "coinc": {
+            "factor_min": 0.9311845830905815,
+            "factor_max": 1.0,
+            "log_spread": 0.07129775810144212
+          }
+        },
+        "per_order": {
+          "scope->dur->coinc": {
+            "scope": 0.8124078880462443,
+            "dur": 0.7699073144479492,
+            "coinc": 0.9311845830905815
+          },
+          "scope->coinc->dur": {
+            "scope": 0.8124078880462443,
+            "dur": 0.7169258216226029,
+            "coinc": 1.0
+          },
+          "dur->scope->coinc": {
+            "scope": 0.8124078880462445,
+            "dur": 0.7699073144479491,
+            "coinc": 0.9311845830905815
+          },
+          "dur->coinc->scope": {
+            "scope": 0.8124078880462444,
+            "dur": 0.7699073144479491,
+            "coinc": 0.9311845830905816
+          },
+          "coinc->scope->dur": {
+            "scope": 0.8124078880462443,
+            "dur": 0.7169258216226029,
+            "coinc": 1.0
+          },
+          "coinc->dur->scope": {
+            "scope": 0.8124078880462444,
+            "dur": 0.7169258216226029,
+            "coinc": 1.0
+          }
+        },
+        "total_log_overstatement": -0.5405356400912343
+      },
+      "h24_a0.9": {
+        "shapley_factor": {
+          "scope": 0.8124078880462444,
+          "dur": 0.655887416965712,
+          "coinc": 0.9387010174916721
+        },
+        "shapley_log": {
+          "scope": -0.2077527397634137,
+          "dur": -0.4217661252456253,
+          "coinc": -0.06325825570276744
+        },
+        "spread": {
+          "scope": {
+            "factor_min": 0.8124078880462443,
+            "factor_max": 0.8124078880462444,
+            "log_spread": 1.1102230246251565e-16
+          },
+          "dur": {
+            "factor_min": 0.6156821856656984,
+            "factor_max": 0.6987181272247112,
+            "log_spread": 0.126516511405535
+          },
+          "coinc": {
+            "factor_min": 0.8811596002399006,
+            "factor_max": 1.0,
+            "log_spread": 0.12651651140553488
+          }
+        },
+        "per_order": {
+          "scope->dur->coinc": {
+            "scope": 0.8124078880462443,
+            "dur": 0.6987181272247112,
+            "coinc": 0.8811596002399006
+          },
+          "scope->coinc->dur": {
+            "scope": 0.8124078880462443,
+            "dur": 0.6156821856656984,
+            "coinc": 1.0
+          },
+          "dur->scope->coinc": {
+            "scope": 0.8124078880462444,
+            "dur": 0.698718127224711,
+            "coinc": 0.8811596002399006
+          },
+          "dur->coinc->scope": {
+            "scope": 0.8124078880462444,
+            "dur": 0.698718127224711,
+            "coinc": 0.8811596002399006
+          },
+          "coinc->scope->dur": {
+            "scope": 0.8124078880462443,
+            "dur": 0.6156821856656984,
+            "coinc": 1.0
+          },
+          "coinc->dur->scope": {
+            "scope": 0.8124078880462444,
+            "dur": 0.6156821856656984,
+            "coinc": 1.0
+          }
+        },
+        "total_log_overstatement": -0.6927771207118064
+      },
+      "h1_a0.95": {
+        "shapley_factor": {
+          "scope": 0.8124078880462443,
+          "dur": 0.736995259043567,
+          "coinc": 0.96370494626941
+        },
+        "shapley_log": {
+          "scope": -0.2077527397634138,
+          "dur": -0.30517381959019774,
+          "coinc": -0.03697010355592523
+        },
+        "spread": {
+          "scope": {
+            "factor_min": 0.8124078880462443,
+            "factor_max": 0.8124078880462443,
+            "log_spread": 0.0
+          },
+          "dur": {
+            "factor_min": 0.7102459765173906,
+            "factor_max": 0.7647519729939575,
+            "log_spread": 0.07394020711185045
+          },
+          "coinc": {
+            "factor_min": 0.9287272234641264,
+            "factor_max": 1.0,
+            "log_spread": 0.07394020711185045
+          }
+        },
+        "per_order": {
+          "scope->dur->coinc": {
+            "scope": 0.8124078880462443,
+            "dur": 0.7647519729939575,
+            "coinc": 0.9287272234641264
+          },
+          "scope->coinc->dur": {
+            "scope": 0.8124078880462443,
+            "dur": 0.7102459765173906,
+            "coinc": 1.0
+          },
+          "dur->scope->coinc": {
+            "scope": 0.8124078880462443,
+            "dur": 0.7647519729939575,
+            "coinc": 0.9287272234641264
+          },
+          "dur->coinc->scope": {
+            "scope": 0.8124078880462443,
+            "dur": 0.7647519729939575,
+            "coinc": 0.9287272234641264
+          },
+          "coinc->scope->dur": {
+            "scope": 0.8124078880462443,
+            "dur": 0.7102459765173906,
+            "coinc": 1.0
+          },
+          "coinc->dur->scope": {
+            "scope": 0.8124078880462443,
+            "dur": 0.7102459765173906,
+            "coinc": 1.0
+          }
+        },
+        "total_log_overstatement": -0.5498966629095368
+      },
+      "h4_a0.95": {
+        "shapley_factor": {
+          "scope": 0.8124078880462443,
+          "dur": 0.6882571823644106,
+          "coinc": 0.9533617677121438
+        },
+        "shapley_log": {
+          "scope": -0.2077527397634138,
+          "dur": -0.3735926993227558,
+          "coinc": -0.04776083800966339
+        },
+        "spread": {
+          "scope": {
+            "factor_min": 0.8124078880462442,
+            "factor_max": 0.8124078880462443,
+            "log_spread": 1.1102230246251565e-16
+          },
+          "dur": {
+            "factor_min": 0.6561580840195138,
+            "factor_max": 0.7219265610116449,
+            "log_spread": 0.09552167601932682
+          },
+          "coinc": {
+            "factor_min": 0.9088986601352236,
+            "factor_max": 1.0,
+            "log_spread": 0.09552167601932682
+          }
+        },
+        "per_order": {
+          "scope->dur->coinc": {
+            "scope": 0.8124078880462443,
+            "dur": 0.7219265610116449,
+            "coinc": 0.9088986601352236
+          },
+          "scope->coinc->dur": {
+            "scope": 0.8124078880462443,
+            "dur": 0.6561580840195138,
+            "coinc": 1.0
+          },
+          "dur->scope->coinc": {
+            "scope": 0.8124078880462443,
+            "dur": 0.7219265610116449,
+            "coinc": 0.9088986601352236
+          },
+          "dur->coinc->scope": {
+            "scope": 0.8124078880462442,
+            "dur": 0.7219265610116449,
+            "coinc": 0.9088986601352236
+          },
+          "coinc->scope->dur": {
+            "scope": 0.8124078880462443,
+            "dur": 0.6561580840195138,
+            "coinc": 1.0
+          },
+          "coinc->dur->scope": {
+            "scope": 0.8124078880462442,
+            "dur": 0.6561580840195138,
+            "coinc": 1.0
+          }
+        },
+        "total_log_overstatement": -0.629106277095833
+      },
+      "h24_a0.95": {
+        "shapley_factor": {
+          "scope": 0.8124078880462443,
+          "dur": 0.6023856633928952,
+          "coinc": 0.9151981270578576
+        },
+        "shapley_log": {
+          "scope": -0.2077527397634138,
+          "dur": -0.5068574019282378,
+          "coinc": -0.08861470484268184
+        },
+        "spread": {
+          "scope": {
+            "factor_min": 0.8124078880462443,
+            "factor_max": 0.8124078880462444,
+            "log_spread": 1.1102230246251565e-16
+          },
+          "dur": {
+            "factor_min": 0.5513022309036828,
+            "factor_max": 0.6582024652185648,
+            "log_spread": 0.17722940968536371
+          },
+          "coinc": {
+            "factor_min": 0.8375876117702106,
+            "factor_max": 1.0,
+            "log_spread": 0.17722940968536371
+          }
+        },
+        "per_order": {
+          "scope->dur->coinc": {
+            "scope": 0.8124078880462443,
+            "dur": 0.6582024652185648,
+            "coinc": 0.8375876117702106
+          },
+          "scope->coinc->dur": {
+            "scope": 0.8124078880462443,
+            "dur": 0.5513022309036828,
+            "coinc": 1.0
+          },
+          "dur->scope->coinc": {
+            "scope": 0.8124078880462444,
+            "dur": 0.6582024652185648,
+            "coinc": 0.8375876117702106
+          },
+          "dur->coinc->scope": {
+            "scope": 0.8124078880462443,
+            "dur": 0.6582024652185648,
+            "coinc": 0.8375876117702107
+          },
+          "coinc->scope->dur": {
+            "scope": 0.8124078880462443,
+            "dur": 0.5513022309036828,
+            "coinc": 1.0
+          },
+          "coinc->dur->scope": {
+            "scope": 0.8124078880462443,
+            "dur": 0.5513022309036828,
+            "coinc": 1.0
+          }
+        },
+        "total_log_overstatement": -0.8032248465343333
+      },
+      "h1_a0.99": {
+        "shapley_factor": {
+          "scope": 0.8124078880462443,
+          "dur": 0.629400916489363,
+          "coinc": 0.9283508938644067
+        },
+        "shapley_log": {
+          "scope": -0.2077527397634138,
+          "dur": -0.4629868382210778,
+          "coinc": -0.07434549927630972
+        },
+        "spread": {
+          "scope": {
+            "factor_min": 0.8124078880462442,
+            "factor_max": 0.8124078880462444,
+            "log_spread": 2.220446049250313e-16
+          },
+          "dur": {
+            "factor_min": 0.5843049034219769,
+            "factor_max": 0.6779773904987398,
+            "log_spread": 0.14869099855261958
+          },
+          "coinc": {
+            "factor_min": 0.8618353821388429,
+            "factor_max": 1.0,
+            "log_spread": 0.14869099855261958
+          }
+        },
+        "per_order": {
+          "scope->dur->coinc": {
+            "scope": 0.8124078880462443,
+            "dur": 0.6779773904987397,
+            "coinc": 0.8618353821388431
+          },
+          "scope->coinc->dur": {
+            "scope": 0.8124078880462443,
+            "dur": 0.584304903421977,
+            "coinc": 1.0
+          },
+          "dur->scope->coinc": {
+            "scope": 0.8124078880462442,
+            "dur": 0.6779773904987398,
+            "coinc": 0.8618353821388431
+          },
+          "dur->coinc->scope": {
+            "scope": 0.8124078880462444,
+            "dur": 0.6779773904987398,
+            "coinc": 0.8618353821388429
+          },
+          "coinc->scope->dur": {
+            "scope": 0.8124078880462443,
+            "dur": 0.584304903421977,
+            "coinc": 1.0
+          },
+          "coinc->dur->scope": {
+            "scope": 0.8124078880462444,
+            "dur": 0.5843049034219769,
+            "coinc": 1.0
+          }
+        },
+        "total_log_overstatement": -0.7450850772608013
+      },
+      "h4_a0.99": {
+        "shapley_factor": {
+          "scope": 0.8124078880462443,
+          "dur": 0.591076273349039,
+          "coinc": 0.916430813148748
+        },
+        "shapley_log": {
+          "scope": -0.2077527397634138,
+          "dur": -0.5258102117831203,
+          "coinc": -0.08726870484242237
+        },
+        "spread": {
+          "scope": {
+            "factor_min": 0.8124078880462443,
+            "factor_max": 0.8124078880462444,
+            "log_spread": 1.1102230246251565e-16
+          },
+          "dur": {
+            "factor_min": 0.5416805098181914,
+            "factor_max": 0.6449764290641548,
+            "log_spread": 0.17453740968484477
+          },
+          "coinc": {
+            "factor_min": 0.8398454352884753,
+            "factor_max": 1.0,
+            "log_spread": 0.17453740968484477
+          }
+        },
+        "per_order": {
+          "scope->dur->coinc": {
+            "scope": 0.8124078880462443,
+            "dur": 0.6449764290641548,
+            "coinc": 0.8398454352884753
+          },
+          "scope->coinc->dur": {
+            "scope": 0.8124078880462443,
+            "dur": 0.5416805098181914,
+            "coinc": 1.0
+          },
+          "dur->scope->coinc": {
+            "scope": 0.8124078880462444,
+            "dur": 0.6449764290641546,
+            "coinc": 0.8398454352884753
+          },
+          "dur->coinc->scope": {
+            "scope": 0.8124078880462443,
+            "dur": 0.6449764290641546,
+            "coinc": 0.8398454352884754
+          },
+          "coinc->scope->dur": {
+            "scope": 0.8124078880462443,
+            "dur": 0.5416805098181914,
+            "coinc": 1.0
+          },
+          "coinc->dur->scope": {
+            "scope": 0.8124078880462443,
+            "dur": 0.5416805098181914,
+            "coinc": 1.0
+          }
+        },
+        "total_log_overstatement": -0.8208316563889564
+      },
+      "h24_a0.99": {
+        "shapley_factor": {
+          "scope": 0.8124078880462443,
+          "dur": 0.5205052318890693,
+          "coinc": 0.8897913380535788
+        },
+        "shapley_log": {
+          "scope": -0.2077527397634138,
+          "dur": -0.6529553393175557,
+          "coinc": -0.11676829536922263
+        },
+        "spread": {
+          "scope": {
+            "factor_min": 0.8124078880462442,
+            "factor_max": 0.8124078880462443,
+            "log_spread": 1.1102230246251565e-16
+          },
+          "dur": {
+            "factor_min": 0.4631410467464633,
+            "factor_max": 0.5849744874204732,
+            "log_spread": 0.23353659073844535
+          },
+          "coinc": {
+            "factor_min": 0.7917286252751782,
+            "factor_max": 1.0,
+            "log_spread": 0.23353659073844535
+          }
+        },
+        "per_order": {
+          "scope->dur->coinc": {
+            "scope": 0.8124078880462443,
+            "dur": 0.5849744874204732,
+            "coinc": 0.7917286252751782
+          },
+          "scope->coinc->dur": {
+            "scope": 0.8124078880462443,
+            "dur": 0.4631410467464633,
+            "coinc": 1.0
+          },
+          "dur->scope->coinc": {
+            "scope": 0.8124078880462442,
+            "dur": 0.5849744874204732,
+            "coinc": 0.7917286252751782
+          },
+          "dur->coinc->scope": {
+            "scope": 0.8124078880462443,
+            "dur": 0.5849744874204732,
+            "coinc": 0.7917286252751782
+          },
+          "coinc->scope->dur": {
+            "scope": 0.8124078880462443,
+            "dur": 0.4631410467464633,
+            "coinc": 1.0
+          },
+          "coinc->dur->scope": {
+            "scope": 0.8124078880462443,
+            "dur": 0.4631410467464633,
+            "coinc": 1.0
+          }
+        },
+        "total_log_overstatement": -0.9774763744501921
+      }
+    }
+  },
+  "provenance": {
+    "script_sha256": "0b7d31cda858685fb2351cd9390aef9acd36dce8e28d9528f697a725749574cd",
+    "powermodel_sha256": "4a030522028ecf0171f7319663af48508588f5e49087c50eef35919f5fbc44ed",
+    "input_agg_sha256": "46e99955d9c3db8cb2ad5c8ae8296a9fc00932f99a7ef4f5ab72212f966b85f7",
+    "config_sha256": "b82279008c2b5eb77e74f2d6c6543b36afc03fa719f68a677a6993638d6fdef9",
+    "generated_at_utc": "2026-09-15T19:00:35.312296+00:00",
+    "command": [
+      "src/flex_decomposition.py",
+      "--agg",
+      "/project/mli30/mli30/asi-trace/agg/pod_hourly_agg.parquet",
+      "--config",
+      "configs/power_curves.yaml",
+      "--out",
+      "/work/mli30/res-gpu-power/2026-09-15_flexibility-decomposition",
+      "--nboot",
+      "1000",
+      "--n-ensemble",
+      "200",
+      "--n-shift",
+      "12",
+      "--n-shift-boot",
+      "3",
+      "--helios-data",
+      "/work/mli30/res-gpu-power/external-data/helios/HeliosData/data"
+    ]
+  }
+}

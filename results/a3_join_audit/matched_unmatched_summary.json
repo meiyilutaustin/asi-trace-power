@@ -1,0 +1,125 @@
+{
+  "analysis": "A3 post-jump execution-summary coverage and composition bound",
+  "window": {
+    "day_start_inclusive": 110,
+    "day_end_inclusive": 184,
+    "n_days": 75
+  },
+  "method": "Match status is exact from span-day pod IDs versus execution-summary pod IDs. Unmatched span rows contain no priority/workload labels, so unmatched composition is not identified. Exact all-population label totals plus the unmatched mass give sharp worst-case bounds for every matched composition share.",
+  "input_counts": {
+    "span_day_files": 1200,
+    "span_day_bytes": 1615158189,
+    "span_pod_day_rows": 44638864,
+    "aggregate_rows_selected": 465444,
+    "job_execution_rows": 40522321,
+    "job_execution_unique_pods": 36685018,
+    "job_execution_conflicting_label_pods_diagnostic_only": 113940
+  },
+  "overall": {
+    "all_gpu_hours": 251882298.24883333,
+    "matched_gpu_hours": 251882189.6710556,
+    "unmatched_gpu_hours": 108.57777777777777,
+    "matched_gpu_hour_share_pct": 99.99995689344647,
+    "unmatched_gpu_hour_share_pct": 0.000043106553550068966,
+    "matched_pod_day_rows": 44638861,
+    "unmatched_pod_day_rows": 3,
+    "matched_unique_pods": 36262052,
+    "unmatched_unique_pods": 3
+  },
+  "composition_identification": {
+    "all_population_composition": "exact from pod_hourly_agg",
+    "matched_composition": "bounded because the three unmatched pod-day rows have no labels in existing aggregates",
+    "unmatched_composition": "not identified; no priority/workload claim is made for 108.57777777777777 GPU-h",
+    "max_matched_share_bound_width_pp": 0.00004310657213182657,
+    "interpretation": "Even assigning all unmatched GPU-hours adversarially to one label changes any matched composition share by at most 0.00004311 percentage points. Thus days 110-184 have no material match-composition bias at the resolution of the paper."
+  },
+  "composition_bounds_by_priority": [
+    {
+      "priority_class": "HP",
+      "all_gpu_hours": 194122862.30205557,
+      "all_composition_share_pct": 77.06887846095579,
+      "matched_composition_share_lower_pct": 77.0688685761354,
+      "matched_composition_share_upper_pct": 77.0689116827075,
+      "matched_bound_width_pp": 0.0000431065721215873
+    },
+    {
+      "priority_class": "LP",
+      "all_gpu_hours": 56144497.729833335,
+      "all_composition_share_pct": 22.28997357899619,
+      "matched_composition_share_lower_pct": 22.2899400808676,
+      "matched_composition_share_upper_pct": 22.2899831874397,
+      "matched_bound_width_pp": 0.0000431065721357982
+    },
+    {
+      "priority_class": "Other",
+      "all_gpu_hours": 1614938.2169444445,
+      "all_composition_share_pct": 0.641147960048012,
+      "matched_composition_share_lower_pct": 0.641105129852788,
+      "matched_composition_share_upper_pct": 0.64114823642492,
+      "matched_bound_width_pp": 0.0000431065721319124
+    }
+  ],
+  "composition_bounds_by_workload": [
+    {
+      "job_type_public": "dev",
+      "all_gpu_hours": 8439880.6085,
+      "all_composition_share_pct": 3.350723995761815,
+      "matched_composition_share_lower_pct": 3.35068233357194,
+      "matched_composition_share_upper_pct": 3.35072544014407,
+      "matched_bound_width_pp": 0.0000431065721313573
+    },
+    {
+      "job_type_public": "offline_inference",
+      "all_gpu_hours": 54177466.888,
+      "all_composition_share_pct": 21.509041034109643,
+      "matched_composition_share_lower_pct": 21.5090071993478,
+      "matched_composition_share_upper_pct": 21.5090503059199,
+      "matched_bound_width_pp": 0.0000431065721322454
+    },
+    {
+      "job_type_public": "online_inference",
+      "all_gpu_hours": 137417089.62055555,
+      "all_composition_share_pct": 54.55607264818659,
+      "matched_composition_share_lower_pct": 54.5560530588673,
+      "matched_composition_share_upper_pct": 54.5560961654394,
+      "matched_bound_width_pp": 0.0000431065721357982
+    },
+    {
+      "job_type_public": "other",
+      "all_gpu_hours": 2377679.422222222,
+      "all_composition_share_pct": 0.943964478152142,
+      "matched_composition_share_lower_pct": 0.943921778490739,
+      "matched_composition_share_upper_pct": 0.943964885062871,
+      "matched_bound_width_pp": 0.0000431065721319124
+    },
+    {
+      "job_type_public": "training",
+      "all_gpu_hours": 48821361.41055556,
+      "all_composition_share_pct": 19.382609159110167,
+      "matched_composition_share_lower_pct": 19.3825744077164,
+      "matched_composition_share_upper_pct": 19.3826175142886,
+      "matched_bound_width_pp": 0.0000431065721322454
+    },
+    {
+      "job_type_public": "unknown",
+      "all_gpu_hours": 648820.299,
+      "all_composition_share_pct": 0.257588684679633,
+      "matched_composition_share_lower_pct": 0.257545689145153,
+      "matched_composition_share_upper_pct": 0.257588795717285,
+      "matched_bound_width_pp": 0.0000431065721318569
+    }
+  ],
+  "quality_checks": {
+    "span_total_minus_aggregate_total_gpu_hours": -2.9802322387695312e-08,
+    "span_total_minus_matched_minus_unmatched_gpu_hours": -3.4438230045452656e-08,
+    "negative_span_gpu_hour_rows": 0,
+    "null_span_gpu_hour_rows": 0,
+    "passes": {
+      "span_and_aggregate_totals_reconcile": true,
+      "matched_plus_unmatched_closes": true,
+      "no_negative_or_null_span_gpu_hours": true
+    }
+  },
+  "discarded_diagnostic": "Execution-summary priority/workload labels are not used for composition: 113940 pod IDs have conflicting label rows, and first-row residual assignment produced negative label cells. The mass-bound result is independent of those labels.",
+  "interpretation_guardrail": "This audit supports the representativeness of matched versus all GPU-hours only for days 110-184. It does not make the low-coverage pre-day-109 window representative and does not convert observed schedule delay into demonstrated flexibility or tolerance."
+}

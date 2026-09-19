@@ -1,0 +1,23 @@
+{
+  "synthetic_tests": "passed: complete calendar masks, moment covariance, R and weighted correlation identity",
+  "local_smoke_replicates": 20,
+  "local_smoke_only": true,
+  "helios_full_raw_R": 1.4050046195620816,
+  "pilot_raw_R": 1.4050046193702517,
+  "absolute_difference": 1.9182988530985767e-10,
+  "full_1000_rep_results": "completed SuperMIC job581010",
+  "note": "Smoke intervals not retained or cited as inference; tiny point difference due to floating-point occupancy integration.",
+  "corrected_script_sha256": "ed0757ac8bdeeaffa17fb0b00159fa0c845703c4a934c37753e3b02bd1b8ae89",
+  "known_hour_126_regression": "passed, present positive aggregate row still masked",
+  "support_policy": "original A2 NaN unstack; observed-hour selection; not forced cluster count",
+  "superseded_job": "581002",
+  "provenance_script_hash_matches": true,
+  "all_bootstrap_replicates": 1000,
+  "empty_support_rows": 0,
+  "asi_selected_clusters": 14,
+  "asi_common_full_hours": 1603,
+  "asi_four_cluster_subsets": 1001,
+  "result_rows": 32080,
+  "point_outside_percentile_band_rows": 4,
+  "interpretation_caveat": "Noncircular moving blocks underweight record edges; some nonstationary point estimates fall outside percentile bands. Report sensitivity, not calibrated universal confidence or causal attribution."
+}

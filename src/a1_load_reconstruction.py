@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""A1 (v2, revision 2): reconstruct the six-month hourly power profile.
+"""A1 (v2, RERUN_PLAN_v1): reconstruct the six-month hourly power profile.
 
 Input: pod_hourly_agg.parquet + server_hourly_agg.parquet + power_curves.yaml.
 Model (src/powermodel.py):
@@ -26,8 +26,8 @@ import matplotlib.pyplot as plt
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import powermodel as pm  # noqa: E402
 
-AGG = os.environ.get("AGG_DIR", os.path.join(os.environ.get("ASI_ROOT", "."), "agg"))
-OUT = os.environ.get("OUT_DIR", os.path.join(os.environ.get("ASI_ROOT", "."), "a1_out"))
+AGG = os.environ.get("AGG_DIR", "/project/mli30/mli30/asi-trace/agg")
+OUT = os.environ.get("OUT_DIR", "/project/mli30/mli30/asi-trace/a1_out")
 CFG = os.environ.get("POWER_CFG", os.path.join(
     os.path.dirname(__file__), "..", "configs", "power_curves.yaml"))
 os.makedirs(OUT, exist_ok=True)

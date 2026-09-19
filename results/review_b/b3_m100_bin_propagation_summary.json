@@ -1,0 +1,115 @@
+{
+  "phi_metered_m100_july": 0.138,
+  "phi_model": 0.2,
+  "alpha": 0.95,
+  "horizons": [
+    1,
+    4,
+    24
+  ],
+  "note": "Part A: util-resolved model/metered error on M100 V100 GPUs. Part B: SENSITIVITY of the ASI envelope to a util-dependent shape error of that magnitude (M100 is not the ASI fleet; not a recalibration). envelope_shift_over_mean_shift > 1 means the low-tail envelope is biased MORE than the fleet mean, i.e. the aggregate energy check alone under-states the low-tail risk.",
+  "part_a_low_util_error": {
+    "training": {
+      "u_lt_0.1": {
+        "n_gpu_hours": 735891,
+        "mean_power_model_over_metered_pct": 35.26535147507138
+      },
+      "u_lt_0.3": {
+        "n_gpu_hours": 1377148,
+        "mean_power_model_over_metered_pct": 65.56180319753615
+      }
+    },
+    "linear": {
+      "u_lt_0.1": {
+        "n_gpu_hours": 735891,
+        "mean_power_model_over_metered_pct": 29.591790902128697
+      },
+      "u_lt_0.3": {
+        "n_gpu_hours": 1377148,
+        "mean_power_model_over_metered_pct": 34.31303820017705
+      }
+    }
+  },
+  "part_b_envelope_propagation": {
+    "training": {
+      "n_clusters": 13,
+      "mean_eligible_mw_uncorrected": 3.53085274373735,
+      "mean_eligible_mw_corrected": 1.9373259020922031,
+      "mean_shift_pct": -45.13150100840583,
+      "envelope_mw_uncorrected": {
+        "h1": 2.507773954914842,
+        "h4": 2.316797571285743,
+        "h24": 1.9465669946147905
+      },
+      "envelope_mw_corrected": {
+        "h1": 1.3486564966434207,
+        "h4": 1.2530818660677314,
+        "h24": 1.0937376437257937
+      },
+      "envelope_shift_pct": {
+        "h1": -46.22097043474488,
+        "h4": -45.91319148473062,
+        "h24": -43.81197016328557
+      },
+      "envelope_shift_over_mean_shift": {
+        "h1": 1.0241398890352913,
+        "h4": 1.0173202853629708,
+        "h24": 0.9707625313664066
+      },
+      "binding_hour_utilization": {
+        "h1": {
+          "n_binding_hours": 222,
+          "mean_curtail_row_util": 0.2603484347837687
+        },
+        "h4": {
+          "n_binding_hours": 311,
+          "mean_curtail_row_util": 0.28009893787843476
+        },
+        "h24": {
+          "n_binding_hours": 427,
+          "mean_curtail_row_util": 0.3043449747849466
+        }
+      }
+    },
+    "linear": {
+      "n_clusters": 13,
+      "mean_eligible_mw_uncorrected": 3.53085274373735,
+      "mean_eligible_mw_corrected": 2.4870647355543567,
+      "mean_shift_pct": -29.561924099903425,
+      "envelope_mw_uncorrected": {
+        "h1": 2.507773954914842,
+        "h4": 2.316797571285743,
+        "h24": 1.9465669946147905
+      },
+      "envelope_mw_corrected": {
+        "h1": 1.7767831527495301,
+        "h4": 1.6490290861285797,
+        "h24": 1.379957779174411
+      },
+      "envelope_shift_pct": {
+        "h1": -29.148990910153007,
+        "h4": -28.82291027206899,
+        "h24": -29.108128156282987
+      },
+      "envelope_shift_over_mean_shift": {
+        "h1": 0.9860315861594486,
+        "h4": 0.9750011594192257,
+        "h24": 0.9846493096292768
+      },
+      "binding_hour_utilization": {
+        "h1": {
+          "n_binding_hours": 222,
+          "mean_curtail_row_util": 0.2603484347837687
+        },
+        "h4": {
+          "n_binding_hours": 311,
+          "mean_curtail_row_util": 0.28009893787843476
+        },
+        "h24": {
+          "n_binding_hours": 427,
+          "mean_curtail_row_util": 0.3043449747849466
+        }
+      }
+    }
+  }
+}

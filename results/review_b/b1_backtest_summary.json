@@ -1,0 +1,373 @@
+{
+  "inputs": {
+    "hours": 4439,
+    "mean_mw": 3.5465355236928358,
+    "n_origins_total": 15,
+    "train_weeks": 8,
+    "test_weeks": 4,
+    "origin_days": [
+      56,
+      63,
+      70,
+      77,
+      84,
+      91,
+      98,
+      105,
+      112,
+      119,
+      126,
+      133,
+      140,
+      147,
+      154
+    ]
+  },
+  "note": "Derating d is fitted ONLY on the calibration origins and then applied unchanged to the disjoint test origins. Coverage is reported per start (worst start, fraction meeting target), not only as the cross-period mean.",
+  "results": [
+    {
+      "split": "forward_earlyCal_lateTest",
+      "h": 1,
+      "alpha": 0.95,
+      "derating_calibrated": 1.0580566406250003,
+      "calibration": {
+        "n_starts": 7,
+        "coverage_mean": 0.9921343537414966,
+        "coverage_worst_start": 0.96875,
+        "coverage_p10_start": 0.9812500000000001,
+        "frac_starts_meeting_target": 1.0
+      },
+      "test_no_derating": {
+        "n_starts": 8,
+        "coverage_mean": 0.9215029761904762,
+        "coverage_worst_start": 0.8422619047619048,
+        "coverage_p10_start": 0.8422619047619048,
+        "frac_starts_meeting_target": 0.375
+      },
+      "test_with_calibrated_derating": {
+        "n_starts": 8,
+        "coverage_mean": 0.8828125,
+        "coverage_worst_start": 0.7663690476190477,
+        "coverage_p10_start": 0.768452380952381,
+        "frac_starts_meeting_target": 0.375
+      },
+      "n_test_starts": 8
+    },
+    {
+      "split": "forward_earlyCal_lateTest",
+      "h": 1,
+      "alpha": 0.9,
+      "derating_calibrated": 1.0245117187500001,
+      "calibration": {
+        "n_starts": 7,
+        "coverage_mean": 0.9379251700680272,
+        "coverage_worst_start": 0.84375,
+        "coverage_p10_start": 0.8741071428571429,
+        "frac_starts_meeting_target": 0.7142857142857143
+      },
+      "test_no_derating": {
+        "n_starts": 8,
+        "coverage_mean": 0.8824404761904763,
+        "coverage_worst_start": 0.7113095238095238,
+        "coverage_p10_start": 0.7508928571428571,
+        "frac_starts_meeting_target": 0.625
+      },
+      "test_with_calibrated_derating": {
+        "n_starts": 8,
+        "coverage_mean": 0.8630952380952381,
+        "coverage_worst_start": 0.6741071428571429,
+        "coverage_p10_start": 0.7168154761904763,
+        "frac_starts_meeting_target": 0.5
+      },
+      "n_test_starts": 8
+    },
+    {
+      "split": "forward_earlyCal_lateTest",
+      "h": 4,
+      "alpha": 0.95,
+      "derating_calibrated": 1.0891845703125,
+      "calibration": {
+        "n_starts": 7,
+        "coverage_mean": 0.9970104633781763,
+        "coverage_worst_start": 0.9850523168908819,
+        "coverage_p10_start": 0.9904334828101644,
+        "frac_starts_meeting_target": 1.0
+      },
+      "test_no_derating": {
+        "n_starts": 8,
+        "coverage_mean": 0.9015321375186847,
+        "coverage_worst_start": 0.7533632286995515,
+        "coverage_p10_start": 0.818236173393124,
+        "frac_starts_meeting_target": 0.25
+      },
+      "test_with_calibrated_derating": {
+        "n_starts": 8,
+        "coverage_mean": 0.8314648729446936,
+        "coverage_worst_start": 0.6278026905829597,
+        "coverage_p10_start": 0.6863976083707025,
+        "frac_starts_meeting_target": 0.25
+      },
+      "n_test_starts": 8
+    },
+    {
+      "split": "forward_earlyCal_lateTest",
+      "h": 4,
+      "alpha": 0.9,
+      "derating_calibrated": 1.0471435546875003,
+      "calibration": {
+        "n_starts": 7,
+        "coverage_mean": 0.9735212470638481,
+        "coverage_worst_start": 0.9028400597907325,
+        "coverage_p10_start": 0.9324364723467863,
+        "frac_starts_meeting_target": 1.0
+      },
+      "test_no_derating": {
+        "n_starts": 8,
+        "coverage_mean": 0.8471599402092675,
+        "coverage_worst_start": 0.6995515695067265,
+        "coverage_p10_start": 0.7267563527653214,
+        "frac_starts_meeting_target": 0.375
+      },
+      "test_with_calibrated_derating": {
+        "n_starts": 8,
+        "coverage_mean": 0.8019431988041854,
+        "coverage_worst_start": 0.6128550074738416,
+        "coverage_p10_start": 0.6327354260089686,
+        "frac_starts_meeting_target": 0.375
+      },
+      "n_test_starts": 8
+    },
+    {
+      "split": "forward_earlyCal_lateTest",
+      "h": 24,
+      "alpha": 0.95,
+      "derating_calibrated": 1.1250732421875,
+      "calibration": {
+        "n_starts": 7,
+        "coverage_mean": 1.0,
+        "coverage_worst_start": 1.0,
+        "coverage_p10_start": 1.0,
+        "frac_starts_meeting_target": 1.0
+      },
+      "test_no_derating": {
+        "n_starts": 8,
+        "coverage_mean": 0.8260785824345147,
+        "coverage_worst_start": 0.551617873651772,
+        "coverage_p10_start": 0.626040061633282,
+        "frac_starts_meeting_target": 0.5
+      },
+      "test_with_calibrated_derating": {
+        "n_starts": 8,
+        "coverage_mean": 0.6829738058551618,
+        "coverage_worst_start": 0.2942989214175655,
+        "coverage_p10_start": 0.3622496147919877,
+        "frac_starts_meeting_target": 0.25
+      },
+      "n_test_starts": 8
+    },
+    {
+      "split": "forward_earlyCal_lateTest",
+      "h": 24,
+      "alpha": 0.9,
+      "derating_calibrated": 1.105224609375,
+      "calibration": {
+        "n_starts": 7,
+        "coverage_mean": 0.9971384547655734,
+        "coverage_worst_start": 0.9799691833590138,
+        "coverage_p10_start": 0.9919876733436055,
+        "frac_starts_meeting_target": 1.0
+      },
+      "test_no_derating": {
+        "n_starts": 8,
+        "coverage_mean": 0.7802388289676425,
+        "coverage_worst_start": 0.4915254237288136,
+        "coverage_p10_start": 0.5810477657935286,
+        "frac_starts_meeting_target": 0.375
+      },
+      "test_with_calibrated_derating": {
+        "n_starts": 8,
+        "coverage_mean": 0.6352080123266564,
+        "coverage_worst_start": 0.2696456086286595,
+        "coverage_p10_start": 0.32573189522342066,
+        "frac_starts_meeting_target": 0.25
+      },
+      "n_test_starts": 8
+    },
+    {
+      "split": "reverse_lateCal_earlyTest",
+      "h": 1,
+      "alpha": 0.95,
+      "derating_calibrated": 0.947900390625,
+      "calibration": {
+        "n_starts": 8,
+        "coverage_mean": 0.9215029761904762,
+        "coverage_worst_start": 0.8422619047619048,
+        "coverage_p10_start": 0.8422619047619048,
+        "frac_starts_meeting_target": 0.375
+      },
+      "test_no_derating": {
+        "n_starts": 7,
+        "coverage_mean": 0.9921343537414966,
+        "coverage_worst_start": 0.96875,
+        "coverage_p10_start": 0.9812500000000001,
+        "frac_starts_meeting_target": 1.0
+      },
+      "test_with_calibrated_derating": {
+        "n_starts": 7,
+        "coverage_mean": 0.9991496598639455,
+        "coverage_worst_start": 0.9940476190476191,
+        "coverage_p10_start": 0.9976190476190476,
+        "frac_starts_meeting_target": 1.0
+      },
+      "n_test_starts": 7
+    },
+    {
+      "split": "reverse_lateCal_earlyTest",
+      "h": 1,
+      "alpha": 0.9,
+      "derating_calibrated": 0.9730224609375002,
+      "calibration": {
+        "n_starts": 8,
+        "coverage_mean": 0.8824404761904763,
+        "coverage_worst_start": 0.7113095238095238,
+        "coverage_p10_start": 0.7508928571428571,
+        "frac_starts_meeting_target": 0.625
+      },
+      "test_no_derating": {
+        "n_starts": 7,
+        "coverage_mean": 0.9379251700680272,
+        "coverage_worst_start": 0.84375,
+        "coverage_p10_start": 0.8741071428571429,
+        "frac_starts_meeting_target": 0.7142857142857143
+      },
+      "test_with_calibrated_derating": {
+        "n_starts": 7,
+        "coverage_mean": 0.9717261904761906,
+        "coverage_worst_start": 0.9315476190476191,
+        "coverage_p10_start": 0.9422619047619047,
+        "frac_starts_meeting_target": 1.0
+      },
+      "n_test_starts": 7
+    },
+    {
+      "split": "reverse_lateCal_earlyTest",
+      "h": 4,
+      "alpha": 0.95,
+      "derating_calibrated": 0.9193359375,
+      "calibration": {
+        "n_starts": 8,
+        "coverage_mean": 0.9015321375186847,
+        "coverage_worst_start": 0.7533632286995515,
+        "coverage_p10_start": 0.818236173393124,
+        "frac_starts_meeting_target": 0.25
+      },
+      "test_no_derating": {
+        "n_starts": 7,
+        "coverage_mean": 0.9970104633781763,
+        "coverage_worst_start": 0.9850523168908819,
+        "coverage_p10_start": 0.9904334828101644,
+        "frac_starts_meeting_target": 1.0
+      },
+      "test_with_calibrated_derating": {
+        "n_starts": 7,
+        "coverage_mean": 1.0,
+        "coverage_worst_start": 1.0,
+        "coverage_p10_start": 1.0,
+        "frac_starts_meeting_target": 1.0
+      },
+      "n_test_starts": 7
+    },
+    {
+      "split": "reverse_lateCal_earlyTest",
+      "h": 4,
+      "alpha": 0.9,
+      "derating_calibrated": 0.939990234375,
+      "calibration": {
+        "n_starts": 8,
+        "coverage_mean": 0.8471599402092675,
+        "coverage_worst_start": 0.6995515695067265,
+        "coverage_p10_start": 0.7267563527653214,
+        "frac_starts_meeting_target": 0.375
+      },
+      "test_no_derating": {
+        "n_starts": 7,
+        "coverage_mean": 0.9735212470638481,
+        "coverage_worst_start": 0.9028400597907325,
+        "coverage_p10_start": 0.9324364723467863,
+        "frac_starts_meeting_target": 1.0
+      },
+      "test_with_calibrated_derating": {
+        "n_starts": 7,
+        "coverage_mean": 0.9976510783685671,
+        "coverage_worst_start": 0.9835575485799701,
+        "coverage_p10_start": 0.9934230194319881,
+        "frac_starts_meeting_target": 1.0
+      },
+      "n_test_starts": 7
+    },
+    {
+      "split": "reverse_lateCal_earlyTest",
+      "h": 24,
+      "alpha": 0.95,
+      "derating_calibrated": 0.845361328125,
+      "calibration": {
+        "n_starts": 8,
+        "coverage_mean": 0.8260785824345147,
+        "coverage_worst_start": 0.551617873651772,
+        "coverage_p10_start": 0.626040061633282,
+        "frac_starts_meeting_target": 0.5
+      },
+      "test_no_derating": {
+        "n_starts": 7,
+        "coverage_mean": 1.0,
+        "coverage_worst_start": 1.0,
+        "coverage_p10_start": 1.0,
+        "frac_starts_meeting_target": 1.0
+      },
+      "test_with_calibrated_derating": {
+        "n_starts": 7,
+        "coverage_mean": 1.0,
+        "coverage_worst_start": 1.0,
+        "coverage_p10_start": 1.0,
+        "frac_starts_meeting_target": 1.0
+      },
+      "n_test_starts": 7
+    },
+    {
+      "split": "reverse_lateCal_earlyTest",
+      "h": 24,
+      "alpha": 0.9,
+      "derating_calibrated": 0.8601562500000001,
+      "calibration": {
+        "n_starts": 8,
+        "coverage_mean": 0.7802388289676425,
+        "coverage_worst_start": 0.4915254237288136,
+        "coverage_p10_start": 0.5810477657935286,
+        "frac_starts_meeting_target": 0.375
+      },
+      "test_no_derating": {
+        "n_starts": 7,
+        "coverage_mean": 0.9971384547655734,
+        "coverage_worst_start": 0.9799691833590138,
+        "coverage_p10_start": 0.9919876733436055,
+        "frac_starts_meeting_target": 1.0
+      },
+      "test_with_calibrated_derating": {
+        "n_starts": 7,
+        "coverage_mean": 1.0,
+        "coverage_worst_start": 1.0,
+        "coverage_p10_start": 1.0,
+        "frac_starts_meeting_target": 1.0
+      },
+      "n_test_starts": 7
+    }
+  ],
+  "whole_record_K_mw": {
+    "h1_a0.95": 2.5179440296630315,
+    "h1_a0.9": 2.708771272075986,
+    "h4_a0.95": 2.3198574507836445,
+    "h4_a0.9": 2.538929908731841,
+    "h24_a0.95": 1.9504805665157359,
+    "h24_a0.9": 2.1824611624210566
+  }
+}
