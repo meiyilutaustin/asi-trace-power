@@ -1,17 +1,19 @@
 # asi-trace-power
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22308423.svg)](https://doi.org/10.5281/zenodo.22308423)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22308422.svg)](https://doi.org/10.5281/zenodo.22308422)
+
+*Concept DOI [10.5281/zenodo.22308422](https://doi.org/10.5281/zenodo.22308422) always resolves to the latest version. This revision is **v1.1.0**, version DOI [10.5281/zenodo.22839997](https://doi.org/10.5281/zenodo.22839997).*
 
 Code, configuration, derived data products and result tables for
 
 > **Beyond Scalar Flexibility: From Eligible AI Workloads to Dependable Load Relief**
 > (Meiyi Li, Louisiana State University; ACM e-Energy 2027 submission; preprint link to be added).
 
-> **Note on this revision.** The working tree reflects the revised paper (e-Energy 2027,
-> the *scope → persistence → coincidence* decomposition). The last archived release is
-> v1.0.1 (DOI [10.5281/zenodo.22308423](https://doi.org/10.5281/zenodo.22308423)); a new
-> version and DOI will be minted when this revision is released. `results/` and `figures/`
-> here already correspond to the revised manuscript, not to v1.0.1.
+> **This revision.** This is the revised paper artifact (e-Energy 2027, the
+> *scope → persistence → coincidence* decomposition), released as **v1.1.0**
+> (internal revision `paper-D-r2-2026-09-18`), archived at Zenodo, version DOI
+> [10.5281/zenodo.22839997](https://doi.org/10.5281/zenodo.22839997). The previous
+> release was v1.0.1 (DOI 10.5281/zenodo.22308423).
 
 The pipeline turns the public Alibaba `cluster-trace-gpu-v2026` (per-pod hourly GPU
 utilisation, job type, priority, scheduling delay; 185 days) into an hourly electric load
@@ -126,7 +128,8 @@ distinct throughout; all MW are GPU-side workload power unless a boundary is nam
 * **Derived products** (`data/products/`): hourly fleet power band, fleet and per-cluster
   envelopes, the K surface, and the server aggregate. The 49 MB pod aggregate table with
   sufficient statistics is attached to the GitHub releases rather than tracked in git;
-  release `v1.0.1` is archived at Zenodo, DOI 10.5281/zenodo.22308423.
+  releases are archived at Zenodo under concept DOI 10.5281/zenodo.22308422 (v1.1.0 =
+  10.5281/zenodo.22839997).
 
 Derived products inherit the research/study-use condition of the source trace; please cite
 both the OSDI 2026 trace paper and this work.
@@ -138,4 +141,4 @@ use, subject to the source-trace terms (`DATA_LICENSE.md`).
 
 ## Citation
 
-See `CITATION.cff`. Archived release: https://doi.org/10.5281/zenodo.22308423 (v1.0.1). Preprint link to be added.
+See `CITATION.cff`. Archived release: https://doi.org/10.5281/zenodo.22839997 (v1.1.0); concept DOI (all versions) https://doi.org/10.5281/zenodo.22308422. Preprint link to be added.

@@ -5,9 +5,9 @@ authors:
   - family-names: Li
     given-names: Meiyi
     affiliation: Louisiana State University
-version: 1.0.1
-date-released: 2026-09-04
-doi: 10.5281/zenodo.22308423
+version: 1.1.0
+date-released: 2026-09-18
+doi: 10.5281/zenodo.22839997
 license: MIT
 repository-code: "https://github.com/meiyilutaustin/asi-trace-power"
 references:
