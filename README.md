@@ -7,11 +7,10 @@
 Code, configuration, derived data products and result tables for
 
 > **Beyond Scalar Flexibility: From Eligible AI Workloads to Dependable Load Relief**
-> (Meiyi Li, Louisiana State University; ACM e-Energy 2027 submission; preprint link to be added).
+> (Meiyi Li, Louisiana State University; preprint [arXiv:2609.05406](https://arxiv.org/abs/2609.05406)).
 
-> **This revision.** This is the revised paper artifact (e-Energy 2027, the
-> *scope → persistence → coincidence* decomposition), released as **v1.1.0**
-> (internal revision `paper-D-r2-2026-09-18`), archived at Zenodo, version DOI
+> **This release.** v1.1.0 extends the analysis with the
+> *scope → persistence → coincidence* decomposition, archived at Zenodo, version DOI
 > [10.5281/zenodo.22839997](https://doi.org/10.5281/zenodo.22839997). The previous
 > release was v1.0.1 (DOI 10.5281/zenodo.22308423).
 
